@@ -1,0 +1,38 @@
+{
+  "name": "hd2-supply-book",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "HD2 军需簿：非官方、离线优先的装备速查与解锁计划工具。",
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run generate:data && npm run typecheck && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "format:check": "prettier --check .",
+    "format": "prettier --write .",
+    "generate:data": "node scripts/generate-data.mjs",
+    "validate:data": "node scripts/validate-data.mjs",
+    "sync:data": "node scripts/sync-data.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "size:check": "node scripts/size-budget.mjs",
+    "desktop:check": "node scripts/check-neutralino.mjs",
+    "desktop:build": "npm run build && node scripts/check-neutralino.mjs --require-binaries && npx --no-install neu build --embed-resources",
+    "check": "npm run generate:data && npm run validate:data && npm run typecheck && npm test && npm run format:check && npm run build && npm run size:check && npm run smoke && npm run desktop:check"
+  },
+  "dependencies": {
+    "preact": "10.29.8"
+  },
+  "devDependencies": {
+    "@neutralinojs/neu": "11.7.2",
+    "@preact/preset-vite": "2.10.6",
+    "@types/node": "26.2.0",
+    "prettier": "3.9.6",
+    "typescript": "7.0.2",
+    "vite": "8.2.1",
+    "vite-plugin-pwa": "1.3.0",
+    "vitest": "4.1.10"
+  }
+}

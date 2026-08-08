@@ -1,0 +1,18 @@
+{
+  "version": "0.1.0",
+  "assets": [
+    {
+      "path": "assets/placeholder-equipment.svg",
+      "alt": "通用装备占位图",
+      "status": "placeholder",
+      "originalPage": null,
+      "author": "HD2 军需簿 contributors",
+      "syncedAt": "2026-08-08T00:00:00.000Z",
+      "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+      "sourceRefs": [
+        { "kind": "local-fixture", "label": "项目自制通用占位图" }
+      ],
+      "licenseStatus": "project-created-placeholder"
+    }
+  ]
+}

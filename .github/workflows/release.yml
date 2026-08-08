@@ -1,0 +1,35 @@
+name: Windows Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+          cache: npm
+      - run: npm ci
+      - run: npm run validate:data
+      - run: npx --no-install neu update
+      - run: npm run desktop:build
+      - name: Verify desktop output and write SHA-256
+        shell: powershell
+        run: |
+          $exe = "desktop-dist\hd2-supply-book\hd2-supply-book-win_x64.exe"
+          if (!(Test-Path -LiteralPath $exe)) { throw "Neutralino Windows x64 executable not found: $exe" }
+          (Get-FileHash -Algorithm SHA256 -LiteralPath $exe).Hash | Out-File -Encoding ascii "desktop-dist\hd2-supply-book-win_x64.exe.sha256"
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            desktop-dist/hd2-supply-book/hd2-supply-book-win_x64.exe
+            desktop-dist/hd2-supply-book-win_x64.exe.sha256
+          generate_release_notes: true

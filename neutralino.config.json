@@ -1,0 +1,29 @@
+{
+  "applicationId": "com.hd2tool.supplybook",
+  "version": "0.1.0",
+  "defaultMode": "window",
+  "documentRoot": "/dist",
+  "url": "/index.html",
+  "enableServer": true,
+  "enableNativeAPI": false,
+  "tokenSecurity": "one-time",
+  "modes": {
+    "window": {
+      "title": "HD2 军需簿",
+      "width": 1180,
+      "height": 820,
+      "minWidth": 360,
+      "minHeight": 560,
+      "resizable": true,
+      "fullScreen": false,
+      "icon": "/dist/icons/icon-192.svg"
+    }
+  },
+  "cli": {
+    "binaryName": "hd2-supply-book",
+    "resourcesPath": "/dist",
+    "distributionPath": "/desktop-dist",
+    "binaryVersion": "6.9.0",
+    "clientLibrary": ""
+  }
+}

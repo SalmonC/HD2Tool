@@ -1,0 +1,2624 @@
+{
+  "meta": {
+    "game": "HELLDIVERS 2",
+    "gameBuild": "unknown",
+    "dataVersion": "0.2.0-community.2026-08-08.1",
+    "generatedAt": "2026-08-08T00:00:00.000Z",
+    "verificationStatus": "pending",
+    "unresolvedDifferences": [
+      "正式中文名、型号、债券归属与外号来自一篇社区整理帖，尚待游戏简体中文资源逐项复核。",
+      "债券页码、页面勋章门槛、物品价格、战备征用点价格及英文名尚未核验。",
+      "武器分类、弹药属性、穿甲等级与拆毁值没有可靠统一来源，因此保持空白且不进入筛选。",
+      "装备图片仍为项目自制占位图，等待具有明确许可与来源的素材。"
+    ]
+  },
+  "taxonomy": {
+    "version": "0.1.0-pending",
+    "dimensions": {
+      "weaponType": {
+        "id": "weaponType",
+        "labelZh": "武器类型（待选择可靠体系）",
+        "valueKind": "single",
+        "taxonomySource": "unselected",
+        "scaleVersion": "none",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "尚未选定可信统一分类" }
+        ],
+        "verificationStatus": "pending",
+        "options": []
+      },
+      "ammoTraits": {
+        "id": "ammoTraits",
+        "labelZh": "弹药/介质标签（待选择可靠体系）",
+        "valueKind": "multi",
+        "taxonomySource": "unselected",
+        "scaleVersion": "none",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "尚未选定可信统一分类" }
+        ],
+        "verificationStatus": "pending",
+        "options": []
+      },
+      "armorPenetration": {
+        "id": "armorPenetration",
+        "labelZh": "穿甲数值（待选择可靠标尺）",
+        "valueKind": "number",
+        "taxonomySource": "unselected",
+        "scaleVersion": "none",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "尚未选定可信统一标尺" }
+        ],
+        "verificationStatus": "pending",
+        "options": []
+      },
+      "demolitionPower": {
+        "id": "demolitionPower",
+        "labelZh": "拆毁值（待来源核验）",
+        "valueKind": "number",
+        "taxonomySource": "product-contract-pending",
+        "scaleVersion": "0..50-v1",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "产品范围约束；不是游戏事实来源" }
+        ],
+        "verificationStatus": "pending",
+        "options": [],
+        "numberScale": { "min": 0, "max": 50, "step": 1 }
+      }
+    }
+  },
+  "warbonds": [
+    {
+      "id": "steeled-veterans",
+      "nameZh": "铁血老兵",
+      "kind": "warbond",
+      "superCredits": null,
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "freedoms-flame",
+      "nameZh": "自由烈焰",
+      "kind": "warbond",
+      "superCredits": null,
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "cutting-edge",
+      "nameZh": "遥遥领先",
+      "kind": "warbond",
+      "superCredits": null,
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "helldivers-mobilize",
+      "nameZh": "绝地潜兵总动员",
+      "kind": "warbond",
+      "superCredits": null,
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "servants-of-freedom",
+      "nameZh": "自由公仆",
+      "kind": "warbond",
+      "superCredits": null,
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "borderline-justice",
+      "nameZh": "临界正义",
+      "kind": "warbond",
+      "superCredits": null,
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "polar-patriots",
+      "nameZh": "极地爱国者",
+      "kind": "warbond",
+      "superCredits": null,
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "viper-commandos",
+      "nameZh": "丛林突击兵",
+      "kind": "warbond",
+      "superCredits": null,
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "urban-legends",
+      "nameZh": "都市传奇",
+      "kind": "warbond",
+      "superCredits": null,
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "democratic-detonation",
+      "nameZh": "民主爆破",
+      "kind": "warbond",
+      "superCredits": null,
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "force-of-law",
+      "nameZh": "法律铁腕",
+      "kind": "warbond",
+      "superCredits": null,
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    }
+  ],
+  "items": [
+    {
+      "id": "sg-225ie-breaker-incendiary",
+      "model": "SG-225IE",
+      "nameZh": "高燃“破裂者”",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "火喷",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        },
+        {
+          "text": "火连喷",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "steeled-veterans",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "sg225ie",
+        "modelFormalName": "sg225ie高燃破裂者",
+        "formalName": "高燃破裂者",
+        "englishName": "待核验",
+        "aliases": ["火喷", "火连喷"],
+        "pinyinFull": ["po", "", ""],
+        "pinyinInitials": ["p", "", ""]
+      }
+    },
+    {
+      "id": "sg-451-cookout",
+      "model": "SG-451",
+      "nameZh": "野炊",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "泵动火喷",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "freedoms-flame",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "sg451",
+        "modelFormalName": "sg451野炊",
+        "formalName": "野炊",
+        "englishName": "待核验",
+        "aliases": ["泵动火喷"],
+        "pinyinFull": ["", ""],
+        "pinyinInitials": ["", ""]
+      }
+    },
+    {
+      "id": "arc-12-blitzer",
+      "model": "ARC-12",
+      "nameZh": "雷霆",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "电喷",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "cutting-edge",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "arc12",
+        "modelFormalName": "arc12雷霆",
+        "formalName": "雷霆",
+        "englishName": "待核验",
+        "aliases": ["电喷"],
+        "pinyinFull": ["lei", ""],
+        "pinyinInitials": ["l", ""]
+      }
+    },
+    {
+      "id": "sg-8p-punisher-plasma",
+      "model": "SG-8P",
+      "nameZh": "等离子“制裁者”",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "离子喷",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "cutting-edge",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "sg8p",
+        "modelFormalName": "sg8p等离子制裁者",
+        "formalName": "等离子制裁者",
+        "englishName": "待核验",
+        "aliases": ["离子喷"],
+        "pinyinFull": ["", ""],
+        "pinyinInitials": ["", ""]
+      }
+    },
+    {
+      "id": "sg-225sp-breaker-spray-pray",
+      "model": "SG-225SP",
+      "nameZh": "弥漫与祷告的“破裂者”",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "鸟喷",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "helldivers-mobilize",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "sg225sp",
+        "modelFormalName": "sg225sp弥漫与祷告的破裂者",
+        "formalName": "弥漫与祷告的破裂者",
+        "englishName": "待核验",
+        "aliases": ["鸟喷"],
+        "pinyinFull": ["yudepo", ""],
+        "pinyinInitials": ["ydp", ""]
+      }
+    },
+    {
+      "id": "r63-diligence",
+      "model": "R63",
+      "nameZh": "勤勉",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "小勤勉",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "helldivers-mobilize",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "r63",
+        "modelFormalName": "r63勤勉",
+        "formalName": "勤勉",
+        "englishName": "待核验",
+        "aliases": ["小勤勉"],
+        "pinyinFull": ["", ""],
+        "pinyinInitials": ["", ""]
+      }
+    },
+    {
+      "id": "r63-cs-diligence-counter-sniper",
+      "model": "R63-CS",
+      "nameZh": "反狙击“勤勉”",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "大勤勉",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "helldivers-mobilize",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "r63cs",
+        "modelFormalName": "r63cs反狙击勤勉",
+        "formalName": "反狙击勤勉",
+        "englishName": "待核验",
+        "aliases": ["大勤勉"],
+        "pinyinFull": ["", ""],
+        "pinyinInitials": ["", ""]
+      }
+    },
+    {
+      "id": "gp-31-ultimatum",
+      "model": "GP-31",
+      "nameZh": "最后通牒",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "核弹手枪",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "servants-of-freedom",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "gp31",
+        "modelFormalName": "gp31最后通牒",
+        "formalName": "最后通牒",
+        "englishName": "待核验",
+        "aliases": ["核弹手枪"],
+        "pinyinFull": ["", "he"],
+        "pinyinInitials": ["", "h"]
+      }
+    },
+    {
+      "id": "p-4-senator",
+      "model": "P-4",
+      "nameZh": "参议员",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "左轮",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "steeled-veterans",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "p4",
+        "modelFormalName": "p4参议员",
+        "formalName": "参议员",
+        "englishName": "待核验",
+        "aliases": ["左轮"],
+        "pinyinFull": ["", "lun"],
+        "pinyinInitials": ["", "l"]
+      }
+    },
+    {
+      "id": "las-58-talon",
+      "model": "LAS-58",
+      "nameZh": "猛爪",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "香蕉左轮",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        },
+        {
+          "text": "激光左轮",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "borderline-justice",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "las58",
+        "modelFormalName": "las58猛爪",
+        "formalName": "猛爪",
+        "englishName": "待核验",
+        "aliases": ["香蕉左轮", "激光左轮"],
+        "pinyinFull": ["", "lun", "lun"],
+        "pinyinInitials": ["", "l", "l"]
+      }
+    },
+    {
+      "id": "p-113-verdict",
+      "model": "P-113",
+      "nameZh": "裁决",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "沙鹰",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "polar-patriots",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "p113",
+        "modelFormalName": "p113裁决",
+        "formalName": "裁决",
+        "englishName": "待核验",
+        "aliases": ["沙鹰"],
+        "pinyinFull": ["", ""],
+        "pinyinInitials": ["", ""]
+      }
+    },
+    {
+      "id": "sg-22-bushwhacker",
+      "model": "SG-22",
+      "nameZh": "游击兵",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "副手喷",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        },
+        {
+          "text": "三连喷",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        },
+        {
+          "text": "三管喷",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        },
+        {
+          "text": "三眼喷",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "viper-commandos",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "sg22",
+        "modelFormalName": "sg22游击兵",
+        "formalName": "游击兵",
+        "englishName": "待核验",
+        "aliases": ["副手喷", "三连喷", "三管喷", "三眼喷"],
+        "pinyinFull": ["you", "", "", "", ""],
+        "pinyinInitials": ["y", "", "", "", ""]
+      }
+    },
+    {
+      "id": "cqc-19-stun-lance",
+      "model": "CQC-19",
+      "nameZh": "眩晕长矛",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "电矛",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        },
+        {
+          "text": "电叉",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "urban-legends",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "cqc19",
+        "modelFormalName": "cqc19眩晕长矛",
+        "formalName": "眩晕长矛",
+        "englishName": "待核验",
+        "aliases": ["电矛", "电叉"],
+        "pinyinFull": ["", "", ""],
+        "pinyinInitials": ["", "", ""]
+      }
+    },
+    {
+      "id": "expendable-anti-tank",
+      "model": "—",
+      "nameZh": "消耗性反坦克武器",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "次抛",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "",
+        "modelFormalName": "消耗性反坦克武器",
+        "formalName": "消耗性反坦克武器",
+        "englishName": "待核验",
+        "aliases": ["次抛"],
+        "pinyinFull": ["qi", ""],
+        "pinyinInitials": ["q", ""]
+      }
+    },
+    {
+      "id": "railgun",
+      "model": "—",
+      "nameZh": "磁轨炮",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "磁小轨",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "",
+        "modelFormalName": "磁轨炮",
+        "formalName": "磁轨炮",
+        "englishName": "待核验",
+        "aliases": ["磁小轨"],
+        "pinyinFull": ["", ""],
+        "pinyinInitials": ["", ""]
+      }
+    },
+    {
+      "id": "spear",
+      "model": "—",
+      "nameZh": "飞矛",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "肥猫",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "",
+        "modelFormalName": "飞矛",
+        "formalName": "飞矛",
+        "englishName": "待核验",
+        "aliases": ["肥猫"],
+        "pinyinFull": ["", ""],
+        "pinyinInitials": ["", ""]
+      }
+    },
+    {
+      "id": "sta-x3-wasp-launcher",
+      "model": "StA-X3",
+      "nameZh": "W.A.S.P.发射器",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "黄蜂",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "stax3",
+        "modelFormalName": "stax3wasp发射器",
+        "formalName": "wasp发射器",
+        "englishName": "待核验",
+        "aliases": ["黄蜂"],
+        "pinyinFull": ["waspqi", ""],
+        "pinyinInitials": ["waspq", ""]
+      }
+    },
+    {
+      "id": "one-true-flag",
+      "model": "—",
+      "nameZh": "唯一真旗",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "国旗",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "",
+        "modelFormalName": "唯一真旗",
+        "formalName": "唯一真旗",
+        "englishName": "待核验",
+        "aliases": ["国旗"],
+        "pinyinFull": ["", ""],
+        "pinyinInitials": ["", ""]
+      }
+    },
+    {
+      "id": "gl-52-de-escalator",
+      "model": "GL-52",
+      "nameZh": "缓和使者",
+      "nameEn": "待核验",
+      "category": "weapon",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "电榴弹",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "gl52",
+        "modelFormalName": "gl52缓和使者",
+        "formalName": "缓和使者",
+        "englishName": "待核验",
+        "aliases": ["电榴弹"],
+        "pinyinFull": ["", ""],
+        "pinyinInitials": ["", ""]
+      }
+    },
+    {
+      "id": "g-16-impact",
+      "model": "G-16",
+      "nameZh": "冲击弹",
+      "nameEn": "待核验",
+      "category": "grenade",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "摔炮",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "helldivers-mobilize",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "g16",
+        "modelFormalName": "g16冲击弹",
+        "formalName": "冲击弹",
+        "englishName": "待核验",
+        "aliases": ["摔炮"],
+        "pinyinFull": ["chong", ""],
+        "pinyinInitials": ["c", ""]
+      }
+    },
+    {
+      "id": "ted-63-dynamite",
+      "model": "TED-63",
+      "nameZh": "炸药",
+      "nameEn": "待核验",
+      "category": "grenade",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "C4",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "borderline-justice",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "ted63",
+        "modelFormalName": "ted63炸药",
+        "formalName": "炸药",
+        "englishName": "待核验",
+        "aliases": ["c4"],
+        "pinyinFull": ["", "c4"],
+        "pinyinInitials": ["", "c4"]
+      }
+    },
+    {
+      "id": "thermite-grenade",
+      "model": "—",
+      "nameZh": "铝热弹",
+      "nameEn": "待核验",
+      "category": "grenade",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "仙女棒",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "democratic-detonation",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "",
+        "modelFormalName": "铝热弹",
+        "formalName": "铝热弹",
+        "englishName": "待核验",
+        "aliases": ["仙女棒"],
+        "pinyinFull": ["", ""],
+        "pinyinInitials": ["", ""]
+      }
+    },
+    {
+      "id": "g-109-urchin",
+      "model": "G-109",
+      "nameZh": "海胆",
+      "nameEn": "待核验",
+      "category": "grenade",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "电雷",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "force-of-law",
+        "page": null,
+        "itemMedals": null,
+        "pageUnlockMedals": null
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "g109",
+        "modelFormalName": "g109海胆",
+        "formalName": "海胆",
+        "englishName": "待核验",
+        "aliases": ["电雷"],
+        "pinyinFull": ["", "lei"],
+        "pinyinInitials": ["", "l"]
+      }
+    },
+    {
+      "id": "orbital-napalm-barrage",
+      "model": "—",
+      "nameZh": "轨道凝固汽油弹火力网",
+      "nameEn": "待核验",
+      "category": "stratagem",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "轨道火",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        },
+        {
+          "text": "轨汽",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "",
+        "modelFormalName": "轨道凝固汽油弹火力网",
+        "formalName": "轨道凝固汽油弹火力网",
+        "englishName": "待核验",
+        "aliases": ["轨道火", "轨汽"],
+        "pinyinFull": ["", "", ""],
+        "pinyinInitials": ["", "", ""]
+      }
+    },
+    {
+      "id": "sh-32-shield-generator-pack",
+      "model": "SH-32",
+      "nameZh": "防护罩生成器",
+      "nameEn": "待核验",
+      "category": "stratagem",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "蛋盾",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "sh32",
+        "modelFormalName": "sh32防护罩生成器",
+        "formalName": "防护罩生成器",
+        "englishName": "待核验",
+        "aliases": ["蛋盾"],
+        "pinyinFull": ["qi", ""],
+        "pinyinInitials": ["q", ""]
+      }
+    },
+    {
+      "id": "ax-ar-23-guard-dog",
+      "model": "AX/AR-23",
+      "nameZh": "“护卫犬”",
+      "nameEn": "待核验",
+      "category": "stratagem",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "实弹狗",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "axar23",
+        "modelFormalName": "axar23护卫犬",
+        "formalName": "护卫犬",
+        "englishName": "待核验",
+        "aliases": ["实弹狗"],
+        "pinyinFull": ["", ""],
+        "pinyinInitials": ["", ""]
+      }
+    },
+    {
+      "id": "ax-las-5-guard-dog-rover",
+      "model": "AX/LAS-5",
+      "nameZh": "“护卫犬”漫游车",
+      "nameEn": "待核验",
+      "category": "stratagem",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "激光狗",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "axlas5",
+        "modelFormalName": "axlas5护卫犬漫游车",
+        "formalName": "护卫犬漫游车",
+        "englishName": "待核验",
+        "aliases": ["激光狗"],
+        "pinyinFull": ["you", ""],
+        "pinyinInitials": ["y", ""]
+      }
+    },
+    {
+      "id": "ax-tx-13-guard-dog-dog-breath",
+      "model": "AX/TX-13",
+      "nameZh": "“护卫犬”腐息",
+      "nameEn": "待核验",
+      "category": "stratagem",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "毒狗",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "axtx13",
+        "modelFormalName": "axtx13护卫犬腐息",
+        "formalName": "护卫犬腐息",
+        "englishName": "待核验",
+        "aliases": ["毒狗"],
+        "pinyinFull": ["", ""],
+        "pinyinInitials": ["", ""]
+      }
+    },
+    {
+      "id": "ax-arc-3-guard-dog-k9",
+      "model": "AX/ARC-3",
+      "nameZh": "“护卫犬”K-9",
+      "nameEn": "待核验",
+      "category": "stratagem",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "电狗",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "axarc3",
+        "modelFormalName": "axarc3护卫犬k9",
+        "formalName": "护卫犬k9",
+        "englishName": "待核验",
+        "aliases": ["电狗"],
+        "pinyinFull": ["k9", ""],
+        "pinyinInitials": ["k9", ""]
+      }
+    },
+    {
+      "id": "lift-850-jump-pack",
+      "model": "LIFT-850",
+      "nameZh": "喷气背包",
+      "nameEn": "待核验",
+      "category": "stratagem",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "跳包",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        },
+        {
+          "text": "喷包",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "lift850",
+        "modelFormalName": "lift850喷气背包",
+        "formalName": "喷气背包",
+        "englishName": "待核验",
+        "aliases": ["跳包", "喷包"],
+        "pinyinFull": ["bao", "bao", "bao"],
+        "pinyinInitials": ["b", "b", "b"]
+      }
+    },
+    {
+      "id": "lift-8-hover-pack",
+      "model": "LIFT-8",
+      "nameZh": "悬浮背包",
+      "nameEn": "待核验",
+      "category": "stratagem",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "飞包",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        },
+        {
+          "text": "登山包",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "lift8",
+        "modelFormalName": "lift8悬浮背包",
+        "formalName": "悬浮背包",
+        "englishName": "待核验",
+        "aliases": ["飞包", "登山包"],
+        "pinyinFull": ["bao", "bao", "bao"],
+        "pinyinInitials": ["b", "b", "b"]
+      }
+    },
+    {
+      "id": "b-100-portable-hellbomb",
+      "model": "B-100",
+      "nameZh": "便捷式地狱火炸弹",
+      "nameEn": "待核验",
+      "category": "stratagem",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "核弹背包",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "b100",
+        "modelFormalName": "b100便捷式地狱火炸弹",
+        "formalName": "便捷式地狱火炸弹",
+        "englishName": "待核验",
+        "aliases": ["核弹背包"],
+        "pinyinFull": ["shidi", "hebao"],
+        "pinyinInitials": ["sd", "hb"]
+      }
+    },
+    {
+      "id": "exo-49-emancipator-exosuit",
+      "model": "EXO-49",
+      "nameZh": "“解放者”外骨骼机甲",
+      "nameEn": "待核验",
+      "category": "stratagem",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "机炮机甲",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "exo49",
+        "modelFormalName": "exo49解放者外骨骼机甲",
+        "formalName": "解放者外骨骼机甲",
+        "englishName": "待核验",
+        "aliases": ["机炮机甲"],
+        "pinyinFull": ["jia", "jia"],
+        "pinyinInitials": ["j", "j"]
+      }
+    },
+    {
+      "id": "exo-45-patriot-exosuit",
+      "model": "EXO-45",
+      "nameZh": "“爱国者”外骨骼机甲",
+      "nameEn": "待核验",
+      "category": "stratagem",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "机枪机甲",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "exo45",
+        "modelFormalName": "exo45爱国者外骨骼机甲",
+        "formalName": "爱国者外骨骼机甲",
+        "englishName": "待核验",
+        "aliases": ["机枪机甲"],
+        "pinyinFull": ["jia", "jia"],
+        "pinyinInitials": ["j", "j"]
+      }
+    },
+    {
+      "id": "a-m-23-ems-mortar-sentry",
+      "model": "A/M-23",
+      "nameZh": "电磁冲击波哨戒炮",
+      "nameEn": "待核验",
+      "category": "stratagem",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "EMP迫击炮",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "am23",
+        "modelFormalName": "am23电磁冲击波哨戒炮",
+        "formalName": "电磁冲击波哨戒炮",
+        "englishName": "待核验",
+        "aliases": ["emp迫击炮"],
+        "pinyinFull": ["chong", "emp"],
+        "pinyinInitials": ["c", "emp"]
+      }
+    },
+    {
+      "id": "e-at-12-anti-tank-emplacement",
+      "model": "E/AT-12",
+      "nameZh": "反坦克炮台",
+      "nameEn": "待核验",
+      "category": "stratagem",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "轮椅炮",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        },
+        {
+          "text": "AT炮",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "eat12",
+        "modelFormalName": "eat12反坦克炮台",
+        "formalName": "反坦克炮台",
+        "englishName": "待核验",
+        "aliases": ["轮椅炮", "at炮"],
+        "pinyinFull": ["", "lun", "at"],
+        "pinyinInitials": ["", "l", "at"]
+      }
+    },
+    {
+      "id": "e-gl-21-grenadier-battlement",
+      "model": "E/GL-21",
+      "nameZh": "掷弹兵防护墙",
+      "nameEn": "待核验",
+      "category": "stratagem",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "榴弹墙",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "egl21",
+        "modelFormalName": "egl21掷弹兵防护墙",
+        "formalName": "掷弹兵防护墙",
+        "englishName": "待核验",
+        "aliases": ["榴弹墙"],
+        "pinyinFull": ["", ""],
+        "pinyinInitials": ["", ""]
+      }
+    },
+    {
+      "id": "inspector-armor",
+      "model": "—",
+      "nameZh": "督察员",
+      "nameEn": "待核验",
+      "category": "armor",
+      "image": {
+        "originalPage": null,
+        "author": "HD2 军需簿 contributors",
+        "syncedAt": "2026-08-08T00:00:00.000Z",
+        "fileHash": "5b5bcb114a66a827c0f9e8c49f11977383bffaf9352dd633febe98c18a1f3a8c",
+        "path": "assets/placeholder-equipment.svg",
+        "alt": "装备图片待补充",
+        "status": "placeholder",
+        "sourceRefs": [
+          { "kind": "local-fixture", "label": "项目自制通用占位图" }
+        ],
+        "licenseStatus": "project-created-placeholder"
+      },
+      "aliases": [
+        {
+          "text": "政委甲",
+          "kind": "community",
+          "sourceRefs": [
+            {
+              "kind": "community",
+              "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+              "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+            }
+          ],
+          "reviewStatus": "verified"
+        }
+      ],
+      "acquisition": {
+        "kind": "other",
+        "label": "帖子未注明获取方式",
+        "status": "pending"
+      },
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending",
+      "notes": "中文名称、型号与俗称来自用户提供的社区帖全文；社区用法已有出处，但仍需用游戏简体中文资源复核正式名与获取数据。",
+      "search": {
+        "model": "",
+        "modelFormalName": "督察员",
+        "formalName": "督察员",
+        "englishName": "待核验",
+        "aliases": ["政委甲"],
+        "pinyinFull": ["", "jia"],
+        "pinyinInitials": ["", "j"]
+      }
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "id": "armor-passive-extra-padding",
+      "titleZh": "额外垫料护甲",
+      "aliases": ["垫料甲"],
+      "description": "泛指带有“额外垫料”属性的护甲，不是单件护甲正式名。",
+      "examples": ["轻装枪手"],
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "armor-passive-peak-physique",
+      "titleZh": "健壮体格护甲",
+      "aliases": ["拉枪甲"],
+      "description": "泛指带有“健壮体格”属性的护甲，不是单件护甲正式名。",
+      "examples": ["捷豹"],
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "armor-passive-democracy-protects",
+      "titleZh": "民主护佑护甲",
+      "aliases": ["民主甲"],
+      "description": "泛指带有“民主护佑”属性的护甲，不是单件护甲正式名。",
+      "examples": ["自由救星"],
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "armor-passive-scout",
+      "titleZh": "侦察护甲",
+      "aliases": ["侦察甲"],
+      "description": "泛指带有“侦察”属性的护甲，不是单件护甲正式名。",
+      "examples": ["开路侦察兵"],
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    },
+    {
+      "id": "armor-passive-integrated-explosives",
+      "titleZh": "集成炸药护甲",
+      "aliases": ["自爆甲"],
+      "description": "泛指带有“集成炸药”属性的护甲，不是单件护甲正式名。",
+      "examples": ["义士"],
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+          "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+        }
+      ],
+      "verificationStatus": "pending"
+    }
+  ]
+}

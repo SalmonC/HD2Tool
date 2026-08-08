@@ -1,0 +1,14 @@
+node_modules/
+dist/
+coverage/
+.vite/
+.tmp/
+bin/
+desktop-dist/
+*.log
+reports/data-sync-report.json
+
+# Neutralino-generated binaries and resources
+resources.neu
+*.exe
+*.pdb

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" role="img" aria-labelledby="title desc">
+  <title id="title">通用装备占位图</title>
+  <desc id="desc">在可信图片来源确认前使用的项目自制占位图</desc>
+  <rect width="480" height="480" fill="#0b1118"/>
+  <path d="M48 80h384M48 400h384M80 48v384M400 48v384" stroke="#f4c95d" stroke-opacity=".28" stroke-width="2"/>
+  <path d="M120 280h240M160 220h160M190 160h100" fill="none" stroke="#f4c95d" stroke-width="10" stroke-linecap="square"/>
+  <circle cx="240" cy="340" r="42" fill="none" stroke="#8ed6b2" stroke-width="8"/>
+  <text x="240" y="108" fill="#91a4ad" font-family="system-ui, sans-serif" font-size="20" text-anchor="middle" letter-spacing="4">NO VERIFIED ASSET</text>
+</svg>

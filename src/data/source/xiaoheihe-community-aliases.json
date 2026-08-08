@@ -1,0 +1,353 @@
+{
+  "version": "2026-08-08.1",
+  "sourceRef": {
+    "kind": "community",
+    "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+    "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+  },
+  "notes": [
+    "该分享链接在 2026-08-08 自动访问时返回 404；本文件依据用户在项目会话中提供的帖子全文逐字整理。",
+    "帖子是社区俗称与中文名称的证据，不等同于官方本地化或解锁成本证据。",
+    "未在帖子中明确给出的债券、页码、价格、英文名和武器数值一律不推断。"
+  ],
+  "warbonds": [
+    { "id": "steeled-veterans", "nameZh": "铁血老兵" },
+    { "id": "freedoms-flame", "nameZh": "自由烈焰" },
+    { "id": "cutting-edge", "nameZh": "遥遥领先" },
+    { "id": "helldivers-mobilize", "nameZh": "绝地潜兵总动员" },
+    { "id": "servants-of-freedom", "nameZh": "自由公仆" },
+    { "id": "borderline-justice", "nameZh": "临界正义" },
+    { "id": "polar-patriots", "nameZh": "极地爱国者" },
+    { "id": "viper-commandos", "nameZh": "丛林突击兵" },
+    { "id": "urban-legends", "nameZh": "都市传奇" },
+    { "id": "democratic-detonation", "nameZh": "民主爆破" },
+    { "id": "force-of-law", "nameZh": "法律铁腕" }
+  ],
+  "equipment": [
+    {
+      "id": "sg-225ie-breaker-incendiary",
+      "model": "SG-225IE",
+      "nameZh": "高燃“破裂者”",
+      "category": "weapon",
+      "aliases": ["火喷", "火连喷"],
+      "warbondId": "steeled-veterans"
+    },
+    {
+      "id": "sg-451-cookout",
+      "model": "SG-451",
+      "nameZh": "野炊",
+      "category": "weapon",
+      "aliases": ["泵动火喷"],
+      "warbondId": "freedoms-flame"
+    },
+    {
+      "id": "arc-12-blitzer",
+      "model": "ARC-12",
+      "nameZh": "雷霆",
+      "category": "weapon",
+      "aliases": ["电喷"],
+      "warbondId": "cutting-edge"
+    },
+    {
+      "id": "sg-8p-punisher-plasma",
+      "model": "SG-8P",
+      "nameZh": "等离子“制裁者”",
+      "category": "weapon",
+      "aliases": ["离子喷"],
+      "warbondId": "cutting-edge"
+    },
+    {
+      "id": "sg-225sp-breaker-spray-pray",
+      "model": "SG-225SP",
+      "nameZh": "弥漫与祷告的“破裂者”",
+      "category": "weapon",
+      "aliases": ["鸟喷"],
+      "warbondId": "helldivers-mobilize"
+    },
+    {
+      "id": "r63-diligence",
+      "model": "R63",
+      "nameZh": "勤勉",
+      "category": "weapon",
+      "aliases": ["小勤勉"],
+      "warbondId": "helldivers-mobilize"
+    },
+    {
+      "id": "r63-cs-diligence-counter-sniper",
+      "model": "R63-CS",
+      "nameZh": "反狙击“勤勉”",
+      "category": "weapon",
+      "aliases": ["大勤勉"],
+      "warbondId": "helldivers-mobilize"
+    },
+
+    {
+      "id": "gp-31-ultimatum",
+      "model": "GP-31",
+      "nameZh": "最后通牒",
+      "category": "weapon",
+      "aliases": ["核弹手枪"],
+      "warbondId": "servants-of-freedom"
+    },
+    {
+      "id": "p-4-senator",
+      "model": "P-4",
+      "nameZh": "参议员",
+      "category": "weapon",
+      "aliases": ["左轮"],
+      "warbondId": "steeled-veterans"
+    },
+    {
+      "id": "las-58-talon",
+      "model": "LAS-58",
+      "nameZh": "猛爪",
+      "category": "weapon",
+      "aliases": ["香蕉左轮", "激光左轮"],
+      "warbondId": "borderline-justice"
+    },
+    {
+      "id": "p-113-verdict",
+      "model": "P-113",
+      "nameZh": "裁决",
+      "category": "weapon",
+      "aliases": ["沙鹰"],
+      "warbondId": "polar-patriots"
+    },
+    {
+      "id": "sg-22-bushwhacker",
+      "model": "SG-22",
+      "nameZh": "游击兵",
+      "category": "weapon",
+      "aliases": ["副手喷", "三连喷", "三管喷", "三眼喷"],
+      "warbondId": "viper-commandos"
+    },
+    {
+      "id": "cqc-19-stun-lance",
+      "model": "CQC-19",
+      "nameZh": "眩晕长矛",
+      "category": "weapon",
+      "aliases": ["电矛", "电叉"],
+      "warbondId": "urban-legends"
+    },
+
+    {
+      "id": "expendable-anti-tank",
+      "model": "—",
+      "nameZh": "消耗性反坦克武器",
+      "category": "weapon",
+      "aliases": ["次抛"]
+    },
+    {
+      "id": "railgun",
+      "model": "—",
+      "nameZh": "磁轨炮",
+      "category": "weapon",
+      "aliases": ["磁小轨"]
+    },
+    {
+      "id": "spear",
+      "model": "—",
+      "nameZh": "飞矛",
+      "category": "weapon",
+      "aliases": ["肥猫"]
+    },
+    {
+      "id": "sta-x3-wasp-launcher",
+      "model": "StA-X3",
+      "nameZh": "W.A.S.P.发射器",
+      "category": "weapon",
+      "aliases": ["黄蜂"]
+    },
+    {
+      "id": "one-true-flag",
+      "model": "—",
+      "nameZh": "唯一真旗",
+      "category": "weapon",
+      "aliases": ["国旗"]
+    },
+    {
+      "id": "gl-52-de-escalator",
+      "model": "GL-52",
+      "nameZh": "缓和使者",
+      "category": "weapon",
+      "aliases": ["电榴弹"]
+    },
+
+    {
+      "id": "g-16-impact",
+      "model": "G-16",
+      "nameZh": "冲击弹",
+      "category": "grenade",
+      "aliases": ["摔炮"],
+      "warbondId": "helldivers-mobilize"
+    },
+    {
+      "id": "ted-63-dynamite",
+      "model": "TED-63",
+      "nameZh": "炸药",
+      "category": "grenade",
+      "aliases": ["C4"],
+      "warbondId": "borderline-justice"
+    },
+    {
+      "id": "thermite-grenade",
+      "model": "—",
+      "nameZh": "铝热弹",
+      "category": "grenade",
+      "aliases": ["仙女棒"],
+      "warbondId": "democratic-detonation"
+    },
+    {
+      "id": "g-109-urchin",
+      "model": "G-109",
+      "nameZh": "海胆",
+      "category": "grenade",
+      "aliases": ["电雷"],
+      "warbondId": "force-of-law"
+    },
+
+    {
+      "id": "orbital-napalm-barrage",
+      "model": "—",
+      "nameZh": "轨道凝固汽油弹火力网",
+      "category": "stratagem",
+      "aliases": ["轨道火", "轨汽"]
+    },
+    {
+      "id": "sh-32-shield-generator-pack",
+      "model": "SH-32",
+      "nameZh": "防护罩生成器",
+      "category": "stratagem",
+      "aliases": ["蛋盾"]
+    },
+    {
+      "id": "ax-ar-23-guard-dog",
+      "model": "AX/AR-23",
+      "nameZh": "“护卫犬”",
+      "category": "stratagem",
+      "aliases": ["实弹狗"]
+    },
+    {
+      "id": "ax-las-5-guard-dog-rover",
+      "model": "AX/LAS-5",
+      "nameZh": "“护卫犬”漫游车",
+      "category": "stratagem",
+      "aliases": ["激光狗"]
+    },
+    {
+      "id": "ax-tx-13-guard-dog-dog-breath",
+      "model": "AX/TX-13",
+      "nameZh": "“护卫犬”腐息",
+      "category": "stratagem",
+      "aliases": ["毒狗"]
+    },
+    {
+      "id": "ax-arc-3-guard-dog-k9",
+      "model": "AX/ARC-3",
+      "nameZh": "“护卫犬”K-9",
+      "category": "stratagem",
+      "aliases": ["电狗"]
+    },
+    {
+      "id": "lift-850-jump-pack",
+      "model": "LIFT-850",
+      "nameZh": "喷气背包",
+      "category": "stratagem",
+      "aliases": ["跳包", "喷包"]
+    },
+    {
+      "id": "lift-8-hover-pack",
+      "model": "LIFT-8",
+      "nameZh": "悬浮背包",
+      "category": "stratagem",
+      "aliases": ["飞包", "登山包"]
+    },
+    {
+      "id": "b-100-portable-hellbomb",
+      "model": "B-100",
+      "nameZh": "便捷式地狱火炸弹",
+      "category": "stratagem",
+      "aliases": ["核弹背包"]
+    },
+    {
+      "id": "exo-49-emancipator-exosuit",
+      "model": "EXO-49",
+      "nameZh": "“解放者”外骨骼机甲",
+      "category": "stratagem",
+      "aliases": ["机炮机甲"]
+    },
+    {
+      "id": "exo-45-patriot-exosuit",
+      "model": "EXO-45",
+      "nameZh": "“爱国者”外骨骼机甲",
+      "category": "stratagem",
+      "aliases": ["机枪机甲"]
+    },
+    {
+      "id": "a-m-23-ems-mortar-sentry",
+      "model": "A/M-23",
+      "nameZh": "电磁冲击波哨戒炮",
+      "category": "stratagem",
+      "aliases": ["EMP迫击炮"]
+    },
+    {
+      "id": "e-at-12-anti-tank-emplacement",
+      "model": "E/AT-12",
+      "nameZh": "反坦克炮台",
+      "category": "stratagem",
+      "aliases": ["轮椅炮", "AT炮"]
+    },
+    {
+      "id": "e-gl-21-grenadier-battlement",
+      "model": "E/GL-21",
+      "nameZh": "掷弹兵防护墙",
+      "category": "stratagem",
+      "aliases": ["榴弹墙"]
+    },
+
+    {
+      "id": "inspector-armor",
+      "model": "—",
+      "nameZh": "督察员",
+      "category": "armor",
+      "aliases": ["政委甲"]
+    }
+  ],
+  "glossaryTerms": [
+    {
+      "id": "armor-passive-extra-padding",
+      "titleZh": "额外垫料护甲",
+      "aliases": ["垫料甲"],
+      "description": "泛指带有“额外垫料”属性的护甲，不是单件护甲正式名。",
+      "examples": ["轻装枪手"]
+    },
+    {
+      "id": "armor-passive-peak-physique",
+      "titleZh": "健壮体格护甲",
+      "aliases": ["拉枪甲"],
+      "description": "泛指带有“健壮体格”属性的护甲，不是单件护甲正式名。",
+      "examples": ["捷豹"]
+    },
+    {
+      "id": "armor-passive-democracy-protects",
+      "titleZh": "民主护佑护甲",
+      "aliases": ["民主甲"],
+      "description": "泛指带有“民主护佑”属性的护甲，不是单件护甲正式名。",
+      "examples": ["自由救星"]
+    },
+    {
+      "id": "armor-passive-scout",
+      "titleZh": "侦察护甲",
+      "aliases": ["侦察甲"],
+      "description": "泛指带有“侦察”属性的护甲，不是单件护甲正式名。",
+      "examples": ["开路侦察兵"]
+    },
+    {
+      "id": "armor-passive-integrated-explosives",
+      "titleZh": "集成炸药护甲",
+      "aliases": ["自爆甲"],
+      "description": "泛指带有“集成炸药”属性的护甲，不是单件护甲正式名。",
+      "examples": ["义士"]
+    }
+  ]
+}
