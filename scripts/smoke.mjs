@@ -3,7 +3,11 @@ import { resolve } from "node:path";
 
 const port = Number(process.env.SMOKE_PORT ?? 4173);
 const baseUrl = `http://127.0.0.1:${port}`;
-const configuredBase = process.env.SMOKE_BASE_PATH ?? "/";
+const repositoryName = process.env.GITHUB_REPOSITORY?.split("/").at(-1);
+const configuredBase =
+  process.env.SMOKE_BASE_PATH ??
+  process.env.VITE_BASE_PATH ??
+  (repositoryName ? `/${repositoryName}/` : "./");
 const appPath =
   configuredBase === "./"
     ? "/"
@@ -49,7 +53,11 @@ try {
   const checks = [
     ["首页", appUrl, "HD2"],
     ["PWA manifest", `${appUrl}manifest.webmanifest`, "HD2"],
-    ["分享查询参数", `${appUrl}?item=sample-pulse-device`, "HD2"],
+    [
+      "分享查询参数",
+      `${appUrl}?item=sg-225ie-breaker-incendiary`,
+      "HD2",
+    ],
   ];
   for (const [label, url, marker] of checks) {
     const response = await fetch(url);
