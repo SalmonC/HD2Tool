@@ -53,11 +53,7 @@ try {
   const checks = [
     ["首页", appUrl, "HD2"],
     ["PWA manifest", `${appUrl}manifest.webmanifest`, "HD2"],
-    [
-      "分享查询参数",
-      `${appUrl}?item=sg-225ie-breaker-incendiary`,
-      "HD2",
-    ],
+    ["分享查询参数", `${appUrl}?item=sg-225ie-breaker-incendiary`, "HD2"],
   ];
   for (const [label, url, marker] of checks) {
     const response = await fetch(url);
