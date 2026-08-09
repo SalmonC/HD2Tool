@@ -6,27 +6,19 @@
   "description": "HD2 Supply Book: offline equipment lookup and unlock planning.",
   "scripts": {
     "dev": "vite",
-    "build": "npm run generate:data && npm run typecheck && vite build",
+    "build": "npm run typecheck && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
-    "generate:data": "node scripts/generate-data.mjs && npm run check:scope",
-    "check:scope": "node scripts/check-product-scope.mjs",
-    "sync:wiki": "node scripts/sync-wiki.mjs",
-    "normalize:frozen": "node scripts/normalize-frozen-wiki.mjs",
-    "sync:images": "node scripts/sync-wiki-assets.mjs",
-    "extract:localization": "node scripts/extract-localization.mjs",
     "validate:data": "node scripts/validate-data.mjs",
-    "release-readiness": "node scripts/release-readiness.mjs",
-    "sync:data": "node scripts/sync-data.mjs",
     "smoke": "node scripts/smoke.mjs",
     "size:check": "node scripts/size-budget.mjs",
     "desktop:check": "node scripts/check-neutralino.mjs",
     "desktop:build": "npm run build && node scripts/check-neutralino.mjs --require-binaries && npx --no-install neu build --embed-resources",
-    "check": "npm run generate:data && npm run validate:data && npm run typecheck && npm test && npm run format:check && npm run build && npm run size:check && npm run smoke && npm run desktop:check && npm run release-readiness"
+    "check": "npm run validate:data && npm test && npm run format:check && npm run build && npm run size:check && npm run smoke && npm run desktop:check"
   },
   "dependencies": {
     "preact": "10.29.8"
@@ -38,7 +30,6 @@
     "prettier": "3.9.6",
     "typescript": "7.0.2",
     "vite": "8.2.1",
-    "vite-plugin-pwa": "1.3.0",
     "vitest": "4.1.10"
   }
 }

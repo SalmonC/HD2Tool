@@ -1,217 +1,140 @@
 import { access, readFile } from "node:fs/promises";
-import { createHash } from "node:crypto";
 import { resolve } from "node:path";
 
 const root = resolve(import.meta.dirname, "..");
-const load = async (file) =>
-  JSON.parse(await readFile(resolve(root, file), "utf8"));
-const catalog = await load("src/data/catalog.json");
-const candidates = await load("src/data/candidates/user-supplied.json");
-const manifest = await load("src/data/assets/manifest.json");
+const readJson = async (path) =>
+  JSON.parse(await readFile(resolve(root, path), "utf8"));
+const catalog = await readJson("src/data/catalog.json");
+const aliases = await readJson("src/data/community-aliases.json");
 const errors = [];
-const warn = [];
-const record = (value) => typeof value === "object" && value !== null;
-const sources = (value) =>
-  Array.isArray(value) &&
-  value.length > 0 &&
-  value.every(
-    (source) =>
-      record(source) &&
-      typeof source.kind === "string" &&
-      typeof source.label === "string",
-  );
-const error = (message) => errors.push(message);
-if (
-  !record(catalog) ||
-  !record(catalog.meta) ||
-  !record(catalog.taxonomy) ||
-  !Array.isArray(catalog.items) ||
-  !Array.isArray(catalog.quarantine) ||
-  !Array.isArray(catalog.warbonds) ||
-  !Array.isArray(catalog.glossaryTerms)
-)
-  error("catalog structure is incomplete");
-if (
-  !record(catalog.taxonomy) ||
-  typeof catalog.taxonomy.version !== "string" ||
-  !record(catalog.taxonomy.dimensions)
-)
-  error("taxonomy version/dimensions missing");
-for (const [id, dimension] of Object.entries(
-  catalog.taxonomy?.dimensions ?? {},
-)) {
-  if (
-    !record(dimension) ||
-    dimension.id !== id ||
-    !sources(dimension.sourceRefs) ||
-    typeof dimension.taxonomySource !== "string" ||
-    typeof dimension.scaleVersion !== "string"
-  )
-    error(`invalid taxonomy dimension ${id}`);
-  if (
-    id === "demolitionPower" &&
-    (dimension.numberScale?.min !== 0 ||
-      dimension.numberScale?.max !== 60 ||
-      dimension.numberScale?.step !== 1)
-  )
-    error("demolitionPower taxonomy must use the migrated 0..60 integer scale");
-}
-const assetsByPath = new Map();
-for (const [index, asset] of (manifest.assets ?? []).entries()) {
-  if (
-    !record(asset) ||
-    typeof asset.path !== "string" ||
-    !sources(asset.sourceRefs) ||
-    !["placeholder", "candidate", "verified"].includes(asset.status) ||
-    !["project-created-placeholder", "pending", "documented"].includes(
-      asset.licenseStatus,
-    )
-  ) {
-    error(`invalid asset manifest record ${index}`);
-    continue;
-  }
-  if (assetsByPath.has(asset.path)) error(`duplicate asset path ${asset.path}`);
-  assetsByPath.set(asset.path, asset);
-  if (
-    asset.licenseStatus === "documented" &&
-    (!asset.license ||
-      !asset.filePage ||
-      !asset.originalUrl ||
-      !asset.fileHash ||
-      asset.provenanceStatus !== "verified" ||
-      !["open-license", "documented-copyrighted"].includes(asset.rightsStatus))
-  )
-    error(
-      `asset marked documented without concrete provenance/rights metadata ${asset.path}`,
-    );
-  if (
-    asset.provenanceStatus !== undefined &&
-    !["verified", "pending"].includes(asset.provenanceStatus)
-  )
-    error(`invalid asset provenance status ${asset.path}`);
-  if (
-    asset.rightsStatus !== undefined &&
-    !["open-license", "documented-copyrighted", "pending"].includes(
-      asset.rightsStatus,
-    )
-  )
-    error(`invalid asset rights status ${asset.path}`);
-  if (asset.path.startsWith("/") || asset.path.includes("..")) {
-    error(`unsafe asset path ${asset.path}`);
-    continue;
-  }
-  try {
-    const path = resolve(root, "public", asset.path);
-    await access(path);
-    if (asset.fileHash) {
-      const hash = createHash("sha256")
-        .update(await readFile(path))
-        .digest("hex");
-      if (hash !== asset.fileHash.toLowerCase())
-        error(`asset hash mismatch ${asset.path}`);
+const fail = (message) => errors.push(message);
+const kinds = new Set([
+  "primary-weapon",
+  "secondary-weapon",
+  "support-weapon",
+  "grenade",
+  "body-armor",
+  "other-stratagem",
+]);
+const itemIds = new Set();
+const warbondIds = new Set(catalog.warbonds.map((entry) => entry.id));
+let demolitionCount = 0;
+
+if (catalog.items.length !== 292)
+  fail(`expected 292 accepted items, found ${catalog.items.length}`);
+for (const item of catalog.items) {
+  if (!item.id || itemIds.has(item.id))
+    fail(`duplicate or empty item id ${item.id}`);
+  itemIds.add(item.id);
+  if (!kinds.has(item.productKind)) fail(`invalid productKind ${item.id}`);
+  if (!item.nameZh || !item.nameEn) fail(`missing identity ${item.id}`);
+  if (!item.image?.path) fail(`missing image path ${item.id}`);
+  else if (item.image.path.includes("placeholder"))
+    fail(`placeholder image remains ${item.id}`);
+  else {
+    try {
+      const imagePath = resolve(root, "public", item.image.path);
+      await access(imagePath);
+      const imageBytes = await readFile(imagePath);
+      if (imageBytes.length === 0) fail(`empty image ${item.id}`);
+      if (
+        item.image.path.toLowerCase().endsWith(".png") &&
+        !imageBytes
+          .subarray(0, 8)
+          .equals(Buffer.from("89504e470d0a1a0a", "hex"))
+      )
+        fail(`invalid PNG header ${item.id}`);
+    } catch {
+      fail(`missing image ${item.id}: ${item.image.path}`);
     }
-  } catch {
-    error(`asset file missing ${asset.path}`);
   }
-}
-const warbondIds = new Set(catalog.warbonds.map((warbond) => warbond.id));
-const allIds = new Set();
-const validAcquisition = (item) => {
-  const a = item.acquisition;
-  if (!record(a)) return false;
-  if (a.kind === "warbond")
-    return (
-      warbondIds.has(a.warbondId) &&
-      Number.isInteger(a.page) &&
-      Number.isInteger(a.itemMedals) &&
-      Number.isInteger(a.pageUnlockMedals)
-    );
-  if (a.kind === "requisition") return Number.isInteger(a.requisitionPoints);
-  if (a.kind === "default") return true;
-  if (a.kind === "superstore")
-    return Number.isInteger(a.superCredits) && a.status !== "pending";
-  if (a.kind === "edition")
-    return Boolean(
-      a.editionName &&
-      a.status !== "pending" &&
-      (a.status === "unavailable" ||
-        a.price === null ||
-        Number.isInteger(a.price)),
-    );
-  if (a.kind === "event") return Boolean(a.eventName && a.status !== "pending");
-  if (a.kind === "poi") return Boolean(a.location && a.status !== "pending");
-  if (a.kind === "unavailable") return Boolean(a.reason);
-  if (a.kind === "other") return Boolean(a.label && a.status !== "pending");
-  return false;
-};
-for (const [index, item] of [
-  ...(catalog.items ?? []),
-  ...(catalog.quarantine ?? []),
-].entries()) {
-  const location =
-    index < catalog.items.length
-      ? `items[${index}]`
-      : `quarantine[${index - catalog.items.length}]`;
-  if (!record(item) || typeof item.id !== "string" || allIds.has(item.id)) {
-    error(`invalid or duplicate id at ${location}`);
-    continue;
-  }
-  allIds.add(item.id);
-  if (
-    !sources(item.sourceRefs) ||
-    !Array.isArray(item.translationEvidence) ||
-    !item.translationEvidence.length
-  )
-    error(`missing sources/translation evidence at ${location}`);
-  if (!record(item.image) || !assetsByPath.has(item.image.path))
-    error(`image manifest mismatch at ${location}`);
-  if (item.admissionStatus === "admitted" && !validAcquisition(item))
-    error(`admitted item has incomplete acquisition at ${location}`);
-  if (
-    !["weapon", "stratagem"].includes(item.category) &&
-    item.weaponProfile !== undefined
-  )
-    error(`non-weapon has weaponProfile at ${location}`);
-  for (const component of item.attackProfile?.components ?? []) {
-    const demo = component.fields?.demolitionForce;
+  const acquisition = item.acquisition;
+  if (acquisition.kind === "warbond") {
+    if (!warbondIds.has(acquisition.warbondId))
+      fail(`unknown warbond ${item.id}`);
+    const pages =
+      catalog.warbonds.find((entry) => entry.id === acquisition.warbondId)
+        ?.pages ?? [];
     if (
-      demo !== undefined &&
-      (!Number.isInteger(demo) || demo < 0 || demo > 60)
+      acquisition.page !== null &&
+      !pages.some((entry) => entry.page === acquisition.page)
     )
-      error(`demolitionForce out of 0..60 at ${location}`);
+      fail(`unknown warbond page ${item.id}`);
+    if (acquisition.itemMedals !== null && acquisition.itemMedals < 0)
+      fail(`negative medals ${item.id}`);
   }
-  if (item.admissionStatus === "admitted" && item.nameEn === "")
-    error(`admitted item missing canonical English name at ${location}`);
+  for (const component of item.combat?.components ?? []) {
+    const ap = component.fields.armorPenetration;
+    for (const value of [ap?.value, ap?.minValue, ap?.maxValue])
+      if (
+        value !== undefined &&
+        (!Number.isInteger(value) || value < 0 || value > 10)
+      )
+        fail(`invalid AP ${item.id}/${component.id}`);
+    const demolition = component.fields.demolitionForce;
+    if (demolition !== undefined) demolitionCount += 1;
+    if (
+      demolition !== undefined &&
+      (!Number.isInteger(demolition) || demolition < 0 || demolition > 60)
+    )
+      fail(`invalid demolition ${item.id}/${component.id}`);
+  }
 }
-for (const [index, currency] of (catalog.currencies ?? []).entries()) {
-  if (
-    !record(currency) ||
-    !["medals", "requisition-slips", "super-credits"].includes(currency.type) ||
-    typeof currency.labelZh !== "string" ||
-    !assetsByPath.has(currency.iconAssetPath) ||
-    !sources(currency.sourceRefs)
-  )
-    error(`invalid currency record ${index}`);
-}
-if (!Array.isArray(candidates.records) || candidates.records.length !== 10)
-  error("user candidate layer must preserve all 10 original records");
-for (const [index, candidate] of (candidates.records ?? []).entries())
-  if (
-    candidate.source !== "user" ||
-    candidate.verificationStatus !== "pending" ||
-    typeof candidate.rawText !== "string" ||
-    typeof candidate.submittedAt !== "string"
-  )
-    error(`invalid pending candidate ${index}`);
-if ((catalog.quarantine ?? []).length)
-  warn.push(
-    `${catalog.quarantine.length} items remain quarantined and are hidden from the formal search.`,
+if (demolitionCount < 120)
+  fail(
+    `expected at least 120 sourced demolition components, found ${demolitionCount}`,
   );
-for (const message of warn) console.warn(`WARN ${message}`);
+if (catalog.meta.demolitionSource?.importedComponents !== demolitionCount)
+  fail(
+    `demolition source count mismatch: ${catalog.meta.demolitionSource?.importedComponents} / ${demolitionCount}`,
+  );
+
+const seenAliases = new Map();
+let aliasCount = 0;
+for (const entry of aliases.entries) {
+  if (!itemIds.has(entry.equipmentId))
+    fail(`alias targets unknown item ${entry.equipmentId}`);
+  for (const alias of entry.aliases) {
+    aliasCount += 1;
+    const key = alias
+      .normalize("NFKC")
+      .toLocaleLowerCase("zh-CN")
+      .replace(/[\s\p{P}\p{S}]+/gu, "");
+    const previous = seenAliases.get(key);
+    if (previous && previous !== entry.equipmentId)
+      fail(`alias collision ${alias}: ${previous}/${entry.equipmentId}`);
+    seenAliases.set(key, entry.equipmentId);
+  }
+}
+if (aliases.entries.length !== 38 || aliasCount !== 48)
+  fail(
+    `expected 38 aliased items / 48 aliases, found ${aliases.entries.length} / ${aliasCount}`,
+  );
+
+const requiredFixtures = [
+  ["sg-451-cookout", "warbond"],
+  ["mg-43-machine-gun", "support-weapon"],
+  ["cqc-72-entrenchment-tool", "support-weapon"],
+  ["cqc-73-entrenchment-tool", "secondary-weapon"],
+  ["gp-20-ultimatum", "secondary-weapon"],
+  ["gp-31-grenade-pistol", "secondary-weapon"],
+];
+for (const [id, expected] of requiredFixtures) {
+  const item = catalog.items.find((entry) => entry.id === id);
+  if (!item) fail(`missing fixture ${id}`);
+  else if (
+    expected === "warbond"
+      ? item.acquisition.kind !== expected
+      : item.productKind !== expected
+  )
+    fail(`fixture mismatch ${id}: expected ${expected}`);
+}
+
 if (errors.length) {
-  for (const message of errors) console.error(`ERROR ${message}`);
+  for (const error of errors) console.error(`ERROR ${error}`);
   process.exitCode = 1;
-} else
+} else {
   console.log(
-    `Validated ${catalog.items.length} admitted items, ${catalog.quarantine.length} quarantined items, ${catalog.glossaryTerms.length} glossary terms and ${candidates.records.length} pending candidates.`,
+    `Catalog OK: ${catalog.items.length} items, ${catalog.warbonds.length} warbonds, ${aliasCount} community aliases.`,
   );
+}

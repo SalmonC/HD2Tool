@@ -19,7 +19,8 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npx --no-install neu update
-      - run: npm run desktop:build
+      - run: node scripts/check-neutralino.mjs --require-binaries
+      - run: npx --no-install neu build --embed-resources
       - name: Verify desktop output and write SHA-256
         shell: powershell
         run: |

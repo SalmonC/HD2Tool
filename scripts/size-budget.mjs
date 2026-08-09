@@ -34,3 +34,5 @@ if (coreTotal > 1024 * 1024)
   throw new Error(
     "Static app and data exceed the 1 MiB core budget (deferred Wiki media excluded).",
   );
+if (distTotal > 25 * 1024 * 1024)
+  throw new Error("Complete static/offline payload exceeds the 25 MiB budget.");

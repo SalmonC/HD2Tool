@@ -1,4 +1,4 @@
-import type { Equipment, PlanState, CurrencyType } from "../types";
+import type { Catalog, CurrencyType, Equipment, PlanState } from "../types";
 
 export interface WarbondPlanTotal {
   warbondId: string;
@@ -11,21 +11,29 @@ export interface PlanCostSummary {
   currencyTotals: Partial<Record<CurrencyType, number>>;
 }
 
-/**
- * Page thresholds are shared prerequisites. They are intentionally kept
- * separate from the sum of item prices because adding both would double count
- * medals and would imply an unlock path we do not model.
- */
+export function warbondPageUnlock(
+  catalog: Catalog,
+  warbondId: string,
+  page: number | null,
+): number | null {
+  if (page === null) return null;
+  return (
+    catalog.warbonds
+      .find((warbond) => warbond.id === warbondId)
+      ?.pages.find((entry) => entry.page === page)?.cumulativeMedals ?? null
+  );
+}
+
 export function summarizePlanCosts(
   plan: PlanState,
   itemsById: ReadonlyMap<string, Equipment>,
+  catalog: Catalog,
 ): PlanCostSummary {
   const warbonds = new Map<string, WarbondPlanTotal>();
   const currencyTotals: Partial<Record<CurrencyType, number>> = {};
   for (const id of plan.pendingIds) {
-    const item = itemsById.get(id);
-    if (!item) continue;
-    const acquisition = item.acquisition;
+    const acquisition = itemsById.get(id)?.acquisition;
+    if (!acquisition) continue;
     if (acquisition.kind === "warbond") {
       const current = warbonds.get(acquisition.warbondId) ?? {
         warbondId: acquisition.warbondId,
@@ -35,7 +43,8 @@ export function summarizePlanCosts(
       current.itemMedals += acquisition.itemMedals ?? 0;
       current.highestPageUnlockMedals = Math.max(
         current.highestPageUnlockMedals,
-        acquisition.pageUnlockMedals ?? 0,
+        warbondPageUnlock(catalog, acquisition.warbondId, acquisition.page) ??
+          0,
       );
       warbonds.set(acquisition.warbondId, current);
     } else if (

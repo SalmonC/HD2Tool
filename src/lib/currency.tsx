@@ -1,11 +1,7 @@
 import type { ComponentChildren } from "preact";
-import type {
-  Catalog,
-  CurrencyAmount,
-  CurrencyType,
-  Equipment,
-} from "../types";
-import { resolveAssetUrl as resolveBundledAssetUrl } from "./asset-url";
+import type { Catalog, CurrencyType, Equipment } from "../types";
+import { resolveAssetUrl } from "./asset-url";
+import { warbondPageUnlock } from "./plan-totals";
 
 export const CURRENCY_LABELS: Record<CurrencyType, string> = {
   medals: "勋章",
@@ -13,124 +9,99 @@ export const CURRENCY_LABELS: Record<CurrencyType, string> = {
   "super-credits": "超级货币",
 };
 
-export function currencyLabel(type: CurrencyType): string {
-  return CURRENCY_LABELS[type];
-}
-
-export function currencyAssetPath(
-  catalog: Catalog,
-  type: CurrencyType,
-): string | null {
-  return (
-    catalog.currencies?.find((currency) => currency.type === type)
-      ?.iconAssetPath ?? null
-  );
-}
-
-export function resolveAssetUrl(
-  path: string,
-  basePath = import.meta.env.BASE_URL,
-  runtimeBase?: string,
-): string {
-  return resolveBundledAssetUrl(
-    path,
-    basePath,
-    runtimeBase ??
-      (typeof document !== "undefined" ? document.baseURI : undefined) ??
-      (typeof window !== "undefined" ? window.location.href : undefined),
-  );
-}
-
-export function CurrencyIcon({
+export function CurrencyAmount({
   type,
-  catalog,
-}: {
-  type: CurrencyType;
-  catalog: Catalog;
-}) {
-  const path = currencyAssetPath(catalog, type);
-  const resolvedPath = path ? resolveAssetUrl(path) : null;
-  return resolvedPath ? (
-    <img
-      className="currency-icon"
-      src={resolvedPath}
-      alt=""
-      aria-hidden="true"
-      onError={(event) => {
-        event.currentTarget.style.display = "none";
-        event.currentTarget.nextElementSibling?.removeAttribute("hidden");
-      }}
-    />
-  ) : null;
-}
-
-export function CurrencyAmountView({
   amount,
   catalog,
-  compact = false,
+  label,
 }: {
-  amount: CurrencyAmount;
+  type: CurrencyType;
+  amount: number;
   catalog: Catalog;
-  compact?: boolean;
+  label?: string;
 }) {
-  const label = currencyLabel(amount.type);
+  const definition = catalog.currencies.find((entry) => entry.type === type);
   return (
     <span
-      className={`currency-amount ${compact ? "currency-amount--compact" : ""}`}
-      title={`${amount.amount} ${label}`}
-      aria-label={`${amount.amount} ${label}`}
+      className="currency-amount"
+      aria-label={`${label ? `${label} ` : ""}${amount} ${CURRENCY_LABELS[type]}`}
     >
-      <CurrencyIcon type={amount.type} catalog={catalog} />
-      <span
-        className="currency-fallback"
-        hidden={Boolean(currencyAssetPath(catalog, amount.type))}
-      >
-        {label}
-      </span>
-      <span className="currency-number">
-        {amount.amount.toLocaleString("zh-CN")}
-      </span>
-      {!compact && <span className="currency-label">{label}</span>}
+      {label && <span className="currency-prefix">{label}</span>}
+      {definition && (
+        <img
+          className="currency-icon"
+          src={resolveAssetUrl(definition.iconAssetPath)}
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        />
+      )}
+      <strong>{amount.toLocaleString("zh-CN")}</strong>
+      <span className="currency-label">{CURRENCY_LABELS[type]}</span>
     </span>
   );
+}
+
+export function acquisitionAvailable(item: Equipment): boolean {
+  const acquisition = item.acquisition;
+  if (acquisition.kind === "unavailable" || acquisition.kind === "default")
+    return false;
+  if (acquisition.kind === "superstore")
+    return acquisition.status === "rotation";
+  if (
+    acquisition.kind === "edition" ||
+    acquisition.kind === "event" ||
+    acquisition.kind === "poi" ||
+    acquisition.kind === "other"
+  )
+    return acquisition.status === "available";
+  return true;
 }
 
 export function AcquisitionSummary({
   item,
   catalog,
-  compact = false,
 }: {
   item: Equipment;
   catalog: Catalog;
-  compact?: boolean;
 }) {
   const acquisition = item.acquisition;
-  const money = (amount: number, type: CurrencyType, label: string) => (
-    <span className="purchase-cost">
-      <span className="purchase-cost__label">{label}</span>
-      <CurrencyAmountView
-        amount={{ type, amount }}
-        catalog={catalog}
-        compact={compact}
-      />
-    </span>
-  );
   let content: ComponentChildren;
   switch (acquisition.kind) {
     case "warbond": {
       const warbond = catalog.warbonds.find(
         (entry) => entry.id === acquisition.warbondId,
       );
+      const threshold = warbondPageUnlock(
+        catalog,
+        acquisition.warbondId,
+        acquisition.page,
+      );
       content = (
         <>
           <span>
-            {warbond?.nameZh ?? "债券"}
+            {warbond?.nameZh ?? acquisition.warbondId}
             {acquisition.page ? ` · 第 ${acquisition.page} 页` : ""}
           </span>
-          {acquisition.itemMedals !== null &&
-            money(acquisition.itemMedals, "medals", "价格")}
-          {acquisition.pageUnlockMedals !== null &&
-            money(acquisition.pageUnlockMedals, "medals", "累计前置")}
+          {acquisition.itemMedals !== null && (
+            <CurrencyAmount
+              type="medals"
+              amount={acquisition.itemMedals}
+              catalog={catalog}
+              label="价格"
+            />
+          )}
+          {acquisition.page !== null &&
+            acquisition.page > 1 &&
+            threshold !== null && (
+              <CurrencyAmount
+                type="medals"
+                amount={threshold}
+                catalog={catalog}
+                label="累计前置"
+              />
+            )}
         </>
       );
       break;
@@ -138,11 +109,19 @@ export function AcquisitionSummary({
     case "requisition":
       content = (
         <>
-          {acquisition.levelRequired !== null && (
-            <span>等级 {acquisition.levelRequired}</span>
+          <span>
+            {acquisition.levelRequired === null
+              ? "基础战备"
+              : `等级 ${acquisition.levelRequired}`}
+          </span>
+          {acquisition.requisitionPoints !== null && (
+            <CurrencyAmount
+              type="requisition-slips"
+              amount={acquisition.requisitionPoints}
+              catalog={catalog}
+              label="价格"
+            />
           )}
-          {acquisition.requisitionPoints !== null &&
-            money(acquisition.requisitionPoints, "requisition-slips", "价格")}
         </>
       );
       break;
@@ -152,37 +131,33 @@ export function AcquisitionSummary({
     case "superstore":
       content = (
         <>
-          {acquisition.superCredits !== null &&
-            money(acquisition.superCredits, "super-credits", "价格")}
-          <span>{acquisition.status === "rotation" ? "轮换" : "暂不可用"}</span>
+          {acquisition.superCredits !== null && (
+            <CurrencyAmount
+              type="super-credits"
+              amount={acquisition.superCredits}
+              catalog={catalog}
+              label="超级商店"
+            />
+          )}
+          <span>
+            {acquisition.status === "rotation" ? "轮换中" : "当前不可用"}
+          </span>
         </>
       );
       break;
     case "edition":
       content = (
-        <>
-          <span>{acquisition.editionName}</span>
-          {acquisition.price !== null &&
-            (acquisition.currencyCode === "USD" ? (
-              <span className="purchase-cost">
-                <span className="purchase-cost__label">价格</span>
-                <span>US$ {acquisition.price.toLocaleString("zh-CN")}</span>
-              </span>
-            ) : (
-              money(
-                acquisition.price,
-                acquisition.currency ?? "super-credits",
-                "价格",
-              )
-            ))}
-        </>
+        <span>
+          {acquisition.editionName}
+          {acquisition.status !== "available" ? " · 当前不可用" : ""}
+        </span>
       );
       break;
     case "event":
       content = (
         <span>
-          {acquisition.eventName}
-          {acquisition.status === "ended" ? " · 已结束" : " · 活动"}
+          {acquisition.eventName} ·{" "}
+          {acquisition.status === "available" ? "活动" : "已结束"}
         </span>
       );
       break;
@@ -193,46 +168,13 @@ export function AcquisitionSummary({
       content = <span>不可获取 · {acquisition.reason}</span>;
       break;
     case "other":
-      content = <span>{acquisition.label}</span>;
+      content = (
+        <span>
+          {acquisition.label}
+          {acquisition.status !== "available" ? " · 当前不可用" : ""}
+        </span>
+      );
       break;
   }
-  return (
-    <div
-      className="acquisition-summary"
-      aria-label={`获取方式：${acquisitionSummaryText(item, catalog)}`}
-    >
-      {content}
-    </div>
-  );
-}
-
-export function acquisitionSummaryText(
-  item: Equipment,
-  catalog: Catalog,
-): string {
-  const acquisition = item.acquisition;
-  switch (acquisition.kind) {
-    case "warbond": {
-      const warbond =
-        catalog.warbonds.find((entry) => entry.id === acquisition.warbondId)
-          ?.nameZh ?? "债券";
-      return `${warbond}${acquisition.page ? ` · 第 ${acquisition.page} 页` : ""}${acquisition.itemMedals !== null ? ` · 价格 ${acquisition.itemMedals} 勋章` : ""}${acquisition.pageUnlockMedals !== null ? ` · 累计前置 ${acquisition.pageUnlockMedals} 勋章` : ""}`;
-    }
-    case "requisition":
-      return `${acquisition.levelRequired !== null ? `等级 ${acquisition.levelRequired} · ` : ""}${acquisition.requisitionPoints !== null ? `${acquisition.requisitionPoints} 征用点` : "征用点战备"}`;
-    case "default":
-      return "默认解锁";
-    case "superstore":
-      return `${acquisition.superCredits ?? ""} 超级货币 · ${acquisition.status === "rotation" ? "轮换" : "暂不可用"}`;
-    case "edition":
-      return `${acquisition.editionName} · ${acquisition.price ?? ""} ${acquisition.currencyCode === "USD" ? "美元" : currencyLabel(acquisition.currency ?? "super-credits")}`;
-    case "event":
-      return `${acquisition.eventName} · ${acquisition.status === "ended" ? "已结束" : "活动"}`;
-    case "poi":
-      return `地图拾取 · ${acquisition.location}`;
-    case "unavailable":
-      return `不可获取 · ${acquisition.reason}`;
-    case "other":
-      return acquisition.label;
-  }
+  return <div className="acquisition-summary">{content}</div>;
 }
