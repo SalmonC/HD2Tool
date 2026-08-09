@@ -1,8 +1,10 @@
 /** Resolve a bundled asset for both Vite's relative preview base and Pages. */
 export function resolveAssetUrl(
   path: string,
-  baseUrl: string,
-  documentBaseUri?: string,
+  baseUrl = import.meta.env.BASE_URL,
+  documentBaseUri = typeof document === "undefined"
+    ? undefined
+    : document.baseURI,
 ): string {
   if (/^[a-z][a-z\d+.-]*:/i.test(path) || path.startsWith("//")) return path;
 

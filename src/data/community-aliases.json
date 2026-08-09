@@ -1,0 +1,161 @@
+{
+  "version": "2026-08-08.1",
+  "source": {
+    "label": "小黑盒社区帖：游戏内常用外号、别称和术语（用户提供全文转录）",
+    "url": "https://api.xiaoheihe.cn/v3/bbs/app/api/web/share?h_camp=link&h_src=YXBwX3NoYXJl&link_id=60b970680458"
+  },
+  "entries": [
+    {
+      "equipmentId": "a-m-23-ems-mortar-sentry",
+      "aliases": ["EMP迫击炮"]
+    },
+    {
+      "equipmentId": "arc-12-blitzer",
+      "aliases": ["电喷"]
+    },
+    {
+      "equipmentId": "ax-ar-23-guard-dog",
+      "aliases": ["实弹狗"]
+    },
+    {
+      "equipmentId": "ax-arc-3-k-9",
+      "aliases": ["电狗"]
+    },
+    {
+      "equipmentId": "ax-las-5-rover",
+      "aliases": ["激光狗"]
+    },
+    {
+      "equipmentId": "ax-tx-13-dog-breath",
+      "aliases": ["毒狗"]
+    },
+    {
+      "equipmentId": "b-100-portable-hellbomb",
+      "aliases": ["核弹背包"]
+    },
+    {
+      "equipmentId": "cqc-1-one-true-flag",
+      "aliases": ["国旗"]
+    },
+    {
+      "equipmentId": "cqc-19-stun-lance",
+      "aliases": ["电矛", "电叉"]
+    },
+    {
+      "equipmentId": "e-at-12-anti-tank-emplacement",
+      "aliases": ["轮椅炮", "AT炮"]
+    },
+    {
+      "equipmentId": "e-gl-21-grenadier-battlement",
+      "aliases": ["榴弹墙"]
+    },
+    {
+      "equipmentId": "eat-17-expendable-anti-tank",
+      "aliases": ["次抛"]
+    },
+    {
+      "equipmentId": "exo-45-patriot-exosuit",
+      "aliases": ["机枪机甲"]
+    },
+    {
+      "equipmentId": "exo-49-emancipator-exosuit",
+      "aliases": ["机炮机甲"]
+    },
+    {
+      "equipmentId": "faf-14-spear",
+      "aliases": ["肥猫"]
+    },
+    {
+      "equipmentId": "g-109-urchin",
+      "aliases": ["电雷"]
+    },
+    {
+      "equipmentId": "g-123-thermite",
+      "aliases": ["仙女棒"]
+    },
+    {
+      "equipmentId": "g-16-impact",
+      "aliases": ["摔炮"]
+    },
+    {
+      "equipmentId": "gl-52-de-escalator",
+      "aliases": ["电榴弹"]
+    },
+    {
+      "equipmentId": "gp-20-ultimatum",
+      "aliases": ["核弹手枪"]
+    },
+    {
+      "equipmentId": "las-58-talon",
+      "aliases": ["香蕉左轮", "激光左轮"]
+    },
+    {
+      "equipmentId": "lift-850-jump-pack",
+      "aliases": ["跳包", "喷包"]
+    },
+    {
+      "equipmentId": "lift-860-hover-pack",
+      "aliases": ["飞包", "登山包"]
+    },
+    {
+      "equipmentId": "orbital-napalm-barrage",
+      "aliases": ["轨道火", "轨汽"]
+    },
+    {
+      "equipmentId": "p-113-verdict",
+      "aliases": ["沙鹰"]
+    },
+    {
+      "equipmentId": "p-4-senator",
+      "aliases": ["左轮"]
+    },
+    {
+      "equipmentId": "r-63-diligence",
+      "aliases": ["小勤勉"]
+    },
+    {
+      "equipmentId": "r-63cs-diligence-counter-sniper",
+      "aliases": ["大勤勉"]
+    },
+    {
+      "equipmentId": "rs-422-railgun",
+      "aliases": ["磁小轨"]
+    },
+    {
+      "equipmentId": "sg-22-bushwhacker",
+      "aliases": ["副手喷", "三连喷", "三管喷", "三眼喷"]
+    },
+    {
+      "equipmentId": "sg-225ie-breaker-incendiary",
+      "aliases": ["火喷", "火连喷"]
+    },
+    {
+      "equipmentId": "sg-225sp-breaker-spray-pray",
+      "aliases": ["鸟喷"]
+    },
+    {
+      "equipmentId": "sg-451-cookout",
+      "aliases": ["泵动火喷"]
+    },
+    {
+      "equipmentId": "sg-8p-punisher-plasma",
+      "aliases": ["离子喷"]
+    },
+    {
+      "equipmentId": "sh-32-shield-generator-pack",
+      "aliases": ["蛋盾"]
+    },
+    {
+      "equipmentId": "sta-x3-w-a-s-p-launcher",
+      "aliases": ["黄蜂"]
+    },
+    {
+      "equipmentId": "ted-63-dynamite",
+      "aliases": ["C4"]
+    },
+    {
+      "equipmentId": "uf-16-inspector",
+      "aliases": ["政委甲"]
+    }
+  ]
+}

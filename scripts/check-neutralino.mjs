@@ -28,7 +28,6 @@ if (
   throw new Error("Neutralino 必须复用 dist，并将桌面包输出到 desktop-dist。");
 for (const file of [
   "dist/index.html",
-  "dist/manifest.webmanifest",
   "public/assets/placeholder-equipment.svg",
 ]) {
   try {
