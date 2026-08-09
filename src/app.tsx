@@ -20,9 +20,10 @@ import {
 } from "./lib/currency";
 import {
   apSummaries,
-  apText,
+  armorPenetrationText,
   componentLabel,
   demolitionSummaries,
+  displayableCombatComponents,
   deploymentTypeLabel,
   passiveLabel,
   PRODUCT_KIND_LABELS,
@@ -185,8 +186,8 @@ function ComponentDetails({ component }: { component: AttackComponent }) {
         <Stat label="伤害" value={fields.standardDamage} />
         <Stat label="耐久伤害" value={fields.durableDamage} />
         <Stat label="DPS" value={fields.dps} />
-        <Stat label="穿甲" value={apText(component) ?? "暂无可靠数据"} />
-        <Stat label="拆毁" value={fields.demolitionForce ?? "暂无可靠数据"} />
+        <Stat label="穿甲" value={armorPenetrationText(component)} />
+        <Stat label="拆毁" value={fields.demolitionForce} />
         <Stat label="硬直" value={fields.stagger} />
         <Stat label="推力" value={fields.push} />
       </dl>
@@ -209,6 +210,7 @@ function EquipmentDetails({
 }) {
   const aliases = aliasesById.get(item.id) ?? [];
   const available = acquisitionAvailable(item);
+  const combatComponents = displayableCombatComponents(item);
   return (
     <div
       className="detail-backdrop"
@@ -250,19 +252,14 @@ function EquipmentDetails({
             </p>
           </div>
         </div>
-        {item.combat?.components.length ? (
+        {combatComponents.length > 0 && (
           <section className="detail-section">
             <h3>攻击参数</h3>
             <div className="component-list">
-              {item.combat.components.map((component) => (
+              {combatComponents.map((component) => (
                 <ComponentDetails component={component} key={component.id} />
               ))}
             </div>
-          </section>
-        ) : (
-          <section className="detail-section core-unknown">
-            <h3>攻击参数</h3>
-            <p>穿甲：暂无可靠数据 · 拆毁：暂无可靠数据</p>
           </section>
         )}
         <section className="detail-section">

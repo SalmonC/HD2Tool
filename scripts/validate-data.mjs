@@ -79,10 +79,17 @@ for (const item of catalog.items) {
     )
       fail(`invalid demolition ${item.id}/${component.id}`);
   }
+  if (
+    item.combat?.primaryComponentId &&
+    !item.combat.components.some(
+      (component) => component.id === item.combat.primaryComponentId,
+    )
+  )
+    fail(`unknown primary combat component ${item.id}`);
 }
-if (demolitionCount < 120)
+if (demolitionCount < 180)
   fail(
-    `expected at least 120 sourced demolition components, found ${demolitionCount}`,
+    `expected at least 180 sourced demolition components, found ${demolitionCount}`,
   );
 if (catalog.meta.demolitionSource?.importedComponents !== demolitionCount)
   fail(
@@ -129,6 +136,19 @@ for (const [id, expected] of requiredFixtures) {
   )
     fail(`fixture mismatch ${id}: expected ${expected}`);
 }
+
+const portableHellbomb = catalog.items.find(
+  (entry) => entry.id === "b-100-portable-hellbomb",
+);
+const hellbombExplosion = portableHellbomb?.combat?.components.find(
+  (component) => component.type === "explosion",
+);
+if (
+  hellbombExplosion?.fields.standardDamage !== 10000 ||
+  hellbombExplosion.fields.armorPenetration?.value !== 10 ||
+  hellbombExplosion.fields.demolitionForce !== 60
+)
+  fail("fixture mismatch b-100-portable-hellbomb combat profile");
 
 if (errors.length) {
   for (const error of errors) console.error(`ERROR ${error}`);

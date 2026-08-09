@@ -47,6 +47,7 @@ const COMPONENT_LABELS: Record<string, string> = {
   other: "其他",
   Ballistic: "弹道",
   Explosion: "爆炸",
+  "Impact Explosion": "冲击爆炸",
   Fire: "火焰",
   Gas: "毒气",
   Arc: "电弧",
@@ -118,7 +119,9 @@ export function deploymentTypeLabel(value?: string): string | undefined {
   return value ? (DEPLOYMENT_TYPE_LABELS[value] ?? value) : undefined;
 }
 
-export function apText(component: AttackComponent): string | undefined {
+export function armorPenetrationText(
+  component: AttackComponent,
+): string | undefined {
   const ap = component.fields.armorPenetration;
   if (!ap) return undefined;
   const value =
@@ -127,9 +130,12 @@ export function apText(component: AttackComponent): string | undefined {
       : ap.minValue !== undefined || ap.maxValue !== undefined
         ? `${ap.minValue ?? "?"}–${ap.maxValue ?? "?"}`
         : undefined;
-  return value
-    ? `${componentLabel(component)} 穿甲 ${value}${ap.labelZh ? ` · ${ap.labelZh}` : ""}`
-    : undefined;
+  return value ? `${value}${ap.labelZh ? ` · ${ap.labelZh}` : ""}` : undefined;
+}
+
+export function apText(component: AttackComponent): string | undefined {
+  const value = armorPenetrationText(component);
+  return value ? `${componentLabel(component)} ${value}` : undefined;
 }
 
 export function demolitionText(component: AttackComponent): string | undefined {
@@ -139,17 +145,58 @@ export function demolitionText(component: AttackComponent): string | undefined {
 }
 
 export function apSummaries(item: Equipment): string[] {
-  return (
-    item.combat?.components
-      .map(apText)
-      .filter((value): value is string => Boolean(value)) ?? []
-  );
+  return [
+    ...new Set(
+      item.combat?.components
+        .map(apText)
+        .filter((value): value is string => Boolean(value)) ?? [],
+    ),
+  ];
 }
 
 export function demolitionSummaries(item: Equipment): string[] {
-  return (
-    item.combat?.components
-      .map(demolitionText)
-      .filter((value): value is string => Boolean(value)) ?? []
-  );
+  return [
+    ...new Set(
+      item.combat?.components
+        .map(demolitionText)
+        .filter((value): value is string => Boolean(value)) ?? [],
+    ),
+  ];
+}
+
+export function hasDisplayableCombatFields(
+  component: AttackComponent,
+): boolean {
+  const fields = component.fields;
+  return [
+    fields.standardDamage,
+    fields.durableDamage,
+    fields.dps,
+    armorPenetrationText(component),
+    fields.demolitionForce,
+    fields.stagger,
+    fields.push,
+  ].some((value) => value !== undefined && value !== null && value !== "");
+}
+
+export function displayableCombatComponents(
+  item: Equipment,
+): AttackComponent[] {
+  const seen = new Set<string>();
+  return (item.combat?.components ?? []).filter((component) => {
+    if (!hasDisplayableCombatFields(component)) return false;
+    const visibleKey = JSON.stringify({
+      label: componentLabel(component),
+      standardDamage: component.fields.standardDamage,
+      durableDamage: component.fields.durableDamage,
+      dps: component.fields.dps,
+      armorPenetration: armorPenetrationText(component),
+      demolitionForce: component.fields.demolitionForce,
+      stagger: component.fields.stagger,
+      push: component.fields.push,
+    });
+    if (seen.has(visibleKey)) return false;
+    seen.add(visibleKey);
+    return true;
+  });
 }

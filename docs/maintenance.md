@@ -10,11 +10,11 @@
 
 ### 拆毁值待办（2026-08-09）
 
-本轮从 Wiki 的 `Module:Decodedata-Attacks` 与旧版 `Module:Decodedata-Weapons` 当前 revision 中，按“稳定装备身份 + 组件类型 + 伤害 + 穿甲”完全一致的条件补入 123 个组件。还有 79 个组件无法与现有目录唯一对应，继续显示“暂无可靠数据”，不得把同一装备的最大值复制给所有组件。
+本轮从 Wiki 的 `Module:Decodedata-Attacks` 与旧版 `Module:Decodedata-Weapons` 当前 revision 中，按“稳定装备身份 + 明确攻击引用 + 组件类型”补入 183 个组件的拆毁值。其中 31 件（含 B-100 便携式地狱火炸弹）原本没有攻击组件的战备已按模块中的精确引用建立组件；B-100 按页面明确的 `Hellbomb` 爆炸组件补入拆毁 60。仍有 79 个旧组件无法与来源唯一对应，目录继续留空，界面直接省略对应字段，不得把同一装备的最大值复制给所有组件。
 
 待核对装备：`a-arc-3-tesla-tower`、`a-flam-40-flame-sentry`、`a-gm-17-gas-mortar-sentry`、`a-las-98-laser-sentry`、`ac-8-autocannon`、`ar-gl-21-one-two`、`arc-12-blitzer`、`ax-arc-3-k-9`、`ax-flam-75-hot-dog`、`ax-las-5-rover`、`ax-tx-13-dog-breath`、`b-flam-80-cremator`、`cqc-1-one-true-flag`、`cqc-19-stun-lance`、`cqc-2-saber`、`cqc-20-breaching-hammer`、`cqc-30-stun-baton`、`cqc-42-machete`、`cqc-5-combat-hatchet`、`cqc-72-entrenchment-tool`、`cqc-73-entrenchment-tool`、`cqc-9-defoliation-tool`、`dbs-2-double-freedom`、`e-at-12-anti-tank-emplacement`、`e-mg-101-hmg-emplacement`、`eat-700-expendable-napalm`、`exo-55-breakthrough-exosuit`、`flam-40-flamethrower`、`flam-66-torcher`、`g-10-incendiary`、`g-109-urchin`、`g-123-thermite`、`g-13-incendiary-impact`、`g-142-pyrotech`、`g-3-smoke`、`g-31-arc`、`g-4-gas`、`g-6-frag`、`g-89-smokescreen`、`g-sh-39-shield`、`gl-52-de-escalator`、`gr-8-recoilless-rifle`、`k-2-throwing-knife`、`las-13-trident`、`las-17-double-edge-sickle`、`las-5-scythe`、`las-7-dagger`、`las-98-laser-cannon`、`m90a-shotgun`、`p-11-stim-pistol`、`p-35-re-educator`、`p-72-crisper`、`plas-101-purifier`、`plas-15-loyalist`、`plas-45-epoch`、`r-4-hyena`、`s-11-speargun`、`sg-20-halt`、`sg-22-bushwhacker`、`sg-225-breaker`、`sg-225ie-breaker-incendiary`、`sg-225sp-breaker-spray-pray`、`sg-451-cookout`、`sg-8-punisher`、`sg-88-break-action-shotgun`、`sg-97-sweeper`、`tx-41-sterilizer`。
 
-后续只处理这些歧义项：优先读取 Wiki `Demolition` 汇总表与对应装备的 Detailed Weapon Statistics，按页面 ID 和明确的攻击组件名人工确认；仍不能唯一对应就继续留空。
+后续只处理这些歧义项：优先读取 Wiki `Demolition` 汇总表与对应装备的 Detailed Weapon Statistics，按页面 ID 和明确的攻击组件名人工确认；仍不能唯一对应就继续留空。补给背包、护盾、位移背包和照明弹等没有可展示攻击组件的战备不显示“攻击参数”区块。
 
 ## 新版本更新
 

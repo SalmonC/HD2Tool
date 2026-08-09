@@ -2,11 +2,11 @@
   "meta": {
     "game": "HELLDIVERS 2",
     "gameBuild": null,
-    "dataVersion": "2026.08.09",
-    "capturedAt": "2026-08-09T12:22:49.491Z",
+    "dataVersion": "2026.08.09.1",
+    "capturedAt": "2026-08-09T13:54:37.506Z",
     "demolitionSource": {
-      "capturedAt": "2026-08-09T12:22:49.491Z",
-      "importedComponents": 123,
+      "capturedAt": "2026-08-09T13:54:37.506Z",
+      "importedComponents": 183,
       "modules": [
         {
           "title": "Module:Decodedata-Attacks/data.json",
@@ -2748,6 +2748,27 @@
         "type": "Backpack",
         "code": ["down", "right", "up", "up", "up"],
         "cooldownSeconds": 300
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "10361-component-1",
+            "type": "explosion",
+            "label": "Explosion",
+            "fields": {
+              "standardDamage": 10000,
+              "durableDamage": 10000,
+              "armorPenetration": {
+                "value": 10,
+                "labelZh": "反坦克 VI"
+              },
+              "demolitionForce": 60,
+              "stagger": 50,
+              "push": 100
+            }
+          }
+        ],
+        "primaryComponentId": "10361-component-1"
       }
     },
     {
@@ -4869,6 +4890,41 @@
         "type": "Eagle",
         "code": ["up", "right", "up", "left"],
         "cooldownSeconds": 15
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2242-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 600,
+              "durableDamage": 600,
+              "armorPenetration": {
+                "value": 7
+              },
+              "demolitionForce": 40,
+              "stagger": 40,
+              "push": 15
+            }
+          },
+          {
+            "id": "2242-component-2",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 300,
+              "durableDamage": 300,
+              "armorPenetration": {
+                "value": 4
+              },
+              "demolitionForce": 30,
+              "stagger": 30,
+              "push": 10
+            }
+          }
+        ],
+        "primaryComponentId": "2242-component-1"
       }
     },
     {
@@ -4900,6 +4956,56 @@
         "type": "Eagle",
         "code": ["up", "right", "down", "down", "down"],
         "cooldownSeconds": 15
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2367-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 2000,
+              "durableDamage": 2000,
+              "armorPenetration": {
+                "value": 7
+              },
+              "demolitionForce": 50,
+              "stagger": 20,
+              "push": 15
+            }
+          },
+          {
+            "id": "2367-component-2",
+            "type": "explosion",
+            "label": "explosion",
+            "fields": {
+              "standardDamage": 1500,
+              "durableDamage": 1500,
+              "armorPenetration": {
+                "value": 6
+              },
+              "demolitionForce": 50,
+              "stagger": 100,
+              "push": 40
+            }
+          },
+          {
+            "id": "2367-component-3",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 100,
+              "durableDamage": 100,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 40,
+              "stagger": 10,
+              "push": 40
+            }
+          }
+        ],
+        "primaryComponentId": "2367-component-1"
       }
     },
     {
@@ -4931,6 +5037,41 @@
         "type": "Eagle",
         "code": ["up", "right", "down", "right"],
         "cooldownSeconds": 15
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2244-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 1500,
+              "durableDamage": 1500,
+              "armorPenetration": {
+                "value": 7
+              },
+              "demolitionForce": 40,
+              "stagger": 20,
+              "push": 15
+            }
+          },
+          {
+            "id": "2244-component-2",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 800,
+              "durableDamage": 800,
+              "armorPenetration": {
+                "value": 5
+              },
+              "demolitionForce": 40,
+              "stagger": 50,
+              "push": 40
+            }
+          }
+        ],
+        "primaryComponentId": "2244-component-1"
       }
     },
     {
@@ -4962,6 +5103,68 @@
         "type": "Eagle",
         "code": ["up", "right", "down", "down", "right"],
         "cooldownSeconds": 15
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2365-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 1500,
+              "durableDamage": 1500,
+              "armorPenetration": {
+                "value": 7
+              },
+              "demolitionForce": 40,
+              "stagger": 20,
+              "push": 15
+            }
+          },
+          {
+            "id": "2365-component-2",
+            "type": "explosion",
+            "label": "explosion",
+            "fields": {
+              "standardDamage": 350,
+              "durableDamage": 350,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 30,
+              "stagger": 50,
+              "push": 40
+            }
+          },
+          {
+            "id": "2365-component-3",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 20,
+              "durableDamage": 2,
+              "demolitionForce": 10,
+              "stagger": 30,
+              "push": 10
+            }
+          },
+          {
+            "id": "2365-component-4",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 350,
+              "durableDamage": 350,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 30,
+              "stagger": 50,
+              "push": 40
+            }
+          }
+        ],
+        "primaryComponentId": "2365-component-1"
       }
     },
     {
@@ -4993,6 +5196,42 @@
         "type": "Eagle",
         "code": ["up", "right", "down", "up"],
         "cooldownSeconds": 15
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2246-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 1500,
+              "durableDamage": 1500,
+              "armorPenetration": {
+                "value": 7
+              },
+              "demolitionForce": 40,
+              "stagger": 20,
+              "push": 15
+            }
+          },
+          {
+            "id": "2246-component-2",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 250,
+              "durableDamage": 250,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 30,
+              "stagger": 50,
+              "push": 40,
+              "statusEffects": ["Fire", "BurningHeavy"]
+            }
+          }
+        ],
+        "primaryComponentId": "2246-component-1"
       }
     },
     {
@@ -5024,6 +5263,26 @@
         "type": "Eagle",
         "code": ["up", "right", "up", "down"],
         "cooldownSeconds": 15
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2247-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 1500,
+              "durableDamage": 1500,
+              "armorPenetration": {
+                "value": 7
+              },
+              "demolitionForce": 40,
+              "stagger": 20,
+              "push": 15
+            }
+          }
+        ],
+        "primaryComponentId": "2247-component-1"
       }
     },
     {
@@ -5055,6 +5314,41 @@
         "type": "Eagle",
         "code": ["up", "right", "right"],
         "cooldownSeconds": 15
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2248-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 350,
+              "durableDamage": 200,
+              "armorPenetration": {
+                "value": 5
+              },
+              "demolitionForce": 30,
+              "stagger": 35,
+              "push": 3
+            }
+          },
+          {
+            "id": "2248-component-2",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 350,
+              "durableDamage": 350,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 30,
+              "stagger": 35,
+              "push": 5
+            }
+          }
+        ],
+        "primaryComponentId": "2248-component-1"
       }
     },
     {
@@ -5399,6 +5693,56 @@
         "type": "Vehicle",
         "code": ["left", "down", "right", "up", "left", "down", "down"],
         "cooldownSeconds": 420
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2806-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 90,
+              "durableDamage": 23,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 10,
+              "stagger": 20,
+              "push": 12
+            }
+          },
+          {
+            "id": "2806-component-2",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 1250,
+              "durableDamage": 1250,
+              "armorPenetration": {
+                "value": 6
+              },
+              "demolitionForce": 30,
+              "stagger": 40,
+              "push": 25
+            }
+          },
+          {
+            "id": "2806-component-3",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 400,
+              "durableDamage": 400,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 30,
+              "stagger": 60,
+              "push": 70
+            }
+          }
+        ],
+        "primaryComponentId": "2806-component-1"
       }
     },
     {
@@ -5430,6 +5774,41 @@
         "type": "Vehicle",
         "code": ["left", "down", "right", "up", "left", "down", "up"],
         "cooldownSeconds": 420
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "6462-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 300,
+              "durableDamage": 150,
+              "armorPenetration": {
+                "value": 5
+              },
+              "demolitionForce": 30,
+              "stagger": 30,
+              "push": 10
+            }
+          },
+          {
+            "id": "6462-component-2",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 150,
+              "durableDamage": 150,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 30,
+              "stagger": 40,
+              "push": 40
+            }
+          }
+        ],
+        "primaryComponentId": "6462-component-1"
       }
     },
     {
@@ -5462,6 +5841,57 @@
         "type": "Vehicle",
         "code": ["left", "down", "right", "up", "right", "left", "up"],
         "cooldownSeconds": 420
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "18422-component-1",
+            "type": "spray",
+            "label": "spray",
+            "fields": {
+              "standardDamage": 3,
+              "durableDamage": 3,
+              "armorPenetration": {
+                "value": 4
+              },
+              "demolitionForce": 10,
+              "stagger": 5,
+              "push": 5,
+              "statusEffects": ["Fire", "FlamerSlowed", "Fire_Panic"]
+            }
+          },
+          {
+            "id": "18422-component-2",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 1300,
+              "durableDamage": 1300,
+              "armorPenetration": {
+                "value": 6
+              },
+              "demolitionForce": 30,
+              "stagger": 50,
+              "push": 25
+            }
+          },
+          {
+            "id": "18422-component-3",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 150,
+              "durableDamage": 150,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 30,
+              "stagger": 60,
+              "push": 40
+            }
+          }
+        ],
+        "primaryComponentId": "18422-component-1"
       }
     },
     {
@@ -8363,6 +8793,26 @@
         "type": "Vehicle",
         "code": ["left", "down", "right", "down", "right", "down", "up"],
         "cooldownSeconds": 480
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "8998-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 150,
+              "durableDamage": 35,
+              "armorPenetration": {
+                "value": 4
+              },
+              "demolitionForce": 15,
+              "stagger": 25,
+              "push": 20
+            }
+          }
+        ],
+        "primaryComponentId": "8998-component-1"
       }
     },
     {
@@ -8395,6 +8845,26 @@
         "type": "Vehicle",
         "code": ["left", "down", "left", "left", "down", "up", "right"],
         "cooldownSeconds": 480
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "19396-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 65,
+              "durableDamage": 15,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 10,
+              "stagger": 10,
+              "push": 10
+            }
+          }
+        ],
+        "primaryComponentId": "19396-component-1"
       }
     },
     {
@@ -8425,6 +8895,27 @@
         "type": "Vehicle",
         "code": ["left", "down", "right", "left", "down", "up", "up"],
         "cooldownSeconds": 480
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "19395-component-1",
+            "type": "spray",
+            "label": "spray",
+            "fields": {
+              "standardDamage": 3,
+              "durableDamage": 3,
+              "armorPenetration": {
+                "value": 4
+              },
+              "demolitionForce": 10,
+              "stagger": 5,
+              "push": 5,
+              "statusEffects": ["Fire", "FlamerSlowed", "Fire_Panic"]
+            }
+          }
+        ],
+        "primaryComponentId": "19395-component-1"
       }
     },
     {
@@ -8722,6 +9213,26 @@
         "type": "Emplacement",
         "code": ["down", "left", "up", "up"],
         "cooldownSeconds": 120
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "5879-component-1",
+            "type": "explosion",
+            "label": "explosion",
+            "fields": {
+              "standardDamage": 2000,
+              "durableDamage": 2000,
+              "armorPenetration": {
+                "value": 5
+              },
+              "demolitionForce": 30,
+              "stagger": 30,
+              "push": 40
+            }
+          }
+        ],
+        "primaryComponentId": "5879-component-1"
       }
     },
     {
@@ -8753,6 +9264,26 @@
         "type": "Emplacement",
         "code": ["down", "left", "up", "right"],
         "cooldownSeconds": 120
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2371-component-1",
+            "type": "explosion",
+            "label": "explosion",
+            "fields": {
+              "standardDamage": 700,
+              "durableDamage": 700,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 30,
+              "stagger": 30,
+              "push": 30
+            }
+          }
+        ],
+        "primaryComponentId": "2371-component-1"
       }
     },
     {
@@ -8784,6 +9315,27 @@
         "type": "Emplacement",
         "code": ["down", "left", "left", "right"],
         "cooldownSeconds": 120
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "8683-component-1",
+            "type": "explosion",
+            "label": "explosion",
+            "fields": {
+              "standardDamage": 3,
+              "durableDamage": 3,
+              "armorPenetration": {
+                "value": 6
+              },
+              "demolitionForce": 30,
+              "stagger": 10,
+              "push": 10,
+              "statusEffects": ["Gas", "Gas_Confusion"]
+            }
+          }
+        ],
+        "primaryComponentId": "8683-component-1"
       }
     },
     {
@@ -8815,6 +9367,27 @@
         "type": "Emplacement",
         "code": ["down", "left", "left", "down"],
         "cooldownSeconds": 120
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2375-component-1",
+            "type": "explosion",
+            "label": "explosion",
+            "fields": {
+              "standardDamage": 300,
+              "durableDamage": 300,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 30,
+              "stagger": 30,
+              "push": 30,
+              "statusEffects": ["Fire"]
+            }
+          }
+        ],
+        "primaryComponentId": "2375-component-1"
       }
     },
     {
@@ -9293,6 +9866,41 @@
         "type": "Orbital",
         "code": ["right", "right", "down", "left", "right", "down"],
         "cooldownSeconds": 180
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2362-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 3500,
+              "durableDamage": 3500,
+              "armorPenetration": {
+                "value": 7
+              },
+              "demolitionForce": 50,
+              "stagger": 20,
+              "push": 20
+            }
+          },
+          {
+            "id": "2362-component-2",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 1200,
+              "durableDamage": 1200,
+              "armorPenetration": {
+                "value": 5
+              },
+              "demolitionForce": 50,
+              "stagger": 70,
+              "push": 40
+            }
+          }
+        ],
+        "primaryComponentId": "2362-component-1"
       }
     },
     {
@@ -9324,6 +9932,41 @@
         "type": "Orbital",
         "code": ["right", "down", "up", "up", "left", "down", "down"],
         "cooldownSeconds": 240
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2363-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 4000,
+              "durableDamage": 4000,
+              "armorPenetration": {
+                "value": 8
+              },
+              "demolitionForce": 50,
+              "stagger": 50,
+              "push": 20
+            }
+          },
+          {
+            "id": "2363-component-2",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 1500,
+              "durableDamage": 1500,
+              "armorPenetration": {
+                "value": 6
+              },
+              "demolitionForce": 50,
+              "stagger": 70,
+              "push": 60
+            }
+          }
+        ],
+        "primaryComponentId": "2363-component-1"
       }
     },
     {
@@ -9355,6 +9998,71 @@
         "type": "Orbital",
         "code": ["right", "right", "right"],
         "cooldownSeconds": 100
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2276-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 300,
+              "durableDamage": 300,
+              "armorPenetration": {
+                "value": 7
+              },
+              "demolitionForce": 50,
+              "stagger": 60,
+              "push": 15
+            }
+          },
+          {
+            "id": "2276-component-2",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 350,
+              "durableDamage": 350,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 30,
+              "stagger": 50,
+              "push": 40
+            }
+          },
+          {
+            "id": "2276-component-3",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 300,
+              "durableDamage": 150,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 10,
+              "stagger": 10,
+              "push": 20
+            }
+          },
+          {
+            "id": "2276-component-4",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 350,
+              "durableDamage": 350,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 30,
+              "stagger": 50,
+              "push": 40
+            }
+          }
+        ],
+        "primaryComponentId": "2276-component-1"
       }
     },
     {
@@ -9386,6 +10094,42 @@
         "type": "Orbital",
         "code": ["right", "right", "left", "down"],
         "cooldownSeconds": 75
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2278-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 300,
+              "durableDamage": 300,
+              "armorPenetration": {
+                "value": 7
+              },
+              "demolitionForce": 50,
+              "stagger": 60,
+              "push": 15
+            }
+          },
+          {
+            "id": "2278-component-2",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 0,
+              "durableDamage": 0,
+              "armorPenetration": {
+                "value": 6
+              },
+              "demolitionForce": 30,
+              "stagger": 50,
+              "push": 0,
+              "statusEffects": ["Stun Medium"]
+            }
+          }
+        ],
+        "primaryComponentId": "2278-component-1"
       }
     },
     {
@@ -9417,6 +10161,42 @@
         "type": "Orbital",
         "code": ["right", "right", "down", "right"],
         "cooldownSeconds": 75
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2279-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 300,
+              "durableDamage": 300,
+              "armorPenetration": {
+                "value": 7
+              },
+              "demolitionForce": 50,
+              "stagger": 60,
+              "push": 15
+            }
+          },
+          {
+            "id": "2279-component-2",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 0,
+              "durableDamage": 0,
+              "armorPenetration": {
+                "value": 6
+              },
+              "demolitionForce": 50,
+              "stagger": 10,
+              "push": 40,
+              "statusEffects": ["Gas", "Gas_Confusion"]
+            }
+          }
+        ],
+        "primaryComponentId": "2279-component-1"
       }
     },
     {
@@ -9448,6 +10228,56 @@
         "type": "Orbital",
         "code": ["right", "down", "left", "up", "up"],
         "cooldownSeconds": 70
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2280-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 350,
+              "durableDamage": 200,
+              "armorPenetration": {
+                "value": 5
+              },
+              "demolitionForce": 30,
+              "stagger": 35,
+              "push": 3
+            }
+          },
+          {
+            "id": "2280-component-2",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 350,
+              "durableDamage": 200,
+              "armorPenetration": {
+                "value": 5
+              },
+              "demolitionForce": 30,
+              "stagger": 35,
+              "push": 3
+            }
+          },
+          {
+            "id": "2280-component-3",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 350,
+              "durableDamage": 350,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 30,
+              "stagger": 35,
+              "push": 5
+            }
+          }
+        ],
+        "primaryComponentId": "2280-component-1"
       }
     },
     {
@@ -9508,6 +10338,27 @@
         "type": "Orbital",
         "code": ["right", "down", "up", "right", "down"],
         "cooldownSeconds": 300
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2364-component-1",
+            "type": "spray",
+            "label": "spray",
+            "fields": {
+              "standardDamage": 60,
+              "durableDamage": 60,
+              "armorPenetration": {
+                "value": 6
+              },
+              "demolitionForce": 50,
+              "stagger": 30,
+              "push": 30,
+              "statusEffects": ["Fire"]
+            }
+          }
+        ],
+        "primaryComponentId": "2364-component-1"
       }
     },
     {
@@ -9539,6 +10390,42 @@
         "type": "Orbital",
         "code": ["right", "right", "down", "left", "right", "up"],
         "cooldownSeconds": 240
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "7370-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 500,
+              "durableDamage": 500,
+              "armorPenetration": {
+                "value": 5
+              },
+              "demolitionForce": 30,
+              "stagger": 20,
+              "push": 15
+            }
+          },
+          {
+            "id": "7370-component-2",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 350,
+              "durableDamage": 350,
+              "armorPenetration": {
+                "value": 3
+              },
+              "demolitionForce": 30,
+              "stagger": 50,
+              "push": 40,
+              "statusEffects": ["Fire", "BurningHeavy"]
+            }
+          }
+        ],
+        "primaryComponentId": "7370-component-1"
       }
     },
     {
@@ -9568,6 +10455,41 @@
         "type": "Orbital",
         "code": ["right", "right", "up"],
         "cooldownSeconds": 90
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2282-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 4000,
+              "durableDamage": 4000,
+              "armorPenetration": {
+                "value": 8
+              },
+              "demolitionForce": 50,
+              "stagger": 50,
+              "push": 20
+            }
+          },
+          {
+            "id": "2282-component-2",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 1500,
+              "durableDamage": 1500,
+              "armorPenetration": {
+                "value": 6
+              },
+              "demolitionForce": 50,
+              "stagger": 70,
+              "push": 60
+            }
+          }
+        ],
+        "primaryComponentId": "2282-component-1"
       }
     },
     {
@@ -9599,6 +10521,41 @@
         "type": "Orbital",
         "code": ["right", "up", "down", "down", "right"],
         "cooldownSeconds": 180
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2283-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 10000,
+              "durableDamage": 10000,
+              "armorPenetration": {
+                "value": 7
+              },
+              "demolitionForce": 50,
+              "stagger": 60,
+              "push": 35
+            }
+          },
+          {
+            "id": "2283-component-2",
+            "type": "explosion",
+            "label": "explosion",
+            "fields": {
+              "standardDamage": 1000,
+              "durableDamage": 1000,
+              "armorPenetration": {
+                "value": 6
+              },
+              "demolitionForce": 50,
+              "stagger": 30,
+              "push": 50
+            }
+          }
+        ],
+        "primaryComponentId": "2283-component-1"
       }
     },
     {
@@ -9630,6 +10587,26 @@
         "type": "Orbital",
         "code": ["right", "right", "down", "up"],
         "cooldownSeconds": 75
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2284-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 300,
+              "durableDamage": 300,
+              "armorPenetration": {
+                "value": 7
+              },
+              "demolitionForce": 50,
+              "stagger": 60,
+              "push": 15
+            }
+          }
+        ],
+        "primaryComponentId": "2284-component-1"
       }
     },
     {
@@ -9661,6 +10638,41 @@
         "type": "Orbital",
         "code": ["right", "down", "right", "down", "right", "down"],
         "cooldownSeconds": 240
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "2286-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 4000,
+              "durableDamage": 4000,
+              "armorPenetration": {
+                "value": 8
+              },
+              "demolitionForce": 50,
+              "stagger": 50,
+              "push": 20
+            }
+          },
+          {
+            "id": "2286-component-2",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 1500,
+              "durableDamage": 1500,
+              "armorPenetration": {
+                "value": 6
+              },
+              "demolitionForce": 50,
+              "stagger": 70,
+              "push": 60
+            }
+          }
+        ],
+        "primaryComponentId": "2286-component-1"
       }
     },
     {
@@ -13151,6 +14163,56 @@
           "up"
         ],
         "cooldownSeconds": 780
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "16075-component-1",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 3500,
+              "durableDamage": 3500,
+              "armorPenetration": {
+                "value": 8
+              },
+              "demolitionForce": 40,
+              "stagger": 50,
+              "push": 20
+            }
+          },
+          {
+            "id": "16075-component-2",
+            "type": "explosion",
+            "label": "Impact Explosion",
+            "fields": {
+              "standardDamage": 750,
+              "durableDamage": 750,
+              "armorPenetration": {
+                "value": 5
+              },
+              "demolitionForce": 40,
+              "stagger": 70,
+              "push": 40
+            }
+          },
+          {
+            "id": "16075-component-3",
+            "type": "projectile",
+            "label": "projectile",
+            "fields": {
+              "standardDamage": 150,
+              "durableDamage": 35,
+              "armorPenetration": {
+                "value": 4
+              },
+              "demolitionForce": 15,
+              "stagger": 25,
+              "push": 20
+            }
+          }
+        ],
+        "primaryComponentId": "16075-component-1"
       }
     },
     {
