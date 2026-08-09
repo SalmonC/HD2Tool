@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { catalog } from "../data/catalog";
+import rawAuditCatalog from "../data/catalog.json";
 import type { Catalog, SourceRef } from "../types";
 import { validateCatalog } from "./data-validator";
 import {
@@ -82,49 +82,51 @@ function taxonomyFixture(): Catalog["taxonomy"] {
         sourceRefs: [source],
         verificationStatus: "verified",
         options: [],
-        numberScale: { min: 0, max: 50, step: 1 },
+        numberScale: { min: 0, max: 60, step: 1 },
       },
     },
   };
 }
 
 function fixtureCatalog(): Catalog {
-  const base = structuredClone(catalog) as Catalog;
+  const base = structuredClone(rawAuditCatalog) as unknown as Catalog;
   base.taxonomy = taxonomyFixture();
-  base.items = base.items.slice(0, 1).map((item) => ({
-    ...item,
-    category: "weapon",
-    weaponProfile: {
-      weaponType: {
-        value: "shotgun",
-        taxonomySource: "official-test",
-        scaleVersion: "type-v1",
-        sourceRefs: [source],
-        verificationStatus: "verified",
+  base.items = (base.items.length ? base.items : (base.quarantine ?? []))
+    .slice(0, 1)
+    .map((item) => ({
+      ...item,
+      category: "weapon",
+      weaponProfile: {
+        weaponType: {
+          value: "shotgun",
+          taxonomySource: "official-test",
+          scaleVersion: "type-v1",
+          sourceRefs: [source],
+          verificationStatus: "verified",
+        },
+        ammoTraits: {
+          value: ["kinetic", "thermal"],
+          taxonomySource: "wiki-test",
+          scaleVersion: "ammo-v4",
+          sourceRefs: [source],
+          verificationStatus: "verified",
+        },
+        armorPenetration: {
+          value: 1,
+          taxonomySource: "official-test",
+          scaleVersion: "ap-v3",
+          sourceRefs: [source],
+          verificationStatus: "verified",
+        },
+        demolitionPower: {
+          value: 0,
+          taxonomySource: "official-test",
+          scaleVersion: "demo-v1",
+          sourceRefs: [source],
+          verificationStatus: "verified",
+        },
       },
-      ammoTraits: {
-        value: ["kinetic", "thermal"],
-        taxonomySource: "wiki-test",
-        scaleVersion: "ammo-v4",
-        sourceRefs: [source],
-        verificationStatus: "verified",
-      },
-      armorPenetration: {
-        value: 1,
-        taxonomySource: "official-test",
-        scaleVersion: "ap-v3",
-        sourceRefs: [source],
-        verificationStatus: "verified",
-      },
-      demolitionPower: {
-        value: 0,
-        taxonomySource: "official-test",
-        scaleVersion: "demo-v1",
-        sourceRefs: [source],
-        verificationStatus: "verified",
-      },
-    },
-  }));
+    }));
   base.items.push({
     ...base.items[0],
     id: "weapon-b",
@@ -154,7 +156,7 @@ function fixtureCatalog(): Catalog {
         verificationStatus: "verified",
       },
       demolitionPower: {
-        value: 50,
+        value: 60,
         taxonomySource: "official-test",
         scaleVersion: "demo-v1",
         sourceRefs: [source],
@@ -195,7 +197,7 @@ describe("taxonomy-driven weapon profile validation", () => {
     const valid = validateCatalog(fixtureCatalog());
     expect(valid.ok).toBe(true);
     const invalid = fixtureCatalog();
-    invalid.items[0].weaponProfile!.demolitionPower!.value = 51;
+    invalid.items[0].weaponProfile!.demolitionPower!.value = 61;
     expect(
       validateCatalog(invalid).issues.some(
         (entry) => entry.code === "taxonomy-number-out-of-scale",
@@ -255,11 +257,11 @@ describe("acquisition discriminated union", () => {
       { kind: "event", eventName: "样例活动", status: "pending" },
       { kind: "other", label: "样例来源", status: "pending" },
     ]) {
-      const data = structuredClone(catalog) as Catalog;
+      const data = fixtureCatalog();
       data.items[0].acquisition = acquisition as never;
       expect(validateCatalog(data).ok).toBe(true);
     }
-    const invalid = structuredClone(catalog) as Catalog;
+    const invalid = fixtureCatalog();
     invalid.items[0].acquisition = {
       kind: "event",
       status: "pending",
@@ -285,7 +287,7 @@ describe("taxonomy-driven weapon filters", () => {
     ]);
     expect(
       getDemolitionPowerOptions(data).map((option) => option.value),
-    ).toEqual([0, 50]);
+    ).toEqual([0, 60]);
     const filters = {
       ...emptyWeaponFilters(),
       weaponTypes: ["shotgun"],
@@ -308,7 +310,7 @@ describe("taxonomy-driven weapon filters", () => {
     expect(
       filterEquipmentByWeaponFilters(
         data.items,
-        { ...emptyWeaponFilters(), demolitionPower: 50 },
+        { ...emptyWeaponFilters(), demolitionPower: 60 },
         data,
       ).map((item) => item.id),
     ).toEqual(["weapon-b"]);
@@ -336,7 +338,7 @@ describe("taxonomy-driven weapon filters", () => {
     expect(
       filterEquipmentByWeaponFilters(
         data.items,
-        { ...emptyWeaponFilters(), demolitionPower: 50 },
+        { ...emptyWeaponFilters(), demolitionPower: 60 },
         data,
       ).map((item) => item.id),
     ).toEqual([]);

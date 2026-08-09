@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-08-08T13:37:46.373Z",
+  "status": "partial",
+  "normalizedItems": 318,
+  "materialized": 311,
+  "provenanceVerified": 311,
+  "openLicense": 188,
+  "documentedCopyrighted": 123,
+  "downloaded": 24,
+  "reused": 287,
+  "failures": [
+    {
+      "itemId": "ar-59-suppressor",
+      "fileTitle": "AR-59 Suppressor Primary Render.png",
+      "reason": "license raw value missing"
+    },
+    {
+      "itemId": "cqc-72-entrenchment-tool",
+      "fileTitle": "CQC-72 Entrenchment Tool Support Render.png",
+      "reason": "license raw value missing"
+    },
+    {
+      "itemId": "g-48-giga-grenade",
+      "fileTitle": "G-48 Giga Grenade Throwable Render.png",
+      "reason": "license raw value missing"
+    },
+    {
+      "itemId": "g-89-smokescreen",
+      "fileTitle": "G-89 Smokescreen Throwable Render.png",
+      "reason": "license raw value missing"
+    },
+    {
+      "itemId": "g-7-pineapple",
+      "fileTitle": "G-7 Pineapple Throwable Render.png",
+      "reason": "license raw value missing"
+    },
+    {
+      "itemId": "ms-11-solo-silo",
+      "fileTitle": "MS-11 Solo Silo Support Render.png",
+      "reason": "license raw value missing"
+    },
+    {
+      "itemId": "r-72-censor",
+      "fileTitle": "R-72 Censor Primary Render.png",
+      "reason": "license raw value missing"
+    }
+  ]
+}

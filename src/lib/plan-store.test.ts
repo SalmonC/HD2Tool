@@ -4,6 +4,7 @@ import {
   exportPlan,
   importPlan,
   loadPlanState,
+  PLAN_RECOVERY_KEY,
   reducePlan,
   savePlanState,
 } from "./plan-store";
@@ -43,6 +44,7 @@ describe("plan store", () => {
       "hd2-supply-book:plan:v1",
       JSON.stringify({ schemaVersion: 0, items: ["c"] }),
     );
+    values.delete("hd2-supply-book:plan:v2");
     expect(loadPlanState(storage, knownIds).migrated).toBe(true);
     expect(loadPlanState(storage, knownIds).state.pendingIds).toEqual(["c"]);
   });
@@ -67,5 +69,32 @@ describe("plan store", () => {
       ),
     ).toThrow("重复");
     expect(loadPlanState(null, knownIds).error).toBeTruthy();
+  });
+
+  it("preserves a bounded recovery copy and reports orphan IDs", () => {
+    const values = new Map<string, string>([
+      ["hd2-supply-book:plan:v2", "{broken"],
+    ]);
+    const storage = {
+      getItem: (key: string) => values.get(key) ?? null,
+      setItem: (key: string, value: string) => values.set(key, value),
+      removeItem: (key: string) => values.delete(key),
+    } as unknown as Storage;
+    const corrupted = loadPlanState(storage, knownIds);
+    expect(corrupted.error).toContain("恢复副本");
+    expect(values.get(PLAN_RECOVERY_KEY)).toBe("{broken");
+    expect(values.get("hd2-supply-book:plan:v2")).toBeUndefined();
+
+    values.set(
+      "hd2-supply-book:plan:v2",
+      JSON.stringify({
+        schemaVersion: 2,
+        pendingIds: ["a", "orphan"],
+        completedIds: [],
+      }),
+    );
+    const orphaned = loadPlanState(storage, knownIds);
+    expect(orphaned.orphanedIds).toEqual(["orphan"]);
+    expect(orphaned.state.pendingIds).toEqual(["a"]);
   });
 });

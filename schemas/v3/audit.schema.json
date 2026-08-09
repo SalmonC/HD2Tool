@@ -4,29 +4,124 @@
   "title": "v3 typed audit and migration diff",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "catalogVersion", "inputHashes", "schemaVersionUsed", "ruleVersions", "toolVersions", "stageCounts", "stageSetHashes", "setReconciliations", "runtimeDiff", "migrationDiff", "mismatches", "unknownByReason", "conflicts", "staleCorrections", "unaccountedCandidates", "durationsMs", "cacheHits"],
+  "required": [
+    "schemaVersion",
+    "catalogVersion",
+    "inputHashes",
+    "schemaVersionUsed",
+    "ruleVersions",
+    "toolVersions",
+    "stageCounts",
+    "stageSetHashes",
+    "setReconciliations",
+    "runtimeDiff",
+    "migrationDiff",
+    "mismatches",
+    "unknownByReason",
+    "conflicts",
+    "staleCorrections",
+    "unaccountedCandidates",
+    "durationsMs",
+    "cacheHits"
+  ],
   "properties": {
     "schemaVersion": { "const": "audit-report.v3" },
     "catalogVersion": { "type": "string", "minLength": 1 },
-    "inputHashes": { "type": "object", "additionalProperties": { "type": "string" } },
+    "inputHashes": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
     "schemaVersionUsed": { "type": "string" },
-    "ruleVersions": { "type": "object", "additionalProperties": { "type": "string" } },
-    "toolVersions": { "type": "object", "additionalProperties": { "type": "string" } },
-    "stageCounts": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
-    "stageSetHashes": { "type": "object", "additionalProperties": { "type": "string" } },
-    "setReconciliations": { "type": "array", "items": { "type": "object", "additionalProperties": false, "required": ["reconciliationId", "missingIds", "extraIds", "expectedHash", "actualHash"], "properties": { "reconciliationId": { "type": "string", "minLength": 1 }, "missingIds": { "type": "array", "items": { "type": "string" } }, "extraIds": { "type": "array", "items": { "type": "string" } }, "expectedHash": { "$ref": "#/$defs/hash" }, "actualHash": { "$ref": "#/$defs/hash" } } } },
-    "runtimeDiff": { "type": "object", "additionalProperties": false, "required": ["matches", "expectedHash", "actualHash", "changes"], "properties": { "matches": { "type": "boolean" }, "expectedHash": { "$ref": "#/$defs/hash" }, "actualHash": { "$ref": "#/$defs/hash" }, "changes": { "type": "array", "items": { "type": "string" } } } },
-    "migrationDiff": { "type": "object", "additionalProperties": false, "required": ["lossyCount", "changes"], "properties": { "lossyCount": { "type": "integer", "minimum": 0 }, "changes": { "type": "array", "items": { "type": "string" } } } },
+    "ruleVersions": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "toolVersions": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "stageCounts": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    },
+    "stageSetHashes": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "setReconciliations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "reconciliationId",
+          "missingIds",
+          "extraIds",
+          "expectedHash",
+          "actualHash"
+        ],
+        "properties": {
+          "reconciliationId": { "type": "string", "minLength": 1 },
+          "missingIds": { "type": "array", "items": { "type": "string" } },
+          "extraIds": { "type": "array", "items": { "type": "string" } },
+          "expectedHash": { "$ref": "#/$defs/hash" },
+          "actualHash": { "$ref": "#/$defs/hash" }
+        }
+      }
+    },
+    "runtimeDiff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["matches", "expectedHash", "actualHash", "changes"],
+      "properties": {
+        "matches": { "type": "boolean" },
+        "expectedHash": { "$ref": "#/$defs/hash" },
+        "actualHash": { "$ref": "#/$defs/hash" },
+        "changes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "migrationDiff": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lossyCount", "changes"],
+      "properties": {
+        "lossyCount": { "type": "integer", "minimum": 0 },
+        "changes": { "type": "array", "items": { "type": "string" } }
+      }
+    },
     "mismatches": { "type": "array", "items": { "$ref": "#/$defs/mismatch" } },
-    "unknownByReason": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } },
+    "unknownByReason": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    },
     "conflicts": { "type": "array", "items": { "type": "string" } },
     "staleCorrections": { "type": "array", "items": { "type": "string" } },
     "unaccountedCandidates": { "type": "array", "items": { "type": "string" } },
-    "durationsMs": { "type": "object", "additionalProperties": { "type": "number", "minimum": 0 } },
-    "cacheHits": { "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 } }
+    "durationsMs": {
+      "type": "object",
+      "additionalProperties": { "type": "number", "minimum": 0 }
+    },
+    "cacheHits": {
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 0 }
+    }
   },
   "$defs": {
     "hash": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
-    "mismatch": { "type": "object", "additionalProperties": false, "required": ["code", "severity"], "properties": { "code": { "type": "string" }, "severity": { "enum": ["P0", "P1", "P2", "info"] }, "entityId": { "type": "string" }, "fieldPath": { "type": "string" }, "expected": {}, "actual": {}, "factIds": { "type": "array", "items": { "type": "string" } }, "suggestedAction": { "type": "string" } } }
+    "mismatch": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["code", "severity"],
+      "properties": {
+        "code": { "type": "string" },
+        "severity": { "enum": ["P0", "P1", "P2", "info"] },
+        "entityId": { "type": "string" },
+        "fieldPath": { "type": "string" },
+        "expected": {},
+        "actual": {},
+        "factIds": { "type": "array", "items": { "type": "string" } },
+        "suggestedAction": { "type": "string" }
+      }
+    }
   }
 }

@@ -85,13 +85,13 @@ Audit 强类型记录 input hashes、schema/rule/tool versions、stage counts/se
 
 ## 来源权威
 
-| 字段 | 首选来源 | 边界 |
-| --- | --- | --- |
-| 正式简中/英文名 | 官方游戏 exact localization key | 官方简中网页可交叉；zh-Hant 不替代 zh-Hans；不能机翻 |
-| Wiki item facts/参数/图片 | helldivers.wiki.gg item/file page | 保留精确 locator/revision |
-| 债券 membership/page/item cost | Warbond Contents | item page 仅交叉核对 |
-| 页面累计前置 | 官方/Wiki 明示 | Unknown 保持 Unknown |
-| 外号/术语 | 小黑盒/社区 | 只能进入 alias，不能覆盖事实/分类 |
+| 字段                           | 首选来源                          | 边界                                                 |
+| ------------------------------ | --------------------------------- | ---------------------------------------------------- |
+| 正式简中/英文名                | 官方游戏 exact localization key   | 官方简中网页可交叉；zh-Hant 不替代 zh-Hans；不能机翻 |
+| Wiki item facts/参数/图片      | helldivers.wiki.gg item/file page | 保留精确 locator/revision                            |
+| 债券 membership/page/item cost | Warbond Contents                  | item page 仅交叉核对                                 |
+| 页面累计前置                   | 官方/Wiki 明示                    | Unknown 保持 Unknown                                 |
+| 外号/术语                      | 小黑盒/社区                       | 只能进入 alias，不能覆盖事实/分类                    |
 
 Node 只处理构建期静态 JSON；最终 Web/PWA/Neutralino 仍是轻量静态文件，无云、服务端、运行时数据库。
 

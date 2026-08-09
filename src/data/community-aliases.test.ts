@@ -1,9 +1,19 @@
 import { describe, expect, it } from "vitest";
 import rawSource from "./source/xiaoheihe-community-aliases.json";
+import evidenceRaw from "./source/translation-evidence.json";
 import { catalog, catalogItems } from "./catalog";
 import { searchEquipment, searchGlossary } from "../lib/search";
 
 describe("小黑盒社区称呼数据", () => {
+  const preservedSearchLayer = [...catalogItems, ...(catalog.quarantine ?? [])];
+  const canonicalIdFor = (communityId: string) =>
+    evidenceRaw.records.find(
+      (record) =>
+        record.canonicalId === communityId ||
+        ("legacyCommunityIds" in record &&
+          record.legacyCommunityIds?.includes(communityId)),
+    )?.canonicalId ?? communityId;
+
   it("逐条保留帖子中的 38 个装备映射和 53 个称呼", () => {
     expect(rawSource.equipment).toHaveLength(38);
     const equipmentAliases = rawSource.equipment.flatMap(
@@ -20,8 +30,8 @@ describe("小黑盒社区称呼数据", () => {
   it("每个装备外号都能命中唯一的预期条目", () => {
     for (const sourceItem of rawSource.equipment) {
       for (const alias of sourceItem.aliases) {
-        const results = searchEquipment(catalogItems, alias);
-        expect(results[0]?.item.id, alias).toBe(sourceItem.id);
+        const results = searchEquipment(preservedSearchLayer, alias);
+        expect(results[0]?.item.id, alias).toBe(canonicalIdFor(sourceItem.id));
         expect(results[0]?.matchedAlias, alias).toBe(alias);
       }
     }
@@ -33,10 +43,31 @@ describe("小黑盒社区称呼数据", () => {
     )) {
       expect(
         searchEquipment(
-          catalogItems,
+          preservedSearchLayer,
           `${sourceItem.model}${sourceItem.nameZh}`,
         )[0]?.item.id,
-      ).toBe(sourceItem.id);
+      ).toBe(canonicalIdFor(sourceItem.id));
+    }
+  });
+
+  it("keeps quarantined mappings out of the formal production search", () => {
+    expect(
+      catalogItems.every((item) => item.admissionStatus === "admitted"),
+    ).toBe(true);
+    expect(
+      (catalog.quarantine ?? []).some(
+        (item) => item.admissionStatus !== "admitted",
+      ),
+    ).toBe(true);
+  });
+
+  it("requires every preserved community equipment alias to resolve uniquely in the formal catalog", () => {
+    for (const sourceItem of rawSource.equipment) {
+      for (const alias of sourceItem.aliases) {
+        const results = searchEquipment(catalogItems, alias);
+        expect(results, `formal alias: ${alias}`).toHaveLength(1);
+        expect(results[0]?.item.id, alias).toBe(canonicalIdFor(sourceItem.id));
+      }
     }
   });
 

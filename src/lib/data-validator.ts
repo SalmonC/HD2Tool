@@ -1,1030 +1,711 @@
-import type {
-  Catalog,
-  Equipment,
-  SourceRef,
-  Taxonomy,
-  TaxonomyDimension,
-  WeaponProfile,
-  WeaponDimension,
-} from "../types";
+import type { Catalog } from "../types";
 import { normalizeSearchText } from "./normalize";
 
 export interface ValidationIssue {
   code: string;
   message: string;
-  path?: string;
+  path: string;
   severity: "error" | "warning";
 }
-
 export interface ValidationResult {
   ok: boolean;
   issues: ValidationIssue[];
 }
 
-function issue(
-  issues: ValidationIssue[],
-  code: string,
-  message: string,
-  path?: string,
-  severity: ValidationIssue["severity"] = "error",
-) {
-  issues.push({ code, message, path, severity });
-}
-
-function isRecord(value: unknown): value is Record<string, unknown> {
-  return typeof value === "object" && value !== null;
-}
-
-function hasSources(value: unknown): value is SourceRef[] {
-  return (
-    Array.isArray(value) &&
-    value.length > 0 &&
-    value.every(
-      (entry) =>
-        isRecord(entry) &&
-        typeof entry.label === "string" &&
-        typeof entry.kind === "string",
-    )
-  );
-}
-
-function hasTrustedSource(value: unknown): boolean {
-  return (
-    Array.isArray(value) &&
-    value.some(
-      (entry) =>
-        isRecord(entry) &&
-        ["game-data", "official", "wiki", "community", "manual"].includes(
-          String(entry.kind),
-        ),
-    )
-  );
-}
-
-function checkMoney(value: unknown, path: string, issues: ValidationIssue[]) {
-  if (
-    value !== null &&
-    (typeof value !== "number" || !Number.isFinite(value) || value < 0)
-  ) {
-    issue(
-      issues,
-      "negative-or-invalid-price",
-      "价格必须是非负数字或 null。",
-      path,
-    );
-  }
-}
-
-const WEAPON_DIMENSIONS: ReadonlySet<WeaponDimension> = new Set([
+const dimensions = new Set([
   "weaponType",
   "ammoTraits",
   "armorPenetration",
   "demolitionPower",
 ]);
-const EXPECTED_TAXONOMY_KINDS: Record<
-  WeaponDimension,
-  TaxonomyDimension["valueKind"]
-> = {
-  weaponType: "single",
-  ammoTraits: "multi",
-  armorPenetration: "number",
-  demolitionPower: "number",
-};
-const ACQUISITION_KINDS = new Set([
+const acquisitionKinds = new Set([
   "warbond",
   "requisition",
   "default",
   "superstore",
   "edition",
   "event",
+  "poi",
   "unavailable",
   "other",
 ]);
-
-function checkVerifiedField(
-  value: unknown,
-  path: string,
+const categories = new Set([
+  "weapon",
+  "armor",
+  "stratagem",
+  "grenade",
+  "booster",
+]);
+const statuses = new Set(["verified", "pending", "sample"]);
+const isRecord = (value: unknown): value is Record<string, any> =>
+  typeof value === "object" && value !== null;
+const hasSources = (value: unknown): boolean =>
+  Array.isArray(value) &&
+  value.length > 0 &&
+  value.every(
+    (source) =>
+      isRecord(source) &&
+      typeof source.kind === "string" &&
+      typeof source.label === "string",
+  );
+const add = (
   issues: ValidationIssue[],
-  dimension: TaxonomyDimension | undefined,
-  checkValue: (
-    fieldValue: unknown,
-    dimension: TaxonomyDimension | undefined,
-    status: "verified" | "pending",
-  ) => void,
-): void {
-  if (!isRecord(value)) {
-    issue(
-      issues,
-      "invalid-weapon-profile-field",
-      "武器属性字段必须是带 value/taxonomySource/scaleVersion/sourceRefs/verificationStatus 的对象。",
-      path,
-    );
-    return;
-  }
-  if (!hasSources(value.sourceRefs))
-    issue(
-      issues,
-      "missing-weapon-profile-source",
-      "武器属性字段必须有独立来源记录。",
-      `${path}.sourceRefs`,
-    );
-  if (
-    value.verificationStatus === "verified" &&
-    !hasTrustedSource(value.sourceRefs)
-  )
-    issue(
-      issues,
-      "untrusted-verified-source",
-      "已核验武器属性不能只引用项目样例来源。",
-      `${path}.sourceRefs`,
-    );
-  if (
-    value.verificationStatus !== "verified" &&
-    value.verificationStatus !== "pending"
-  )
-    issue(
-      issues,
-      "invalid-weapon-profile-status",
-      "武器属性字段核验状态必须是 verified 或 pending。",
-      `${path}.verificationStatus`,
-    );
-  const status =
-    value.verificationStatus === "verified" ? "verified" : "pending";
-  if (
-    typeof value.taxonomySource !== "string" ||
-    value.taxonomySource.trim() === ""
-  )
-    issue(
-      issues,
-      "missing-taxonomy-source",
-      "武器属性字段必须记录 taxonomySource。",
-      `${path}.taxonomySource`,
-    );
-  if (
-    typeof value.scaleVersion !== "string" ||
-    value.scaleVersion.trim() === ""
-  )
-    issue(
-      issues,
-      "missing-scale-version",
-      "武器属性字段必须记录 scaleVersion。",
-      `${path}.scaleVersion`,
-    );
-  if (dimension) {
-    if (value.taxonomySource !== dimension.taxonomySource)
-      issue(
-        issues,
-        "taxonomy-source-mismatch",
-        "字段 taxonomySource 与当前 taxonomy 不一致。",
-        `${path}.taxonomySource`,
-      );
-    if (value.scaleVersion !== dimension.scaleVersion)
-      issue(
-        issues,
-        "scale-version-mismatch",
-        "字段 scaleVersion 与当前 taxonomy 不一致。",
-        `${path}.scaleVersion`,
-      );
-  } else {
-    issue(
-      issues,
-      status === "verified"
-        ? "missing-taxonomy-definition"
-        : "pending-taxonomy-value",
-      "当前没有可靠的统一 taxonomy 定义；字段只能保持待核验，不能进入筛选。",
-      path,
-      status === "verified" ? "error" : "warning",
-    );
-  }
-  checkValue(value.value, dimension, status);
-}
-
-function checkTaxonomyOption(
-  value: unknown,
+  code: string,
+  message: string,
   path: string,
-  issues: ValidationIssue[],
-): void {
-  if (
-    !isRecord(value) ||
-    typeof value.id !== "string" ||
-    value.id.trim() === "" ||
-    typeof value.labelZh !== "string" ||
-    value.labelZh.trim() === ""
-  ) {
-    issue(
-      issues,
-      "invalid-taxonomy-option",
-      "taxonomy 选项必须有稳定 ID 和简中标签。",
-      path,
-    );
-    return;
-  }
-  if (!hasSources(value.sourceRefs))
-    issue(
-      issues,
-      "missing-taxonomy-option-source",
-      "taxonomy 选项必须有来源记录。",
-      `${path}.sourceRefs`,
-    );
-  if (
-    value.verificationStatus === "verified" &&
-    !hasTrustedSource(value.sourceRefs)
-  )
-    issue(
-      issues,
-      "untrusted-verified-taxonomy-source",
-      "已核验 taxonomy 不能只引用项目样例来源。",
-      `${path}.sourceRefs`,
-    );
-  if (
-    !["verified", "pending", "sample"].includes(
-      String(value.verificationStatus),
-    )
-  )
-    issue(
-      issues,
-      "invalid-taxonomy-option-status",
-      "taxonomy 选项核验状态无效。",
-      `${path}.verificationStatus`,
-    );
-}
+  severity: "error" | "warning" = "error",
+) => issues.push({ code, message, path, severity });
 
 function checkTaxonomy(
   value: unknown,
   issues: ValidationIssue[],
-): value is Taxonomy {
+): Map<string, any> {
+  const checked = new Map<string, any>();
   if (
     !isRecord(value) ||
     typeof value.version !== "string" ||
     !isRecord(value.dimensions)
   ) {
-    issue(
+    add(
       issues,
       "invalid-taxonomy",
-      "数据必须包含版本化 taxonomy 及 dimensions。",
+      "taxonomy needs a version and dimensions.",
       "taxonomy",
     );
-    return false;
+    return checked;
   }
-  for (const [key, dimension] of Object.entries(value.dimensions)) {
-    if (
-      !WEAPON_DIMENSIONS.has(key as WeaponDimension) ||
-      !isRecord(dimension)
-    ) {
-      issue(
+  for (const [id, dimension] of Object.entries(value.dimensions)) {
+    if (!dimensions.has(id) || !isRecord(dimension)) {
+      add(
         issues,
-        "invalid-taxonomy-dimension",
-        `未知 taxonomy 维度：${key}。`,
-        `taxonomy.dimensions.${key}`,
+        "unknown-taxonomy-dimension",
+        `Unknown taxonomy dimension: ${id}`,
+        `taxonomy.dimensions.${id}`,
       );
       continue;
     }
-    const path = `taxonomy.dimensions.${key}`;
+    checked.set(id, dimension);
     if (
-      dimension.id !== key ||
-      typeof dimension.labelZh !== "string" ||
+      dimension.id !== id ||
       typeof dimension.taxonomySource !== "string" ||
-      typeof dimension.scaleVersion !== "string"
+      typeof dimension.scaleVersion !== "string" ||
+      !["single", "multi", "number"].includes(dimension.valueKind) ||
+      !hasSources(dimension.sourceRefs) ||
+      !Array.isArray(dimension.options) ||
+      !statuses.has(dimension.verificationStatus)
     )
-      issue(
+      add(
         issues,
         "invalid-taxonomy-dimension",
-        "taxonomy 维度缺少 id、标签、来源或标尺版本。",
-        path,
+        `Invalid taxonomy dimension: ${id}`,
+        `taxonomy.dimensions.${id}`,
       );
-    if (!["single", "multi", "number"].includes(String(dimension.valueKind)))
-      issue(
-        issues,
-        "invalid-taxonomy-kind",
-        "taxonomy valueKind 无效。",
-        `${path}.valueKind`,
-      );
-    if (dimension.valueKind !== EXPECTED_TAXONOMY_KINDS[key as WeaponDimension])
-      issue(
-        issues,
-        "taxonomy-kind-mismatch",
-        `${key} 的 taxonomy valueKind 必须是 ${EXPECTED_TAXONOMY_KINDS[key as WeaponDimension]}。`,
-        `${path}.valueKind`,
-      );
-    if (!hasSources(dimension.sourceRefs))
-      issue(
-        issues,
-        "missing-taxonomy-source",
-        "taxonomy 维度必须有来源记录。",
-        `${path}.sourceRefs`,
-      );
-    if (
-      dimension.verificationStatus === "verified" &&
-      !hasTrustedSource(dimension.sourceRefs)
-    )
-      issue(
-        issues,
-        "untrusted-verified-taxonomy-source",
-        "已核验 taxonomy 不能只引用项目样例来源。",
-        `${path}.sourceRefs`,
-      );
-    if (
-      !["verified", "pending", "sample"].includes(
-        String(dimension.verificationStatus),
-      )
-    )
-      issue(
-        issues,
-        "invalid-taxonomy-status",
-        "taxonomy 维度核验状态无效。",
-        `${path}.verificationStatus`,
-      );
-    if (!Array.isArray(dimension.options))
-      issue(
-        issues,
-        "invalid-taxonomy-options",
-        "taxonomy options 必须是数组。",
-        `${path}.options`,
-      );
-    if (Array.isArray(dimension.options)) {
-      const optionIds = new Set<string>();
-      dimension.options.forEach((option, index) => {
-        checkTaxonomyOption(option, `${path}.options[${index}]`, issues);
-        if (isRecord(option) && typeof option.id === "string") {
-          if (optionIds.has(option.id))
-            issue(
-              issues,
-              "duplicate-taxonomy-option",
-              `重复 taxonomy 选项：${option.id}。`,
-              `${path}.options[${index}].id`,
-            );
-          optionIds.add(option.id);
-        }
-      });
-    }
-    if (
-      dimension.valueKind === "number" &&
-      dimension.numberScale !== undefined
-    ) {
+    if (dimension.valueKind === "number") {
       const scale = dimension.numberScale;
       if (
         !isRecord(scale) ||
-        typeof scale.min !== "number" ||
-        typeof scale.max !== "number" ||
-        typeof scale.step !== "number" ||
+        ![scale.min, scale.max, scale.step].every(
+          (v) => typeof v === "number" && Number.isFinite(v),
+        ) ||
         scale.step <= 0 ||
         scale.max < scale.min
       )
-        issue(
+        add(
           issues,
           "invalid-taxonomy-scale",
-          "数值 taxonomy 标尺必须有有效的 min/max/step。",
-          `${path}.numberScale`,
+          `Invalid numeric scale: ${id}`,
+          `taxonomy.dimensions.${id}.numberScale`,
         );
       if (
-        isRecord(scale) &&
-        key === "demolitionPower" &&
-        dimension.verificationStatus === "verified" &&
-        (scale.min !== 0 || scale.max !== 50 || scale.step !== 1)
+        (id === "demolitionPower" && isRecord(scale) && scale.min !== 0) ||
+        (id === "demolitionPower" && isRecord(scale) && scale.max !== 60)
       )
-        issue(
+        add(
           issues,
-          "demolition-power-scale-migration-required",
-          "demolitionPower 当前标尺必须是整数 0..50；变更必须通过 taxonomy 版本迁移。",
-          `${path}.numberScale`,
+          "demolition-scale-migration-required",
+          "demolitionPower uses the current Wiki 0..60 scale; migrate older scales explicitly.",
+          `taxonomy.dimensions.${id}.numberScale`,
         );
     }
+    const options = new Set<string>();
+    for (const [index, option] of dimension.options.entries()) {
+      if (
+        !isRecord(option) ||
+        typeof option.id !== "string" ||
+        typeof option.labelZh !== "string" ||
+        !hasSources(option.sourceRefs) ||
+        !statuses.has(option.verificationStatus)
+      )
+        add(
+          issues,
+          "invalid-taxonomy-option",
+          "Invalid taxonomy option.",
+          `taxonomy.dimensions.${id}.options[${index}]`,
+        );
+      if (isRecord(option) && options.has(option.id))
+        add(
+          issues,
+          "duplicate-taxonomy-option",
+          `Duplicate option ${option.id}.`,
+          `taxonomy.dimensions.${id}.options[${index}]`,
+        );
+      if (isRecord(option)) options.add(option.id);
+    }
   }
-  return true;
+  return checked;
 }
 
-function checkTaxonomyValue(
-  fieldValue: unknown,
-  dimension: TaxonomyDimension | undefined,
-  status: "verified" | "pending",
+function checkAcquisition(
+  item: any,
   path: string,
+  warbondIds: Set<string>,
   issues: ValidationIssue[],
-): void {
-  if (!dimension) return;
-  const optionIds = new Set(dimension.options.map((option) => option.id));
-  const reportUnknown = (unknownValue: string) =>
-    issue(
+) {
+  const acquisition = item.acquisition;
+  if (!isRecord(acquisition) || !acquisitionKinds.has(acquisition.kind)) {
+    add(
       issues,
-      status === "verified"
-        ? "unknown-taxonomy-value"
-        : "pending-unknown-taxonomy-value",
-      `taxonomy 中不存在值：${unknownValue}。`,
-      path,
-      status === "verified" ? "error" : "warning",
+      "invalid-acquisition",
+      "Invalid acquisition kind.",
+      `${path}.acquisition`,
     );
-  if (dimension.valueKind === "single" && typeof fieldValue === "string") {
-    if (!optionIds.has(fieldValue)) reportUnknown(fieldValue);
-  } else if (dimension.valueKind === "multi" && Array.isArray(fieldValue)) {
-    fieldValue
-      .filter((entry): entry is string => typeof entry === "string")
-      .forEach((entry) => {
-        if (!optionIds.has(entry)) reportUnknown(entry);
-      });
-  } else if (
-    dimension.valueKind === "number" &&
-    typeof fieldValue === "number"
-  ) {
-    if (!Number.isFinite(fieldValue))
-      issue(
-        issues,
-        "invalid-taxonomy-number",
-        "数值字段必须是有限数字。",
-        path,
-      );
-    if (
-      dimension.id === "demolitionPower" &&
-      (!Number.isInteger(fieldValue) || fieldValue < 0 || fieldValue > 50)
-    )
-      issue(
-        issues,
-        "demolition-power-out-of-contract",
-        "demolitionPower 必须是整数 0..50。",
-        path,
-      );
-    if (dimension.numberScale) {
-      const { min, max, step } = dimension.numberScale;
-      if (
-        fieldValue < min ||
-        fieldValue > max ||
-        Math.abs(
-          (fieldValue - min) / step - Math.round((fieldValue - min) / step),
-        ) > 1e-8
-      )
-        issue(
-          issues,
-          "taxonomy-number-out-of-scale",
-          "数值不符合当前 taxonomy 的标尺。",
-          path,
-        );
-    } else if (status === "verified") {
-      issue(
-        issues,
-        "missing-taxonomy-scale",
-        "没有明确数值标尺时不能核验或进入筛选。",
-        path,
-      );
-    }
-  } else {
-    issue(
-      issues,
-      "taxonomy-value-kind-mismatch",
-      "字段值类型与 taxonomy 维度不一致。",
-      path,
-      status === "verified" ? "error" : "warning",
-    );
+    return;
   }
+  if (acquisition.kind === "warbond") {
+    if (!warbondIds.has(acquisition.warbondId))
+      add(
+        issues,
+        "unknown-warbond",
+        `Unknown warbond ${acquisition.warbondId}.`,
+        `${path}.acquisition.warbondId`,
+      );
+    for (const field of ["page", "itemMedals", "pageUnlockMedals"])
+      if (
+        acquisition[field] !== null &&
+        acquisition[field] !== undefined &&
+        (!Number.isInteger(acquisition[field]) ||
+          acquisition[field] < 0 ||
+          (field === "page" && acquisition[field] < 1))
+      )
+        add(
+          issues,
+          "invalid-acquisition-number",
+          `Invalid ${field}.`,
+          `${path}.acquisition.${field}`,
+        );
+  }
+  if (
+    acquisition.kind === "requisition" &&
+    acquisition.requisitionPoints !== null &&
+    acquisition.requisitionPoints !== undefined &&
+    (!Number.isInteger(acquisition.requisitionPoints) ||
+      acquisition.requisitionPoints < 0)
+  )
+    add(
+      issues,
+      "invalid-acquisition-number",
+      "Invalid requisition points.",
+      `${path}.acquisition.requisitionPoints`,
+    );
+  if (
+    acquisition.kind === "superstore" &&
+    acquisition.superCredits !== null &&
+    acquisition.superCredits !== undefined &&
+    (!Number.isInteger(acquisition.superCredits) ||
+      acquisition.superCredits < 0)
+  )
+    add(
+      issues,
+      "invalid-acquisition-number",
+      "Invalid super credits.",
+      `${path}.acquisition.superCredits`,
+    );
+  if (
+    acquisition.kind === "edition" &&
+    (!acquisition.editionName || typeof acquisition.editionName !== "string")
+  )
+    add(
+      issues,
+      "invalid-edition",
+      "Edition name is required.",
+      `${path}.acquisition`,
+    );
+  if (
+    acquisition.kind === "event" &&
+    (!acquisition.eventName || typeof acquisition.eventName !== "string")
+  )
+    add(
+      issues,
+      "invalid-event",
+      "Event name is required.",
+      `${path}.acquisition`,
+    );
+  if (
+    acquisition.kind === "poi" &&
+    (!acquisition.location || typeof acquisition.location !== "string")
+  )
+    add(
+      issues,
+      "invalid-poi-acquisition",
+      "POI acquisition location is required.",
+      `${path}.acquisition`,
+    );
+  if (
+    acquisition.kind === "other" &&
+    (!acquisition.label || typeof acquisition.label !== "string")
+  )
+    add(
+      issues,
+      "invalid-other-acquisition",
+      "Other acquisition label is required.",
+      `${path}.acquisition`,
+    );
 }
 
 function checkWeaponProfile(
-  value: unknown,
+  item: any,
   path: string,
+  taxonomy: Map<string, any>,
   issues: ValidationIssue[],
-  taxonomy: Taxonomy | undefined,
-): value is WeaponProfile {
-  if (!isRecord(value)) {
-    issue(issues, "invalid-weapon-profile", "weaponProfile 必须是对象。", path);
-    return false;
-  }
-  for (const key of Object.keys(value)) {
-    if (
-      ![
-        "weaponType",
-        "ammoTraits",
-        "armorPenetration",
-        "demolitionPower",
-      ].includes(key)
-    )
-      issue(
+) {
+  if (
+    !["weapon", "stratagem"].includes(item.category) &&
+    item.weaponProfile !== undefined
+  )
+    add(
+      issues,
+      "non-weapon-profile",
+      "Only weapons and stratagems with weapon-backed data can carry weaponProfile.",
+      `${path}.weaponProfile`,
+    );
+  if (!item.weaponProfile) return;
+  for (const [fieldName, field] of Object.entries(item.weaponProfile)) {
+    const dimension = taxonomy.get(fieldName);
+    if (!dimensions.has(fieldName) || !dimension || !isRecord(field)) {
+      add(
         issues,
         "unknown-weapon-profile-field",
-        `未知武器属性字段：${key}。`,
-        `${path}.${key}`,
+        `No taxonomy for ${fieldName}.`,
+        `${path}.weaponProfile.${fieldName}`,
+      );
+      continue;
+    }
+    if (
+      !hasSources(field.sourceRefs) ||
+      field.taxonomySource !== dimension.taxonomySource ||
+      field.scaleVersion !== dimension.scaleVersion
+    )
+      add(
+        issues,
+        "weapon-profile-source-mismatch",
+        "Field source and taxonomy version must match.",
+        `${path}.weaponProfile.${fieldName}`,
+      );
+    if (!["verified", "pending"].includes(field.verificationStatus))
+      add(
+        issues,
+        "invalid-field-verification",
+        "Invalid field verification status.",
+        `${path}.weaponProfile.${fieldName}`,
+      );
+    const optionIds = new Set(
+      (dimension.options ?? []).map((option: any) => option.id),
+    );
+    const values =
+      dimension.valueKind === "multi" ? field.value : [field.value];
+    if (
+      dimension.valueKind === "multi" &&
+      (!Array.isArray(field.value) ||
+        !field.value.length ||
+        new Set(field.value).size !== field.value.length)
+    )
+      add(
+        issues,
+        "invalid-multi-value",
+        "Multi taxonomy field must be a non-empty unique array.",
+        `${path}.weaponProfile.${fieldName}`,
+      );
+    if (dimension.valueKind === "single" && typeof field.value !== "string")
+      add(
+        issues,
+        "invalid-single-value",
+        "Single taxonomy field must be a string.",
+        `${path}.weaponProfile.${fieldName}`,
+      );
+    if (
+      dimension.valueKind === "number" &&
+      (typeof field.value !== "number" || !Number.isFinite(field.value))
+    )
+      add(
+        issues,
+        "invalid-number-value",
+        "Numeric taxonomy field must be finite.",
+        `${path}.weaponProfile.${fieldName}`,
+      );
+    if (dimension.valueKind !== "number")
+      for (const entry of Array.isArray(values) ? values : [])
+        if (!optionIds.has(entry))
+          add(
+            issues,
+            field.verificationStatus === "pending"
+              ? "pending-unknown-taxonomy-value"
+              : "unknown-taxonomy-value",
+            `Unknown taxonomy value: ${entry}.`,
+            `${path}.weaponProfile.${fieldName}`,
+            field.verificationStatus === "pending" ? "warning" : "error",
+          );
+    if (
+      dimension.valueKind === "number" &&
+      typeof field.value === "number" &&
+      dimension.numberScale &&
+      (field.value < dimension.numberScale.min ||
+        field.value > dimension.numberScale.max ||
+        Math.abs(
+          (field.value - dimension.numberScale.min) /
+            dimension.numberScale.step -
+            Math.round(
+              (field.value - dimension.numberScale.min) /
+                dimension.numberScale.step,
+            ),
+        ) > 1e-8)
+    )
+      add(
+        issues,
+        "taxonomy-number-out-of-scale",
+        "Numeric taxonomy value is outside its declared scale.",
+        `${path}.weaponProfile.${fieldName}`,
+      );
+    if (
+      fieldName === "demolitionPower" &&
+      (typeof field.value !== "number" ||
+        !Number.isInteger(field.value) ||
+        field.value < 0 ||
+        field.value > 60)
+    )
+      add(
+        issues,
+        "demolition-power-out-of-contract",
+        "demolitionPower must be an integer in 0..60 under the current schema.",
+        `${path}.weaponProfile.${fieldName}`,
       );
   }
-  if (value.weaponType !== undefined) {
-    const dimension = taxonomy?.dimensions.weaponType;
-    checkVerifiedField(
-      value.weaponType,
-      `${path}.weaponType`,
+}
+
+function checkAttackProfile(
+  item: any,
+  path: string,
+  issues: ValidationIssue[],
+) {
+  if (!item.attackProfile) return;
+  const profile = item.attackProfile;
+  if (
+    typeof profile.version !== "string" ||
+    !hasSources(profile.sourceRefs) ||
+    !statuses.has(profile.verificationStatus) ||
+    !Array.isArray(profile.components) ||
+    !profile.components.length
+  )
+    add(
       issues,
-      dimension,
-      (fieldValue, currentDimension, status) =>
-        checkTaxonomyValue(
-          fieldValue,
-          currentDimension,
-          status,
-          `${path}.weaponType.value`,
-          issues,
-        ),
+      "invalid-attack-profile",
+      "AttackProfile requires version, sources and components.",
+      `${path}.attackProfile`,
     );
-  }
-  if (value.ammoTraits !== undefined) {
-    const dimension = taxonomy?.dimensions.ammoTraits;
-    checkVerifiedField(
-      value.ammoTraits,
-      `${path}.ammoTraits`,
-      issues,
-      dimension,
-      (fieldValue, currentDimension, status) => {
-        if (!Array.isArray(fieldValue) || fieldValue.length === 0)
-          issue(
-            issues,
-            "invalid-ammo-trait",
-            "ammoTraits 必须是非空多标签数组，具体值来自 taxonomy。",
-            `${path}.ammoTraits.value`,
-          );
-        else if (new Set(fieldValue).size !== fieldValue.length)
-          issue(
-            issues,
-            "duplicate-ammo-trait",
-            "ammoTraits 不得重复同一标签。",
-            `${path}.ammoTraits.value`,
-          );
-        checkTaxonomyValue(
-          fieldValue,
-          currentDimension,
-          status,
-          `${path}.ammoTraits.value`,
+  const ids = new Set();
+  for (const [index, component] of (profile.components ?? []).entries()) {
+    const componentPath = `${path}.attackProfile.components[${index}]`;
+    if (
+      !isRecord(component) ||
+      typeof component.id !== "string" ||
+      typeof component.label !== "string" ||
+      ![
+        "projectile",
+        "shrapnel",
+        "explosion",
+        "spray",
+        "melee",
+        "charge",
+        "alternate",
+        "status",
+        "other",
+      ].includes(component.componentType) ||
+      !isRecord(component.fields) ||
+      !hasSources(component.sourceRefs) ||
+      !statuses.has(component.verificationStatus)
+    )
+      add(
+        issues,
+        "invalid-attack-component",
+        "Invalid attack component.",
+        componentPath,
+      );
+    if (isRecord(component) && ids.has(component.id))
+      add(
+        issues,
+        "duplicate-attack-component",
+        `Duplicate attack component ${component.id}.`,
+        componentPath,
+      );
+    if (isRecord(component)) ids.add(component.id);
+    const fields = component.fields ?? {};
+    if (fields.armorPenetration) {
+      const penetration = fields.armorPenetration;
+      if (
+        typeof penetration.label !== "string" ||
+        (penetration.value !== undefined &&
+          (!Number.isInteger(penetration.value) ||
+            penetration.value < 0 ||
+            penetration.value > 10)) ||
+        !hasSources(penetration.sourceRefs)
+      )
+        add(
           issues,
+          "invalid-attack-penetration",
+          "AP must retain a Wiki label, 0..10 value and field sourceRefs.",
+          `${componentPath}.fields.armorPenetration`,
         );
-      },
-    );
-  }
-  if (value.armorPenetration !== undefined) {
-    const dimension = taxonomy?.dimensions.armorPenetration;
-    checkVerifiedField(
-      value.armorPenetration,
-      `${path}.armorPenetration`,
-      issues,
-      dimension,
-      (fieldValue, currentDimension, status) =>
-        checkTaxonomyValue(
-          fieldValue,
-          currentDimension,
-          status,
-          `${path}.armorPenetration.value`,
+    }
+    for (const field of [
+      "standardDamage",
+      "durableDamage",
+      "dps",
+      "demolitionForce",
+      "stagger",
+      "push",
+      "innerRadius",
+      "outerRadius",
+    ])
+      if (
+        fields[field] !== undefined &&
+        (typeof fields[field] !== "number" || !Number.isFinite(fields[field]))
+      )
+        add(
           issues,
-        ),
-    );
+          "invalid-attack-number",
+          `Invalid attack field ${field}.`,
+          `${componentPath}.fields.${field}`,
+        );
+    if (
+      fields.demolitionForce !== undefined &&
+      (!Number.isInteger(fields.demolitionForce) ||
+        fields.demolitionForce < 0 ||
+        fields.demolitionForce > 60)
+    )
+      add(
+        issues,
+        "demolition-power-out-of-contract",
+        "demolitionForce must be an integer in 0..60.",
+        `${componentPath}.fields.demolitionForce`,
+      );
   }
-  if (value.demolitionPower !== undefined) {
-    const dimension = taxonomy?.dimensions.demolitionPower;
-    checkVerifiedField(
-      value.demolitionPower,
-      `${path}.demolitionPower`,
+  if (profile.primaryComponentId && !ids.has(profile.primaryComponentId))
+    add(
       issues,
-      dimension,
-      (fieldValue, currentDimension, status) =>
-        checkTaxonomyValue(
-          fieldValue,
-          currentDimension,
-          status,
-          `${path}.demolitionPower.value`,
-          issues,
-        ),
+      "missing-primary-attack-component",
+      "primaryComponentId must refer to a component.",
+      `${path}.attackProfile.primaryComponentId`,
     );
-  }
-  return true;
 }
 
 function checkItem(
-  item: unknown,
+  item: any,
   index: number,
   warbondIds: Set<string>,
+  taxonomy: Map<string, any>,
   issues: ValidationIssue[],
-  taxonomy: Taxonomy | undefined,
-): item is Equipment {
+  names: Set<string>,
+  aliases: Map<string, string>,
+) {
   const path = `items[${index}]`;
   if (!isRecord(item)) {
-    issue(issues, "invalid-item", "装备条目必须是对象。", path);
-    return false;
+    add(issues, "invalid-item", "Item must be an object.", path);
+    return;
   }
-  for (const field of [
-    "id",
-    "model",
-    "nameZh",
-    "nameEn",
-    "category",
-    "notes",
-  ]) {
-    if (typeof item[field] !== "string" || item[field].trim() === "")
-      issue(issues, "missing-field", `缺少 ${field}。`, `${path}.${field}`);
-  }
+  for (const field of ["id", "nameZh", "nameEn", "model", "notes"])
+    if (typeof item[field] !== "string")
+      add(
+        issues,
+        "invalid-item-field",
+        `${field} must be a string.`,
+        `${path}.${field}`,
+      );
+  if (names.has(item.nameZh))
+    add(
+      issues,
+      "duplicate-formal-name",
+      `Duplicate formal name ${item.nameZh}.`,
+      `${path}.nameZh`,
+    );
+  names.add(item.nameZh);
   if (
-    !["weapon", "armor", "stratagem", "grenade", "booster"].includes(
-      String(item.category),
-    )
+    !categories.has(item.category) ||
+    !statuses.has(item.verificationStatus) ||
+    !["admitted", "candidate", "quarantine"].includes(item.admissionStatus)
   )
-    issue(issues, "invalid-category", "装备类别无效。", `${path}.category`);
-  if (
-    !["verified", "pending", "sample"].includes(String(item.verificationStatus))
-  )
-    issue(
+    add(
       issues,
       "invalid-item-status",
-      "装备核验状态无效。",
-      `${path}.verificationStatus`,
+      "Invalid item category, verification or admission status.",
+      path,
     );
   if (!hasSources(item.sourceRefs))
-    issue(
+    add(
       issues,
       "missing-source",
-      "装备必须至少有一个来源记录。",
-      `${path}.sourceRefs`,
-    );
-  if (
-    item.verificationStatus === "verified" &&
-    !hasTrustedSource(item.sourceRefs)
-  )
-    issue(
-      issues,
-      "untrusted-item-source",
-      "已核验装备不能只引用项目样例来源。",
+      "Item needs sourceRefs.",
       `${path}.sourceRefs`,
     );
   if (
     !isRecord(item.image) ||
     typeof item.image.path !== "string" ||
-    typeof item.image.alt !== "string" ||
-    !["placeholder", "candidate", "verified"].includes(
-      String(item.image.status),
-    ) ||
-    (item.image.originalPage !== null &&
-      typeof item.image.originalPage !== "string") ||
-    (item.image.author !== null && typeof item.image.author !== "string") ||
-    typeof item.image.syncedAt !== "string" ||
-    (item.image.fileHash !== null && typeof item.image.fileHash !== "string") ||
+    !hasSources(item.image.sourceRefs) ||
+    !["placeholder", "candidate", "verified"].includes(item.image.status) ||
     !["project-created-placeholder", "pending", "documented"].includes(
-      String(item.image.licenseStatus),
-    ) ||
-    !hasSources(item.image.sourceRefs)
-  ) {
-    issue(
+      item.image.licenseStatus,
+    )
+  )
+    add(
       issues,
-      "missing-image-record",
-      "装备必须有本地图片路径和图片来源记录。",
+      "invalid-asset-record",
+      "Item image lacks manifest metadata.",
       `${path}.image`,
     );
-  }
+  if (
+    isRecord(item.image) &&
+    item.image.provenanceStatus !== undefined &&
+    !["verified", "pending"].includes(item.image.provenanceStatus)
+  )
+    add(
+      issues,
+      "invalid-asset-provenance-status",
+      "Asset provenanceStatus must be verified or pending.",
+      `${path}.image.provenanceStatus`,
+    );
+  if (
+    isRecord(item.image) &&
+    item.image.rightsStatus !== undefined &&
+    !["open-license", "documented-copyrighted", "pending"].includes(
+      item.image.rightsStatus,
+    )
+  )
+    add(
+      issues,
+      "invalid-asset-rights-status",
+      "Asset rightsStatus is invalid.",
+      `${path}.image.rightsStatus`,
+    );
   if (
     isRecord(item.image) &&
     item.image.status === "verified" &&
-    (!hasTrustedSource(item.image.sourceRefs) ||
-      item.image.licenseStatus !== "documented")
+    (item.image.provenanceStatus !== "verified" ||
+      item.image.rightsStatus === "pending")
   )
-    issue(
+    add(
       issues,
-      "untrusted-image-source",
-      "已核验图片必须有可信来源和 documented 许可状态。",
+      "unverified-asset-marked-verified",
+      "A verified image needs verified provenance and an honest rights status.",
       `${path}.image`,
     );
-  if (item.category !== "weapon" && item.weaponProfile !== undefined)
-    issue(
-      issues,
-      "non-weapon-profile",
-      "非武器条目禁止出现 weaponProfile。",
-      `${path}.weaponProfile`,
-    );
-  if (item.category === "weapon" && item.weaponProfile !== undefined)
-    checkWeaponProfile(
-      item.weaponProfile,
-      `${path}.weaponProfile`,
-      issues,
-      taxonomy,
-    );
   if (!Array.isArray(item.aliases))
-    issue(issues, "invalid-aliases", "aliases 必须是数组。", `${path}.aliases`);
-  if (
-    !isRecord(item.acquisition) ||
-    typeof item.acquisition.kind !== "string"
-  ) {
-    issue(
+    add(
       issues,
-      "invalid-acquisition",
-      "获取方式缺少 kind。",
-      `${path}.acquisition`,
+      "invalid-aliases",
+      "aliases must be an array.",
+      `${path}.aliases`,
     );
-  } else {
-    const acquisition = item.acquisition;
-    const acquisitionKind =
-      typeof acquisition.kind === "string" ? acquisition.kind : "";
-    if (!ACQUISITION_KINDS.has(acquisitionKind))
-      issue(
+  for (const [aliasIndex, alias] of (item.aliases ?? []).entries()) {
+    if (
+      !isRecord(alias) ||
+      typeof alias.text !== "string" ||
+      !hasSources(alias.sourceRefs)
+    ) {
+      add(
         issues,
-        "invalid-acquisition-kind",
-        `未知获取方式：${acquisition.kind}。`,
-        `${path}.acquisition.kind`,
+        "invalid-alias",
+        "Alias needs text and sources.",
+        `${path}.aliases[${aliasIndex}]`,
       );
-    if (acquisition.kind === "warbond") {
-      if (
-        typeof acquisition.warbondId !== "string" ||
-        !warbondIds.has(acquisition.warbondId)
-      )
-        issue(
-          issues,
-          "dangling-warbond",
-          "债券引用不存在。",
-          `${path}.acquisition.warbondId`,
-        );
-      const page = acquisition.page;
-      if (
-        page !== null &&
-        (typeof page !== "number" || !Number.isInteger(page) || page < 1)
-      )
-        issue(
-          issues,
-          "invalid-page",
-          "债券页码必须是正整数或 null。",
-          `${path}.acquisition.page`,
-        );
-      checkMoney(
-        acquisition.itemMedals,
-        `${path}.acquisition.itemMedals`,
-        issues,
-      );
-      checkMoney(
-        acquisition.pageUnlockMedals,
-        `${path}.acquisition.pageUnlockMedals`,
-        issues,
-      );
+      continue;
     }
-    if (acquisition.kind === "requisition") {
-      checkMoney(
-        acquisition.levelRequired,
-        `${path}.acquisition.levelRequired`,
+    const key = normalizeSearchText(alias.text);
+    if (aliases.has(key) && aliases.get(key) !== item.id)
+      add(
         issues,
+        "alias-conflict",
+        `Alias conflict: ${alias.text}.`,
+        `${path}.aliases[${aliasIndex}]`,
       );
-      checkMoney(
-        acquisition.requisitionPoints,
-        `${path}.acquisition.requisitionPoints`,
-        issues,
-      );
-    }
-    if (acquisition.kind === "superstore")
-      checkMoney(
-        acquisition.superCredits,
-        `${path}.acquisition.superCredits`,
-        issues,
-      );
-    if (acquisition.kind === "edition") {
-      if (
-        typeof acquisition.editionName !== "string" ||
-        acquisition.editionName.trim() === ""
-      )
-        issue(
-          issues,
-          "invalid-edition",
-          "版本奖励必须有版本名称。",
-          `${path}.acquisition.editionName`,
-        );
-      checkMoney(acquisition.price, `${path}.acquisition.price`, issues);
-      if (
-        !["available", "unavailable", "pending"].includes(
-          String(acquisition.status),
-        )
-      )
-        issue(
-          issues,
-          "invalid-edition-status",
-          "版本奖励状态无效。",
-          `${path}.acquisition.status`,
-        );
-    }
-    if (acquisition.kind === "event") {
-      if (
-        typeof acquisition.eventName !== "string" ||
-        acquisition.eventName.trim() === ""
-      )
-        issue(
-          issues,
-          "invalid-event",
-          "活动获取必须有活动名称。",
-          `${path}.acquisition.eventName`,
-        );
-      if (
-        !["available", "ended", "pending"].includes(String(acquisition.status))
-      )
-        issue(
-          issues,
-          "invalid-event-status",
-          "活动状态无效。",
-          `${path}.acquisition.status`,
-        );
-    }
-    if (acquisition.kind === "other") {
-      if (
-        typeof acquisition.label !== "string" ||
-        acquisition.label.trim() === ""
-      )
-        issue(
-          issues,
-          "invalid-other-acquisition",
-          "其他获取方式必须有来源标签。",
-          `${path}.acquisition.label`,
-        );
-      if (
-        !["available", "unavailable", "pending"].includes(
-          String(acquisition.status),
-        )
-      )
-        issue(
-          issues,
-          "invalid-other-status",
-          "其他获取方式状态无效。",
-          `${path}.acquisition.status`,
-        );
-    }
+    aliases.set(key, item.id);
   }
-  return true;
+  checkAcquisition(item, path, warbondIds, issues);
+  checkWeaponProfile(item, path, taxonomy, issues);
+  checkAttackProfile(item, path, issues);
+  if (
+    !Array.isArray(item.translationEvidence) ||
+    !item.translationEvidence.length
+  )
+    add(
+      issues,
+      "missing-translation-evidence",
+      "Formal item needs translation evidence.",
+      `${path}.translationEvidence`,
+    );
 }
 
 export function validateCatalog(value: unknown): ValidationResult {
   const issues: ValidationIssue[] = [];
-  if (!isRecord(value))
+  if (
+    !isRecord(value) ||
+    !isRecord(value.meta) ||
+    !isRecord(value.taxonomy) ||
+    !Array.isArray(value.items) ||
+    !Array.isArray(value.warbonds) ||
+    !Array.isArray(value.glossaryTerms)
+  )
     return {
       ok: false,
       issues: [
         {
-          code: "invalid-root",
-          message: "数据根节点必须是对象。",
+          code: "invalid-catalog",
+          message: "Catalog structure is incomplete.",
+          path: "catalog",
           severity: "error",
         },
       ],
     };
-  if (!isRecord(value.meta))
-    issue(issues, "missing-meta", "数据必须包含 meta。", "meta");
-  const taxonomy = checkTaxonomy(value.taxonomy, issues)
-    ? value.taxonomy
-    : undefined;
-  if (!Array.isArray(value.warbonds))
-    issue(issues, "invalid-warbonds", "warbonds 必须是数组。", "warbonds");
-  if (!Array.isArray(value.items))
-    issue(issues, "invalid-items", "items 必须是数组。", "items");
-  if (!Array.isArray(value.glossaryTerms))
-    issue(
-      issues,
-      "invalid-glossary",
-      "glossaryTerms 必须是数组。",
-      "glossaryTerms",
-    );
-  if (
-    !Array.isArray(value.warbonds) ||
-    !Array.isArray(value.items) ||
-    !Array.isArray(value.glossaryTerms)
-  )
-    return { ok: false, issues };
-
+  const taxonomy = checkTaxonomy(value.taxonomy, issues);
   const warbondIds = new Set<string>();
-  value.warbonds.forEach((warbond, index) => {
-    if (!isRecord(warbond) || typeof warbond.id !== "string") {
-      issue(
-        issues,
-        "invalid-warbond",
-        "债券缺少稳定 ID。",
-        `warbonds[${index}]`,
-      );
-      return;
-    }
-    if (warbondIds.has(warbond.id))
-      issue(
+  for (const [index, warbond] of value.warbonds.entries()) {
+    if (
+      !isRecord(warbond) ||
+      typeof warbond.id !== "string" ||
+      !hasSources(warbond.sourceRefs) ||
+      !statuses.has(warbond.verificationStatus)
+    )
+      add(issues, "invalid-warbond", "Invalid warbond.", `warbonds[${index}]`);
+    else if (warbondIds.has(warbond.id))
+      add(
         issues,
         "duplicate-warbond-id",
-        `重复债券 ID：${warbond.id}。`,
-        `warbonds[${index}].id`,
+        `Duplicate warbond ${warbond.id}.`,
+        `warbonds[${index}]`,
       );
-    warbondIds.add(warbond.id);
-    checkMoney(warbond.superCredits, `warbonds[${index}].superCredits`, issues);
-    if (!hasSources(warbond.sourceRefs))
-      issue(
-        issues,
-        "missing-source",
-        "债券必须至少有一个来源记录。",
-        `warbonds[${index}].sourceRefs`,
-      );
-    if (
-      warbond.verificationStatus === "verified" &&
-      !hasTrustedSource(warbond.sourceRefs)
-    )
-      issue(
-        issues,
-        "untrusted-warbond-source",
-        "已核验债券不能只引用项目样例来源。",
-        `warbonds[${index}].sourceRefs`,
-      );
-  });
-
-  const ids = new Set<string>();
-  const formalNames = new Set<string>();
+    else warbondIds.add(warbond.id);
+  }
+  const names = new Set<string>();
   const aliases = new Map<string, string>();
-  value.items.forEach((item, index) => {
-    if (isRecord(item) && typeof item.id === "string") {
-      if (ids.has(item.id))
-        issue(
-          issues,
-          "duplicate-id",
-          `重复装备 ID：${item.id}。`,
-          `items[${index}].id`,
-        );
-      ids.add(item.id);
-      if (typeof item.nameZh === "string") {
-        const normalizedName = normalizeSearchText(item.nameZh);
-        if (formalNames.has(normalizedName))
-          issue(
-            issues,
-            "duplicate-formal-name",
-            `重复正式名：${item.nameZh}。`,
-            `items[${index}].nameZh`,
-          );
-        formalNames.add(normalizedName);
-      }
-      if (Array.isArray(item.aliases)) {
-        item.aliases.forEach((alias, aliasIndex) => {
-          if (!isRecord(alias) || typeof alias.text !== "string") return;
-          const normalizedAlias = normalizeSearchText(alias.text);
-          const priorId = aliases.get(normalizedAlias);
-          if (priorId && priorId !== item.id)
-            issue(
-              issues,
-              "alias-conflict",
-              `外号“${alias.text}”同时指向 ${priorId} 与 ${item.id}。`,
-              `items[${index}].aliases[${aliasIndex}]`,
-            );
-          aliases.set(normalizedAlias, item.id as string);
-          if (!hasSources(alias.sourceRefs))
-            issue(
-              issues,
-              "missing-alias-source",
-              "外号必须有来源记录。",
-              `items[${index}].aliases[${aliasIndex}].sourceRefs`,
-            );
-          if (
-            alias.reviewStatus === "verified" &&
-            !hasTrustedSource(alias.sourceRefs)
-          )
-            issue(
-              issues,
-              "untrusted-alias-source",
-              "已核验外号不能只引用项目样例来源。",
-              `items[${index}].aliases[${aliasIndex}].sourceRefs`,
-            );
-        });
-      }
-    }
-    checkItem(item, index, warbondIds, issues, taxonomy);
-  });
-
-  const glossaryIds = new Set<string>();
-  const glossaryAliases = new Set<string>();
-  value.glossaryTerms.forEach((term, index) => {
-    const path = `glossaryTerms[${index}]`;
-    if (!isRecord(term)) {
-      issue(issues, "invalid-glossary-term", "术语必须是对象。", path);
-      return;
-    }
-    if (typeof term.id !== "string" || term.id.trim() === "")
-      issue(issues, "invalid-glossary-id", "术语缺少稳定 ID。", `${path}.id`);
-    else if (glossaryIds.has(term.id))
-      issue(
+  for (const [index, item] of value.items.entries())
+    checkItem(item, index, warbondIds, taxonomy, issues, names, aliases);
+  for (const [index, item] of (value.quarantine ?? []).entries()) {
+    if (isRecord(item) && item.admissionStatus === "admitted")
+      add(
         issues,
-        "duplicate-glossary-id",
-        `重复术语 ID：${term.id}。`,
-        `${path}.id`,
+        "quarantine-admitted",
+        "Quarantine item cannot be admitted.",
+        `quarantine[${index}]`,
       );
-    else glossaryIds.add(term.id);
-    if (
-      typeof term.titleZh !== "string" ||
-      typeof term.description !== "string" ||
-      !Array.isArray(term.aliases) ||
-      term.aliases.length === 0 ||
-      !Array.isArray(term.examples) ||
-      !hasSources(term.sourceRefs) ||
-      !["verified", "pending"].includes(String(term.verificationStatus))
-    )
-      issue(issues, "invalid-glossary-term", "术语记录字段不完整。", path);
-    if (Array.isArray(term.aliases))
-      term.aliases.forEach((alias) => {
-        if (typeof alias !== "string" || alias.trim() === "") {
-          issue(
-            issues,
-            "invalid-glossary-alias",
-            "术语俗称不能为空。",
-            `${path}.aliases`,
-          );
-          return;
-        }
-        const normalized = normalizeSearchText(alias);
-        if (glossaryAliases.has(normalized))
-          issue(
-            issues,
-            "duplicate-glossary-alias",
-            `重复术语俗称：${alias}。`,
-            `${path}.aliases`,
-          );
-        glossaryAliases.add(normalized);
-      });
-  });
-
-  return { ok: issues.every((entry) => entry.severity !== "error"), issues };
+  }
+  return { ok: issues.every((issue) => issue.severity !== "error"), issues };
 }
 
 export function assertValidCatalog(value: unknown): asserts value is Catalog {
@@ -1032,7 +713,7 @@ export function assertValidCatalog(value: unknown): asserts value is Catalog {
   if (!result.ok)
     throw new Error(
       result.issues
-        .map((entry) => `${entry.code}: ${entry.message}`)
+        .map((issue) => `${issue.code}: ${issue.message}`)
         .join("\n"),
     );
 }

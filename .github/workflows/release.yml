@@ -17,7 +17,7 @@ jobs:
           node-version: 24.x
           cache: npm
       - run: npm ci
-      - run: npm run validate:data
+      - run: npm run check
       - run: npx --no-install neu update
       - run: npm run desktop:build
       - name: Verify desktop output and write SHA-256

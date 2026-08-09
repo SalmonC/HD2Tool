@@ -1,0 +1,6080 @@
+{
+  "schemaVersion": "migration-preflight.v1",
+  "toolVersion": "m1-migration.v1",
+  "inputs": {
+    "rawSnapshot": {
+      "path": "src/data/source/wiki-raw.json",
+      "byteSha256": "99cda2e7b3f5ef6c5ea9470d64c02eea6cd59b00f5926c9a156eea678bee3a29",
+      "pageSetSha256": "09cb940ba711beed78d75d6cc0881fe70a9df49c3ac68a78bcef642b7efea15d",
+      "pageCount": 467,
+      "rawSnapshotComplete": true
+    },
+    "diffOnly": {
+      "normalized": {
+        "path": "src/data/source/wiki-normalized.json",
+        "byteSha256": "1de68d0b67428157ac3a0b9fae389fd10596d31b216a63a369712fba22834c02",
+        "itemCount": 321
+      },
+      "catalog": {
+        "path": "src/data/catalog.json",
+        "byteSha256": "1abb43865373788002df149665910447bee502f14fd1251db79a14434bd704a4",
+        "formalItemCount": 292
+      },
+      "communityAliases": {
+        "path": "src/data/source/xiaoheihe-community-aliases.json",
+        "byteSha256": "38c646dabd914925bc4edd4f7405e6216194a92faffb4cc9fddb78d1efe480c5",
+        "role": "diff-only-not-raw-fact"
+      }
+    },
+    "correctionEvidenceOnly": {
+      "officialLocalization": {
+        "path": "src/data/source/official-localization.json",
+        "byteSha256": "f0c8021d1449d5f844fc97e8b4b0f9818eebd0cf42ce0e0cbbb6f3ac2c1c1bd5",
+        "role": "correction-evidence-only-sealed-derived-snapshot",
+        "originalStringsInRepo": false,
+        "requiresLocalRehashBeforeRelease": true
+      }
+    }
+  },
+  "rawProbe": {
+    "rawPageCount": 467,
+    "rawSnapshotComplete": true,
+    "rawByteSha256": "99cda2e7b3f5ef6c5ea9470d64c02eea6cd59b00f5926c9a156eea678bee3a29",
+    "rawPageRevisionClosure": {
+      "count": 467,
+      "duplicatePageIds": [],
+      "pageRevisionSetSha256": "bc58dfbb483d21edfccb23850d439d3d3d5676d5f8f28eca179ac9c0ca8c50b4"
+    },
+    "warbondPageCount": 24,
+    "warbondPageIds": [
+      2545,
+      2546,
+      3801,
+      4561,
+      6128,
+      6675,
+      7221,
+      7419,
+      7882,
+      9015,
+      10293,
+      10898,
+      12038,
+      12623,
+      13263,
+      13638,
+      13736,
+      14656,
+      15186,
+      15401,
+      15852,
+      17209,
+      18420,
+      19094
+    ],
+    "warbondPageSectionCount": 79,
+    "acquisitionProbe": {
+      "nLink": 545,
+      "nCost": 545,
+      "tableRows": 562,
+      "totalCandidates": 1107
+    }
+  },
+  "sourcePolicy": {
+    "rawFactSources": [
+      "wiki-raw.json",
+      "community original text"
+    ],
+    "diffOnlyInputs": [
+      "wiki-normalized.json",
+      "catalog.json",
+      "xiaoheihe-community-aliases.json"
+    ],
+    "correctionEvidenceOnly": {
+      "path": "src/data/source/official-localization.json",
+      "role": "correction-evidence-only sealed derived snapshot",
+      "byteSha256": "f0c8021d1449d5f844fc97e8b4b0f9818eebd0cf42ce0e0cbbb6f3ac2c1c1bd5",
+      "originalStringsInRepo": false,
+      "attestationPath": "data/v3/config/localization-attestation.json",
+      "attestationContentSha256": "e165cb9c0c80121f6c57dfb57a458b7750ed9a0e63db2b70f3dae5baa6da9925"
+    },
+    "diffOnlyRule": "Diff-only inputs are never accepted as RawFact evidence in M1; official-localization is not diff-only and is used only to validate typed corrections."
+  },
+  "sourceManifest": {
+    "schemaVersion": "m1-source-manifest.v1",
+    "manifestPath": "data/v3/config/source-manifest.json",
+    "manifestFileSha256": "a7a18e0890b56e39e4baafee8ee609ed02ffca2deacd9c83dceb4bb8347507e0",
+    "selfExcludedFromInputs": true,
+    "shapeErrors": [],
+    "entries": [
+      {
+        "inputId": "wiki-raw",
+        "path": "src/data/source/wiki-raw.json",
+        "role": "raw-fact-snapshot",
+        "required": true,
+        "exists": true,
+        "expectedSha256": "99cda2e7b3f5ef6c5ea9470d64c02eea6cd59b00f5926c9a156eea678bee3a29",
+        "actualSha256": "99cda2e7b3f5ef6c5ea9470d64c02eea6cd59b00f5926c9a156eea678bee3a29",
+        "byteMatch": true,
+        "tracked": false,
+        "dirty": false
+      },
+      {
+        "inputId": "wiki-normalized-reference",
+        "path": "src/data/source/wiki-normalized.json",
+        "role": "diff-only-reference",
+        "required": true,
+        "exists": true,
+        "expectedSha256": "1de68d0b67428157ac3a0b9fae389fd10596d31b216a63a369712fba22834c02",
+        "actualSha256": "1de68d0b67428157ac3a0b9fae389fd10596d31b216a63a369712fba22834c02",
+        "byteMatch": true,
+        "tracked": false,
+        "dirty": false
+      },
+      {
+        "inputId": "legacy-catalog-reference",
+        "path": "src/data/catalog.json",
+        "role": "formal-offer-diff-reference",
+        "required": true,
+        "exists": true,
+        "expectedSha256": "1abb43865373788002df149665910447bee502f14fd1251db79a14434bd704a4",
+        "actualSha256": "1abb43865373788002df149665910447bee502f14fd1251db79a14434bd704a4",
+        "byteMatch": true,
+        "tracked": true,
+        "dirty": true
+      },
+      {
+        "inputId": "official-localization-registry",
+        "path": "src/data/source/official-localization.json",
+        "role": "correction-evidence-only-sealed-derived-snapshot",
+        "required": true,
+        "exists": true,
+        "expectedSha256": "f0c8021d1449d5f844fc97e8b4b0f9818eebd0cf42ce0e0cbbb6f3ac2c1c1bd5",
+        "actualSha256": "f0c8021d1449d5f844fc97e8b4b0f9818eebd0cf42ce0e0cbbb6f3ac2c1c1bd5",
+        "byteMatch": true,
+        "tracked": false,
+        "dirty": false
+      },
+      {
+        "inputId": "localization-attestation",
+        "path": "data/v3/config/localization-attestation.json",
+        "role": "content-addressed-localization-attestation",
+        "required": true,
+        "exists": true,
+        "expectedSha256": "ab2d0ea377da109fea5edf1ac28425f04c81e35764a36f9320d7a258bb8f4925",
+        "actualSha256": "ab2d0ea377da109fea5edf1ac28425f04c81e35764a36f9320d7a258bb8f4925",
+        "byteMatch": true,
+        "tracked": false,
+        "dirty": false
+      },
+      {
+        "inputId": "community-alias-reference",
+        "path": "src/data/source/xiaoheihe-community-aliases.json",
+        "role": "diff-only-alias-reference",
+        "required": true,
+        "exists": true,
+        "expectedSha256": "38c646dabd914925bc4edd4f7405e6216194a92faffb4cc9fddb78d1efe480c5",
+        "actualSha256": "38c646dabd914925bc4edd4f7405e6216194a92faffb4cc9fddb78d1efe480c5",
+        "byteMatch": true,
+        "tracked": true,
+        "dirty": true
+      },
+      {
+        "inputId": "resolver-fixtures",
+        "path": "data/v3/config/resolver-fixtures.json",
+        "role": "raw-coordinate-test-fixture",
+        "required": true,
+        "exists": true,
+        "expectedSha256": "1dfc21010d2c155653724e1b8325e674431ba71da0aaed9d21cab66135de8f18",
+        "actualSha256": "1dfc21010d2c155653724e1b8325e674431ba71da0aaed9d21cab66135de8f18",
+        "byteMatch": true,
+        "tracked": false,
+        "dirty": false
+      },
+      {
+        "inputId": "warbond-corrections",
+        "path": "data/v3/config/warbond-corrections.json",
+        "role": "typed-correction-config",
+        "required": true,
+        "exists": true,
+        "expectedSha256": "ef6ace320a9990039b4e9ec09847247ca7eec5ce68c776eace3abc6e88925893",
+        "actualSha256": "ef6ace320a9990039b4e9ec09847247ca7eec5ce68c776eace3abc6e88925893",
+        "byteMatch": true,
+        "tracked": false,
+        "dirty": false
+      }
+    ],
+    "byteMismatches": [],
+    "toolBundle": {
+      "expectedBundleSha256": "8d72177720cc8b007012635c6409d91029aabaf01320c63da34e7a12e8811831",
+      "actualBundleSha256": "8d72177720cc8b007012635c6409d91029aabaf01320c63da34e7a12e8811831",
+      "bundleMatch": true,
+      "entries": [
+        {
+          "path": "scripts/v3/migration-common.mjs",
+          "exists": true,
+          "expectedSha256": "2364484dbc3dc2dec93072f88197e5b3190889cdcb97ed175143fab4d6c31d12",
+          "actualSha256": "2364484dbc3dc2dec93072f88197e5b3190889cdcb97ed175143fab4d6c31d12",
+          "byteMatch": true,
+          "tracked": false,
+          "dirty": false
+        },
+        {
+          "path": "scripts/v3/migration-preflight.mjs",
+          "exists": true,
+          "expectedSha256": "9edf556d2c139b2552e6842450330785a700a17ccd5befef8791fddba34fdf89",
+          "actualSha256": "9edf556d2c139b2552e6842450330785a700a17ccd5befef8791fddba34fdf89",
+          "byteMatch": true,
+          "tracked": false,
+          "dirty": false
+        },
+        {
+          "path": "scripts/v3/migration-tests.mjs",
+          "exists": true,
+          "expectedSha256": "40fe1077479ca5126b5a90bbb2b5d7975b7ab7cfe5094fa7f9e3e2b75a8b7e90",
+          "actualSha256": "40fe1077479ca5126b5a90bbb2b5d7975b7ab7cfe5094fa7f9e3e2b75a8b7e90",
+          "byteMatch": true,
+          "tracked": false,
+          "dirty": false
+        },
+        {
+          "path": "scripts/v3/raw-probe.mjs",
+          "exists": true,
+          "expectedSha256": "8da6a56028495f6cdee2ced0b1cd79da01736a126522b27936de63da57e037b7",
+          "actualSha256": "8da6a56028495f6cdee2ced0b1cd79da01736a126522b27936de63da57e037b7",
+          "byteMatch": true,
+          "tracked": false,
+          "dirty": false
+        },
+        {
+          "path": "scripts/v3/raw-validator.mjs",
+          "exists": true,
+          "expectedSha256": "a3789411a8ed0b2cc0d112249f20eade2a1ec1f604f71dd72c4a1a773b759a22",
+          "actualSha256": "a3789411a8ed0b2cc0d112249f20eade2a1ec1f604f71dd72c4a1a773b759a22",
+          "byteMatch": true,
+          "tracked": false,
+          "dirty": false
+        },
+        {
+          "path": "scripts/v3/resolver-gate.mjs",
+          "exists": true,
+          "expectedSha256": "06485e75d751c22a746df01e20d128ffefd4102248ded9e6682f20de12646f54",
+          "actualSha256": "06485e75d751c22a746df01e20d128ffefd4102248ded9e6682f20de12646f54",
+          "byteMatch": true,
+          "tracked": false,
+          "dirty": false
+        },
+        {
+          "path": "scripts/wiki-normalize.mjs",
+          "exists": true,
+          "expectedSha256": "e68f79f49381e3ceec2a0997b0e3cc1f346ac90e26aa1ba8612d89644dae5d22",
+          "actualSha256": "e68f79f49381e3ceec2a0997b0e3cc1f346ac90e26aa1ba8612d89644dae5d22",
+          "byteMatch": true,
+          "tracked": false,
+          "dirty": false
+        },
+        {
+          "path": "scripts/lib/product-scope.mjs",
+          "exists": true,
+          "expectedSha256": "975ba2f54f8edd079697be3d3456a38ecae25817f4bf37939e9cacf875208178",
+          "actualSha256": "975ba2f54f8edd079697be3d3456a38ecae25817f4bf37939e9cacf875208178",
+          "byteMatch": true,
+          "tracked": false,
+          "dirty": false
+        }
+      ],
+      "missingOrMismatched": []
+    },
+    "reproducibility": null,
+    "warnings": [
+      {
+        "inputId": "wiki-raw",
+        "path": "src/data/source/wiki-raw.json",
+        "tracked": false,
+        "dirty": false,
+        "source": "input"
+      },
+      {
+        "inputId": "wiki-normalized-reference",
+        "path": "src/data/source/wiki-normalized.json",
+        "tracked": false,
+        "dirty": false,
+        "source": "input"
+      },
+      {
+        "inputId": "legacy-catalog-reference",
+        "path": "src/data/catalog.json",
+        "tracked": true,
+        "dirty": true,
+        "source": "input"
+      },
+      {
+        "inputId": "official-localization-registry",
+        "path": "src/data/source/official-localization.json",
+        "tracked": false,
+        "dirty": false,
+        "source": "input"
+      },
+      {
+        "inputId": "localization-attestation",
+        "path": "data/v3/config/localization-attestation.json",
+        "tracked": false,
+        "dirty": false,
+        "source": "input"
+      },
+      {
+        "inputId": "community-alias-reference",
+        "path": "src/data/source/xiaoheihe-community-aliases.json",
+        "tracked": true,
+        "dirty": true,
+        "source": "input"
+      },
+      {
+        "inputId": "resolver-fixtures",
+        "path": "data/v3/config/resolver-fixtures.json",
+        "tracked": false,
+        "dirty": false,
+        "source": "input"
+      },
+      {
+        "inputId": "warbond-corrections",
+        "path": "data/v3/config/warbond-corrections.json",
+        "tracked": false,
+        "dirty": false,
+        "source": "input"
+      },
+      {
+        "inputId": null,
+        "path": "scripts/v3/migration-common.mjs",
+        "tracked": false,
+        "dirty": false,
+        "source": "tool-bundle"
+      },
+      {
+        "inputId": null,
+        "path": "scripts/v3/migration-preflight.mjs",
+        "tracked": false,
+        "dirty": false,
+        "source": "tool-bundle"
+      },
+      {
+        "inputId": null,
+        "path": "scripts/v3/migration-tests.mjs",
+        "tracked": false,
+        "dirty": false,
+        "source": "tool-bundle"
+      },
+      {
+        "inputId": null,
+        "path": "scripts/v3/raw-probe.mjs",
+        "tracked": false,
+        "dirty": false,
+        "source": "tool-bundle"
+      },
+      {
+        "inputId": null,
+        "path": "scripts/v3/raw-validator.mjs",
+        "tracked": false,
+        "dirty": false,
+        "source": "tool-bundle"
+      },
+      {
+        "inputId": null,
+        "path": "scripts/v3/resolver-gate.mjs",
+        "tracked": false,
+        "dirty": false,
+        "source": "tool-bundle"
+      },
+      {
+        "inputId": null,
+        "path": "scripts/wiki-normalize.mjs",
+        "tracked": false,
+        "dirty": false,
+        "source": "tool-bundle"
+      },
+      {
+        "inputId": null,
+        "path": "scripts/lib/product-scope.mjs",
+        "tracked": false,
+        "dirty": false,
+        "source": "tool-bundle"
+      }
+    ]
+  },
+  "localizationAttestation": {
+    "path": "data/v3/config/localization-attestation.json",
+    "present": true,
+    "artifactSha256": "e165cb9c0c80121f6c57dfb57a458b7750ed9a0e63db2b70f3dae5baa6da9925",
+    "recomputedContentSha256": "e165cb9c0c80121f6c57dfb57a458b7750ed9a0e63db2b70f3dae5baa6da9925",
+    "validationErrors": [],
+    "readError": null
+  },
+  "rawPageDisposition": {
+    "counts": {
+      "excluded": 122,
+      "normalized": 345
+    },
+    "recordCount": 467,
+    "recordSetSha256": "4aaa742131b7e79fba14578a066e7b7960c46ba422180cdb1a3708e601ecbe2d",
+    "parseErrorRecords": []
+  },
+  "normalizedReference": {
+    "itemCount": 321,
+    "role": "reference-diff-only"
+  },
+  "scope": {
+    "normalizedEquipmentCount": 321,
+    "requiredCount": 292,
+    "formalCatalogCount": 292,
+    "requiredIdSetSha256": "1efe9bd0a7dd2693a9394d716bff5778c4ac422e71560b5b80873055cd1dcece",
+    "formalCatalogIdSetSha256": "1efe9bd0a7dd2693a9394d716bff5778c4ac422e71560b5b80873055cd1dcece",
+    "upcomingIds": [
+      "40-k-meltagun",
+      "g-40-k-meltamine",
+      "p-40-k-bolt-pistol",
+      "r-40-k-hot-shot-marksman-rifle",
+      "tg-122-demo-trooper",
+      "tg-8-sharpshooter"
+    ],
+    "excludedIds": [
+      "armed-resupply-pods",
+      "call-in-super-destroyer",
+      "concealed-insertion",
+      "dead-sprint",
+      "eagle-rearm",
+      "experimental-infusion",
+      "expert-extraction-pilot",
+      "firebomb-hellpods",
+      "flexible-reinforcement-budget",
+      "hellpod-space-optimization",
+      "increased-reinforcement-budget",
+      "localization-confusion",
+      "motivational-shocks",
+      "muscle-enhancement",
+      "reinforce",
+      "resupply",
+      "sample-extricator",
+      "sample-scanner",
+      "sos-beacon",
+      "stamina-enhancement",
+      "stun-pods",
+      "uav-recon-booster",
+      "vitality-enhancement"
+    ],
+    "symmetricDiff": {
+      "missingIds": [],
+      "extraIds": []
+    },
+    "catalogUnexpected": [],
+    "upcomingRecords": [
+      {
+        "id": "40-k-meltagun",
+        "title": "40-K Meltagun",
+        "productKind": "support-weapon",
+        "availableFrom": "2026-08-12"
+      },
+      {
+        "id": "g-40-k-meltamine",
+        "title": "G-40-K Meltamine",
+        "productKind": "grenade",
+        "availableFrom": "2026-08-12"
+      },
+      {
+        "id": "p-40-k-bolt-pistol",
+        "title": "P-40-K Bolt Pistol",
+        "productKind": "secondary-weapon",
+        "availableFrom": "2026-08-12"
+      },
+      {
+        "id": "r-40-k-hot-shot-marksman-rifle",
+        "title": "R-40-K Hot-Shot Marksman Rifle",
+        "productKind": "primary-weapon",
+        "availableFrom": "2026-08-12"
+      },
+      {
+        "id": "tg-122-demo-trooper",
+        "title": "TG-122 Demo-Trooper",
+        "productKind": "body-armor",
+        "availableFrom": "2026-08-12"
+      },
+      {
+        "id": "tg-8-sharpshooter",
+        "title": "TG-8 Sharpshooter",
+        "productKind": "body-armor",
+        "availableFrom": "2026-08-12"
+      }
+    ],
+    "excludedRecords": [
+      {
+        "id": "armed-resupply-pods",
+        "title": "Armed Resupply Pods",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "call-in-super-destroyer",
+        "title": "Call In Super Destroyer",
+        "category": "stratagem",
+        "slot": "stratagem",
+        "productKind": "other-stratagem",
+        "reason": "system-action",
+        "ruleId": "system-action"
+      },
+      {
+        "id": "concealed-insertion",
+        "title": "Concealed Insertion",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "dead-sprint",
+        "title": "Dead Sprint",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "eagle-rearm",
+        "title": "Eagle Rearm",
+        "category": "stratagem",
+        "slot": "stratagem",
+        "productKind": "other-stratagem",
+        "reason": "system-action",
+        "ruleId": "system-action"
+      },
+      {
+        "id": "experimental-infusion",
+        "title": "Experimental Infusion",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "expert-extraction-pilot",
+        "title": "Expert Extraction Pilot",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "firebomb-hellpods",
+        "title": "Firebomb Hellpods",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "flexible-reinforcement-budget",
+        "title": "Flexible Reinforcement Budget",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "hellpod-space-optimization",
+        "title": "Hellpod Space Optimization",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "increased-reinforcement-budget",
+        "title": "Increased Reinforcement Budget",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "localization-confusion",
+        "title": "Localization Confusion",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "motivational-shocks",
+        "title": "Motivational Shocks",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "muscle-enhancement",
+        "title": "Muscle Enhancement",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "reinforce",
+        "title": "Reinforce",
+        "category": "stratagem",
+        "slot": "stratagem",
+        "productKind": "other-stratagem",
+        "reason": "system-action",
+        "ruleId": "system-action"
+      },
+      {
+        "id": "resupply",
+        "title": "Resupply",
+        "category": "stratagem",
+        "slot": "stratagem",
+        "productKind": "other-stratagem",
+        "reason": "system-action",
+        "ruleId": "system-action"
+      },
+      {
+        "id": "sample-extricator",
+        "title": "Sample Extricator",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "sample-scanner",
+        "title": "Sample Scanner",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "sos-beacon",
+        "title": "SoS Beacon",
+        "category": "stratagem",
+        "slot": "stratagem",
+        "productKind": "other-stratagem",
+        "reason": "system-action",
+        "ruleId": "system-action"
+      },
+      {
+        "id": "stamina-enhancement",
+        "title": "Stamina Enhancement",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "stun-pods",
+        "title": "Stun Pods",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "uav-recon-booster",
+        "title": "UAV Recon Booster",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      },
+      {
+        "id": "vitality-enhancement",
+        "title": "Vitality Enhancement",
+        "category": "booster",
+        "slot": "booster",
+        "productKind": null,
+        "reason": "booster",
+        "ruleId": "booster"
+      }
+    ],
+    "productKindCounts": {
+      "required": {
+        "support-weapon": 34,
+        "primary-weapon": 51,
+        "other-stratagem": 59,
+        "secondary-weapon": 23,
+        "grenade": 20,
+        "body-armor": 105
+      },
+      "upcoming": {
+        "body-armor": 2,
+        "primary-weapon": 1,
+        "secondary-weapon": 1,
+        "support-weapon": 1,
+        "grenade": 1
+      },
+      "excluded": {
+        "null": 18,
+        "other-stratagem": 5
+      }
+    },
+    "groups": {
+      "support-weapon": {
+        "expected": 34,
+        "formal": 34,
+        "upcoming": 1,
+        "excluded": 0,
+        "missingIds": [],
+        "extraIds": []
+      },
+      "primary-weapon": {
+        "expected": 51,
+        "formal": 51,
+        "upcoming": 1,
+        "excluded": 0,
+        "missingIds": [],
+        "extraIds": []
+      },
+      "other-stratagem": {
+        "expected": 59,
+        "formal": 59,
+        "upcoming": 0,
+        "excluded": 5,
+        "missingIds": [],
+        "extraIds": []
+      },
+      "secondary-weapon": {
+        "expected": 23,
+        "formal": 23,
+        "upcoming": 1,
+        "excluded": 0,
+        "missingIds": [],
+        "extraIds": []
+      },
+      "grenade": {
+        "expected": 20,
+        "formal": 20,
+        "upcoming": 1,
+        "excluded": 0,
+        "missingIds": [],
+        "extraIds": []
+      },
+      "body-armor": {
+        "expected": 105,
+        "formal": 105,
+        "upcoming": 2,
+        "excluded": 0,
+        "missingIds": [],
+        "extraIds": []
+      },
+      "excluded:booster": {
+        "expected": 0,
+        "formal": 0,
+        "upcoming": 0,
+        "excluded": 18,
+        "missingIds": [],
+        "extraIds": []
+      }
+    }
+  },
+  "warbond": {
+    "sourcePageCount": 24,
+    "sourceSectionCount": 79,
+    "candidateCounts": {
+      "nLink": 545,
+      "nCost": 545,
+      "tableRows": 562,
+      "totalCandidates": 1107,
+      "dispositioned": 1107,
+      "exceptionCount": 0
+    },
+    "dispositionCounts": {
+      "excluded": 737,
+      "resolved": 276,
+      "duplicate": 58,
+      "excluded-with-source-ambiguity": 25,
+      "excluded-with-source-conflict": 5,
+      "upcoming": 6
+    },
+    "candidateAudit": {
+      "blockingExceptions": [],
+      "blockingExceptionCount": 0,
+      "blockingProductExceptionCount": 0,
+      "nonProductRejectedCount": 767,
+      "nonProductRejectedByReason": {
+        "out-of-product-row-type": 370,
+        "corroborated-by-contents-table-non-product-type": 329,
+        "unlinked-row-explicitly-non-product-type": 19,
+        "template-image-explicitly-non-product": 19,
+        "multiple-same-kind-non-product-rows": 25,
+        "non-product-page-cost-conflict": 5
+      },
+      "nonProductRejectedIdSetSha256": "15c71891f5ee71eba724ba61e63b534e0d6bb8ae357f8e1789b784a63c3f9e9c",
+      "nonProductRejectedSample": [
+        "raw:10293:p1:table:1",
+        "raw:10293:p1:table:3",
+        "raw:10293:p1:table:5",
+        "raw:10293:p1:table:6",
+        "raw:10293:p1:template:1",
+        "raw:10293:p1:template:2",
+        "raw:10293:p1:template:5",
+        "raw:10293:p1:template:6",
+        "raw:10293:p2:table:1",
+        "raw:10293:p2:table:3",
+        "raw:10293:p2:table:5",
+        "raw:10293:p2:table:6",
+        "raw:10293:p2:template:1",
+        "raw:10293:p2:template:4",
+        "raw:10293:p2:template:5",
+        "raw:10293:p2:template:6",
+        "raw:10293:p3:table:1",
+        "raw:10293:p3:table:2",
+        "raw:10293:p3:table:5",
+        "raw:10293:p3:template:2"
+      ],
+      "nonProductAmbiguous": [
+        {
+          "candidateId": "raw:12623:p3:template:2",
+          "sourcePageId": 12623,
+          "sourceRevision": 124374,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "force-of-law",
+          "page": 3,
+          "canonicalTitle": "True Blue Pattern",
+          "type": "",
+          "image": "True Blue Vehicle Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 55,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:12623:p3:table:6",
+              "raw:12623:p3:table:7"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 12623,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:12623",
+            "pageId": 12623,
+            "revision": 124374,
+            "sha256": "b606c3dee177ac0d2d3737d739920cb60cbad913aad80c151fbce4e4a6b8a954",
+            "wikitextSha256": "4e1a3b2bd86053103ebf838aa937f40a404af89c55a51e9dde21e22e7b2df29f",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Force_of_Law_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:12623:p3:template:7",
+          "sourcePageId": 12623,
+          "sourceRevision": 124374,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "force-of-law",
+          "page": 3,
+          "canonicalTitle": "True Blue Pattern",
+          "type": "",
+          "image": "True Blue Exosuit Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 50,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:12623:p3:table:6",
+              "raw:12623:p3:table:7"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 12623,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:12623",
+            "pageId": 12623,
+            "revision": 124374,
+            "sha256": "b606c3dee177ac0d2d3737d739920cb60cbad913aad80c151fbce4e4a6b8a954",
+            "wikitextSha256": "4e1a3b2bd86053103ebf838aa937f40a404af89c55a51e9dde21e22e7b2df29f",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Force_of_Law_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:13638:p3:template:3",
+          "sourcePageId": 13638,
+          "sourceRevision": 124378,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "obedient-democracy-support-troopers-legendary",
+          "page": 3,
+          "canonicalTitle": "Mean Green Pattern",
+          "type": "",
+          "image": "Mean Green Exosuit Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 50,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:13638:p3:table:4",
+              "raw:13638:p3:table:5"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 13638,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:13638",
+            "pageId": 13638,
+            "revision": 124378,
+            "sha256": "154cca310349d3e1e970544b8ef7dea5094e1dd8d278a4d5f7ec1a7a46042443",
+            "wikitextSha256": "f96f19dc73c3923e72b9a34dc919eaa3479403563c5ecc68cc3b067993f90141",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Obedient_Democracy_Support_Troopers_Legendary_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:13638:p3:template:4",
+          "sourcePageId": 13638,
+          "sourceRevision": 124378,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "obedient-democracy-support-troopers-legendary",
+          "page": 3,
+          "canonicalTitle": "Mean Green Pattern",
+          "type": "",
+          "image": "Mean Green Vehicle Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 55,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:13638:p3:table:4",
+              "raw:13638:p3:table:5"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 13638,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:13638",
+            "pageId": 13638,
+            "revision": 124378,
+            "sha256": "154cca310349d3e1e970544b8ef7dea5094e1dd8d278a4d5f7ec1a7a46042443",
+            "wikitextSha256": "f96f19dc73c3923e72b9a34dc919eaa3479403563c5ecc68cc3b067993f90141",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Obedient_Democracy_Support_Troopers_Legendary_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:13736:p3:template:4",
+          "sourcePageId": 13736,
+          "sourceRevision": 124371,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "dust-devils",
+          "page": 3,
+          "canonicalTitle": "Rattlesnake Pattern",
+          "type": "",
+          "image": "Rattlesnake Exosuit Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 50,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:13736:p3:table:6",
+              "raw:13736:p3:table:7"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 13736,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:13736",
+            "pageId": 13736,
+            "revision": 124371,
+            "sha256": "52f6fbec04efe41938673f54bffc313cd73ffb3d8623338d2bbcb8f718bf02db",
+            "wikitextSha256": "1dea1f16ae079d03783c4b9de4c56af556fa715189180954cb90a962100dc73c",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Dust_Devils_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:13736:p3:template:5",
+          "sourcePageId": 13736,
+          "sourceRevision": 124371,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "dust-devils",
+          "page": 3,
+          "canonicalTitle": "Rattlesnake Pattern",
+          "type": "",
+          "image": "Rattlesnake Vehicle Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 55,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:13736:p3:table:6",
+              "raw:13736:p3:table:7"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 13736,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:13736",
+            "pageId": 13736,
+            "revision": 124371,
+            "sha256": "52f6fbec04efe41938673f54bffc313cd73ffb3d8623338d2bbcb8f718bf02db",
+            "wikitextSha256": "1dea1f16ae079d03783c4b9de4c56af556fa715189180954cb90a962100dc73c",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Dust_Devils_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:14656:p3:template:2",
+          "sourcePageId": 14656,
+          "sourceRevision": 124890,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "python-commandos",
+          "page": 3,
+          "canonicalTitle": "Chameleon Camo Pattern",
+          "type": "",
+          "image": "Chameleon Camo Emancipator Exosuit Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 50,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:14656:p3:table:5",
+              "raw:14656:p3:table:6"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 14656,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:14656",
+            "pageId": 14656,
+            "revision": 124890,
+            "sha256": "7e95511ec7bb2a9f1a8078c2e5524db13f46205e55ae173dc8cc538dd92ad42a",
+            "wikitextSha256": "5fb3630bcc5c2f2f0c815eaa5ef784c97f5f172adb6b0e4d5b8b6a8ead7ecd5d",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Python_Commandos_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:14656:p3:template:6",
+          "sourcePageId": 14656,
+          "sourceRevision": 124890,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "python-commandos",
+          "page": 3,
+          "canonicalTitle": "Chameleon Camo Pattern",
+          "type": "",
+          "image": "Chameleon Camo Vehicle Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 55,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:14656:p3:table:5",
+              "raw:14656:p3:table:6"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 14656,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:14656",
+            "pageId": 14656,
+            "revision": 124890,
+            "sha256": "7e95511ec7bb2a9f1a8078c2e5524db13f46205e55ae173dc8cc538dd92ad42a",
+            "wikitextSha256": "5fb3630bcc5c2f2f0c815eaa5ef784c97f5f172adb6b0e4d5b8b6a8ead7ecd5d",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Python_Commandos_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:15186:p3:template:2",
+          "sourcePageId": 15186,
+          "sourceRevision": 124382,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "righteous-revenants-legendary",
+          "page": 3,
+          "canonicalTitle": "Extrasolar Ash Pattern",
+          "type": "",
+          "image": "Extrasolar Ash Vehicle Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 55,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:15186:p3:table:3",
+              "raw:15186:p3:table:4"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 15186,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:15186",
+            "pageId": 15186,
+            "revision": 124382,
+            "sha256": "bca65895dbd367082a6da751bf89e5d11502405d76a2f11fc625ac8d82ddf633",
+            "wikitextSha256": "d66d882142491a1a6a674e313668a748c521b82a0d879f0c766aaef1d60e2ab7",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Righteous_Revenants_Legendary_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:15186:p3:template:4",
+          "sourcePageId": 15186,
+          "sourceRevision": 124382,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "righteous-revenants-legendary",
+          "page": 3,
+          "canonicalTitle": "Extrasolar Ash Pattern",
+          "type": "",
+          "image": "Extrasolar Ash Exosuit Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 50,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:15186:p3:table:3",
+              "raw:15186:p3:table:4"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 15186,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:15186",
+            "pageId": 15186,
+            "revision": 124382,
+            "sha256": "bca65895dbd367082a6da751bf89e5d11502405d76a2f11fc625ac8d82ddf633",
+            "wikitextSha256": "d66d882142491a1a6a674e313668a748c521b82a0d879f0c766aaef1d60e2ab7",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Righteous_Revenants_Legendary_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:15852:p3:template:3",
+          "sourcePageId": 15852,
+          "sourceRevision": 124384,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "siege-breakers",
+          "page": 3,
+          "canonicalTitle": "Churned Earth Pattern",
+          "type": "",
+          "image": "Churned Earth Vehicle Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 55,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:15852:p3:table:1",
+              "raw:15852:p3:table:7"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 15852,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:15852",
+            "pageId": 15852,
+            "revision": 124384,
+            "sha256": "09299eff92811a649b15bf00734194287c1d59736fec87d31700d7b4fc30a9af",
+            "wikitextSha256": "3566bb7c248deb9042bbf8d33f44da7a3790617238858ede88616fca001c33da",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Siege_Breakers_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:15852:p3:template:4",
+          "sourcePageId": 15852,
+          "sourceRevision": 124384,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "siege-breakers",
+          "page": 3,
+          "canonicalTitle": "Churned Earth Pattern",
+          "type": "",
+          "image": "Churned Earth Exosuit Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 50,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:15852:p3:table:1",
+              "raw:15852:p3:table:7"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 15852,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:15852",
+            "pageId": 15852,
+            "revision": 124384,
+            "sha256": "09299eff92811a649b15bf00734194287c1d59736fec87d31700d7b4fc30a9af",
+            "wikitextSha256": "3566bb7c248deb9042bbf8d33f44da7a3790617238858ede88616fca001c33da",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Siege_Breakers_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:17209:p3:template:6",
+          "sourcePageId": 17209,
+          "sourceRevision": 124372,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "entrenched-division",
+          "page": 3,
+          "canonicalTitle": "Heritage Olive Pattern",
+          "type": "",
+          "image": "Heritage Olive Shuttle Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 55,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:17209:p3:table:1",
+              "raw:17209:p3:table:2"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 17209,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:17209",
+            "pageId": 17209,
+            "revision": 124372,
+            "sha256": "a4fd2347c04a24b2ae2cedae7c109515b8d04d48581fc252c7c563357ab343f6",
+            "wikitextSha256": "fecfa8ef11fc031f0fb5a1189b4d04d56df8b38f162c2d501846a0c063d2b9a7",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Entrenched_Division_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:17209:p3:template:7",
+          "sourcePageId": 17209,
+          "sourceRevision": 124372,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "entrenched-division",
+          "page": 3,
+          "canonicalTitle": "Heritage Olive Pattern",
+          "type": "",
+          "image": "Heritage Olive Vehicle Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 55,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:17209:p3:table:1",
+              "raw:17209:p3:table:2"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 17209,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:17209",
+            "pageId": 17209,
+            "revision": 124372,
+            "sha256": "a4fd2347c04a24b2ae2cedae7c109515b8d04d48581fc252c7c563357ab343f6",
+            "wikitextSha256": "fecfa8ef11fc031f0fb5a1189b4d04d56df8b38f162c2d501846a0c063d2b9a7",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Entrenched_Division_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:18420:p3:template:5",
+          "sourcePageId": 18420,
+          "sourceRevision": 125861,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "exo-experts",
+          "page": 3,
+          "canonicalTitle": "Mobile White Pattern",
+          "type": "",
+          "image": "Mobile White Vehicle Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 55,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:18420:p3:table:5",
+              "raw:18420:p3:table:6"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 18420,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:18420",
+            "pageId": 18420,
+            "revision": 125861,
+            "sha256": "2a1518a6abc425f8a1c9a79972e44e2d33c272ef95e249f40a4bfea0dd847ed0",
+            "wikitextSha256": "7f8ed4b1b2f5b9b1707698f7ea8eed8f5bc5872f661bc8f16a8f4c8bb7dce485",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Exo_Experts_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:18420:p3:template:6",
+          "sourcePageId": 18420,
+          "sourceRevision": 125861,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "exo-experts",
+          "page": 3,
+          "canonicalTitle": "Mobile White Pattern",
+          "type": "",
+          "image": "Mobile White Exosuit Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 50,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:18420:p3:table:5",
+              "raw:18420:p3:table:6"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 18420,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:18420",
+            "pageId": 18420,
+            "revision": 125861,
+            "sha256": "2a1518a6abc425f8a1c9a79972e44e2d33c272ef95e249f40a4bfea0dd847ed0",
+            "wikitextSha256": "7f8ed4b1b2f5b9b1707698f7ea8eed8f5bc5872f661bc8f16a8f4c8bb7dce485",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Exo_Experts_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:6675:p3:template:4",
+          "sourcePageId": 6675,
+          "sourceRevision": 124388,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "viper-commandos",
+          "page": 3,
+          "canonicalTitle": "Undergrowth Pattern",
+          "type": "",
+          "image": "Undergrowth Exosuit Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 50,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:6675:p3:table:6",
+              "raw:6675:p3:table:7"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 6675,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:6675",
+            "pageId": 6675,
+            "revision": 124388,
+            "sha256": "286b8264e4fb91b833973256ea5467e7620a053a014c0fdab8bf64cca89a2cf8",
+            "wikitextSha256": "3a8c58670c251777561fdbc5ba48ecc990a1372146e4a9171eb2b3e0b4e800f9",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Viper_Commandos_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:6675:p3:template:7",
+          "sourcePageId": 6675,
+          "sourceRevision": 124388,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "viper-commandos",
+          "page": 3,
+          "canonicalTitle": "Undergrowth Pattern",
+          "type": "",
+          "image": "Undergrowth Vehicle Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 55,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:6675:p3:table:6",
+              "raw:6675:p3:table:7"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 6675,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:6675",
+            "pageId": 6675,
+            "revision": 124388,
+            "sha256": "286b8264e4fb91b833973256ea5467e7620a053a014c0fdab8bf64cca89a2cf8",
+            "wikitextSha256": "3a8c58670c251777561fdbc5ba48ecc990a1372146e4a9171eb2b3e0b4e800f9",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Viper_Commandos_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:7221:p3:template:6",
+          "sourcePageId": 7221,
+          "sourceRevision": 124375,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "freedoms-flame",
+          "page": 3,
+          "canonicalTitle": "safety Orange Pattern",
+          "type": "",
+          "image": "Safety Orange Exosuit Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 40,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:7221:p3:table:6",
+              "raw:7221:p3:table:7"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 7221,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:7221",
+            "pageId": 7221,
+            "revision": 124375,
+            "sha256": "c6d86a15a81490c2ba880926d52b0822b33585d103dc5ac0a96dc887a9b949b7",
+            "wikitextSha256": "0bc5b71b75b775d6db3d3036eb6b1e26adf16bb0ce7a9bc57b1a139ff8325362",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Freedom%27s_Flame_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:7221:p3:template:7",
+          "sourcePageId": 7221,
+          "sourceRevision": 124375,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "freedoms-flame",
+          "page": 3,
+          "canonicalTitle": "safety Orange Pattern",
+          "type": "",
+          "image": "Safety Orange Vehicle Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 55,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:7221:p3:table:6",
+              "raw:7221:p3:table:7"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 7221,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:7221",
+            "pageId": 7221,
+            "revision": 124375,
+            "sha256": "c6d86a15a81490c2ba880926d52b0822b33585d103dc5ac0a96dc887a9b949b7",
+            "wikitextSha256": "0bc5b71b75b775d6db3d3036eb6b1e26adf16bb0ce7a9bc57b1a139ff8325362",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Freedom%27s_Flame_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:7419:p3:template:2",
+          "sourcePageId": 7419,
+          "sourceRevision": 124367,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "chemical-agents",
+          "page": 3,
+          "canonicalTitle": "Mustard Pattern",
+          "type": "",
+          "image": "Mustard Vehicle Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 55,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:7419:p3:table:6",
+              "raw:7419:p3:table:7"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 7419,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:7419",
+            "pageId": 7419,
+            "revision": 124367,
+            "sha256": "83df780b3417a820a20225d336cedea1431c8f97f04fa7cedd3121902b8877a0",
+            "wikitextSha256": "aa88338010f54abe92165681a7c46998a9ee1606608d41711170ad13d6b8d444",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Chemical_Agents_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:7419:p3:template:3",
+          "sourcePageId": 7419,
+          "sourceRevision": 124367,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "chemical-agents",
+          "page": 3,
+          "canonicalTitle": "Mustard Pattern",
+          "type": "",
+          "image": "Mustard Exosuit Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 50,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:7419:p3:table:6",
+              "raw:7419:p3:table:7"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 7419,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:7419",
+            "pageId": 7419,
+            "revision": 124367,
+            "sha256": "83df780b3417a820a20225d336cedea1431c8f97f04fa7cedd3121902b8877a0",
+            "wikitextSha256": "aa88338010f54abe92165681a7c46998a9ee1606608d41711170ad13d6b8d444",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Chemical_Agents_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:7882:p1:template:1",
+          "sourcePageId": 7882,
+          "sourceRevision": 124386,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "truth-enforcers",
+          "page": 1,
+          "canonicalTitle": "Inconspicuous Black Pattern",
+          "type": "",
+          "image": "Inconspicuous Black Exosuit Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 50,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:7882:p1:table:4",
+              "raw:7882:p1:table:5"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 7882,
+            "page": 1
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:7882",
+            "pageId": 7882,
+            "revision": 124386,
+            "sha256": "873f8b52309388b67ceb5967dd93a6b1aad48bd12836126efc68849935565441",
+            "wikitextSha256": "c8a0f892400c62105634252f3ee401d93c62702d2ee96e1d60a87bbd9207db71",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Truth_Enforcers_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:7882:p1:template:5",
+          "sourcePageId": 7882,
+          "sourceRevision": 124386,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "truth-enforcers",
+          "page": 1,
+          "canonicalTitle": "Inconspicuous Black Pattern",
+          "type": "",
+          "image": "Inconspicuous Black Hellpod Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 10,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:7882:p1:table:4",
+              "raw:7882:p1:table:5"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 7882,
+            "page": 1
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:7882",
+            "pageId": 7882,
+            "revision": 124386,
+            "sha256": "873f8b52309388b67ceb5967dd93a6b1aad48bd12836126efc68849935565441",
+            "wikitextSha256": "c8a0f892400c62105634252f3ee401d93c62702d2ee96e1d60a87bbd9207db71",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Truth_Enforcers_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:9015:p3:template:3",
+          "sourcePageId": 9015,
+          "sourceRevision": 124387,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "urban-legends",
+          "page": 3,
+          "canonicalTitle": "Concrete Jungle Pattern",
+          "type": "",
+          "image": "Concrete Jungle Exosuit Pattern Icon.png",
+          "rewardKind": "pattern",
+          "itemMedals": 50,
+          "disposition": "excluded-with-source-ambiguity",
+          "reason": "multiple-same-kind-non-product-rows",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": null,
+          "sourceConflict": null,
+          "sourceAmbiguity": {
+            "candidateIds": [
+              "raw:9015:p3:table:5",
+              "raw:9015:p3:table:6"
+            ],
+            "rewardKind": "pattern",
+            "sourcePageId": 9015,
+            "page": 3
+          },
+          "sourceBinding": {
+            "sourceId": "wiki-page:9015",
+            "pageId": 9015,
+            "revision": 124387,
+            "sha256": "d7e5878ed8af1c954a7b0fd302505db15a6eb827efc78c1286319a8de55105cb",
+            "wikitextSha256": "a3fbe9eedd080871ad9b99ac71647fa2d65eac4153a7a5aca2599fbe23f2051f",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Urban_Legends_Premium_Warbond"
+          }
+        }
+      ],
+      "nonProductAmbiguousCount": 25,
+      "nonProductSourceConflicts": [
+        {
+          "candidateId": "raw:13263:p2:template:1",
+          "sourcePageId": 13263,
+          "sourceRevision": 124368,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "control-group",
+          "page": 2,
+          "canonicalTitle": "Super Credits",
+          "type": "",
+          "image": "Super Credits Warbond Premium.png",
+          "rewardKind": "currency",
+          "itemMedals": 15,
+          "disposition": "excluded-with-source-conflict",
+          "reason": "non-product-page-cost-conflict",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": "raw:13263:p2:table:1",
+          "sourceConflict": {
+            "templateItemMedals": 15,
+            "tableItemMedals": 12,
+            "tableCandidateId": "raw:13263:p2:table:1",
+            "tableType": "Currency"
+          },
+          "sourceAmbiguity": null,
+          "sourceBinding": {
+            "sourceId": "wiki-page:13263",
+            "pageId": 13263,
+            "revision": 124368,
+            "sha256": "ef60bc973a7635d14373eb783f833a958fa51bee449eb68f06ae59704b15a1cb",
+            "wikitextSha256": "74b41efc2d29f36b970484e0e8cdc1621f4ed2be06be8351dad492eb2ca855fd",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Control_Group_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:17209:p1:template:6",
+          "sourcePageId": 17209,
+          "sourceRevision": 124372,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "entrenched-division",
+          "page": 1,
+          "canonicalTitle": "CPG-48 Sapper",
+          "type": "",
+          "image": "CPG-48 Sapper Helmet Render.png",
+          "rewardKind": "helmet",
+          "itemMedals": 30,
+          "disposition": "excluded-with-source-conflict",
+          "reason": "non-product-page-cost-conflict",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": "raw:17209:p1:table:3",
+          "sourceConflict": {
+            "templateItemMedals": 30,
+            "tableItemMedals": 35,
+            "tableCandidateId": "raw:17209:p1:table:3",
+            "tableType": "Helmet"
+          },
+          "sourceAmbiguity": null,
+          "sourceBinding": {
+            "sourceId": "wiki-page:17209",
+            "pageId": 17209,
+            "revision": 124372,
+            "sha256": "a4fd2347c04a24b2ae2cedae7c109515b8d04d48581fc252c7c563357ab343f6",
+            "wikitextSha256": "fecfa8ef11fc031f0fb5a1189b4d04d56df8b38f162c2d501846a0c063d2b9a7",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Entrenched_Division_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:17209:p2:template:5",
+          "sourcePageId": 17209,
+          "sourceRevision": 124372,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "entrenched-division",
+          "page": 2,
+          "canonicalTitle": "Crest of the Unsullied",
+          "type": "",
+          "image": "Crest of the Unsullied Player Card Icon.png",
+          "rewardKind": "player-card",
+          "itemMedals": 7,
+          "disposition": "excluded-with-source-conflict",
+          "reason": "non-product-page-cost-conflict",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": "raw:17209:p2:table:4",
+          "sourceConflict": {
+            "templateItemMedals": 7,
+            "tableItemMedals": 6,
+            "tableCandidateId": "raw:17209:p2:table:4",
+            "tableType": "Player Card"
+          },
+          "sourceAmbiguity": null,
+          "sourceBinding": {
+            "sourceId": "wiki-page:17209",
+            "pageId": 17209,
+            "revision": 124372,
+            "sha256": "a4fd2347c04a24b2ae2cedae7c109515b8d04d48581fc252c7c563357ab343f6",
+            "wikitextSha256": "fecfa8ef11fc031f0fb5a1189b4d04d56df8b38f162c2d501846a0c063d2b9a7",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Entrenched_Division_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:7882:p2:template:4",
+          "sourcePageId": 7882,
+          "sourceRevision": 124386,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "truth-enforcers",
+          "page": 2,
+          "canonicalTitle": "Pride of the Whistleblower",
+          "type": "",
+          "image": "Pride of the Whistleblower Player Card Icon.png",
+          "rewardKind": "player-card",
+          "itemMedals": 20,
+          "disposition": "excluded-with-source-conflict",
+          "reason": "non-product-page-cost-conflict",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": "raw:7882:p2:table:6",
+          "sourceConflict": {
+            "templateItemMedals": 20,
+            "tableItemMedals": 5,
+            "tableCandidateId": "raw:7882:p2:table:6",
+            "tableType": "Player Card"
+          },
+          "sourceAmbiguity": null,
+          "sourceBinding": {
+            "sourceId": "wiki-page:7882",
+            "pageId": 7882,
+            "revision": 124386,
+            "sha256": "873f8b52309388b67ceb5967dd93a6b1aad48bd12836126efc68849935565441",
+            "wikitextSha256": "c8a0f892400c62105634252f3ee401d93c62702d2ee96e1d60a87bbd9207db71",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Truth_Enforcers_Premium_Warbond"
+          }
+        },
+        {
+          "candidateId": "raw:7882:p2:template:7",
+          "sourcePageId": 7882,
+          "sourceRevision": 124386,
+          "sourceKind": "acquisitions-template",
+          "warbondId": "truth-enforcers",
+          "page": 2,
+          "canonicalTitle": "Pride of the Whistleblower",
+          "type": "",
+          "image": "Pride of the Whistleblower Cape Render.png",
+          "rewardKind": "cape",
+          "itemMedals": 5,
+          "disposition": "excluded-with-source-conflict",
+          "reason": "non-product-page-cost-conflict",
+          "resolutionMode": "unresolved",
+          "canonicalId": null,
+          "typeWarning": null,
+          "corroboratedByCandidateId": "raw:7882:p2:table:5",
+          "sourceConflict": {
+            "templateItemMedals": 5,
+            "tableItemMedals": 20,
+            "tableCandidateId": "raw:7882:p2:table:5",
+            "tableType": "Cape"
+          },
+          "sourceAmbiguity": null,
+          "sourceBinding": {
+            "sourceId": "wiki-page:7882",
+            "pageId": 7882,
+            "revision": 124386,
+            "sha256": "873f8b52309388b67ceb5967dd93a6b1aad48bd12836126efc68849935565441",
+            "wikitextSha256": "c8a0f892400c62105634252f3ee401d93c62702d2ee96e1d60a87bbd9207db71",
+            "role": "contents-candidate",
+            "url": "https://helldivers.wiki.gg/wiki/Truth_Enforcers_Premium_Warbond"
+          }
+        }
+      ],
+      "nonProductSourceConflictCount": 5
+    },
+    "candidateSetSha256": "a136e8c98da4ae028ed3fd7352e2b26b8e3942b3af703f32a4cd5b7ed94665e2",
+    "typeWarningCount": 20,
+    "typeWarnings": [
+      {
+        "candidateId": "raw:10293:p1:table:2",
+        "canonicalTitle": "LAS-17 Double-Edge Sickle",
+        "type": "Energy-Based",
+        "canonicalId": "las-17-double-edge-sickle",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:10898:p1:table:2",
+        "canonicalTitle": "R-6 Deadeye",
+        "type": "Energy-Based",
+        "canonicalId": "r-6-deadeye",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:12038:p2:table:2",
+        "canonicalTitle": "CQC-2 Saber",
+        "type": "Melee",
+        "canonicalId": "cqc-2-saber",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:13638:p2:table:1",
+        "canonicalTitle": "M7S SMG",
+        "type": "Submachine Gun",
+        "canonicalId": "m7s-smg",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:15186:p2:table:1",
+        "canonicalTitle": "PLAS-39 Accelerator Rifle",
+        "type": "Energy-Based",
+        "canonicalId": "plas-39-accelerator-rifle",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:15186:p3:table:2",
+        "canonicalTitle": "StA-11 SMG",
+        "type": "Submachine Gun",
+        "canonicalId": "sta-11-smg",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:15401:p3:table:4",
+        "canonicalTitle": "B/MD C4 Pack",
+        "type": "Stratagems",
+        "canonicalId": "b-md-c4-pack",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:18420:p1:table:2",
+        "canonicalTitle": "SMG-203 Gallant",
+        "type": "Submachine Gun",
+        "canonicalId": "smg-203-gallant",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:2545:p10:table:3",
+        "canonicalTitle": "PLAS-1 Scorcher",
+        "type": "Energy-Based",
+        "canonicalId": "plas-1-scorcher",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:2545:p3:table:3",
+        "canonicalTitle": "SMG-37 Defender",
+        "type": "Submachine Gun",
+        "canonicalId": "smg-37-defender",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:2545:p5:table:2",
+        "canonicalTitle": "LAS-5 Scythe",
+        "type": "Energy-Based",
+        "canonicalId": "las-5-scythe",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:3801:p1:table:3",
+        "canonicalTitle": "LAS-16 Sickle",
+        "type": "Energy-Based",
+        "canonicalId": "las-16-sickle",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:3801:p2:table:2",
+        "canonicalTitle": "SG-8P Punisher Plasma",
+        "type": "Energy-Based",
+        "canonicalId": "sg-8p-punisher-plasma",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:3801:p3:table:2",
+        "canonicalTitle": "ARC-12 Blitzer",
+        "type": "Energy-Based",
+        "canonicalId": "arc-12-blitzer",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:4561:p2:table:3",
+        "canonicalTitle": "R-36 Eruptor",
+        "type": "Explosive",
+        "canonicalId": "r-36-eruptor",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:4561:p3:table:2",
+        "canonicalTitle": "CB-9 Exploding Crossbow",
+        "type": "Explosive",
+        "canonicalId": "cb-9-exploding-crossbow",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:6128:p2:table:2",
+        "canonicalTitle": "SMG-72 Pummeler",
+        "type": "Submachine Gun",
+        "canonicalId": "smg-72-pummeler",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:6128:p3:table:2",
+        "canonicalTitle": "PLAS-101 Purifier",
+        "type": "Energy-Based",
+        "canonicalId": "plas-101-purifier",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:7882:p2:table:2",
+        "canonicalTitle": "SMG-32 Reprimand",
+        "type": "Submachine Gun",
+        "canonicalId": "smg-32-reprimand",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      },
+      {
+        "candidateId": "raw:9015:p1:table:3",
+        "canonicalTitle": "CQC-19 Stun Lance",
+        "type": "Melee",
+        "canonicalId": "cqc-19-stun-lance",
+        "warning": "contents-type-open-vocabulary-mismatch"
+      }
+    ],
+    "exceptions": [],
+    "sets": [
+      {
+        "warbondId": "borderline-justice",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 6,
+        "formalCount": 6,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "gs-17-frontier-marshal",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "gs-66-lawmaker",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "las-58-talon",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 40
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 40
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "lift-860-hover-pack",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "r-6-deadeye",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ted-63-dynamite",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "castellans-creed-legendary",
+        "released": false,
+        "upcomingIds": [
+          "40-k-meltagun",
+          "g-40-k-meltamine",
+          "p-40-k-bolt-pistol",
+          "r-40-k-hot-shot-marksman-rifle",
+          "tg-122-demo-trooper",
+          "tg-8-sharpshooter"
+        ],
+        "expectedCount": 0,
+        "formalCount": 0,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [],
+        "exactSet": true
+      },
+      {
+        "warbondId": "chemical-agents",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 6,
+        "formalCount": 6,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "af-02-haz-master",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "af-50-noxious-ranger",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 40
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 40
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ax-tx-13-dog-breath",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "g-4-gas",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 30
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 30
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "p-11-stim-pistol",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 80
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 80
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "tx-41-sterilizer",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "control-group",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 7,
+        "formalCount": 7,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "a-las-98-laser-sentry",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ad-26-bleeding-edge",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ad-49-apollonian",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "g-31-arc",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "lift-182-warp-pack",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "plas-45-epoch",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 75
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 75
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "vg-70-variable",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "cutting-edge",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 8,
+        "formalCount": 8,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "arc-12-blitzer",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 80
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 80
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ex-00-prototype-x",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 64
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 64
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ex-03-prototype-3",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 18
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 18
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ex-16-prototype-16",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "g-23-stun",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 25
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 25
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "las-16-sickle",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "las-7-dagger",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 60
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 60
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sg-8p-punisher-plasma",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 60
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 60
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "democratic-detonation",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 8,
+        "formalCount": 8,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "br-14-adjudicator",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "cb-9-exploding-crossbow",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 80
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 80
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ce-07-demolition-specialist",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ce-27-ground-breaker",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 18
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 18
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "fs-55-devastator",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 64
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 64
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "g-123-thermite",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 15
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 15
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "gp-31-grenade-pistol",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 60
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 60
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "r-36-eruptor",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 60
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 60
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "dust-devils",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 7,
+        "formalCount": 7,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "ar-2-coyote",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ds-191-scorpion",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ds-42-federations-blade",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "eat-700-expendable-napalm",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "g-7-pineapple",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ms-11-solo-silo",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "s-11-speargun",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "entrenched-division",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 8,
+        "formalCount": 8,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "a-gm-17-gas-mortar-sentry",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "b-flam-80-cremator",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "cpg-48-sapper",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "cph-26-commandant",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "cqc-73-entrenchment-tool",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "g-48-giga-grenade",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 50
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 50
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "p-69-veto",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "smg-flam-34-stoker",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "exo-experts",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 7,
+        "formalCount": 7,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "exo-51-lumberer-exosuit",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 50
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 50
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "exo-55-breakthrough-exosuit",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 50
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 50
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "mgx-42-bullet-storm",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 75
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 75
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "o-2-heavy-operator",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "o-3-free-spirit",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "p-33-missile-pistol",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 50
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 50
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "smg-203-gallant",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "force-of-law",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 6,
+        "formalCount": 6,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "ar-32-pacifier",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ax-arc-3-k-9",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "bp-20-correct-officer",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "bp-32-jackboot",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "g-109-urchin",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "gl-52-de-escalator",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "freedoms-flame",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 5,
+        "formalCount": 5,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "flam-66-torcher",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 40
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 40
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "i-09-heatseeker",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 18
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 18
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "i-102-draconaught",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "p-72-crisper",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sg-451-cookout",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "helldivers-mobilize",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 24,
+        "formalCount": 24,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "ar-23p-liberator-penetrator",
+            "expected": [
+              {
+                "page": 6,
+                "itemMedals": 40
+              }
+            ],
+            "actual": [
+              {
+                "page": 6,
+                "itemMedals": 40
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ce-35-trench-engineer",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 10
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 10
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "cm-09-bonesnapper",
+            "expected": [
+              {
+                "page": 4,
+                "itemMedals": 15
+              }
+            ],
+            "actual": [
+              {
+                "page": 4,
+                "itemMedals": 15
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "cm-14-physician",
+            "expected": [
+              {
+                "page": 9,
+                "itemMedals": 70
+              }
+            ],
+            "actual": [
+              {
+                "page": 9,
+                "itemMedals": 70
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "dp-11-champion-of-the-people",
+            "expected": [
+              {
+                "page": 10,
+                "itemMedals": 100
+              }
+            ],
+            "actual": [
+              {
+                "page": 10,
+                "itemMedals": 100
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "dp-40-hero-of-the-federation",
+            "expected": [
+              {
+                "page": 5,
+                "itemMedals": 25
+              }
+            ],
+            "actual": [
+              {
+                "page": 5,
+                "itemMedals": 25
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "fs-05-marksman",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 6
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 6
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "fs-23-battle-master",
+            "expected": [
+              {
+                "page": 6,
+                "itemMedals": 35
+              }
+            ],
+            "actual": [
+              {
+                "page": 6,
+                "itemMedals": 35
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "g-16-impact",
+            "expected": [
+              {
+                "page": 5,
+                "itemMedals": 20
+              }
+            ],
+            "actual": [
+              {
+                "page": 5,
+                "itemMedals": 20
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "g-3-smoke",
+            "expected": [
+              {
+                "page": 8,
+                "itemMedals": 25
+              }
+            ],
+            "actual": [
+              {
+                "page": 8,
+                "itemMedals": 25
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "g-6-frag",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 2
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 2
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "las-5-scythe",
+            "expected": [
+              {
+                "page": 5,
+                "itemMedals": 30
+              }
+            ],
+            "actual": [
+              {
+                "page": 5,
+                "itemMedals": 30
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "p-19-redeemer",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 5
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 5
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "plas-1-scorcher",
+            "expected": [
+              {
+                "page": 10,
+                "itemMedals": 75
+              }
+            ],
+            "actual": [
+              {
+                "page": 10,
+                "itemMedals": 75
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "r-63-diligence",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 8
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 8
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "r-63cs-diligence-counter-sniper",
+            "expected": [
+              {
+                "page": 7,
+                "itemMedals": 40
+              }
+            ],
+            "actual": [
+              {
+                "page": 7,
+                "itemMedals": 40
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sa-04-combat-technician",
+            "expected": [
+              {
+                "page": 8,
+                "itemMedals": 60
+              }
+            ],
+            "actual": [
+              {
+                "page": 8,
+                "itemMedals": 60
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sc-30-trailblazer-scout",
+            "expected": [
+              {
+                "page": 7,
+                "itemMedals": 50
+              }
+            ],
+            "actual": [
+              {
+                "page": 7,
+                "itemMedals": 50
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sc-34-infiltrator",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 3
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 3
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sg-225-breaker",
+            "expected": [
+              {
+                "page": 4,
+                "itemMedals": 20
+              }
+            ],
+            "actual": [
+              {
+                "page": 4,
+                "itemMedals": 20
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sg-225sp-breaker-spray-pray",
+            "expected": [
+              {
+                "page": 9,
+                "itemMedals": 60
+              }
+            ],
+            "actual": [
+              {
+                "page": 9,
+                "itemMedals": 60
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sg-8-punisher",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 4
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 4
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sg-8s-slugger",
+            "expected": [
+              {
+                "page": 8,
+                "itemMedals": 60
+              }
+            ],
+            "actual": [
+              {
+                "page": 8,
+                "itemMedals": 60
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "smg-37-defender",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 15
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 15
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "masters-of-ceremony",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 6,
+        "formalCount": 6,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "cqc-1-one-true-flag",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "cqc-2-saber",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 40
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 40
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "g-142-pyrotech",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "r-2-amendment",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "re-1861-parade-commander",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "re-2310-honorary-guard",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "obedient-democracy-support-troopers-legendary",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 6,
+        "formalCount": 6,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "a-35-recon",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "a-9-helljumper",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "m6c-socom-pistol",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 75
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 75
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "m7s-smg",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 50
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 50
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "m90a-shotgun",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ma5c-assault-rifle",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "polar-patriots",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 8,
+        "formalCount": 8,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "ar-61-tenderizer",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "cw-22-kodiak",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "cw-36-winter-warrior",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 18
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 18
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "cw-4-arctic-ranger",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 64
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 64
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "g-13-incendiary-impact",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 25
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 25
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "p-113-verdict",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 60
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 60
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "plas-101-purifier",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 80
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 80
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "smg-72-pummeler",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 60
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 60
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "python-commandos",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 6,
+        "formalCount": 6,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "ar-gl-21-one-two",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ax-flam-75-hot-dog",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 75
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 75
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "cqc-9-defoliation-tool",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "m-1000-maxigun",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "rs-20-constrictor",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "rs-40-beast-of-prey",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "redacted-regiment",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 7,
+        "formalCount": 7,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "ar-59-suppressor",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 50
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 50
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "b-md-c4-pack",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "p-35-re-educator",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "r-72-censor",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "rs-67-null-cipher",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "rs-89-shadow-paragon",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "tm-1-lure-mine",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "righteous-revenants-legendary",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 5,
+        "formalCount": 5,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "ac-1-dutiful",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ac-2-obedient",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "plas-39-accelerator-rifle",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 50
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 50
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sta-11-smg",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sta-52-assault-rifle",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "servants-of-freedom",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 6,
+        "formalCount": 6,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "b-100-portable-hellbomb",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "g-50-seeker",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "gp-20-ultimatum",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 40
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 40
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ie-12-righteous",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ie-3-martyr",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "las-17-double-edge-sickle",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "siege-breakers",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 7,
+        "formalCount": 7,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "cqc-20-breaching-hammer",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 75
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 75
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "eat-411-leveller",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "g-sh-39-shield",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "gl-28-belt-fed-grenade-launcher",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "las-13-trident",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 35
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sa-7-headfirst",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sa-8-ram",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 55
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "steeled-veterans",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 8,
+        "formalCount": 8,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "ar-23c-liberator-concussive",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "g-10-incendiary",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 25
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 25
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "jar-5-dominator",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 80
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 80
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "p-4-senator",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 15
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 15
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sa-12-servo-assisted",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sa-25-steel-trooper",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 18
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 18
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sa-32-dynamo",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 64
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 64
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sg-225ie-breaker-incendiary",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 60
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 60
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "truth-enforcers",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 5,
+        "formalCount": 5,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "plas-15-loyalist",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sg-20-halt",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "smg-32-reprimand",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 40
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 40
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "uf-16-inspector",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 65
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "uf-50-bloodhound",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "urban-legends",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 6,
+        "formalCount": 6,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "a-flam-40-flame-sentry",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 85
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "cqc-19-stun-lance",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 30
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 30
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "e-at-12-anti-tank-emplacement",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 110
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sh-51-directional-shield",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 75
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 75
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sr-18-roadblock",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sr-24-street-scout",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 40
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 40
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      },
+      {
+        "warbondId": "viper-commandos",
+        "released": true,
+        "upcomingIds": [],
+        "expectedCount": 5,
+        "formalCount": 5,
+        "missingIds": [],
+        "extraIds": [],
+        "rawOfferConflicts": [],
+        "offerMismatches": [],
+        "offerDiffCount": 0,
+        "offerComparisons": [
+          {
+            "canonicalId": "ar-23a-liberator-carbine",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 20
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "k-2-throwing-knife",
+            "expected": [
+              {
+                "page": 3,
+                "itemMedals": 60
+              }
+            ],
+            "actual": [
+              {
+                "page": 3,
+                "itemMedals": 60
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ph-202-twigsnapper",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 45
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "ph-9-predator",
+            "expected": [
+              {
+                "page": 1,
+                "itemMedals": 40
+              }
+            ],
+            "actual": [
+              {
+                "page": 1,
+                "itemMedals": 40
+              }
+            ],
+            "equal": true
+          },
+          {
+            "canonicalId": "sg-22-bushwhacker",
+            "expected": [
+              {
+                "page": 2,
+                "itemMedals": 50
+              }
+            ],
+            "actual": [
+              {
+                "page": 2,
+                "itemMedals": 50
+              }
+            ],
+            "equal": true
+          }
+        ],
+        "exactSet": true
+      }
+    ]
+  },
+  "corrections": {
+    "applied": [
+      {
+        "correctionId": "chemical-agents-dog-breath-title-alias",
+        "kind": "identity-link",
+        "fromContentsTitle": "AX/TX-13 \"Guard Dog\" Dog Breath",
+        "toId": "ax-tx-13-dog-breath",
+        "sourceBindings": [
+          {
+            "sourceId": "wiki-page:7501",
+            "pageId": 7501,
+            "revision": 123664,
+            "sha256": "50b54a9ed4dc2a00d46cdb8d8164b13983737ae6355583702c05e3d273183f96",
+            "wikitextSha256": "b41451d4fe852c0ff89cfbbdaa07a273118ba7d902b84d5269e1f609bb54d088",
+            "role": "equipment-page",
+            "url": "https://helldivers.wiki.gg/wiki/AX/TX-13_Dog_Breath"
+          },
+          {
+            "sourceId": "wiki-page:7419",
+            "pageId": 7419,
+            "revision": 124367,
+            "sha256": "83df780b3417a820a20225d336cedea1431c8f97f04fa7cedd3121902b8877a0",
+            "wikitextSha256": "aa88338010f54abe92165681a7c46998a9ee1606608d41711170ad13d6b8d444",
+            "role": "contents-page",
+            "url": "https://helldivers.wiki.gg/wiki/Chemical_Agents_Premium_Warbond"
+          }
+        ],
+        "officialSourceBindings": [],
+        "conflict": null
+      },
+      {
+        "correctionId": "urban-legends-flame-sentry",
+        "kind": "identity-link",
+        "fromContentsTitle": "Flame Sentry",
+        "toId": "a-flam-40-flame-sentry",
+        "sourceBindings": [
+          {
+            "sourceId": "wiki-page:9056",
+            "pageId": 9056,
+            "revision": 123650,
+            "sha256": "a33f2b5723900e25f6d28bbf0fca6a22a1876ecc677d035866a950988272be35",
+            "wikitextSha256": "720769928c8c22b7f57afb0ae8f00395e4539dbc247a061b47a11052583c0623",
+            "role": "equipment-page",
+            "url": "https://helldivers.wiki.gg/wiki/A/FLAM-40_Flame_Sentry"
+          },
+          {
+            "sourceId": "wiki-page:9015",
+            "pageId": 9015,
+            "revision": 124387,
+            "sha256": "d7e5878ed8af1c954a7b0fd302505db15a6eb827efc78c1286319a8de55105cb",
+            "wikitextSha256": "a3fbe9eedd080871ad9b99ac71647fa2d65eac4153a7a5aca2599fbe23f2051f",
+            "role": "contents-page",
+            "url": "https://helldivers.wiki.gg/wiki/Urban_Legends_Premium_Warbond"
+          }
+        ],
+        "officialSourceBindings": [],
+        "conflict": null
+      },
+      {
+        "correctionId": "urban-legends-anti-tank-emplacement",
+        "kind": "identity-link",
+        "fromContentsTitle": "Anti-Tank Emplacement",
+        "toId": "e-at-12-anti-tank-emplacement",
+        "sourceBindings": [
+          {
+            "sourceId": "wiki-page:9014",
+            "pageId": 9014,
+            "revision": 126647,
+            "sha256": "aff962d8d5e2831ea32dbd7e60493a2e7a0286403542cc36137bf6819ae6d709",
+            "wikitextSha256": "034657bac7d9a9598beadc2ab79e284dccadd848aa7a28d5be824f4b234fdc7a",
+            "role": "equipment-page",
+            "url": "https://helldivers.wiki.gg/wiki/E/AT-12_Anti-Tank_Emplacement"
+          },
+          {
+            "sourceId": "wiki-page:9015",
+            "pageId": 9015,
+            "revision": 124387,
+            "sha256": "d7e5878ed8af1c954a7b0fd302505db15a6eb827efc78c1286319a8de55105cb",
+            "wikitextSha256": "a3fbe9eedd080871ad9b99ac71647fa2d65eac4153a7a5aca2599fbe23f2051f",
+            "role": "contents-page",
+            "url": "https://helldivers.wiki.gg/wiki/Urban_Legends_Premium_Warbond"
+          }
+        ],
+        "officialSourceBindings": [],
+        "conflict": null
+      },
+      {
+        "correctionId": "urban-legends-directional-shield",
+        "kind": "identity-link",
+        "fromContentsTitle": "Directional Shield",
+        "toId": "sh-51-directional-shield",
+        "sourceBindings": [
+          {
+            "sourceId": "wiki-page:9055",
+            "pageId": 9055,
+            "revision": 126349,
+            "sha256": "98e1b1bfb08a43b2f93e54d4ca7e530a09c321e3a9825bff68b3d459cc89b622",
+            "wikitextSha256": "fa59b2c8f4cac0e3e0710b04dba8896a8ecaddaf79c09fd94c9c1c8e68d987d9",
+            "role": "equipment-page",
+            "url": "https://helldivers.wiki.gg/wiki/SH-51_Directional_Shield"
+          },
+          {
+            "sourceId": "wiki-page:9015",
+            "pageId": 9015,
+            "revision": 124387,
+            "sha256": "d7e5878ed8af1c954a7b0fd302505db15a6eb827efc78c1286319a8de55105cb",
+            "wikitextSha256": "a3fbe9eedd080871ad9b99ac71647fa2d65eac4153a7a5aca2599fbe23f2051f",
+            "role": "contents-page",
+            "url": "https://helldivers.wiki.gg/wiki/Urban_Legends_Premium_Warbond"
+          }
+        ],
+        "officialSourceBindings": [],
+        "conflict": null
+      },
+      {
+        "correctionId": "servants-of-freedom-portable-hellbomb",
+        "kind": "identity-link",
+        "fromContentsTitle": "Portable Hellbomb",
+        "toId": "b-100-portable-hellbomb",
+        "sourceBindings": [
+          {
+            "sourceId": "wiki-page:10361",
+            "pageId": 10361,
+            "revision": 123666,
+            "sha256": "10b3adcca3c6fac4a0a38d5bc9d7307b9a97277f9a8363c1f0263f8cd2025754",
+            "wikitextSha256": "68940086c5c77fb414a99917c0b495e6de880dabd87f13c99389a8f3be256390",
+            "role": "equipment-page",
+            "url": "https://helldivers.wiki.gg/wiki/B-100_Portable_Hellbomb"
+          },
+          {
+            "sourceId": "wiki-page:10293",
+            "pageId": 10293,
+            "revision": 124383,
+            "sha256": "cfc8af0b0666e90ae38c1fdc201c8388c9e015816cb7834397918a696ebb814d",
+            "wikitextSha256": "1c06d6cb86309abfbd12d4b1a34d39f62de2f86f8a939d4ef1b3325693058351",
+            "role": "contents-page",
+            "url": "https://helldivers.wiki.gg/wiki/Servants_of_Freedom_Premium_Warbond"
+          }
+        ],
+        "officialSourceBindings": [],
+        "conflict": null
+      },
+      {
+        "correctionId": "python-commandos-hot-dog",
+        "kind": "identity-link",
+        "fromContentsTitle": "AX/FLAM-75 \"Guard Dog\" Hot Dog",
+        "toId": "ax-flam-75-hot-dog",
+        "sourceBindings": [
+          {
+            "sourceId": "wiki-page:14706",
+            "pageId": 14706,
+            "revision": 124880,
+            "sha256": "ddab3b37fd3c0dbbd66b670c870d0fe20ec35129a9a0cc9b3f1080c4187ceed0",
+            "wikitextSha256": "a9fd545437b94d0eb4c75e740a966766a6adba297685f10790c2534a616edf25",
+            "role": "equipment-page",
+            "url": "https://helldivers.wiki.gg/wiki/AX/FLAM-75_Hot_Dog"
+          },
+          {
+            "sourceId": "wiki-page:14656",
+            "pageId": 14656,
+            "revision": 124890,
+            "sha256": "7e95511ec7bb2a9f1a8078c2e5524db13f46205e55ae173dc8cc538dd92ad42a",
+            "wikitextSha256": "5fb3630bcc5c2f2f0c815eaa5ef784c97f5f172adb6b0e4d5b8b6a8ead7ecd5d",
+            "role": "contents-page",
+            "url": "https://helldivers.wiki.gg/wiki/Python_Commandos_Premium_Warbond"
+          }
+        ],
+        "officialSourceBindings": [],
+        "conflict": null
+      },
+      {
+        "correctionId": "siege-breakers-las-16-to-las-13",
+        "kind": "identity-conflict",
+        "fromContentsTitle": "LAS-16 Trident",
+        "toId": "las-13-trident",
+        "sourceBindings": [
+          {
+            "sourceId": "wiki-page:15881",
+            "pageId": 15881,
+            "revision": 119052,
+            "sha256": "fbe717cc104b79718a8b5a779bd7c3535cea192bef3f5f4ef34fb09194dd3424",
+            "wikitextSha256": "ddd9997a7beca741eaa7d43f02b062cc110a6a67f3c069a5f5e69194b5ec1650",
+            "role": "equipment-page",
+            "url": "https://helldivers.wiki.gg/wiki/LAS-13_Trident"
+          },
+          {
+            "sourceId": "wiki-page:15852",
+            "pageId": 15852,
+            "revision": 124384,
+            "sha256": "09299eff92811a649b15bf00734194287c1d59736fec87d31700d7b4fc30a9af",
+            "wikitextSha256": "3566bb7c248deb9042bbf8d33f44da7a3790617238858ede88616fca001c33da",
+            "role": "contents-page",
+            "url": "https://helldivers.wiki.gg/wiki/Siege_Breakers_Premium_Warbond"
+          }
+        ],
+        "officialSourceBindings": [
+          {
+            "sourceId": "official-localization:equipment-primary:2350507039",
+            "kind": "official-localization",
+            "registryId": "equipment-primary",
+            "gameBuild": "24036910",
+            "key": 2350507039,
+            "englishFile": "0x4f68a1db55e6da09.strings.json",
+            "englishSha256": "bce4468d52268fc8dbe3ba6a298cdab8c3e837fde0ffb6b2e0d5f7a9ea5b8aa5",
+            "simplifiedFile": "0x95ee90e8062250a6.strings.json",
+            "simplifiedSha256": "ae242b3899b2bb3dc36df89af572ab0be02e141a8be79558cc7bdf4bed2810b7",
+            "english": "LAS-13 Trident",
+            "simplifiedChinese": "LAS-13“三叉戟”",
+            "sha256": "27a77db82f22382b64bebaf2402f6cd09b153fb0907b9dc27d7850ce23a3e16e"
+          },
+          {
+            "sourceId": "official-localization:equipment-primary:2990487434",
+            "kind": "official-localization",
+            "registryId": "equipment-primary",
+            "gameBuild": "24036910",
+            "key": 2990487434,
+            "englishFile": "0x4f68a1db55e6da09.strings.json",
+            "englishSha256": "bce4468d52268fc8dbe3ba6a298cdab8c3e837fde0ffb6b2e0d5f7a9ea5b8aa5",
+            "simplifiedFile": "0x95ee90e8062250a6.strings.json",
+            "simplifiedSha256": "ae242b3899b2bb3dc36df89af572ab0be02e141a8be79558cc7bdf4bed2810b7",
+            "english": "LAS-13 TRIDENT",
+            "simplifiedChinese": "LAS-13“三叉戟”",
+            "sha256": "e4d17d3c3c5b1d4580e7643d045d715ba21d53ebbbc73c042787a3ce5ce42404"
+          }
+        ],
+        "conflict": "Contents revision labels the row LAS-16 while the canonical equipment page is LAS-13; retain the conflict in the audit report."
+      }
+    ],
+    "stale": [],
+    "invalid": []
+  },
+  "acquisitionAudit": {
+    "releasedCatalogCount": 292,
+    "missingPageThresholds": [],
+    "missingPageThresholdCount": 0,
+    "legacyIncrementalReference": {
+      "field": "pageIncrementalMedals",
+      "role": "legacy-reference-only",
+      "missingCount": 118,
+      "denominator": 167,
+      "idSetSha256": "c2266d64db34c26bdf8b00b18ff697fb273a653388298547d0189239b332f708",
+      "sampleIds": [
+        "a-las-98-laser-sentry",
+        "ad-26-bleeding-edge",
+        "ad-49-apollonian",
+        "af-02-haz-master",
+        "af-50-noxious-ranger",
+        "ar-2-coyote",
+        "ar-23a-liberator-carbine",
+        "ar-23c-liberator-concussive",
+        "ar-23p-liberator-penetrator",
+        "ar-32-pacifier",
+        "ar-59-suppressor",
+        "ar-61-tenderizer",
+        "ar-gl-21-one-two",
+        "arc-12-blitzer",
+        "ax-arc-3-k-9",
+        "ax-flam-75-hot-dog",
+        "ax-tx-13-dog-breath",
+        "b-md-c4-pack",
+        "bp-20-correct-officer",
+        "bp-32-jackboot"
+      ]
+    },
+    "otherAcquisition": [],
+    "otherAcquisitionCount": 0
+  },
+  "resolverFixtures": {
+    "production": {
+      "results": [
+        {
+          "fixtureId": "mg-43",
+          "status": "passed",
+          "details": {
+            "fixtureId": "mg-43",
+            "pageId": 2268,
+            "revision": 126234,
+            "mode": "raw-direct",
+            "id": "mg-43-machine-gun",
+            "productKind": "support-weapon",
+            "uiGroup": "stratagem"
+          }
+        },
+        {
+          "fixtureId": "exo-55",
+          "status": "passed",
+          "details": {
+            "fixtureId": "exo-55",
+            "pageId": 18423,
+            "revision": 126795,
+            "mode": "raw-direct",
+            "id": "exo-55-breakthrough-exosuit",
+            "productKind": "other-stratagem",
+            "uiGroup": "stratagem"
+          }
+        },
+        {
+          "fixtureId": "cqc-72",
+          "status": "passed",
+          "details": {
+            "fixtureId": "cqc-72",
+            "pageId": 10335,
+            "revision": 127324,
+            "mode": "raw-direct",
+            "id": "cqc-72-entrenchment-tool",
+            "productKind": "support-weapon",
+            "uiGroup": "stratagem"
+          }
+        },
+        {
+          "fixtureId": "cqc-73",
+          "status": "passed",
+          "details": {
+            "fixtureId": "cqc-73",
+            "pageId": 17266,
+            "revision": 125302,
+            "mode": "raw-direct",
+            "id": "cqc-73-entrenchment-tool",
+            "productKind": "secondary-weapon",
+            "uiGroup": "weapon"
+          }
+        },
+        {
+          "fixtureId": "gp-20",
+          "status": "passed",
+          "details": {
+            "fixtureId": "gp-20",
+            "pageId": 10341,
+            "revision": 126514,
+            "mode": "raw-direct",
+            "id": "gp-20-ultimatum",
+            "productKind": "secondary-weapon",
+            "uiGroup": "weapon"
+          }
+        },
+        {
+          "fixtureId": "gp-31",
+          "status": "passed",
+          "details": {
+            "fixtureId": "gp-31",
+            "pageId": 4562,
+            "revision": 126215,
+            "mode": "raw-direct",
+            "id": "gp-31-grenade-pistol",
+            "productKind": "secondary-weapon",
+            "uiGroup": "weapon"
+          }
+        },
+        {
+          "fixtureId": "p-33",
+          "status": "passed",
+          "details": {
+            "fixtureId": "p-33",
+            "pageId": 18455,
+            "revision": 126332,
+            "mode": "raw-direct",
+            "id": "p-33-missile-pistol",
+            "productKind": "secondary-weapon",
+            "uiGroup": "weapon",
+            "components": [
+              {
+                "role": "projectile",
+                "standardDamage": 1000,
+                "armorPenetration": 5
+              },
+              {
+                "role": "explosion",
+                "standardDamage": 300,
+                "armorPenetration": 3
+              }
+            ]
+          }
+        },
+        {
+          "fixtureId": "cpg-48-armor-conflict",
+          "status": "passed",
+          "details": {
+            "fixtureId": "cpg-48-armor-conflict",
+            "pageId": 17272,
+            "revision": 126430,
+            "mode": "raw-direct",
+            "bodyMedals": 45,
+            "helmetMedals": 35
+          }
+        },
+        {
+          "fixtureId": "entrenched-contents",
+          "status": "passed",
+          "details": {
+            "fixtureId": "entrenched-contents",
+            "pageId": 17209,
+            "revision": 124372,
+            "mode": "raw-direct"
+          }
+        },
+        {
+          "fixtureId": "exo-contents",
+          "status": "passed",
+          "details": {
+            "fixtureId": "exo-contents",
+            "pageId": 18420,
+            "revision": 125861,
+            "mode": "raw-direct"
+          }
+        },
+        {
+          "fixtureId": "las-13-item",
+          "status": "passed",
+          "details": {
+            "fixtureId": "las-13-item",
+            "pageId": 15881,
+            "revision": 119052,
+            "mode": "raw-direct",
+            "id": "las-13-trident",
+            "productKind": "primary-weapon",
+            "uiGroup": "weapon"
+          }
+        },
+        {
+          "fixtureId": "siege-contents",
+          "status": "passed",
+          "details": {
+            "fixtureId": "siege-contents",
+            "pageId": 15852,
+            "revision": 124384,
+            "mode": "exception-assisted"
+          }
+        },
+        {
+          "fixtureId": "entrenched-exact-set",
+          "status": "passed",
+          "details": {
+            "actualCount": 8,
+            "expectedCount": 8,
+            "requiredId": "cqc-73-entrenchment-tool",
+            "ids": [
+              "a-gm-17-gas-mortar-sentry",
+              "b-flam-80-cremator",
+              "cpg-48-sapper",
+              "cph-26-commandant",
+              "cqc-73-entrenchment-tool",
+              "g-48-giga-grenade",
+              "p-69-veto",
+              "smg-flam-34-stoker"
+            ]
+          }
+        },
+        {
+          "fixtureId": "exo-experts-exact-set",
+          "status": "passed",
+          "details": {
+            "actualCount": 7,
+            "expectedCount": 7,
+            "requiredId": "p-33-missile-pistol",
+            "ids": [
+              "exo-51-lumberer-exosuit",
+              "exo-55-breakthrough-exosuit",
+              "mgx-42-bullet-storm",
+              "o-2-heavy-operator",
+              "o-3-free-spirit",
+              "p-33-missile-pistol",
+              "smg-203-gallant"
+            ]
+          }
+        },
+        {
+          "fixtureId": "siege-las-explicit-correction",
+          "status": "passed",
+          "details": {
+            "candidateId": "raw:15852:p1:table:1",
+            "sourcePageId": 15852,
+            "sourceRevision": 124384,
+            "sourceKind": "contents-table",
+            "warbondId": "siege-breakers",
+            "page": 1,
+            "canonicalTitle": "LAS-16 Trident",
+            "type": "Energy-Based",
+            "image": "LAS-16 Trident Primary Render.png",
+            "rewardKind": null,
+            "itemMedals": 35,
+            "disposition": "resolved",
+            "reason": "explicit-source-bound-correction",
+            "resolutionMode": "correction",
+            "canonicalId": "las-13-trident",
+            "typeWarning": null,
+            "corroboratedByCandidateId": null,
+            "sourceConflict": null,
+            "sourceAmbiguity": null,
+            "sourceBinding": {
+              "sourceId": "wiki-page:15852",
+              "pageId": 15852,
+              "revision": 124384,
+              "sha256": "09299eff92811a649b15bf00734194287c1d59736fec87d31700d7b4fc30a9af",
+              "wikitextSha256": "3566bb7c248deb9042bbf8d33f44da7a3790617238858ede88616fca001c33da",
+              "role": "contents-candidate",
+              "url": "https://helldivers.wiki.gg/wiki/Siege_Breakers_Premium_Warbond"
+            }
+          }
+        },
+        {
+          "fixtureId": "gp-alias-isolation",
+          "status": "passed",
+          "details": {
+            "gp20Aliases": [
+              "核弹手枪"
+            ],
+            "gp31Aliases": []
+          }
+        }
+      ],
+      "passed": true,
+      "failedFixtureIds": []
+    },
+    "independentRaw": {
+      "passed": true,
+      "checked": [
+        "mg",
+        "exo55",
+        "cqc72",
+        "cqc73",
+        "gp20",
+        "gp31",
+        "p33",
+        "cpg",
+        "las13",
+        "siege",
+        "entrenched",
+        "exo"
+      ],
+      "rawOffers": {
+        "entrenched": [
+          {
+            "title": "SMG/FLAM-34 Stoker",
+            "id": "smg-flam-34-stoker",
+            "type": "Primary Weapon",
+            "itemMedals": 35,
+            "linked": true,
+            "page": 1
+          },
+          {
+            "title": "CPG-48 Sapper",
+            "id": "cpg-48-sapper",
+            "type": "Medium Armor",
+            "itemMedals": 45,
+            "linked": true,
+            "page": 1
+          },
+          {
+            "title": "CQC-73 Entrenchment Tool",
+            "id": "cqc-73-entrenchment-tool",
+            "type": "Secondary Weapon",
+            "itemMedals": 20,
+            "linked": true,
+            "page": 1
+          },
+          {
+            "title": "CPH-26 Commandant",
+            "id": "cph-26-commandant",
+            "type": "Light Armor",
+            "itemMedals": 55,
+            "linked": true,
+            "page": 2
+          },
+          {
+            "title": "G-48 Giga Grenade",
+            "id": "g-48-giga-grenade",
+            "type": "Throwable",
+            "itemMedals": 50,
+            "linked": true,
+            "page": 2
+          },
+          {
+            "title": "A/GM-17 Gas Mortar Sentry",
+            "id": "a-gm-17-gas-mortar-sentry",
+            "type": "Mortar",
+            "itemMedals": 85,
+            "linked": true,
+            "page": 2
+          },
+          {
+            "title": "P-69 Veto",
+            "id": "p-69-veto",
+            "type": "Secondary Weapon",
+            "itemMedals": 65,
+            "linked": true,
+            "page": 3
+          },
+          {
+            "title": "B/FLAM-80 Cremator",
+            "id": "b-flam-80-cremator",
+            "type": "Support Weapon",
+            "itemMedals": 110,
+            "linked": true,
+            "page": 3
+          }
+        ],
+        "exo": [
+          {
+            "title": "SMG-203 Gallant",
+            "id": "smg-203-gallant",
+            "type": "Submachine Gun",
+            "itemMedals": 35,
+            "linked": true,
+            "page": 1
+          },
+          {
+            "title": "MGX-42 Bullet Storm",
+            "id": "mgx-42-bullet-storm",
+            "type": "Support Weapon",
+            "itemMedals": 75,
+            "linked": true,
+            "page": 1
+          },
+          {
+            "title": "O-3 Free Spirit",
+            "id": "o-3-free-spirit",
+            "type": "Light Armor",
+            "itemMedals": 45,
+            "linked": true,
+            "page": 1
+          },
+          {
+            "title": "EXO-51 Lumberer Exosuit",
+            "id": "exo-51-lumberer-exosuit",
+            "type": "Vehicle",
+            "itemMedals": 50,
+            "linked": true,
+            "page": 2
+          },
+          {
+            "title": "P-33 Missile Pistol",
+            "id": "p-33-missile-pistol",
+            "type": "Special Secondary",
+            "itemMedals": 50,
+            "linked": true,
+            "page": 2
+          },
+          {
+            "title": "O-2 Heavy Operator",
+            "id": "o-2-heavy-operator",
+            "type": "Heavy Armor",
+            "itemMedals": 55,
+            "linked": true,
+            "page": 2
+          },
+          {
+            "title": "EXO-55 Breakthrough Exosuit",
+            "id": "exo-55-breakthrough-exosuit",
+            "type": "Vehicle",
+            "itemMedals": 50,
+            "linked": true,
+            "page": 3
+          }
+        ]
+      },
+      "productionDiff": []
+    },
+    "rawTable": {
+      "passed": true
+    }
+  },
+  "gate": {
+    "status": "blocked",
+    "blocked": true,
+    "dataReady": true,
+    "reproducibleReady": false,
+    "blockedReasons": [
+      {
+        "code": "uncommitted-inputs-not-reproducible",
+        "details": {
+          "warnings": [
+            {
+              "inputId": "wiki-raw",
+              "path": "src/data/source/wiki-raw.json",
+              "tracked": false,
+              "dirty": false,
+              "source": "input"
+            },
+            {
+              "inputId": "wiki-normalized-reference",
+              "path": "src/data/source/wiki-normalized.json",
+              "tracked": false,
+              "dirty": false,
+              "source": "input"
+            },
+            {
+              "inputId": "legacy-catalog-reference",
+              "path": "src/data/catalog.json",
+              "tracked": true,
+              "dirty": true,
+              "source": "input"
+            },
+            {
+              "inputId": "official-localization-registry",
+              "path": "src/data/source/official-localization.json",
+              "tracked": false,
+              "dirty": false,
+              "source": "input"
+            },
+            {
+              "inputId": "localization-attestation",
+              "path": "data/v3/config/localization-attestation.json",
+              "tracked": false,
+              "dirty": false,
+              "source": "input"
+            },
+            {
+              "inputId": "community-alias-reference",
+              "path": "src/data/source/xiaoheihe-community-aliases.json",
+              "tracked": true,
+              "dirty": true,
+              "source": "input"
+            },
+            {
+              "inputId": "resolver-fixtures",
+              "path": "data/v3/config/resolver-fixtures.json",
+              "tracked": false,
+              "dirty": false,
+              "source": "input"
+            },
+            {
+              "inputId": "warbond-corrections",
+              "path": "data/v3/config/warbond-corrections.json",
+              "tracked": false,
+              "dirty": false,
+              "source": "input"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/v3/migration-common.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/v3/migration-preflight.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/v3/migration-tests.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/v3/raw-probe.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/v3/raw-validator.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/v3/resolver-gate.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/wiki-normalize.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/lib/product-scope.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            }
+          ]
+        }
+      }
+    ],
+    "dataBlockedReasons": [],
+    "reproducibilityBlockedReasons": [
+      {
+        "code": "uncommitted-inputs-not-reproducible",
+        "details": {
+          "warnings": [
+            {
+              "inputId": "wiki-raw",
+              "path": "src/data/source/wiki-raw.json",
+              "tracked": false,
+              "dirty": false,
+              "source": "input"
+            },
+            {
+              "inputId": "wiki-normalized-reference",
+              "path": "src/data/source/wiki-normalized.json",
+              "tracked": false,
+              "dirty": false,
+              "source": "input"
+            },
+            {
+              "inputId": "legacy-catalog-reference",
+              "path": "src/data/catalog.json",
+              "tracked": true,
+              "dirty": true,
+              "source": "input"
+            },
+            {
+              "inputId": "official-localization-registry",
+              "path": "src/data/source/official-localization.json",
+              "tracked": false,
+              "dirty": false,
+              "source": "input"
+            },
+            {
+              "inputId": "localization-attestation",
+              "path": "data/v3/config/localization-attestation.json",
+              "tracked": false,
+              "dirty": false,
+              "source": "input"
+            },
+            {
+              "inputId": "community-alias-reference",
+              "path": "src/data/source/xiaoheihe-community-aliases.json",
+              "tracked": true,
+              "dirty": true,
+              "source": "input"
+            },
+            {
+              "inputId": "resolver-fixtures",
+              "path": "data/v3/config/resolver-fixtures.json",
+              "tracked": false,
+              "dirty": false,
+              "source": "input"
+            },
+            {
+              "inputId": "warbond-corrections",
+              "path": "data/v3/config/warbond-corrections.json",
+              "tracked": false,
+              "dirty": false,
+              "source": "input"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/v3/migration-common.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/v3/migration-preflight.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/v3/migration-tests.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/v3/raw-probe.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/v3/raw-validator.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/v3/resolver-gate.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/wiki-normalize.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            },
+            {
+              "inputId": null,
+              "path": "scripts/lib/product-scope.mjs",
+              "tracked": false,
+              "dirty": false,
+              "source": "tool-bundle"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "auditHash": "abaa54c297ea37688d23fa1e13bd5fa5a44d302d31795264cf398fb752388dab"
+}

@@ -1,0 +1,17 @@
+{
+  "version": "1.0.0",
+  "records": [
+    {
+      "id": "helldivers2-steam-app-icon",
+      "path": "assets/brand/helldivers2-steam-app-icon.png",
+      "sourceUrl": "https://store.steampowered.com/app/553850/HELLDIVERS_2/",
+      "sourceDetail": "D:/SteamLibrary/steamapps/common/Helldivers 2/bin/helldivers2.exe associated application icon",
+      "retrievedAt": "2026-08-08T00:00:00.000Z",
+      "sha256": "eb044a6f45c5d300167c4e3d2514ab2e312d73177e7b20847ecfa71235813408",
+      "rightsStatus": "documented-copyrighted",
+      "licenseRaw": "Steam game application asset; copyright remains with the respective rights holders",
+      "author": null,
+      "notes": "Extracted from the locally installed official executable icon; not a third-party redraw and not included in the MIT code license."
+    }
+  ]
+}

@@ -6,7 +6,7 @@ HD2 军需簿 NOTICE
 
 2. 游戏数据、名称、商标与图片
 
-《HELLDIVERS 2》及相关名称、商标、角色和游戏素材归各自权利人所有，不因本仓库的源码许可而获得 MIT 授权。本仓库当前只提交项目自制通用占位 SVG，不提交许可证不明的游戏截图、纹理或 Wiki 图片。
+《HELLDIVERS 2》及相关名称、商标、角色和游戏素材归各自权利人所有，不因本仓库的源码许可而获得 MIT 授权。Wiki 文件页素材按 `src/data/assets/manifest.json` 与 `reports/wiki-assets-report.json` 逐图记录：包含 file page、原始 URL、revision/oldid、同步时间、SHA-256、license raw 和 `rightsStatus`。`open-license` 只表示文件页明确给出的开放许可；`documented-copyrighted` 表示来源可追溯但权利仍归原权利人，项目不授予再许可；作者为空时保持为空，不臆造。缺 license raw 或来源不可追溯的记录不物化。首页 Steam/本机客户端图标另见 `src/data/source/brand-assets.json`，同样不纳入 MIT。
 
 3. 非官方声明
 
@@ -14,4 +14,4 @@ HD2 军需簿是非官方社区工具，与 Arrowhead Game Studios、Sony、Play
 
 4. 移除联系
 
-若未来加入外部素材，应在逐项来源记录中补充原始页面、作者、许可证/版权状态、同步日期和文件哈希，并以项目 GitHub Issue 作为移除联系渠道。
+若未来加入外部素材，应在逐项来源记录中补充原始页面、file page、原始 URL、revision/oldid、作者（如文件页提供）、许可证/版权状态、同步日期和文件哈希，并以项目 GitHub Issue 作为移除联系渠道。

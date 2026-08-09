@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "HD2 军需簿：非官方、离线优先的装备速查与解锁计划工具。",
+  "description": "HD2 Supply Book: offline equipment lookup and unlock planning.",
   "scripts": {
     "dev": "vite",
     "build": "npm run generate:data && npm run typecheck && vite build",
@@ -13,14 +13,20 @@
     "test:watch": "vitest",
     "format:check": "prettier --check .",
     "format": "prettier --write .",
-    "generate:data": "node scripts/generate-data.mjs",
+    "generate:data": "node scripts/generate-data.mjs && npm run check:scope",
+    "check:scope": "node scripts/check-product-scope.mjs",
+    "sync:wiki": "node scripts/sync-wiki.mjs",
+    "normalize:frozen": "node scripts/normalize-frozen-wiki.mjs",
+    "sync:images": "node scripts/sync-wiki-assets.mjs",
+    "extract:localization": "node scripts/extract-localization.mjs",
     "validate:data": "node scripts/validate-data.mjs",
+    "release-readiness": "node scripts/release-readiness.mjs",
     "sync:data": "node scripts/sync-data.mjs",
     "smoke": "node scripts/smoke.mjs",
     "size:check": "node scripts/size-budget.mjs",
     "desktop:check": "node scripts/check-neutralino.mjs",
     "desktop:build": "npm run build && node scripts/check-neutralino.mjs --require-binaries && npx --no-install neu build --embed-resources",
-    "check": "npm run generate:data && npm run validate:data && npm run typecheck && npm test && npm run format:check && npm run build && npm run size:check && npm run smoke && npm run desktop:check"
+    "check": "npm run generate:data && npm run validate:data && npm run typecheck && npm test && npm run format:check && npm run build && npm run size:check && npm run smoke && npm run desktop:check && npm run release-readiness"
   },
   "dependencies": {
     "preact": "10.29.8"

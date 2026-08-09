@@ -1,4 +1,299 @@
 {
-  "version": "0.1.0",
-  "items": []
+  "version": "2026-08-08.1",
+  "items": [
+    { "id": "eat-17-expendable-anti-tank", "model": "EAT-17" },
+    { "id": "rs-422-railgun", "model": "RS-422" },
+    { "id": "faf-14-spear", "model": "FAF-14" },
+    { "id": "cqc-1-one-true-flag", "model": "CQC-1" },
+    { "id": "g-123-thermite", "model": "G-123" },
+    { "id": "lift-860-hover-pack", "model": "LIFT-860" },
+    {
+      "id": "b-100-portable-hellbomb",
+      "nameZh": "便携式地狱火炸弹",
+      "aliases": ["核弹背包", "便捷式地狱火炸弹"]
+    },
+    { "id": "uf-16-inspector", "model": "UF-16" },
+    {
+      "id": "b-flam-80-cremator",
+      "model": "B/FLAM-80",
+      "nameZh": "焚燃者",
+      "category": "stratagem",
+      "aliases": []
+    },
+    {
+      "id": "cph-26-commandant",
+      "nameEn": "CPH-26 Commandant",
+      "nameZh": "CPH-26“司令官”"
+    },
+    {
+      "id": "b-22-model-citizen",
+      "acquisition": {
+        "kind": "event",
+        "eventName": "周年礼物",
+        "status": "available",
+        "sourceRefs": [
+          {
+            "kind": "wiki",
+            "label": "Wiki acquisition field: Anniversary Gift",
+            "url": "https://helldivers.wiki.gg/wiki/B-22_Model_Citizen"
+          }
+        ]
+      },
+      "overrideReason": "Wiki source explicitly identifies this as an Anniversary Gift; no medal price is inferred."
+    },
+    {
+      "id": "m-103-supply-frv",
+      "acquisition": {
+        "kind": "event",
+        "eventName": "Permanent Enclosure",
+        "status": "available",
+        "sourceRefs": [
+          {
+            "kind": "wiki",
+            "label": "Wiki acquisition mechanism: Permanent Enclosure",
+            "url": "https://helldivers.wiki.gg/wiki/M-103_Supply_FRV"
+          }
+        ]
+      },
+      "overrideReason": "The Wiki page identifies the vehicle as a campaign/event unlock; it is not a requisition purchase."
+    },
+    {
+      "id": "m-104-incinerator-frv",
+      "acquisition": {
+        "kind": "unavailable",
+        "reason": "当前不可获取",
+        "sourceRefs": [
+          {
+            "kind": "wiki",
+            "label": "Wiki acquisition field: Hangar; current availability unresolved",
+            "url": "https://helldivers.wiki.gg/wiki/M-104_Incinerator_FRV"
+          }
+        ]
+      },
+      "overrideReason": "No price or release availability is present in the snapshot; the UI reports unavailable instead of inventing a cost."
+    },
+    {
+      "id": "orbital-illumination-flare",
+      "acquisition": {
+        "kind": "unavailable",
+        "reason": "废弃未实装",
+        "sourceRefs": [
+          {
+            "kind": "wiki",
+            "label": "Wiki page; deprecated stratagem record",
+            "url": "https://helldivers.wiki.gg/wiki/Orbital_Illumination_Flare"
+          }
+        ]
+      },
+      "overrideReason": "The snapshot has a deprecated system record and no acquisition entry; it is not admitted as a purchasable item."
+    },
+    {
+      "id": "r-4-hyena",
+      "acquisition": {
+        "kind": "event",
+        "eventName": "Celestial Fence",
+        "status": "available",
+        "sourceRefs": [
+          {
+            "kind": "wiki",
+            "label": "Wiki acquisition field: Celestial Fence campaign",
+            "url": "https://helldivers.wiki.gg/wiki/R-4_Hyena"
+          }
+        ]
+      },
+      "overrideReason": "The Wiki source names the campaign; no medal or requisition price is inferred."
+    },
+    {
+      "id": "sg-88-break-action-shotgun",
+      "acquisition": {
+        "kind": "poi",
+        "location": "地图拾取",
+        "status": "available",
+        "sourceRefs": [
+          {
+            "kind": "wiki",
+            "label": "Wiki equipment page; POI acquisition",
+            "url": "https://helldivers.wiki.gg/wiki/SG-88_Break-Action_Shotgun"
+          }
+        ]
+      },
+      "overrideReason": "This equipment is a map pickup and has no purchase currency; it is modeled as POI."
+    },
+    {
+      "id": "cqc-72-entrenchment-tool",
+      "acquisition": {
+        "kind": "poi",
+        "location": "地图拾取",
+        "status": "available",
+        "sourceRefs": [
+          {
+            "kind": "wiki",
+            "label": "Wiki equipment page; POI acquisition",
+            "url": "https://helldivers.wiki.gg/wiki/CQC-72_Entrenchment_Tool"
+          }
+        ]
+      },
+      "overrideReason": "CQC-72 is the POI/map pickup shovel; it is kept separate from the CQC-73 Entrenched Division item."
+    },
+    {
+      "id": "tr-117-alpha-commander",
+      "acquisition": {
+        "kind": "event",
+        "eventName": "全平台免费获取",
+        "status": "available",
+        "sourceRefs": [
+          {
+            "kind": "wiki",
+            "label": "Wiki acquisition field: Downloadable Content",
+            "url": "https://helldivers.wiki.gg/wiki/TR-117_Alpha_Commander"
+          }
+        ]
+      },
+      "overrideReason": "The item is distributed free across platforms; no store price is added."
+    },
+    {
+      "id": "tr-40-gold-eagle",
+      "acquisition": {
+        "kind": "event",
+        "eventName": "Escalation of Freedom（限时）",
+        "status": "ended",
+        "sourceRefs": [
+          {
+            "kind": "wiki",
+            "label": "Wiki acquisition field: Escalation of Freedom",
+            "url": "https://helldivers.wiki.gg/wiki/TR-40_Gold_Eagle"
+          }
+        ]
+      },
+      "overrideReason": "The Wiki marks this as an exclusive prior event reward; no medal price is inferred."
+    },
+    {
+      "id": "tr-62-knight",
+      "acquisition": {
+        "kind": "edition",
+        "editionName": "预购奖励",
+        "price": null,
+        "status": "unavailable",
+        "sourceRefs": [
+          {
+            "kind": "wiki",
+            "label": "Wiki acquisition field: Pre-Order Bonus",
+            "url": "https://helldivers.wiki.gg/wiki/TR-62_Knight"
+          }
+        ]
+      },
+      "overrideReason": "This is a preorder-exclusive item; no current resale price is asserted."
+    },
+    {
+      "id": "tr-7-ambassador-of-the-brand",
+      "acquisition": {
+        "kind": "edition",
+        "editionName": "预购奖励",
+        "price": null,
+        "status": "unavailable",
+        "sourceRefs": [
+          {
+            "kind": "wiki",
+            "label": "Wiki acquisition field: Pre-Order Bonus",
+            "url": "https://helldivers.wiki.gg/wiki/TR-7_Ambassador_of_the_Brand"
+          }
+        ]
+      },
+      "overrideReason": "This is a preorder-exclusive item; no current resale price is asserted."
+    },
+    {
+      "id": "tr-9-cavalier-of-democracy",
+      "acquisition": {
+        "kind": "edition",
+        "editionName": "预购奖励",
+        "price": null,
+        "status": "unavailable",
+        "sourceRefs": [
+          {
+            "kind": "wiki",
+            "label": "Wiki acquisition field: Pre-Order Bonus",
+            "url": "https://helldivers.wiki.gg/wiki/TR-9_Cavalier_of_Democracy"
+          }
+        ]
+      },
+      "overrideReason": "This is a preorder-exclusive item; no current resale price is asserted."
+    },
+    {
+      "id": "dp-53-savior-of-the-free",
+      "acquisition": {
+        "kind": "edition",
+        "editionName": "Super Citizen Edition",
+        "price": 20,
+        "currencyCode": "USD",
+        "status": "available",
+        "sourceRefs": [
+          {
+            "kind": "wiki",
+            "label": "Wiki acquisition field: Super Citizen Edition",
+            "url": "https://helldivers.wiki.gg/wiki/DP-53_Savior_of_the_Free"
+          }
+        ]
+      },
+      "overrideReason": "The source exposes the edition package price as USD 20; it is not a medal price."
+    },
+    {
+      "id": "mp-98-knight",
+      "acquisition": {
+        "kind": "edition",
+        "editionName": "Super Citizen Edition",
+        "price": null,
+        "status": "available",
+        "sourceRefs": [
+          {
+            "kind": "wiki",
+            "label": "Wiki acquisition field: Super Citizen Edition; item price not separately stated",
+            "url": "https://helldivers.wiki.gg/wiki/MP-98_Knight"
+          }
+        ]
+      },
+      "overrideReason": "The item belongs to a named edition, but the item page does not provide a separate package price; null is preserved."
+    },
+    {
+      "id": "kdm-500-outrider",
+      "acquisition": {
+        "kind": "event",
+        "eventName": "Permanent Enclosure / Lightning Intercept",
+        "status": "available",
+        "componentAcquisitions": [
+          {
+            "component": "body",
+            "label": "Permanent Enclosure",
+            "acquisition": "event",
+            "sourceRefs": [
+              {
+                "kind": "wiki",
+                "label": "Body source field",
+                "url": "https://helldivers.wiki.gg/wiki/KDM-500_Outrider"
+              }
+            ]
+          },
+          {
+            "component": "helmet",
+            "label": "Lightning Intercept",
+            "acquisition": "event",
+            "sourceRefs": [
+              {
+                "kind": "wiki",
+                "label": "Helmet source field",
+                "url": "https://helldivers.wiki.gg/wiki/KDM-500_Outrider"
+              }
+            ]
+          }
+        ],
+        "sourceRefs": [
+          {
+            "kind": "wiki",
+            "label": "Wiki body/helmet acquisition fields",
+            "url": "https://helldivers.wiki.gg/wiki/KDM-500_Outrider"
+          }
+        ]
+      },
+      "overrideReason": "Body and helmet source fields differ; both are retained as componentAcquisitions rather than flattened into one source."
+    }
+  ]
 }

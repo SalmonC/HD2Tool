@@ -24,12 +24,8 @@ jobs:
           node-version: 24.x
           cache: npm
       - run: npm ci
-      - name: Build for repository base path
-        run: VITE_BASE_PATH=/${{ github.event.repository.name }}/ npm run build
-      - name: Preview smoke for repository base path
-        run: SMOKE_BASE_PATH=/${{ github.event.repository.name }}/ npm run smoke
-      - run: npm run validate:data
-      - run: npm run size:check
+      - name: Run the same release gate as CI
+        run: VITE_BASE_PATH=/${{ github.event.repository.name }}/ npm run check
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

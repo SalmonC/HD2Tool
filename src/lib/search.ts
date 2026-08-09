@@ -164,5 +164,17 @@ export function searchEquipment(
       matchedAlias: best.candidate.alias,
     });
   }
-  return results.sort(compareResults).slice(0, limit);
+  const sorted = results.sort(compareResults);
+  const strongest = sorted[0];
+  if (strongest && strongest.score >= 90000) {
+    // An exact model/name/alias is an intentional lookup. Do not dilute it
+    // with broader substring matches (for example "火喷" vs "泵动火喷").
+    // Equal-rank exact matches remain visible so a real data collision fails
+    // the release alias gate instead of being hidden by this rule.
+    const strongestRank = Math.floor(strongest.score / 100);
+    return sorted
+      .filter((result) => Math.floor(result.score / 100) === strongestRank)
+      .slice(0, limit);
+  }
+  return sorted.slice(0, limit);
 }

@@ -1,0 +1,294 @@
+{
+  "syncedAt": "2026-08-08T19:17:36.907Z",
+  "status": "complete-english-layer",
+  "categoryStatus": [
+    { "category": "Weapons", "ok": true, "count": 164 },
+    { "category": "Armor", "ok": true, "count": 195 },
+    { "category": "Stratagems", "ok": true, "count": 121 },
+    { "category": "Throwables", "ok": true, "count": 22 },
+    { "category": "Boosters", "ok": true, "count": 19 },
+    { "category": "Warbonds", "ok": true, "count": 28 }
+  ],
+  "discoveredPages": 467,
+  "rawPages": 467,
+  "redirects": 0,
+  "rawSnapshotComplete": true,
+  "cacheStats": { "reusedPages": 467, "fetchedPages": 0, "offline": true },
+  "normalized": {
+    "total": 321,
+    "categories": {
+      "weapon": 112,
+      "armor": 107,
+      "stratagem": 63,
+      "booster": 18,
+      "grenade": 21
+    },
+    "slots": {
+      "support": 36,
+      "armor": 107,
+      "stratagem": 63,
+      "primary": 52,
+      "booster": 18,
+      "secondary": 24,
+      "throwable": 21
+    },
+    "withAcquisition": 303,
+    "withAttackProfile": 147,
+    "withArmorPenetration": 138,
+    "withDemolition": 1,
+    "withImageFile": 321,
+    "withDocumentedImage": 311
+  },
+  "warbonds": 24,
+  "unresolved": [
+    {
+      "id": "40-k-meltagun",
+      "title": "40-K Meltagun",
+      "reasons": ["attackProfile"]
+    },
+    {
+      "id": "b-22-model-citizen",
+      "title": "B-22 Model Citizen",
+      "reasons": ["acquisition"]
+    },
+    {
+      "id": "call-in-super-destroyer",
+      "title": "Call In Super Destroyer",
+      "reasons": ["acquisition"]
+    },
+    {
+      "id": "cqc-72-entrenchment-tool",
+      "title": "CQC-72 Entrenchment Tool",
+      "reasons": ["acquisition"]
+    },
+    { "id": "eagle-rearm", "title": "Eagle Rearm", "reasons": ["acquisition"] },
+    {
+      "id": "kdm-500-outrider",
+      "title": "KDM-500 Outrider",
+      "reasons": ["acquisition"]
+    },
+    {
+      "id": "m-103-supply-frv",
+      "title": "M-103 Supply FRV",
+      "reasons": ["acquisition"]
+    },
+    {
+      "id": "m-104-incinerator-frv",
+      "title": "M-104 Incinerator FRV",
+      "reasons": ["acquisition"]
+    },
+    {
+      "id": "orbital-illumination-flare",
+      "title": "Orbital Illumination Flare",
+      "reasons": ["acquisition"]
+    },
+    {
+      "id": "p-40-k-bolt-pistol",
+      "title": "P-40-K Bolt Pistol",
+      "reasons": ["attackProfile"]
+    },
+    { "id": "r-4-hyena", "title": "R-4 Hyena", "reasons": ["acquisition"] },
+    {
+      "id": "r-40-k-hot-shot-marksman-rifle",
+      "title": "R-40-K Hot-Shot Marksman Rifle",
+      "reasons": ["attackProfile"]
+    },
+    { "id": "reinforce", "title": "Reinforce", "reasons": ["acquisition"] },
+    { "id": "resupply", "title": "Resupply", "reasons": ["acquisition"] },
+    {
+      "id": "sg-88-break-action-shotgun",
+      "title": "SG-88 Break-Action Shotgun",
+      "reasons": ["acquisition"]
+    },
+    { "id": "sos-beacon", "title": "SoS Beacon", "reasons": ["acquisition"] },
+    {
+      "id": "tr-117-alpha-commander",
+      "title": "TR-117 Alpha Commander",
+      "reasons": ["acquisition"]
+    },
+    {
+      "id": "tr-40-gold-eagle",
+      "title": "TR-40 Gold Eagle",
+      "reasons": ["acquisition"]
+    },
+    {
+      "id": "tr-62-knight",
+      "title": "TR-62 Knight",
+      "reasons": ["acquisition"]
+    },
+    {
+      "id": "tr-7-ambassador-of-the-brand",
+      "title": "TR-7 Ambassador of the Brand",
+      "reasons": ["acquisition"]
+    },
+    {
+      "id": "tr-9-cavalier-of-democracy",
+      "title": "TR-9 Cavalier of Democracy",
+      "reasons": ["acquisition"]
+    }
+  ],
+  "criticalErrors": [],
+  "imageFallbacks": [
+    {
+      "itemId": "ac-8-autocannon",
+      "primaryFileTitle": "AC-8_Autocannon_Weapon_and_Backpack_Support_Render.png",
+      "selectedFileTitle": "AC-8 Autocannon Weapon and Backpack Support Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "gr-8-recoilless-rifle",
+      "primaryFileTitle": "GR-8_Recoilless_Rifle_Weapon_and_Backpack_Support_Render.png",
+      "selectedFileTitle": "GR-8 Recoilless Rifle Weapon and Backpack Support Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "rl-77-airburst-rocket-launcher",
+      "primaryFileTitle": "RL-77_Airburst_Rocket_Launcher_Weapon_and_Backpack_Support_Render.png",
+      "selectedFileTitle": "RL-77 Airburst Rocket Launcher Weapon and Backpack Support Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "armed-resupply-pods",
+      "primaryFileTitle": "Armed_Resupply_Pods Booster Icon.svg",
+      "selectedFileTitle": "Armed Resupply Pods Booster Icon.svg",
+      "licenseRaw": "License/Arrowhead"
+    },
+    {
+      "itemId": "sta-x3-w-a-s-p-launcher",
+      "primaryFileTitle": "StA-X3_W.A.S.P._Launcher_Weapon_and_Backpack_Support_Render.png",
+      "selectedFileTitle": "StA-X3 W.A.S.P. Launcher Weapon and Backpack Support Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "g-142-pyrotech",
+      "primaryFileTitle": "G-142_Pyrotech_Throwable_Render.png",
+      "selectedFileTitle": "G-142 Pyrotech Throwable Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "g-109-urchin",
+      "primaryFileTitle": "G-109_Urchin_Throwable_Render.png",
+      "selectedFileTitle": "G-109 Urchin Throwable Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "p-92-warrant",
+      "primaryFileTitle": "P-92_Warrant_Secondary_Render.png",
+      "selectedFileTitle": "P-92 Warrant Secondary Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "vg-70-variable",
+      "primaryFileTitle": "VG-70_Variable_Primary_Render.png",
+      "selectedFileTitle": "VG-70 Variable Primary Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "g-31-arc",
+      "primaryFileTitle": "G-31_ARC_Throwable_Render.png",
+      "selectedFileTitle": "G-31 ARC Throwable Render.png",
+      "licenseRaw": "License/Arrowhead"
+    },
+    {
+      "itemId": "a-9-helljumper",
+      "primaryFileTitle": "A-9 Helljumper Body Icon.png",
+      "selectedFileTitle": "A-9 Helljumper Armor Render.png",
+      "licenseRaw": "License/Arrowhead"
+    },
+    {
+      "itemId": "ma5c-assault-rifle",
+      "primaryFileTitle": "MA5C_Assault_Rifle_Primary_Render.png",
+      "selectedFileTitle": "MA5C Assault Rifle Primary Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "m7s-smg",
+      "primaryFileTitle": "M7S_SMG_Primary_Render.png",
+      "selectedFileTitle": "M7S SMG Primary Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "m90a-shotgun",
+      "primaryFileTitle": "M90A_Shotgun_Primary_Render.png",
+      "selectedFileTitle": "M90A Shotgun Primary Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "m6c-socom-pistol",
+      "primaryFileTitle": "M6C_SOCOM Pistol Secondary Render.png",
+      "selectedFileTitle": "M6C-SOCOM Pistol Secondary Render.png",
+      "licenseRaw": "License/Arrowhead"
+    },
+    {
+      "itemId": "cqc-42-machete",
+      "primaryFileTitle": "CQC-42 Machete Secondary Render.png",
+      "selectedFileTitle": "CQC-42 Machete Render.png",
+      "licenseRaw": "License/Arrowhead"
+    },
+    {
+      "itemId": "m-1000-maxigun",
+      "primaryFileTitle": "M-1000_Maxigun_Weapon_and_Backpack_Support_Render.png",
+      "selectedFileTitle": "M-1000 Maxigun Weapon and Backpack Support Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "dbs-2-double-freedom",
+      "primaryFileTitle": "DBS-2_Shotgun_Primary_Render.png",
+      "selectedFileTitle": "DBS-2 Shotgun Primary Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "p-35-re-educator",
+      "primaryFileTitle": "P-35 Re-Educator Secondary Render.png",
+      "selectedFileTitle": "P-35 Re-Educator Concept Art Tom McCahey.png",
+      "licenseRaw": "License/Fairuse"
+    },
+    {
+      "itemId": "tm-1-lure-mine",
+      "primaryFileTitle": "TM-1 Lure Mine Throwable Render.png",
+      "selectedFileTitle": "TM-1 Lure Mine Armed.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "g-89-smokescreen",
+      "primaryFileTitle": "G-89_Smokescreen_Throwable_Render.png",
+      "selectedFileTitle": "G-89 Smokescreen Throwable Render.png",
+      "licenseRaw": null
+    },
+    {
+      "itemId": "eat-411-leveller",
+      "primaryFileTitle": "EAT-411_Leveller_Support_Render.png",
+      "selectedFileTitle": "EAT-411 Leveller Support Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "gl-28-belt-fed-grenade-launcher",
+      "primaryFileTitle": "GL-28_Belt-Fed_Grenade_Launcher_Weapon_and_Backpack_Support_Render.png",
+      "selectedFileTitle": "GL-28 Belt-Fed Grenade Launcher Weapon and Backpack Support Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "g-sh-39-shield",
+      "primaryFileTitle": "G_SH-39_Throwable_Render.png",
+      "selectedFileTitle": "G-SH-39 Shield Throwable Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "b-flam-80-cremator",
+      "primaryFileTitle": "B_FLAM-80_Cremator_Weapon_and_Backpack_Support_Render.png",
+      "selectedFileTitle": "B FLAM-80 Cremator Weapon and Backpack Support Render.png",
+      "licenseRaw": "License/CC-BY-NC-SA"
+    },
+    {
+      "itemId": "sg-97-sweeper",
+      "primaryFileTitle": "SG-97_Shotgun_Primary_Render.png",
+      "selectedFileTitle": "SG-97 Shotgun Primary Render.png",
+      "licenseRaw": "License/Arrowhead"
+    }
+  ],
+  "fileFailures": [],
+  "notes": [
+    "The English layer is category-driven and does not read the community alias database.",
+    "Missing facts remain null/other and are reported; no Chinese names or guessed values are generated."
+  ]
+}

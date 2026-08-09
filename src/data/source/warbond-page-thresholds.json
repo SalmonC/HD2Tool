@@ -1,0 +1,159 @@
+{
+  "version": "2026-08-08.1",
+  "records": [
+    {
+      "warbondId": "entrenched-division",
+      "nameEn": "Entrenched Division",
+      "pages": [
+        { "page": 1, "incrementalMedals": 0, "cumulativeMedals": 0 },
+        { "page": 2, "incrementalMedals": 125, "cumulativeMedals": 125 },
+        { "page": 3, "incrementalMedals": 245, "cumulativeMedals": 370 }
+      ],
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "GamesRadar+: Entrenched Division page unlock requirements",
+          "url": "https://www.gamesradar.com/games/third-person-shooter/helldivers-2-entrenched-division-warbond/",
+          "capturedAt": "2026-08-08T00:00:00.000Z"
+        },
+        {
+          "kind": "wiki",
+          "label": "Helldivers Wiki.gg: Entrenched Division Premium Warbond (370 medals for all pages)",
+          "url": "https://helldivers.wiki.gg/wiki/Entrenched_Division_Premium_Warbond",
+          "capturedAt": "2026-08-08T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "warbondId": "exo-experts",
+      "nameEn": "Exo Experts",
+      "pages": [
+        { "page": 1, "incrementalMedals": 0, "cumulativeMedals": 0 },
+        { "page": 2, "incrementalMedals": 165, "cumulativeMedals": 165 },
+        { "page": 3, "incrementalMedals": 55, "cumulativeMedals": 220 }
+      ],
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "Observed Exo Experts unlock route: 165 medals reaches page 2; 220 cumulative reaches page 3",
+          "url": "https://www.reddit.com/r/Helldivers/comments/1syaudm/heres_how_to_get_to_the_end_of_the_exo_experts/",
+          "capturedAt": "2026-08-08T00:00:00.000Z"
+        },
+        {
+          "kind": "wiki",
+          "label": "Helldivers Wiki.gg: Exo Experts Premium Warbond (220 medals for all pages)",
+          "url": "https://helldivers.wiki.gg/wiki/Exo_Experts_Premium_Warbond",
+          "capturedAt": "2026-08-08T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "warbondId": "obedient-democracy-support-troopers-legendary",
+      "nameEn": "Obedient Democracy Support Troopers",
+      "pages": [
+        { "page": 1, "incrementalMedals": 0, "cumulativeMedals": 0 },
+        { "page": 2, "incrementalMedals": 135, "cumulativeMedals": 135 },
+        { "page": 3, "incrementalMedals": 280, "cumulativeMedals": 415 }
+      ],
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "Helldivers Wiki Fandom: ODST page unlock requirements",
+          "url": "https://helldivers.fandom.com/wiki/Obedient_Democracy_Support_Troopers",
+          "capturedAt": "2026-08-09T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "warbondId": "urban-legends",
+      "nameEn": "Urban Legends",
+      "pages": [
+        { "page": 1, "incrementalMedals": 0, "cumulativeMedals": 0 },
+        { "page": 2, "incrementalMedals": 160, "cumulativeMedals": 160 },
+        { "page": 3, "incrementalMedals": 250, "cumulativeMedals": 410 }
+      ],
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "GamesRadar+: Urban Legends page unlock requirements",
+          "url": "https://www.gamesradar.com/games/third-person-shooter/helldivers-2-urban-legends-warbond/",
+          "capturedAt": "2026-08-09T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "warbondId": "righteous-revenants-legendary",
+      "nameEn": "Righteous Revenants",
+      "pages": [
+        { "page": 1, "incrementalMedals": 0, "cumulativeMedals": 0 },
+        { "page": 2, "incrementalMedals": 135, "cumulativeMedals": 135 },
+        { "page": 3, "incrementalMedals": 175, "cumulativeMedals": 310 }
+      ],
+      "sourceRefs": [
+        {
+          "kind": "wiki",
+          "label": "Helldivers Wiki.gg: Righteous Revenants all-pages and page unlock data",
+          "url": "https://helldivers.wiki.gg/wiki/Righteous_Revenants_Legendary_Warbond",
+          "capturedAt": "2026-08-09T00:00:00.000Z"
+        },
+        {
+          "kind": "community",
+          "label": "Helldivers Wiki Fandom: Righteous Revenants page 2 spend requirement",
+          "url": "https://helldivers.fandom.com/wiki/Righteous_Revenants",
+          "capturedAt": "2026-08-09T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "warbondId": "masters-of-ceremony",
+      "nameEn": "Masters of Ceremony",
+      "pages": [
+        { "page": 1, "incrementalMedals": 0, "cumulativeMedals": 0 },
+        { "page": 2, "incrementalMedals": 95, "cumulativeMedals": 95 },
+        { "page": 3, "incrementalMedals": 230, "cumulativeMedals": 325 }
+      ],
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "GamesRadar+: Masters of Ceremony page unlock requirements",
+          "url": "https://www.gamesradar.com/games/third-person-shooter/helldivers-2-masters-of-ceremony-warbond/",
+          "capturedAt": "2026-08-09T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "warbondId": "servants-of-freedom",
+      "nameEn": "Servants of Freedom",
+      "pages": [
+        { "page": 1, "incrementalMedals": 0, "cumulativeMedals": 0 },
+        { "page": 2, "incrementalMedals": 95, "cumulativeMedals": 95 },
+        { "page": 3, "incrementalMedals": 230, "cumulativeMedals": 325 }
+      ],
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "GamesRadar+: Servants of Freedom page unlock requirements",
+          "url": "https://www.gamesradar.com/games/third-person-shooter/helldivers-2-servants-of-freedom-warbond/",
+          "capturedAt": "2026-08-09T00:00:00.000Z"
+        }
+      ]
+    },
+    {
+      "warbondId": "truth-enforcers",
+      "nameEn": "Truth Enforcers",
+      "pages": [
+        { "page": 1, "incrementalMedals": 0, "cumulativeMedals": 0 },
+        { "page": 2, "incrementalMedals": 90, "cumulativeMedals": 90 },
+        { "page": 3, "incrementalMedals": 250, "cumulativeMedals": 340 }
+      ],
+      "sourceRefs": [
+        {
+          "kind": "community",
+          "label": "GamesRadar+: Truth Enforcers page unlock requirements",
+          "url": "https://www.gamesradar.com/games/third-person-shooter/helldivers-2-truth-enforcers-warbond/",
+          "capturedAt": "2026-08-09T00:00:00.000Z"
+        }
+      ]
+    }
+  ]
+}

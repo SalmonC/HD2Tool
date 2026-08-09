@@ -28,7 +28,13 @@ export interface SourceLocator {
 
 export interface SourceSnapshot {
   sourceId: SourceId;
-  kind: "wiki" | "official-localization" | "official-web" | "community" | "user" | "local-file";
+  kind:
+    | "wiki"
+    | "official-localization"
+    | "official-web"
+    | "community"
+    | "user"
+    | "local-file";
   authority: "official" | "wiki" | "community" | "user";
   locator: SourceLocator;
   capturedAt: string;
@@ -51,13 +57,37 @@ export interface RawFact<T = unknown> {
 
 export type CandidateDisposition =
   | { status: "extracted" }
-  | { status: "rejected"; reason: "wrong-scope" | "duplicate" | "invalid" | "rights-blocked" }
-  | { status: "unresolved"; reason: "source-missing" | "not-published" | "parse-failed" | "identity-unresolved" | "ambiguous" | "unknown-threshold" | "rights-unresolved" };
+  | {
+      status: "rejected";
+      reason: "wrong-scope" | "duplicate" | "invalid" | "rights-blocked";
+    }
+  | {
+      status: "unresolved";
+      reason:
+        | "source-missing"
+        | "not-published"
+        | "parse-failed"
+        | "identity-unresolved"
+        | "ambiguous"
+        | "unknown-threshold"
+        | "rights-unresolved";
+    };
 
 export interface RawCandidate {
   candidateId: string;
   subjectHint: string;
-  type: "identity" | "name" | "alias" | "localization" | "item-link" | "item-cost" | "page-prerequisite" | "attack-component" | "image" | "acquisition" | "classification";
+  type:
+    | "identity"
+    | "name"
+    | "alias"
+    | "localization"
+    | "item-link"
+    | "item-cost"
+    | "page-prerequisite"
+    | "attack-component"
+    | "image"
+    | "acquisition"
+    | "classification";
   sourceId: SourceId;
   factIds: [FactId, ...FactId[]];
   disposition: CandidateDisposition;
@@ -82,14 +112,25 @@ export interface UnknownFieldEvidence {
   fieldEvidenceId: string;
   fieldPath: string;
   status: "unknown";
-  reason: "source-missing" | "not-published" | "parse-failed" | "identity-unresolved" | "ambiguous" | "unknown-threshold" | "rights-unresolved";
+  reason:
+    | "source-missing"
+    | "not-published"
+    | "parse-failed"
+    | "identity-unresolved"
+    | "ambiguous"
+    | "unknown-threshold"
+    | "rights-unresolved";
 }
 export interface ConflictFieldEvidence {
   fieldEvidenceId: string;
   fieldPath: string;
   status: "conflict";
   reason: "source-disagreement" | "identity-collision";
-  candidateFactIdGroups: [[FactId, ...FactId[]], [FactId, ...FactId[]], ...[FactId, ...FactId[]][]];
+  candidateFactIdGroups: [
+    [FactId, ...FactId[]],
+    [FactId, ...FactId[]],
+    ...[FactId, ...FactId[]][],
+  ];
 }
 export interface NotApplicableFieldEvidence {
   fieldEvidenceId: string;
@@ -97,13 +138,20 @@ export interface NotApplicableFieldEvidence {
   status: "not-applicable";
   reason: string;
 }
-export type FieldEvidence = KnownFieldEvidence | UnknownFieldEvidence | ConflictFieldEvidence | NotApplicableFieldEvidence;
+export type FieldEvidence =
+  | KnownFieldEvidence
+  | UnknownFieldEvidence
+  | ConflictFieldEvidence
+  | NotApplicableFieldEvidence;
 
 export interface CorrectionBase {
   correctionId: string;
   target: { entityId: string; fieldPath?: string };
   expectedBefore: unknown;
-  sourceBindings: [{ sourceId: SourceId; sha256: string; revision?: string }, ...{ sourceId: SourceId; sha256: string; revision?: string }[]];
+  sourceBindings: [
+    { sourceId: SourceId; sha256: string; revision?: string },
+    ...{ sourceId: SourceId; sha256: string; revision?: string }[],
+  ];
   evidenceFactIds: [FactId, ...FactId[]];
   reason: string;
   reviewer: string;
@@ -111,10 +159,25 @@ export interface CorrectionBase {
   expiry?: string;
 }
 export type Correction =
-  | (CorrectionBase & { kind: "identity-link"; after: { equipmentId: EquipmentId; externalKeys?: Record<string, string> } })
-  | (CorrectionBase & { kind: "candidate-selection"; after: { candidateId: string } })
-  | (CorrectionBase & { kind: "fact-supersession"; after: { replacementFactIds: FactId[]; supersededFactIds: FactId[] } })
-  | (CorrectionBase & { kind: "taxonomy-map"; after: { taxonomy: string; value: string } });
+  | (CorrectionBase & {
+      kind: "identity-link";
+      after: {
+        equipmentId: EquipmentId;
+        externalKeys?: Record<string, string>;
+      };
+    })
+  | (CorrectionBase & {
+      kind: "candidate-selection";
+      after: { candidateId: string };
+    })
+  | (CorrectionBase & {
+      kind: "fact-supersession";
+      after: { replacementFactIds: FactId[]; supersededFactIds: FactId[] };
+    })
+  | (CorrectionBase & {
+      kind: "taxonomy-map";
+      after: { taxonomy: string; value: string };
+    });
 export interface CorrectionsFile {
   schemaVersion: "corrections.v3";
   correctionsHash: string;
@@ -138,11 +201,23 @@ export interface IdAlias {
 export type NumericValue =
   | { kind: "scalar"; value: number }
   | { kind: "range"; min: number; max: number }
-  | { kind: "variants"; values: { id: string; label: string; value: number }[] };
+  | {
+      kind: "variants";
+      values: { id: string; label: string; value: number }[];
+    };
 
 export interface AttackComponent {
   componentId: string;
-  role: "direct" | "shrapnel" | "explosion" | "fire" | "melee" | "spray" | "status" | "alternate" | "other";
+  role:
+    | "direct"
+    | "shrapnel"
+    | "explosion"
+    | "fire"
+    | "melee"
+    | "spray"
+    | "status"
+    | "alternate"
+    | "other";
   label: string;
   standardDamage?: NumericValue;
   durableDamage?: NumericValue;
@@ -151,11 +226,16 @@ export interface AttackComponent {
 }
 export interface CombatProfile {
   weaponClass?: string;
-  ammoTraits?: ("ballistic" | "laser" | "plasma" | "arc" | "fire" | "gas" | "other")[];
+  ammoTraits?: (
+    "ballistic" | "laser" | "plasma" | "arc" | "fire" | "gas" | "other"
+  )[];
   components?: AttackComponent[];
   handling?: {
     capacity?: { value: number; kind: "rounds" | "charges" | "heat" | "uses" };
-    reserveCapacity?: { value: number; kind: "rounds" | "charges" | "heat" | "uses" };
+    reserveCapacity?: {
+      value: number;
+      kind: "rounds" | "charges" | "heat" | "uses";
+    };
     fireRateRpm?: number;
     recoil?: number;
   };
@@ -168,7 +248,15 @@ export interface ArmorProfile {
   passive?: { name: string; summary?: string };
 }
 export interface DeploymentProfile {
-  kind?: "orbital" | "eagle" | "backpack" | "sentry" | "emplacement" | "minefield" | "vehicle" | "other";
+  kind?:
+    | "orbital"
+    | "eagle"
+    | "backpack"
+    | "sentry"
+    | "emplacement"
+    | "minefield"
+    | "vehicle"
+    | "other";
   code?: string;
   callInSeconds?: number;
   cooldownSeconds?: number;
@@ -185,7 +273,14 @@ export type Acquisition =
   | { kind: "poi"; location: string }
   | { kind: "grant"; label: string }
   | { kind: "unavailable"; reason: string }
-  | { kind: "unknown"; reason: "source-missing" | "not-published" | "identity-unresolved" | "conflicting" };
+  | {
+      kind: "unknown";
+      reason:
+        | "source-missing"
+        | "not-published"
+        | "identity-unresolved"
+        | "conflicting";
+    };
 
 export interface Warbond {
   id: string;
@@ -265,7 +360,10 @@ export interface RuntimeProjection {
   ruleVersion: string;
   equipment: RuntimeEquipment[];
   warbonds: RuntimeWarbond[];
-  warbondPages: Pick<WarbondPage, "pageId" | "warbondId" | "page" | "cumulativePrerequisiteMedals">[];
+  warbondPages: Pick<
+    WarbondPage,
+    "pageId" | "warbondId" | "page" | "cumulativePrerequisiteMedals"
+  >[];
 }
 
 export interface PlanV3 {
@@ -274,7 +372,11 @@ export interface PlanV3 {
   catalogHash: string;
   pendingIds: EquipmentId[];
   completedIds: EquipmentId[];
-  orphans: { equipmentId: EquipmentId; lastKnownName: string; reason: "removed" | "id-migration" | "invalid" }[];
+  orphans: {
+    equipmentId: EquipmentId;
+    lastKnownName: string;
+    reason: "removed" | "id-migration" | "invalid";
+  }[];
   updatedAt: string;
 }
 
@@ -287,10 +389,30 @@ export interface AuditReport {
   toolVersions: Record<string, string>;
   stageCounts: Record<string, number>;
   stageSetHashes: Record<string, string>;
-  setReconciliations: { reconciliationId: string; missingIds: string[]; extraIds: string[]; expectedHash: string; actualHash: string }[];
-  runtimeDiff: { matches: boolean; expectedHash: string; actualHash: string; changes: string[] };
+  setReconciliations: {
+    reconciliationId: string;
+    missingIds: string[];
+    extraIds: string[];
+    expectedHash: string;
+    actualHash: string;
+  }[];
+  runtimeDiff: {
+    matches: boolean;
+    expectedHash: string;
+    actualHash: string;
+    changes: string[];
+  };
   migrationDiff: { lossyCount: number; changes: string[] };
-  mismatches: { code: string; severity: "P0" | "P1" | "P2" | "info"; entityId?: string; fieldPath?: string; expected?: unknown; actual?: unknown; factIds?: FactId[]; suggestedAction?: string }[];
+  mismatches: {
+    code: string;
+    severity: "P0" | "P1" | "P2" | "info";
+    entityId?: string;
+    fieldPath?: string;
+    expected?: unknown;
+    actual?: unknown;
+    factIds?: FactId[];
+    suggestedAction?: string;
+  }[];
   unknownByReason: Record<string, number>;
   conflicts: string[];
   staleCorrections: string[];
@@ -299,21 +421,40 @@ export interface AuditReport {
   cacheHits: Record<string, number>;
 }
 
-export function displayGroupFor(productKind: ProductKind): "weapon" | "armor" | "stratagem" {
-  return productKind === "body-armor" ? "armor" : productKind === "primary-weapon" || productKind === "secondary-weapon" || productKind === "grenade" ? "weapon" : "stratagem";
+export function displayGroupFor(
+  productKind: ProductKind,
+): "weapon" | "armor" | "stratagem" {
+  return productKind === "body-armor"
+    ? "armor"
+    : productKind === "primary-weapon" ||
+        productKind === "secondary-weapon" ||
+        productKind === "grenade"
+      ? "weapon"
+      : "stratagem";
 }
 
-export function slotFor(productKind: ProductKind): "primary" | "secondary" | "throwable" | "armor" | "support" | "stratagem" {
+export function slotFor(
+  productKind: ProductKind,
+): "primary" | "secondary" | "throwable" | "armor" | "support" | "stratagem" {
   switch (productKind) {
-    case "primary-weapon": return "primary";
-    case "secondary-weapon": return "secondary";
-    case "grenade": return "throwable";
-    case "body-armor": return "armor";
-    case "support-weapon": return "support";
-    case "other-stratagem": return "stratagem";
+    case "primary-weapon":
+      return "primary";
+    case "secondary-weapon":
+      return "secondary";
+    case "grenade":
+      return "throwable";
+    case "body-armor":
+      return "armor";
+    case "support-weapon":
+      return "support";
+    case "other-stratagem":
+      return "stratagem";
   }
 }
 
 export function normalizeSearchInput(input: string): string {
-  return input.normalize("NFKC").toLocaleLowerCase().replace(/[\s\p{P}\p{S}_]+/gu, "");
+  return input
+    .normalize("NFKC")
+    .toLocaleLowerCase()
+    .replace(/[\s\p{P}\p{S}_]+/gu, "");
 }

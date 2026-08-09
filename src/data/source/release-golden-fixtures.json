@@ -1,0 +1,157 @@
+{
+  "version": "2026-08-08.1",
+  "warbonds": [
+    {
+      "id": "entrenched-division",
+      "nameZh": "堑壕之师",
+      "items": [
+        {
+          "id": "smg-flam-34-stoker",
+          "nameZh": "司炉者",
+          "model": "SMG/FLAM-34",
+          "page": 1,
+          "itemMedals": 35,
+          "incrementalMedals": 0,
+          "cumulativeMedals": 0,
+          "imageStatus": "verified"
+        },
+        {
+          "id": "cpg-48-sapper",
+          "nameZh": "CPG-48“工兵”",
+          "model": "CPG-48",
+          "page": 1,
+          "itemMedals": 45,
+          "incrementalMedals": 0,
+          "cumulativeMedals": 0,
+          "imageStatus": "verified"
+        },
+        {
+          "id": "a-gm-17-gas-mortar-sentry",
+          "nameZh": "瓦斯迫击哨戒炮",
+          "model": "A/GM-17",
+          "page": 2,
+          "itemMedals": 85,
+          "incrementalMedals": 125,
+          "cumulativeMedals": 125,
+          "imageStatus": "verified"
+        },
+        {
+          "id": "cph-26-commandant",
+          "nameZh": "CPH-26“司令官”",
+          "model": "CPH-26",
+          "page": 2,
+          "itemMedals": 55,
+          "incrementalMedals": 125,
+          "cumulativeMedals": 125,
+          "imageStatus": "verified"
+        },
+        {
+          "id": "g-48-giga-grenade",
+          "nameZh": "千兆级榴弹",
+          "model": "G-48",
+          "page": 2,
+          "itemMedals": 50,
+          "incrementalMedals": 125,
+          "cumulativeMedals": 125,
+          "imageStatus": "placeholder"
+        },
+        {
+          "id": "b-flam-80-cremator",
+          "nameZh": "焚燃者",
+          "model": "B/FLAM-80",
+          "page": 3,
+          "itemMedals": 110,
+          "incrementalMedals": 245,
+          "cumulativeMedals": 370,
+          "imageStatus": "verified"
+        },
+        {
+          "id": "p-69-veto",
+          "nameZh": "否决者",
+          "model": "P-69",
+          "page": 3,
+          "itemMedals": 65,
+          "incrementalMedals": 245,
+          "cumulativeMedals": 370,
+          "imageStatus": "verified"
+        }
+      ]
+    },
+    {
+      "id": "exo-experts",
+      "nameZh": "外骨骼装甲专家",
+      "items": [
+        {
+          "id": "smg-203-gallant",
+          "nameZh": "英勇无畏",
+          "model": "SMG-203",
+          "page": 1,
+          "itemMedals": 35,
+          "incrementalMedals": 0,
+          "cumulativeMedals": 0,
+          "imageStatus": "verified"
+        },
+        {
+          "id": "mgx-42-bullet-storm",
+          "nameZh": "子弹风暴",
+          "model": "MGX-42",
+          "page": 1,
+          "itemMedals": 75,
+          "incrementalMedals": 0,
+          "cumulativeMedals": 0,
+          "imageStatus": "verified"
+        },
+        {
+          "id": "o-3-free-spirit",
+          "nameZh": "O-3“自由之魂”",
+          "model": "O-3",
+          "page": 1,
+          "itemMedals": 45,
+          "incrementalMedals": 0,
+          "cumulativeMedals": 0,
+          "imageStatus": "verified"
+        },
+        {
+          "id": "exo-51-lumberer-exosuit",
+          "nameZh": "“伐木者”外骨骼装甲",
+          "model": "EXO-51",
+          "page": 2,
+          "itemMedals": 50,
+          "incrementalMedals": 165,
+          "cumulativeMedals": 165,
+          "imageStatus": "verified"
+        },
+        {
+          "id": "p-33-missile-pistol",
+          "nameZh": "制导手枪",
+          "model": "P-33",
+          "page": 2,
+          "itemMedals": 50,
+          "incrementalMedals": 165,
+          "cumulativeMedals": 165,
+          "imageStatus": "verified"
+        },
+        {
+          "id": "o-2-heavy-operator",
+          "nameZh": "O-2“重装操作者”",
+          "model": "O-2",
+          "page": 2,
+          "itemMedals": 55,
+          "incrementalMedals": 165,
+          "cumulativeMedals": 165,
+          "imageStatus": "verified"
+        },
+        {
+          "id": "exo-55-breakthrough-exosuit",
+          "nameZh": "“突破”外骨骼装甲",
+          "model": "EXO-55",
+          "page": 3,
+          "itemMedals": 50,
+          "incrementalMedals": 55,
+          "cumulativeMedals": 220,
+          "imageStatus": "verified"
+        }
+      ]
+    }
+  ]
+}

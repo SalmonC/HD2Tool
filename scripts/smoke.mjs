@@ -41,30 +41,54 @@ async function waitForServer() {
       const response = await fetch(appUrl);
       if (response.ok) return;
     } catch {
-      /* preview is still starting */
+      // Preview is still starting.
     }
-    await new Promise((resolve) => setTimeout(resolve, 200));
+    await new Promise((resolveDelay) => setTimeout(resolveDelay, 200));
   }
-  throw new Error(`预览服务器未启动：${output}`);
+  throw new Error(`Preview server did not start: ${output}`);
 }
 
 try {
   await waitForServer();
   const checks = [
-    ["首页", appUrl, "HD2"],
+    ["home", appUrl, "HD2"],
     ["PWA manifest", `${appUrl}manifest.webmanifest`, "HD2"],
-    ["分享查询参数", `${appUrl}?item=sg-225ie-breaker-incendiary`, "HD2"],
+    ["shared item query", `${appUrl}?item=sg-225ie-breaker-incendiary`, "HD2"],
   ];
   for (const [label, url, marker] of checks) {
     const response = await fetch(url);
-    const text = await response.text();
-    if (!response.ok || !text.includes(marker))
-      throw new Error(`${label} smoke 失败：HTTP ${response.status}`);
+    const body = await response.text();
+    if (!response.ok || !body.includes(marker))
+      throw new Error(`${label} smoke failed: HTTP ${response.status}`);
     console.log(`${label}: OK`);
   }
+
   const serviceWorker = await fetch(`${appUrl}sw.js`);
+  if (!serviceWorker.ok)
+    throw new Error(
+      `service worker smoke failed: HTTP ${serviceWorker.status}`,
+    );
+  const serviceWorkerText = await serviceWorker.text();
+  const precacheManifest =
+    serviceWorkerText.match(/precacheAndRoute\(\[(.*?)\](?:,|\))/s)?.[1] ?? "";
+  const wikiPrecacheRefs = (precacheManifest.match(/assets\/wiki\//g) ?? [])
+    .length;
+  if (wikiPrecacheRefs !== 0)
+    throw new Error(
+      `service worker precaches ${wikiPrecacheRefs} Wiki images; expected 0`,
+    );
+  if (!serviceWorkerText.includes("wiki-equipment-images-v1"))
+    throw new Error(
+      "service worker is missing the bounded Wiki image runtime cache",
+    );
+  if (!/maxEntries:\s*64/.test(serviceWorkerText))
+    throw new Error("Wiki image runtime cache must retain at most 64 entries");
+  if (!/maxAgeSeconds:\s*(?:2592000|2592e3)/.test(serviceWorkerText))
+    throw new Error("Wiki image runtime cache is missing its 30-day expiry");
+  if (!/purgeOnQuotaError:\s*(?:!0|true)/.test(serviceWorkerText))
+    throw new Error("Wiki image runtime cache must purge on quota errors");
   console.log(
-    `service worker: ${serviceWorker.ok ? "OK" : "未生成（检查 PWA 配置）"}`,
+    "service worker: OK (0 Wiki precache entries; runtime cache max 64 / 30 days)",
   );
 } finally {
   child.kill();

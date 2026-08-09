@@ -55,13 +55,13 @@
         "labelZh": "拆毁值（待来源核验）",
         "valueKind": "number",
         "taxonomySource": "product-contract-pending",
-        "scaleVersion": "0..50-v1",
+        "scaleVersion": "wiki-0..60-v1",
         "sourceRefs": [
           { "kind": "local-fixture", "label": "产品范围约束；不是游戏事实来源" }
         ],
         "verificationStatus": "pending",
         "options": [],
-        "numberScale": { "min": 0, "max": 50, "step": 1 }
+        "numberScale": { "min": 0, "max": 60, "step": 1 }
       }
     }
   },

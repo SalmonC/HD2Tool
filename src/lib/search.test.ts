@@ -1,7 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { catalogItems } from "../data/catalog";
+import { catalog, catalogItems as formalCatalogItems } from "../data/catalog";
 import type { Equipment } from "../types";
 import { searchEquipment } from "./search";
+
+const catalogItems = formalCatalogItems.length
+  ? formalCatalogItems
+  : (catalog.quarantine ?? []);
 
 function searchableItem(overrides: Partial<Equipment>): Equipment {
   const base = catalogItems[0];

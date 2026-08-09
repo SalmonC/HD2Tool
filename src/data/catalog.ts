@@ -1,7 +1,7 @@
-import rawCatalog from "./catalog.json";
+import rawCatalog from "./catalog-runtime.json";
 import type { Catalog } from "../types";
 
-export const catalog = rawCatalog as Catalog;
+export const catalog = rawCatalog as unknown as Catalog;
 export const catalogItems = catalog.items;
 
 export function findEquipment(

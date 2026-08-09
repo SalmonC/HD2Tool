@@ -82,8 +82,8 @@
     },
 
     {
-      "id": "gp-31-ultimatum",
-      "model": "GP-31",
+      "id": "gp-20-ultimatum",
+      "model": "GP-20",
       "nameZh": "最后通牒",
       "category": "weapon",
       "aliases": ["核弹手枪"],

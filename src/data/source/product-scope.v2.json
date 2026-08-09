@@ -1,0 +1,94 @@
+{
+  "schemaVersion": "product-scope.v2",
+  "description": "Canonical product inventory scope. Matching is defined only by this manifest; each normalized Wiki item must have one valid scope disposition.",
+  "groups": [
+    {
+      "ruleId": "primary-weapon",
+      "scopeClass": "required",
+      "productGroup": "primary-weapon",
+      "match": { "category": "weapon", "slot": "primary" }
+    },
+    {
+      "ruleId": "secondary-weapon",
+      "scopeClass": "required",
+      "productGroup": "secondary-weapon",
+      "match": { "category": "weapon", "slot": "secondary" }
+    },
+    {
+      "ruleId": "grenade",
+      "scopeClass": "required",
+      "productGroup": "grenade",
+      "match": { "category": "grenade" }
+    },
+    {
+      "ruleId": "body-armor",
+      "scopeClass": "required",
+      "productGroup": "body-armor",
+      "match": { "category": "armor", "slot": "armor" }
+    },
+    {
+      "ruleId": "support-weapon",
+      "scopeClass": "required",
+      "productGroup": "support-weapon",
+      "match": { "category": "weapon", "slot": "support" }
+    },
+    {
+      "ruleId": "other-stratagem",
+      "scopeClass": "required",
+      "productGroup": "other-stratagem",
+      "match": { "category": "stratagem" }
+    }
+  ],
+  "exclusions": [
+    {
+      "ruleId": "upcoming-castellans-creed",
+      "scopeClass": "upcoming",
+      "reason": "unreleased",
+      "availableFrom": "2026-08-12",
+      "match": {
+        "ids": [
+          "40-k-meltagun",
+          "g-40-k-meltamine",
+          "p-40-k-bolt-pistol",
+          "r-40-k-hot-shot-marksman-rifle",
+          "tg-122-demo-trooper",
+          "tg-8-sharpshooter"
+        ]
+      }
+    },
+    {
+      "ruleId": "system-action",
+      "scopeClass": "out-of-product-scope",
+      "reason": "system-action",
+      "match": {
+        "ids": [
+          "reinforce",
+          "resupply",
+          "sos-beacon",
+          "eagle-rearm",
+          "call-in-super-destroyer"
+        ]
+      }
+    },
+    {
+      "ruleId": "booster",
+      "scopeClass": "out-of-product-scope",
+      "reason": "booster",
+      "match": { "category": "booster" }
+    },
+    {
+      "ruleId": "cosmetic",
+      "scopeClass": "out-of-product-scope",
+      "reason": "cosmetic",
+      "match": {
+        "categories": ["helmet", "cape", "player-card", "emote"]
+      }
+    },
+    {
+      "ruleId": "unsupported-category",
+      "scopeClass": "out-of-product-scope",
+      "reason": "unsupported-category",
+      "match": {}
+    }
+  ]
+}

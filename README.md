@@ -2,7 +2,7 @@
 
 HD2 军需簿是一个简体中文优先、离线优先的《HELLDIVERS 2》装备速查与解锁计划工具。它是公开、免费、无账号、无后端的非官方项目，不收集分析数据。
 
-当前仓库包含首批社区来源数据：38 个装备条目、48 个装备外号和 5 个护甲属性俗称。它不是完整当前数据库。名称、型号、债券归属与外号来自用户提供全文的一篇小黑盒社区整理帖，全部保留来源并标为 `pending`；页码、价格、英文名、武器数值和图片尚未核验，不会被自动补全或冒充官方事实。
+当前冻结同步范围、归一化条目数、正式目录和隔离数量以 `reports/release-readiness.json` 为准；隔离条目不会进入首页搜索。图片 manifest 逐图记录来源追溯与权利状态，缺少具体 license raw 值的图片不物化。它不是“所有 Wiki 条目都已发布”的声明；请查看 `reports/release-readiness.json`、`reports/wiki-sync-report.json` 和 `reports/wiki-assets-report.json`。
 
 ## 开发
 
@@ -28,7 +28,7 @@ npm run desktop:check
 
 ## 数据与搜索
 
-基础数据契约位于 `src/data/source/catalog-source.json`，社区转录位于 `src/data/source/xiaoheihe-community-aliases.json`，人工覆盖位于 `src/data/overrides/manual-overrides.json`，构建生成物为 `src/data/catalog.json`，不要直接手改生成物。`npm run generate:data` 会从原始层重新生成规范化搜索字段。
+Wiki raw/normalized、官方简中对齐和翻译证据位于 `src/data/source/`，社区转录位于 `src/data/source/xiaoheihe-community-aliases.json`，人工覆盖位于 `src/data/overrides/manual-overrides.json`。`src/data/catalog.json` 是完整审计生成物，`src/data/catalog-runtime.json` 是供前端使用的精简投影；两者都由 `npm run generate:data` 重建，不要直接手改。
 
 武器属性使用版本化、来源驱动的 taxonomy。没有可靠统一体系时，维度保持 pending，UI 隐藏筛选项；字段必须同时匹配 taxonomy 来源和标尺版本，并有字段级来源，不能从描述推导数值。候选数据见 `src/data/candidates/user-supplied.json`。
 
