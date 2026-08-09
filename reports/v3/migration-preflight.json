@@ -17,7 +17,7 @@
       },
       "catalog": {
         "path": "src/data/catalog.json",
-        "byteSha256": "1abb43865373788002df149665910447bee502f14fd1251db79a14434bd704a4",
+        "byteSha256": "6f30bd4c9f05ca7475acfa91ab068bb7e901a5190ef8c445f8c974e8e263e50e",
         "formalItemCount": 292
       },
       "communityAliases": {
@@ -103,7 +103,7 @@
   "sourceManifest": {
     "schemaVersion": "m1-source-manifest.v1",
     "manifestPath": "data/v3/config/source-manifest.json",
-    "manifestFileSha256": "a7a18e0890b56e39e4baafee8ee609ed02ffca2deacd9c83dceb4bb8347507e0",
+    "manifestFileSha256": "f585f9b2f1b829ec0c56b1908d4eff4a917571d8758ff2c2a8bf76387efed9f6",
     "selfExcludedFromInputs": true,
     "shapeErrors": [],
     "entries": [
@@ -116,7 +116,7 @@
         "expectedSha256": "99cda2e7b3f5ef6c5ea9470d64c02eea6cd59b00f5926c9a156eea678bee3a29",
         "actualSha256": "99cda2e7b3f5ef6c5ea9470d64c02eea6cd59b00f5926c9a156eea678bee3a29",
         "byteMatch": true,
-        "tracked": false,
+        "tracked": true,
         "dirty": false
       },
       {
@@ -128,7 +128,7 @@
         "expectedSha256": "1de68d0b67428157ac3a0b9fae389fd10596d31b216a63a369712fba22834c02",
         "actualSha256": "1de68d0b67428157ac3a0b9fae389fd10596d31b216a63a369712fba22834c02",
         "byteMatch": true,
-        "tracked": false,
+        "tracked": true,
         "dirty": false
       },
       {
@@ -137,11 +137,11 @@
         "role": "formal-offer-diff-reference",
         "required": true,
         "exists": true,
-        "expectedSha256": "1abb43865373788002df149665910447bee502f14fd1251db79a14434bd704a4",
-        "actualSha256": "1abb43865373788002df149665910447bee502f14fd1251db79a14434bd704a4",
+        "expectedSha256": "6f30bd4c9f05ca7475acfa91ab068bb7e901a5190ef8c445f8c974e8e263e50e",
+        "actualSha256": "6f30bd4c9f05ca7475acfa91ab068bb7e901a5190ef8c445f8c974e8e263e50e",
         "byteMatch": true,
         "tracked": true,
-        "dirty": true
+        "dirty": false
       },
       {
         "inputId": "official-localization-registry",
@@ -152,7 +152,7 @@
         "expectedSha256": "f0c8021d1449d5f844fc97e8b4b0f9818eebd0cf42ce0e0cbbb6f3ac2c1c1bd5",
         "actualSha256": "f0c8021d1449d5f844fc97e8b4b0f9818eebd0cf42ce0e0cbbb6f3ac2c1c1bd5",
         "byteMatch": true,
-        "tracked": false,
+        "tracked": true,
         "dirty": false
       },
       {
@@ -164,7 +164,7 @@
         "expectedSha256": "ab2d0ea377da109fea5edf1ac28425f04c81e35764a36f9320d7a258bb8f4925",
         "actualSha256": "ab2d0ea377da109fea5edf1ac28425f04c81e35764a36f9320d7a258bb8f4925",
         "byteMatch": true,
-        "tracked": false,
+        "tracked": true,
         "dirty": false
       },
       {
@@ -177,7 +177,7 @@
         "actualSha256": "38c646dabd914925bc4edd4f7405e6216194a92faffb4cc9fddb78d1efe480c5",
         "byteMatch": true,
         "tracked": true,
-        "dirty": true
+        "dirty": false
       },
       {
         "inputId": "resolver-fixtures",
@@ -188,7 +188,7 @@
         "expectedSha256": "1dfc21010d2c155653724e1b8325e674431ba71da0aaed9d21cab66135de8f18",
         "actualSha256": "1dfc21010d2c155653724e1b8325e674431ba71da0aaed9d21cab66135de8f18",
         "byteMatch": true,
-        "tracked": false,
+        "tracked": true,
         "dirty": false
       },
       {
@@ -200,7 +200,7 @@
         "expectedSha256": "ef6ace320a9990039b4e9ec09847247ca7eec5ce68c776eace3abc6e88925893",
         "actualSha256": "ef6ace320a9990039b4e9ec09847247ca7eec5ce68c776eace3abc6e88925893",
         "byteMatch": true,
-        "tracked": false,
+        "tracked": true,
         "dirty": false
       }
     ],
@@ -216,7 +216,7 @@
           "expectedSha256": "2364484dbc3dc2dec93072f88197e5b3190889cdcb97ed175143fab4d6c31d12",
           "actualSha256": "2364484dbc3dc2dec93072f88197e5b3190889cdcb97ed175143fab4d6c31d12",
           "byteMatch": true,
-          "tracked": false,
+          "tracked": true,
           "dirty": false
         },
         {
@@ -225,7 +225,7 @@
           "expectedSha256": "9edf556d2c139b2552e6842450330785a700a17ccd5befef8791fddba34fdf89",
           "actualSha256": "9edf556d2c139b2552e6842450330785a700a17ccd5befef8791fddba34fdf89",
           "byteMatch": true,
-          "tracked": false,
+          "tracked": true,
           "dirty": false
         },
         {
@@ -234,7 +234,7 @@
           "expectedSha256": "40fe1077479ca5126b5a90bbb2b5d7975b7ab7cfe5094fa7f9e3e2b75a8b7e90",
           "actualSha256": "40fe1077479ca5126b5a90bbb2b5d7975b7ab7cfe5094fa7f9e3e2b75a8b7e90",
           "byteMatch": true,
-          "tracked": false,
+          "tracked": true,
           "dirty": false
         },
         {
@@ -243,7 +243,7 @@
           "expectedSha256": "8da6a56028495f6cdee2ced0b1cd79da01736a126522b27936de63da57e037b7",
           "actualSha256": "8da6a56028495f6cdee2ced0b1cd79da01736a126522b27936de63da57e037b7",
           "byteMatch": true,
-          "tracked": false,
+          "tracked": true,
           "dirty": false
         },
         {
@@ -252,7 +252,7 @@
           "expectedSha256": "a3789411a8ed0b2cc0d112249f20eade2a1ec1f604f71dd72c4a1a773b759a22",
           "actualSha256": "a3789411a8ed0b2cc0d112249f20eade2a1ec1f604f71dd72c4a1a773b759a22",
           "byteMatch": true,
-          "tracked": false,
+          "tracked": true,
           "dirty": false
         },
         {
@@ -261,7 +261,7 @@
           "expectedSha256": "06485e75d751c22a746df01e20d128ffefd4102248ded9e6682f20de12646f54",
           "actualSha256": "06485e75d751c22a746df01e20d128ffefd4102248ded9e6682f20de12646f54",
           "byteMatch": true,
-          "tracked": false,
+          "tracked": true,
           "dirty": false
         },
         {
@@ -270,7 +270,7 @@
           "expectedSha256": "e68f79f49381e3ceec2a0997b0e3cc1f346ac90e26aa1ba8612d89644dae5d22",
           "actualSha256": "e68f79f49381e3ceec2a0997b0e3cc1f346ac90e26aa1ba8612d89644dae5d22",
           "byteMatch": true,
-          "tracked": false,
+          "tracked": true,
           "dirty": false
         },
         {
@@ -279,127 +279,14 @@
           "expectedSha256": "975ba2f54f8edd079697be3d3456a38ecae25817f4bf37939e9cacf875208178",
           "actualSha256": "975ba2f54f8edd079697be3d3456a38ecae25817f4bf37939e9cacf875208178",
           "byteMatch": true,
-          "tracked": false,
+          "tracked": true,
           "dirty": false
         }
       ],
       "missingOrMismatched": []
     },
     "reproducibility": null,
-    "warnings": [
-      {
-        "inputId": "wiki-raw",
-        "path": "src/data/source/wiki-raw.json",
-        "tracked": false,
-        "dirty": false,
-        "source": "input"
-      },
-      {
-        "inputId": "wiki-normalized-reference",
-        "path": "src/data/source/wiki-normalized.json",
-        "tracked": false,
-        "dirty": false,
-        "source": "input"
-      },
-      {
-        "inputId": "legacy-catalog-reference",
-        "path": "src/data/catalog.json",
-        "tracked": true,
-        "dirty": true,
-        "source": "input"
-      },
-      {
-        "inputId": "official-localization-registry",
-        "path": "src/data/source/official-localization.json",
-        "tracked": false,
-        "dirty": false,
-        "source": "input"
-      },
-      {
-        "inputId": "localization-attestation",
-        "path": "data/v3/config/localization-attestation.json",
-        "tracked": false,
-        "dirty": false,
-        "source": "input"
-      },
-      {
-        "inputId": "community-alias-reference",
-        "path": "src/data/source/xiaoheihe-community-aliases.json",
-        "tracked": true,
-        "dirty": true,
-        "source": "input"
-      },
-      {
-        "inputId": "resolver-fixtures",
-        "path": "data/v3/config/resolver-fixtures.json",
-        "tracked": false,
-        "dirty": false,
-        "source": "input"
-      },
-      {
-        "inputId": "warbond-corrections",
-        "path": "data/v3/config/warbond-corrections.json",
-        "tracked": false,
-        "dirty": false,
-        "source": "input"
-      },
-      {
-        "inputId": null,
-        "path": "scripts/v3/migration-common.mjs",
-        "tracked": false,
-        "dirty": false,
-        "source": "tool-bundle"
-      },
-      {
-        "inputId": null,
-        "path": "scripts/v3/migration-preflight.mjs",
-        "tracked": false,
-        "dirty": false,
-        "source": "tool-bundle"
-      },
-      {
-        "inputId": null,
-        "path": "scripts/v3/migration-tests.mjs",
-        "tracked": false,
-        "dirty": false,
-        "source": "tool-bundle"
-      },
-      {
-        "inputId": null,
-        "path": "scripts/v3/raw-probe.mjs",
-        "tracked": false,
-        "dirty": false,
-        "source": "tool-bundle"
-      },
-      {
-        "inputId": null,
-        "path": "scripts/v3/raw-validator.mjs",
-        "tracked": false,
-        "dirty": false,
-        "source": "tool-bundle"
-      },
-      {
-        "inputId": null,
-        "path": "scripts/v3/resolver-gate.mjs",
-        "tracked": false,
-        "dirty": false,
-        "source": "tool-bundle"
-      },
-      {
-        "inputId": null,
-        "path": "scripts/wiki-normalize.mjs",
-        "tracked": false,
-        "dirty": false,
-        "source": "tool-bundle"
-      },
-      {
-        "inputId": null,
-        "path": "scripts/lib/product-scope.mjs",
-        "tracked": false,
-        "dirty": false,
-        "source": "tool-bundle"
-      }
-    ]
+    "warnings": []
   },
   "localizationAttestation": {
     "path": "data/v3/config/localization-attestation.json",
@@ -5828,253 +5715,13 @@
     }
   },
   "gate": {
-    "status": "blocked",
-    "blocked": true,
+    "status": "unblocked",
+    "blocked": false,
     "dataReady": true,
-    "reproducibleReady": false,
-    "blockedReasons": [
-      {
-        "code": "uncommitted-inputs-not-reproducible",
-        "details": {
-          "warnings": [
-            {
-              "inputId": "wiki-raw",
-              "path": "src/data/source/wiki-raw.json",
-              "tracked": false,
-              "dirty": false,
-              "source": "input"
-            },
-            {
-              "inputId": "wiki-normalized-reference",
-              "path": "src/data/source/wiki-normalized.json",
-              "tracked": false,
-              "dirty": false,
-              "source": "input"
-            },
-            {
-              "inputId": "legacy-catalog-reference",
-              "path": "src/data/catalog.json",
-              "tracked": true,
-              "dirty": true,
-              "source": "input"
-            },
-            {
-              "inputId": "official-localization-registry",
-              "path": "src/data/source/official-localization.json",
-              "tracked": false,
-              "dirty": false,
-              "source": "input"
-            },
-            {
-              "inputId": "localization-attestation",
-              "path": "data/v3/config/localization-attestation.json",
-              "tracked": false,
-              "dirty": false,
-              "source": "input"
-            },
-            {
-              "inputId": "community-alias-reference",
-              "path": "src/data/source/xiaoheihe-community-aliases.json",
-              "tracked": true,
-              "dirty": true,
-              "source": "input"
-            },
-            {
-              "inputId": "resolver-fixtures",
-              "path": "data/v3/config/resolver-fixtures.json",
-              "tracked": false,
-              "dirty": false,
-              "source": "input"
-            },
-            {
-              "inputId": "warbond-corrections",
-              "path": "data/v3/config/warbond-corrections.json",
-              "tracked": false,
-              "dirty": false,
-              "source": "input"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/v3/migration-common.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/v3/migration-preflight.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/v3/migration-tests.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/v3/raw-probe.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/v3/raw-validator.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/v3/resolver-gate.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/wiki-normalize.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/lib/product-scope.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            }
-          ]
-        }
-      }
-    ],
+    "reproducibleReady": true,
+    "blockedReasons": [],
     "dataBlockedReasons": [],
-    "reproducibilityBlockedReasons": [
-      {
-        "code": "uncommitted-inputs-not-reproducible",
-        "details": {
-          "warnings": [
-            {
-              "inputId": "wiki-raw",
-              "path": "src/data/source/wiki-raw.json",
-              "tracked": false,
-              "dirty": false,
-              "source": "input"
-            },
-            {
-              "inputId": "wiki-normalized-reference",
-              "path": "src/data/source/wiki-normalized.json",
-              "tracked": false,
-              "dirty": false,
-              "source": "input"
-            },
-            {
-              "inputId": "legacy-catalog-reference",
-              "path": "src/data/catalog.json",
-              "tracked": true,
-              "dirty": true,
-              "source": "input"
-            },
-            {
-              "inputId": "official-localization-registry",
-              "path": "src/data/source/official-localization.json",
-              "tracked": false,
-              "dirty": false,
-              "source": "input"
-            },
-            {
-              "inputId": "localization-attestation",
-              "path": "data/v3/config/localization-attestation.json",
-              "tracked": false,
-              "dirty": false,
-              "source": "input"
-            },
-            {
-              "inputId": "community-alias-reference",
-              "path": "src/data/source/xiaoheihe-community-aliases.json",
-              "tracked": true,
-              "dirty": true,
-              "source": "input"
-            },
-            {
-              "inputId": "resolver-fixtures",
-              "path": "data/v3/config/resolver-fixtures.json",
-              "tracked": false,
-              "dirty": false,
-              "source": "input"
-            },
-            {
-              "inputId": "warbond-corrections",
-              "path": "data/v3/config/warbond-corrections.json",
-              "tracked": false,
-              "dirty": false,
-              "source": "input"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/v3/migration-common.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/v3/migration-preflight.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/v3/migration-tests.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/v3/raw-probe.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/v3/raw-validator.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/v3/resolver-gate.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/wiki-normalize.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            },
-            {
-              "inputId": null,
-              "path": "scripts/lib/product-scope.mjs",
-              "tracked": false,
-              "dirty": false,
-              "source": "tool-bundle"
-            }
-          ]
-        }
-      }
-    ]
+    "reproducibilityBlockedReasons": []
   },
-  "auditHash": "abaa54c297ea37688d23fa1e13bd5fa5a44d302d31795264cf398fb752388dab"
+  "auditHash": "31f6ab593948f4854b660925fd5a43dc5ec0fa1e0c308feddb791ddba170a74a"
 }

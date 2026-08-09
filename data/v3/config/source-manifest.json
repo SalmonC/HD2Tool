@@ -34,7 +34,7 @@
       "inputId": "legacy-catalog-reference",
       "path": "src/data/catalog.json",
       "role": "formal-offer-diff-reference",
-      "sha256": "1abb43865373788002df149665910447bee502f14fd1251db79a14434bd704a4",
+      "sha256": "6f30bd4c9f05ca7475acfa91ab068bb7e901a5190ef8c445f8c974e8e263e50e",
       "required": true
     },
     {
