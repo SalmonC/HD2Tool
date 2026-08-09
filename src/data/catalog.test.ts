@@ -2,7 +2,12 @@ import { describe, expect, it } from "vitest";
 import { aliasesById, catalog, catalogItems, findEquipment } from "./catalog";
 import { warbondPageUnlock } from "../lib/plan-totals";
 import {
+  apSummaries,
+  armorPenetrationText,
+  demolitionSummaries,
   deploymentTypeLabel,
+  displayableCombatComponents,
+  hasDisplayableCombatFields,
   passiveLabel,
   weaponTypeLabel,
 } from "../lib/display";
@@ -16,7 +21,7 @@ describe("light catalog", () => {
     expect(
       catalogItems.some((item) => item.image.path.includes("placeholder")),
     ).toBe(false);
-    expect(catalog.meta.demolitionSource?.importedComponents).toBe(123);
+    expect(catalog.meta.demolitionSource?.importedComponents).toBe(183);
   });
 
   it("keeps high-risk identities and classifications distinct", () => {
@@ -87,5 +92,126 @@ describe("light catalog", () => {
     expect(
       findEquipment("g-23-stun")?.combat?.components[0]?.fields.demolitionForce,
     ).toBe(0);
+  });
+
+  it("restores explicitly sourced stratagem combat data", () => {
+    const auditedComponentCounts: Record<string, number> = {
+      "b-100-portable-hellbomb": 1,
+      "eagle-110mm-rocket-pods": 2,
+      "eagle-500kg-bomb": 3,
+      "eagle-airstrike": 2,
+      "eagle-cluster-bomb": 4,
+      "eagle-napalm-airstrike": 2,
+      "eagle-smoke-strike": 1,
+      "eagle-strafing-run": 2,
+      "exo-45-patriot-exosuit": 3,
+      "exo-49-emancipator-exosuit": 2,
+      "exo-51-lumberer-exosuit": 3,
+      "m-102-fast-recon-vehicle": 1,
+      "m-103-supply-frv": 1,
+      "m-104-incinerator-frv": 1,
+      "md-17-anti-tank-mines": 1,
+      "md-6-anti-personnel-minefield": 1,
+      "md-8-gas-mines": 1,
+      "md-i4-incendiary-mines": 1,
+      "orbital-120mm-he-barrage": 2,
+      "orbital-380mm-he-barrage": 2,
+      "orbital-airburst-strike": 4,
+      "orbital-ems-strike": 2,
+      "orbital-gas-strike": 2,
+      "orbital-gatling-barrage": 3,
+      "orbital-laser": 1,
+      "orbital-napalm-barrage": 2,
+      "orbital-precision-strike": 2,
+      "orbital-railcannon-strike": 2,
+      "orbital-smoke-strike": 1,
+      "orbital-walking-barrage": 2,
+      "td-220-bastion-mk-xvi": 3,
+    };
+    for (const [id, count] of Object.entries(auditedComponentCounts))
+      expect(findEquipment(id)?.combat?.components).toHaveLength(count);
+
+    const hellbomb = findEquipment("b-100-portable-hellbomb");
+    expect(hellbomb?.combat?.components).toEqual([
+      {
+        id: "10361-component-1",
+        type: "explosion",
+        label: "Explosion",
+        fields: {
+          standardDamage: 10000,
+          durableDamage: 10000,
+          armorPenetration: { value: 10, labelZh: "反坦克 VI" },
+          demolitionForce: 60,
+          stagger: 50,
+          push: 100,
+        },
+      },
+    ]);
+    expect(
+      findEquipment("eagle-500kg-bomb")?.combat?.components.map(
+        (component) => component.fields.demolitionForce,
+      ),
+    ).toEqual([50, 50, 40]);
+    expect(
+      findEquipment("eagle-cluster-bomb")?.combat?.components.map(
+        (component) => component.fields.demolitionForce,
+      ),
+    ).toEqual([40, 30, 10, 30]);
+    expect(
+      findEquipment("orbital-ems-strike")?.combat?.components[1]?.fields,
+    ).toMatchObject({
+      standardDamage: 0,
+      armorPenetration: { value: 6 },
+      demolitionForce: 30,
+    });
+    expect(
+      findEquipment("orbital-gas-strike")?.combat?.components[1]?.fields,
+    ).toMatchObject({
+      standardDamage: 0,
+      armorPenetration: { value: 6 },
+      demolitionForce: 50,
+    });
+    expect(
+      findEquipment("exo-45-patriot-exosuit")?.combat?.components.map(
+        (component) => component.fields.demolitionForce,
+      ),
+    ).toEqual([10, 30, 30]);
+    expect(
+      findEquipment("m-102-fast-recon-vehicle")?.combat?.components[0]?.fields
+        .demolitionForce,
+    ).toBe(15);
+  });
+
+  it("only treats actual combat facts as displayable", () => {
+    expect(
+      hasDisplayableCombatFields({
+        id: "zero",
+        type: "explosion",
+        label: "Explosion",
+        fields: { demolitionForce: 0 },
+      }),
+    ).toBe(true);
+    expect(
+      hasDisplayableCombatFields({
+        id: "empty",
+        type: "other",
+        label: "Other",
+        fields: {},
+      }),
+    ).toBe(false);
+    expect(
+      armorPenetrationText({
+        id: "ap",
+        type: "projectile",
+        label: "Ballistic",
+        fields: { armorPenetration: { value: 3, labelZh: "中型" } },
+      }),
+    ).toBe("3 · 中型");
+
+    const gatling = findEquipment("orbital-gatling-barrage")!;
+    expect(gatling.combat?.components).toHaveLength(3);
+    expect(displayableCombatComponents(gatling)).toHaveLength(2);
+    expect(apSummaries(gatling)).toHaveLength(2);
+    expect(demolitionSummaries(gatling)).toHaveLength(2);
   });
 });

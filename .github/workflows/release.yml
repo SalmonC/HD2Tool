@@ -21,16 +21,13 @@ jobs:
       - run: npx --no-install neu update
       - run: node scripts/check-neutralino.mjs --require-binaries
       - run: npx --no-install neu build --embed-resources
-      - name: Verify desktop output and write SHA-256
+      - name: Verify desktop output
         shell: powershell
         run: |
           $exe = "desktop-dist\hd2-supply-book\hd2-supply-book-win_x64.exe"
           if (!(Test-Path -LiteralPath $exe)) { throw "Neutralino Windows x64 executable not found: $exe" }
-          (Get-FileHash -Algorithm SHA256 -LiteralPath $exe).Hash | Out-File -Encoding ascii "desktop-dist\hd2-supply-book-win_x64.exe.sha256"
       - name: Upload release assets
         uses: softprops/action-gh-release@v2
         with:
-          files: |
-            desktop-dist/hd2-supply-book/hd2-supply-book-win_x64.exe
-            desktop-dist/hd2-supply-book-win_x64.exe.sha256
+          files: desktop-dist/hd2-supply-book/hd2-supply-book-win_x64.exe
           generate_release_notes: true

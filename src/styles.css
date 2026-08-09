@@ -528,10 +528,6 @@ p {
   margin: 0;
   text-align: right;
 }
-.core-unknown p {
-  color: var(--muted);
-  font-size: 13px;
-}
 .wiki-link {
   display: inline-block;
   margin-top: 15px;
