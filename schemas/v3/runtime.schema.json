@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hd2-supply-book.invalid/schema/v3/runtime.schema.json",
+  "title": "v3 runtime whitelist projection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "catalogVersion", "resolvedCatalogHash", "inputManifestHash", "acquisitionAsOf", "projectionHash", "ruleVersion", "equipment", "warbonds", "warbondPages"],
+  "properties": {
+    "schemaVersion": { "const": "runtime-projection.v3" },
+    "catalogVersion": { "type": "string", "minLength": 1 },
+    "resolvedCatalogHash": { "$ref": "#/$defs/hash" },
+    "inputManifestHash": { "$ref": "#/$defs/hash" },
+    "acquisitionAsOf": { "type": "string", "format": "date-time" },
+    "projectionHash": { "$ref": "#/$defs/hash" },
+    "ruleVersion": { "type": "string", "minLength": 1 },
+    "equipment": { "type": "array", "items": { "$ref": "#/$defs/equipment" } },
+    "warbonds": { "type": "array", "items": { "$ref": "#/$defs/warbond" } },
+    "warbondPages": { "type": "array", "items": { "$ref": "#/$defs/page" } }
+  },
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+    "acquisition": { "$ref": "resolved-catalog.schema.json#/$defs/acquisition" },
+    "combat": { "$ref": "resolved-catalog.schema.json#/$defs/combat" },
+    "armor": { "$ref": "resolved-catalog.schema.json#/$defs/armor" },
+    "deployment": { "$ref": "resolved-catalog.schema.json#/$defs/deployment" },
+    "equipment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "nameZhHans", "nameEn", "aliases", "productKind", "currentAcquisition", "image", "wikiUrl"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "model": { "type": "string", "minLength": 1 },
+        "nameZhHans": { "type": "string", "minLength": 1 },
+        "nameEn": { "type": "string", "minLength": 1 },
+        "aliases": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "productKind": { "enum": ["primary-weapon", "secondary-weapon", "grenade", "body-armor", "support-weapon", "other-stratagem"] },
+        "currentAcquisition": { "$ref": "#/$defs/acquisition" },
+        "combat": { "$ref": "#/$defs/combat" },
+        "armor": { "$ref": "#/$defs/armor" },
+        "deployment": { "$ref": "#/$defs/deployment" },
+        "image": { "type": "object", "additionalProperties": false, "required": ["assetId", "path", "status"], "properties": { "assetId": { "type": "string", "minLength": 1 }, "path": { "type": "string", "minLength": 1 }, "status": { "enum": ["real", "placeholder"] } } },
+        "wikiUrl": { "type": "string", "format": "uri", "pattern": "^https://helldivers\\.wiki\\.gg/wiki/" }
+      }
+    },
+    "warbond": { "type": "object", "additionalProperties": false, "required": ["id", "nameZhHans", "nameEn"], "properties": { "id": { "type": "string" }, "nameZhHans": { "type": "string", "minLength": 1 }, "nameEn": { "type": "string", "minLength": 1 }, "purchaseSuperCredits": { "type": "integer", "minimum": 0 } } },
+    "page": { "type": "object", "additionalProperties": false, "required": ["pageId", "warbondId", "page", "cumulativePrerequisiteMedals"], "properties": { "pageId": { "type": "string" }, "warbondId": { "type": "string" }, "page": { "type": "integer", "minimum": 1 }, "cumulativePrerequisiteMedals": { "type": ["integer", "null"], "minimum": 0 } } }
+  }
+}

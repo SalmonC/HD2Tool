@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hd2-supply-book.invalid/schema/v3/resolved-catalog.schema.json",
+  "title": "v3 compact resolved catalog",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "catalogVersion", "resolvedCatalogHash", "inputManifestHash", "acquisitionAsOf", "equipment", "aliases", "idAliases", "warbonds", "warbondPages", "assets", "correctionsHash"],
+  "properties": {
+    "schemaVersion": { "const": "resolved-catalog.v3" },
+    "catalogVersion": { "type": "string", "minLength": 1 },
+    "resolvedCatalogHash": { "$ref": "#/$defs/hash" },
+    "inputManifestHash": { "$ref": "#/$defs/hash" },
+    "acquisitionAsOf": { "type": "string", "format": "date-time" },
+    "equipment": { "type": "array", "items": { "$ref": "#/$defs/equipment" } },
+    "aliases": { "type": "array", "items": { "$ref": "#/$defs/alias" } },
+    "idAliases": { "type": "array", "items": { "$ref": "#/$defs/idAlias" } },
+    "warbonds": { "type": "array", "items": { "$ref": "#/$defs/warbond" } },
+    "warbondPages": { "type": "array", "items": { "$ref": "#/$defs/page" } },
+    "assets": { "type": "array", "items": { "$ref": "#/$defs/asset" } },
+    "correctionsHash": { "$ref": "#/$defs/hash" }
+  },
+  "$defs": {
+    "hash": { "type": "string", "pattern": "^[A-Fa-f0-9]{64}$" },
+    "fieldPath": { "type": "string", "pattern": "^(?!.*combat\\.components(?!\\[componentId=[^\\]]+\\]))(?!.*\\[[0-9]+\\])[A-Za-z][A-Za-z0-9_.\\[\\]=:-]*$" },
+    "evidence": {
+      "oneOf": [
+        { "type": "object", "additionalProperties": false, "required": ["fieldEvidenceId", "fieldPath", "status", "factIds", "resolvedValueHash"], "properties": { "fieldEvidenceId": { "type": "string" }, "fieldPath": { "$ref": "#/$defs/fieldPath" }, "status": { "const": "known" }, "factIds": { "type": "array", "minItems": 1, "items": { "type": "string" } }, "resolvedValueHash": { "$ref": "#/$defs/hash" } } },
+        { "type": "object", "additionalProperties": false, "required": ["fieldEvidenceId", "fieldPath", "status", "reason"], "properties": { "fieldEvidenceId": { "type": "string" }, "fieldPath": { "$ref": "#/$defs/fieldPath" }, "status": { "const": "unknown" }, "reason": { "enum": ["source-missing", "not-published", "parse-failed", "identity-unresolved", "ambiguous", "unknown-threshold", "rights-unresolved"] } } },
+        { "type": "object", "additionalProperties": false, "required": ["fieldEvidenceId", "fieldPath", "status", "reason", "candidateFactIdGroups"], "properties": { "fieldEvidenceId": { "type": "string" }, "fieldPath": { "$ref": "#/$defs/fieldPath" }, "status": { "const": "conflict" }, "reason": { "enum": ["source-disagreement", "identity-collision"] }, "candidateFactIdGroups": { "type": "array", "minItems": 2, "items": { "type": "array", "minItems": 1, "items": { "type": "string" } } } } },
+        { "type": "object", "additionalProperties": false, "required": ["fieldEvidenceId", "fieldPath", "status", "reason"], "properties": { "fieldEvidenceId": { "type": "string" }, "fieldPath": { "$ref": "#/$defs/fieldPath" }, "status": { "const": "not-applicable" }, "reason": { "type": "string", "minLength": 1 } } }
+      ]
+    },
+    "numericScalar": { "type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": { "kind": { "const": "scalar" }, "value": { "type": "number", "minimum": 0 } } },
+    "numericRange": { "type": "object", "additionalProperties": false, "required": ["kind", "min", "max"], "properties": { "kind": { "const": "range" }, "min": { "type": "number", "minimum": 0 }, "max": { "type": "number", "minimum": 0 } } },
+    "numericVariants": { "type": "object", "additionalProperties": false, "required": ["kind", "values"], "properties": { "kind": { "const": "variants" }, "values": { "type": "array", "minItems": 1, "items": { "type": "object", "additionalProperties": false, "required": ["id", "label", "value"], "properties": { "id": { "type": "string", "minLength": 1 }, "label": { "type": "string", "minLength": 1 }, "value": { "type": "number", "minimum": 0 } } } } } },
+    "numeric": { "oneOf": [{ "$ref": "#/$defs/numericScalar" }, { "$ref": "#/$defs/numericRange" }, { "$ref": "#/$defs/numericVariants" }] },
+    "apScalar": { "type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": { "kind": { "const": "scalar" }, "value": { "type": "integer", "minimum": 0, "maximum": 10 } } },
+    "apRange": { "type": "object", "additionalProperties": false, "required": ["kind", "min", "max"], "properties": { "kind": { "const": "range" }, "min": { "type": "integer", "minimum": 0, "maximum": 10 }, "max": { "type": "integer", "minimum": 0, "maximum": 10 } } },
+    "apVariants": { "type": "object", "additionalProperties": false, "required": ["kind", "values"], "properties": { "kind": { "const": "variants" }, "values": { "type": "array", "minItems": 1, "items": { "type": "object", "additionalProperties": false, "required": ["id", "label", "value"], "properties": { "id": { "type": "string", "minLength": 1 }, "label": { "type": "string", "minLength": 1 }, "value": { "type": "integer", "minimum": 0, "maximum": 10 } } } } } },
+    "ap": { "oneOf": [{ "$ref": "#/$defs/apScalar" }, { "$ref": "#/$defs/apRange" }, { "$ref": "#/$defs/apVariants" }] },
+    "demoScalar": { "type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": { "kind": { "const": "scalar" }, "value": { "type": "integer", "minimum": 0, "maximum": 50 } } },
+    "demoRange": { "type": "object", "additionalProperties": false, "required": ["kind", "min", "max"], "properties": { "kind": { "const": "range" }, "min": { "type": "integer", "minimum": 0, "maximum": 50 }, "max": { "type": "integer", "minimum": 0, "maximum": 50 } } },
+    "demoVariants": { "type": "object", "additionalProperties": false, "required": ["kind", "values"], "properties": { "kind": { "const": "variants" }, "values": { "type": "array", "minItems": 1, "items": { "type": "object", "additionalProperties": false, "required": ["id", "label", "value"], "properties": { "id": { "type": "string", "minLength": 1 }, "label": { "type": "string", "minLength": 1 }, "value": { "type": "integer", "minimum": 0, "maximum": 50 } } } } } },
+    "demolition": { "oneOf": [{ "$ref": "#/$defs/demoScalar" }, { "$ref": "#/$defs/demoRange" }, { "$ref": "#/$defs/demoVariants" }] },
+    "component": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["componentId", "role", "label"],
+      "properties": { "componentId": { "type": "string", "minLength": 1 }, "role": { "enum": ["direct", "shrapnel", "explosion", "fire", "melee", "spray", "status", "alternate", "other"] }, "label": { "type": "string", "minLength": 1 }, "standardDamage": { "$ref": "#/$defs/numeric" }, "durableDamage": { "$ref": "#/$defs/numeric" }, "armorPenetration": { "$ref": "#/$defs/ap" }, "demolition": { "$ref": "#/$defs/demolition" } }
+    },
+    "combat": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "weaponClass": { "type": "string", "minLength": 1 },
+        "ammoTraits": { "type": "array", "items": { "enum": ["ballistic", "laser", "plasma", "arc", "fire", "gas", "other"] }, "uniqueItems": true },
+        "components": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/component" } },
+        "handling": { "type": "object", "additionalProperties": false, "properties": { "capacity": { "$ref": "#/$defs/capacity" }, "reserveCapacity": { "$ref": "#/$defs/capacity" }, "fireRateRpm": { "type": "number", "minimum": 0 }, "recoil": { "type": "number", "minimum": 0 } } }
+      }
+    },
+    "capacity": { "type": "object", "additionalProperties": false, "required": ["value", "kind"], "properties": { "value": { "type": "integer", "minimum": 0 }, "kind": { "enum": ["rounds", "charges", "heat", "uses"] } } },
+    "armor": { "type": "object", "additionalProperties": false, "properties": { "class": { "enum": ["light", "medium", "heavy"] }, "rating": { "type": "number", "minimum": 0 }, "speed": { "type": "number", "minimum": 0 }, "staminaRegen": { "type": "number", "minimum": 0 }, "passive": { "type": "object", "additionalProperties": false, "required": ["name"], "properties": { "name": { "type": "string", "minLength": 1 }, "summary": { "type": "string", "minLength": 1 } } } } },
+    "deployment": { "type": "object", "additionalProperties": false, "properties": { "kind": { "enum": ["orbital", "eagle", "backpack", "sentry", "emplacement", "minefield", "vehicle", "other"] }, "code": { "type": "string", "minLength": 1 }, "callInSeconds": { "type": "number", "minimum": 0 }, "cooldownSeconds": { "type": "number", "minimum": 0 }, "uses": { "type": "integer", "minimum": 0 } } },
+    "acquisition": {
+      "oneOf": [
+        { "type": "object", "additionalProperties": false, "required": ["kind"], "properties": { "kind": { "const": "default" } } },
+        { "type": "object", "additionalProperties": false, "required": ["kind", "requisitionSlips"], "properties": { "kind": { "const": "requisition" }, "levelRequired": { "type": "integer", "minimum": 0 }, "requisitionSlips": { "type": "integer", "minimum": 0 } } },
+        { "type": "object", "additionalProperties": false, "required": ["kind", "warbondId", "page", "itemMedals"], "properties": { "kind": { "const": "warbond" }, "warbondId": { "type": "string", "minLength": 1 }, "page": { "type": "integer", "minimum": 1 }, "itemMedals": { "type": "integer", "minimum": 0 } } },
+        { "type": "object", "additionalProperties": false, "required": ["kind", "superCredits"], "properties": { "kind": { "const": "superstore" }, "superCredits": { "type": "integer", "minimum": 0 }, "rotation": { "type": "string", "minLength": 1 } } },
+        { "type": "object", "additionalProperties": false, "required": ["kind", "editionName"], "properties": { "kind": { "const": "edition" }, "editionName": { "type": "string", "minLength": 1 } } },
+        { "type": "object", "additionalProperties": false, "required": ["kind", "eventName"], "properties": { "kind": { "const": "event" }, "eventName": { "type": "string", "minLength": 1 } } },
+        { "type": "object", "additionalProperties": false, "required": ["kind", "location"], "properties": { "kind": { "const": "poi" }, "location": { "type": "string", "minLength": 1 } } },
+        { "type": "object", "additionalProperties": false, "required": ["kind", "label"], "properties": { "kind": { "const": "grant" }, "label": { "type": "string", "minLength": 1 } } },
+        { "type": "object", "additionalProperties": false, "required": ["kind", "reason"], "properties": { "kind": { "const": "unavailable" }, "reason": { "type": "string", "minLength": 1 } } },
+        { "type": "object", "additionalProperties": false, "required": ["kind", "reason"], "properties": { "kind": { "const": "unknown" }, "reason": { "enum": ["source-missing", "not-published", "identity-unresolved", "conflicting"] } } }
+      ]
+    },
+    "alias": { "type": "object", "additionalProperties": false, "required": ["aliasId", "text", "targetIds", "locale", "kind", "state", "evidence"], "properties": { "aliasId": { "type": "string" }, "text": { "type": "string", "minLength": 1 }, "targetIds": { "type": "array", "minItems": 1, "items": { "type": "string" } }, "locale": { "enum": ["en", "zh-Hans", "zh-Hant", "und"] }, "kind": { "enum": ["official", "community", "model", "legacy"] }, "state": { "enum": ["accepted", "pending", "ambiguous", "conflict"] }, "evidence": { "$ref": "#/$defs/evidence" } } },
+    "idAlias": { "type": "object", "additionalProperties": false, "required": ["legacyId", "equipmentId"], "properties": { "legacyId": { "type": "string", "minLength": 1 }, "equipmentId": { "type": "string", "minLength": 1 } } },
+    "equipment": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "productKind", "nameZhHans", "nameEn", "currentAcquisition", "imageAssetId", "wikiUrl", "fieldEvidence"],
+      "properties": { "id": { "type": "string", "minLength": 1 }, "productKind": { "enum": ["primary-weapon", "secondary-weapon", "grenade", "body-armor", "support-weapon", "other-stratagem"] }, "model": { "type": "string", "minLength": 1 }, "nameZhHans": { "type": "string", "minLength": 1 }, "nameEn": { "type": "string", "minLength": 1 }, "currentAcquisition": { "$ref": "#/$defs/acquisition" }, "combat": { "$ref": "#/$defs/combat" }, "armor": { "$ref": "#/$defs/armor" }, "deployment": { "$ref": "#/$defs/deployment" }, "imageAssetId": { "type": "string", "minLength": 1 }, "wikiUrl": { "type": "string", "format": "uri", "pattern": "^https://helldivers\\.wiki\\.gg/wiki/" }, "fieldEvidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } } }
+    },
+    "warbond": { "type": "object", "additionalProperties": false, "required": ["id", "nameZhHans", "nameEn", "fieldEvidence"], "properties": { "id": { "type": "string", "minLength": 1 }, "nameZhHans": { "type": "string", "minLength": 1 }, "nameEn": { "type": "string", "minLength": 1 }, "purchaseSuperCredits": { "type": "integer", "minimum": 0 }, "fieldEvidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } } } },
+    "page": { "type": "object", "additionalProperties": false, "required": ["pageId", "warbondId", "page", "cumulativePrerequisiteMedals", "fieldEvidence"], "properties": { "pageId": { "type": "string" }, "warbondId": { "type": "string" }, "page": { "type": "integer", "minimum": 1 }, "cumulativePrerequisiteMedals": { "type": ["integer", "null"], "minimum": 0 }, "fieldEvidence": { "type": "array", "items": { "$ref": "#/$defs/evidence" } } } },
+    "asset": { "type": "object", "additionalProperties": false, "required": ["assetId", "path", "sha256", "sourceEvidenceId", "licenseEligible", "displayEligibility"], "properties": { "assetId": { "type": "string" }, "path": { "type": "string", "minLength": 1 }, "sha256": { "$ref": "#/$defs/hash" }, "sourceEvidenceId": { "type": "string" }, "licenseEligible": { "type": "boolean" }, "displayEligibility": { "enum": ["real", "placeholder", "blocked"] } }, "allOf": [{ "if": { "properties": { "displayEligibility": { "const": "real" } } }, "then": { "properties": { "licenseEligible": { "const": true } } } }, { "if": { "properties": { "displayEligibility": { "const": "blocked" } } }, "then": { "properties": { "licenseEligible": { "const": false } } } }] }
+  }
+}
