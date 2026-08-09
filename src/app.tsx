@@ -83,7 +83,7 @@ function EquipmentImage({
       }
       src={resolveAssetUrl(item.image.path)}
       alt={item.image.alt}
-      loading={detail ? "eager" : "lazy"}
+      loading={detail ? "eager" : undefined}
       decoding="async"
       onError={() => setFailed(true)}
     />
