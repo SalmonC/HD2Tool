@@ -1,4 +1,9 @@
-import type { AttackComponent, Equipment, ProductKind } from "../types";
+import type {
+  AttackComponent,
+  AttackFields,
+  Equipment,
+  ProductKind,
+} from "../types";
 
 export const PRODUCT_KIND_LABELS: Record<ProductKind, string> = {
   "primary-weapon": "主武器",
@@ -86,6 +91,7 @@ const PASSIVE_LABELS: Record<string, string> = {
   "Siege-Ready": "攻城就绪",
   "Supplementary Adrenaline": "补充肾上腺素",
   Unflinching: "坚定不移",
+  "True Grit": "坚韧不拔",
 };
 
 const DEPLOYMENT_TYPE_LABELS: Record<string, string> = {
@@ -133,6 +139,16 @@ export function armorPenetrationText(
   return value ? `${value}${ap.labelZh ? ` · ${ap.labelZh}` : ""}` : undefined;
 }
 
+export function radiusText(fields: AttackFields): string | undefined {
+  if (fields.innerRadius !== undefined && fields.outerRadius !== undefined)
+    return `${fields.innerRadius}–${fields.outerRadius} 米`;
+  if (fields.innerRadius !== undefined)
+    return `内半径 ${fields.innerRadius} 米`;
+  if (fields.outerRadius !== undefined)
+    return `外半径 ${fields.outerRadius} 米`;
+  return undefined;
+}
+
 export function apText(component: AttackComponent): string | undefined {
   const value = armorPenetrationText(component);
   return value ? `${componentLabel(component)} ${value}` : undefined;
@@ -176,6 +192,8 @@ export function hasDisplayableCombatFields(
     fields.demolitionForce,
     fields.stagger,
     fields.push,
+    fields.innerRadius,
+    fields.outerRadius,
   ].some((value) => value !== undefined && value !== null && value !== "");
 }
 
@@ -194,6 +212,8 @@ export function displayableCombatComponents(
       demolitionForce: component.fields.demolitionForce,
       stagger: component.fields.stagger,
       push: component.fields.push,
+      innerRadius: component.fields.innerRadius,
+      outerRadius: component.fields.outerRadius,
     });
     if (seen.has(visibleKey)) return false;
     seen.add(visibleKey);

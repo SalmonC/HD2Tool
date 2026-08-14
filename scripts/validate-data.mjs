@@ -20,8 +20,12 @@ const itemIds = new Set();
 const warbondIds = new Set(catalog.warbonds.map((entry) => entry.id));
 let demolitionCount = 0;
 
-if (catalog.items.length !== 292)
-  fail(`expected 292 accepted items, found ${catalog.items.length}`);
+if (catalog.items.length !== 298)
+  fail(`expected 298 accepted items, found ${catalog.items.length}`);
+if (catalog.warbonds.length !== 24 || warbondIds.size !== 24)
+  fail(
+    `expected 24 unique warbonds, found ${catalog.warbonds.length} / ${warbondIds.size}`,
+  );
 for (const item of catalog.items) {
   if (!item.id || itemIds.has(item.id))
     fail(`duplicate or empty item id ${item.id}`);
@@ -29,6 +33,8 @@ for (const item of catalog.items) {
   if (!kinds.has(item.productKind)) fail(`invalid productKind ${item.id}`);
   if (!item.nameZh || !item.nameEn) fail(`missing identity ${item.id}`);
   if (!item.image?.path) fail(`missing image path ${item.id}`);
+  else if (!item.image.filePage || !item.image.license)
+    fail(`missing image provenance ${item.id}`);
   else if (item.image.path.includes("placeholder"))
     fail(`placeholder image remains ${item.id}`);
   else {
@@ -125,6 +131,12 @@ const requiredFixtures = [
   ["cqc-73-entrenchment-tool", "secondary-weapon"],
   ["gp-20-ultimatum", "secondary-weapon"],
   ["gp-31-grenade-pistol", "secondary-weapon"],
+  ["r-40-k-hot-shot-marksman-rifle", "primary-weapon"],
+  ["p-40-k-bolt-pistol", "secondary-weapon"],
+  ["40-k-meltagun", "support-weapon"],
+  ["g-40-k-melta-mine", "grenade"],
+  ["tg-8-sharpshooter", "body-armor"],
+  ["tg-122-demo-trooper", "body-armor"],
 ];
 for (const [id, expected] of requiredFixtures) {
   const item = catalog.items.find((entry) => entry.id === id);
@@ -149,6 +161,33 @@ if (
   hellbombExplosion.fields.demolitionForce !== 60
 )
   fail("fixture mismatch b-100-portable-hellbomb combat profile");
+
+const castellansCreed = catalog.warbonds.find(
+  (entry) => entry.id === "castellans-creed-legendary",
+);
+if (
+  castellansCreed?.superCredits !== 1500 ||
+  castellansCreed.pages.find((entry) => entry.page === 3)?.cumulativeMedals !==
+    210
+)
+  fail("fixture mismatch castellans-creed-legendary");
+
+for (const [id, spareMagazines] of [
+  ["p-113-verdict", 10],
+  ["m6c-socom-pistol", 10],
+  ["p-19-redeemer", 6],
+]) {
+  if (
+    catalog.items.find((entry) => entry.id === id)?.handling?.spareMagazines !==
+    spareMagazines
+  )
+    fail(`fixture mismatch ${id} spare magazines`);
+}
+if (
+  catalog.items.find((entry) => entry.id === "md-17-anti-tank-mines")?.combat
+    ?.components[0]?.fields.demolitionForce !== 40
+)
+  fail("fixture mismatch md-17-anti-tank-mines demolition force");
 
 if (errors.length) {
   for (const error of errors) console.error(`ERROR ${error}`);

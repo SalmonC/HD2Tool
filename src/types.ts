@@ -191,6 +191,8 @@ export interface Catalog {
       capturedAt: string;
       importedComponents: number;
       modules: Array<{ title: string; revision: number }>;
+      pages?: Array<{ title: string; revision: number }>;
+      patches?: Array<{ title: string; url: string }>;
     };
   };
   idAliases: Record<string, string>;

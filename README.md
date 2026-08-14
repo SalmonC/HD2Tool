@@ -28,7 +28,7 @@ npm run desktop:build
 
 ## 数据
 
-- `src/data/catalog.json`：唯一权威装备目录，当前包含 292 条装备。
+- `src/data/catalog.json`：唯一权威装备目录，当前包含 298 条装备。
 - `src/data/community-aliases.json`：用户提供的小黑盒帖子转录，包含 38 件装备的 48 个社区外号。
 - `public/assets/wiki/`：本地装备图片，Pages 按需加载，EXE 离线内嵌。
 

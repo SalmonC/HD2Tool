@@ -1,0 +1,2700 @@
+{
+  "version": 1,
+  "source": "https://helldivers.wiki.gg/api.php",
+  "checkedAt": "2026-08-13T07:54:28.076Z",
+  "exclusions": [
+    {
+      "equipmentId": "cqc-72-entrenchment-tool",
+      "purpose": "loadout-icon-watch",
+      "reason": "map pickup; no callable stratagem"
+    },
+    {
+      "equipmentId": "sg-88-break-action-shotgun",
+      "purpose": "loadout-icon-watch",
+      "reason": "map pickup; no callable stratagem"
+    }
+  ],
+  "entries": [
+    {
+      "equipmentId": "40-k-meltagun",
+      "purpose": "catalog-image",
+      "fileTitle": "File:40-K Meltagun Support Render.png",
+      "assetPath": "assets/wiki/40-k-meltagun.png",
+      "remoteSha1": "4938d3ab85ecbd9cfd6a6f036c80156ad6a362ba",
+      "remoteTimestamp": "2026-08-12T22:22:03Z"
+    },
+    {
+      "equipmentId": "a-35-recon",
+      "purpose": "catalog-image",
+      "fileTitle": "File:A-35 Recon Body Icon.png",
+      "assetPath": "assets/wiki/a-35-recon.png",
+      "remoteSha1": "d69b7e015c72f18a8d81485f8332f65ff88f8746",
+      "remoteTimestamp": "2025-08-27T08:30:56Z"
+    },
+    {
+      "equipmentId": "a-9-helljumper",
+      "purpose": "catalog-image",
+      "fileTitle": "File:A-9 Helljumper Armor Render.png",
+      "assetPath": "assets/wiki/a-9-helljumper.png",
+      "remoteSha1": "83a7edc12a570cd96b6096860813748469bbb018",
+      "remoteTimestamp": "2025-08-27T08:30:30Z"
+    },
+    {
+      "equipmentId": "a-ac-8-autocannon-sentry",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Autocannon Sentry Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/a-ac-8-autocannon-sentry.svg",
+      "remoteSha1": "428b6979dd647b7a2a52272d46ac48091a36c3eb",
+      "remoteTimestamp": "2026-06-19T08:50:02Z"
+    },
+    {
+      "equipmentId": "a-arc-3-tesla-tower",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Tesla Tower Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/a-arc-3-tesla-tower.svg",
+      "remoteSha1": "a40a2e987b00846d7ec41f8ab5b62b44fb951806",
+      "remoteTimestamp": "2026-06-19T08:52:01Z"
+    },
+    {
+      "equipmentId": "a-flam-40-flame-sentry",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Flame Sentry Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/a-flam-40-flame-sentry.svg",
+      "remoteSha1": "9214db2e7fdaa288f8cfedaaf427379d775e9ad5",
+      "remoteTimestamp": "2026-06-19T08:50:29Z"
+    },
+    {
+      "equipmentId": "a-g-16-gatling-sentry",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Gatling Sentry Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/a-g-16-gatling-sentry.svg",
+      "remoteSha1": "7ee8f33fb724f3ee33c987dc8fbe9c9c42f71c7f",
+      "remoteTimestamp": "2026-06-19T08:49:54Z"
+    },
+    {
+      "equipmentId": "a-gm-17-gas-mortar-sentry",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Gas Mortar Sentry Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/a-gm-17-gas-mortar-sentry.svg",
+      "remoteSha1": "8948b9a6962663d95cb4e4b3e1de9f59fadabc58",
+      "remoteTimestamp": "2026-06-19T08:49:53Z"
+    },
+    {
+      "equipmentId": "a-las-98-laser-sentry",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Laser Sentry Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/a-las-98-laser-sentry.svg",
+      "remoteSha1": "090ea4adca874d86bae5db0f2ba2c25de7fea707",
+      "remoteTimestamp": "2026-06-19T08:51:27Z"
+    },
+    {
+      "equipmentId": "a-m-12-mortar-sentry",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Mortar Sentry Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/a-m-12-mortar-sentry.svg",
+      "remoteSha1": "30dea2f4aa9525de1528f4791896a49b87538462",
+      "remoteTimestamp": "2026-06-19T08:51:32Z"
+    },
+    {
+      "equipmentId": "a-m-23-ems-mortar-sentry",
+      "purpose": "catalog-image",
+      "fileTitle": "File:EMS Mortar Sentry Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/a-m-23-ems-mortar-sentry.svg",
+      "remoteSha1": "202fdc628cf1a4eb60b069b479fadf2958e12feb",
+      "remoteTimestamp": "2026-06-19T08:50:25Z"
+    },
+    {
+      "equipmentId": "a-mg-43-machine-gun-sentry",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Machine Gun Sentry Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/a-mg-43-machine-gun-sentry.svg",
+      "remoteSha1": "331c9d645e84b1de4cd158a32c6e535ffce18973",
+      "remoteTimestamp": "2026-06-19T08:51:29Z"
+    },
+    {
+      "equipmentId": "a-mls-4x-rocket-sentry",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Rocket Sentry Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/a-mls-4x-rocket-sentry.svg",
+      "remoteSha1": "1af08ce8afb50b4d9f970f0db9dbd5a1a56dd723",
+      "remoteTimestamp": "2026-06-19T08:51:48Z"
+    },
+    {
+      "equipmentId": "ac-1-dutiful",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AC-1 Dutiful Armor Render.png",
+      "assetPath": "assets/wiki/ac-1-dutiful.png",
+      "remoteSha1": "e857705520c9e1a26f592346f3104401dce81514",
+      "remoteTimestamp": "2026-03-14T19:51:14Z"
+    },
+    {
+      "equipmentId": "ac-2-obedient",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AC-2 Obedient Armor Render.png",
+      "assetPath": "assets/wiki/ac-2-obedient.png",
+      "remoteSha1": "1a841538d8b76a051345bc24bfb0f647ebbfef6b",
+      "remoteTimestamp": "2026-03-14T19:51:15Z"
+    },
+    {
+      "equipmentId": "ac-8-autocannon",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AC-8 Autocannon Weapon and Backpack Support Render.png",
+      "assetPath": "assets/wiki/ac-8-autocannon.png",
+      "remoteSha1": "8098066f101aa80c7b2756bd791043d5d65fbacb",
+      "remoteTimestamp": "2026-05-03T21:34:02Z"
+    },
+    {
+      "equipmentId": "ad-11-livewire",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AD-11 Livewire Armor Render.png",
+      "assetPath": "assets/wiki/ad-11-livewire.png",
+      "remoteSha1": "f31fa8ec8b8d35812f6665916d202d215cd75485",
+      "remoteTimestamp": "2026-07-31T13:15:02Z"
+    },
+    {
+      "equipmentId": "ad-26-bleeding-edge",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AD-26 Bleeding Edge Armor Render.png",
+      "assetPath": "assets/wiki/ad-26-bleeding-edge.png",
+      "remoteSha1": "913a47eba1bd09dded425f4b6e7847a79f316193",
+      "remoteTimestamp": "2026-03-24T10:15:33Z"
+    },
+    {
+      "equipmentId": "ad-49-apollonian",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AD-49 Apollonian Armor Render.png",
+      "assetPath": "assets/wiki/ad-49-apollonian.png",
+      "remoteSha1": "071eeace4ea97d7122a21fb1fcac831f9da41074",
+      "remoteTimestamp": "2026-03-24T10:15:34Z"
+    },
+    {
+      "equipmentId": "af-02-haz-master",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AF-02 Haz-Master Armor Render.png",
+      "assetPath": "assets/wiki/af-02-haz-master.png",
+      "remoteSha1": "6545c25370abbd13895ac1784a30ae2242870ffe",
+      "remoteTimestamp": "2026-03-14T00:22:31Z"
+    },
+    {
+      "equipmentId": "af-50-noxious-ranger",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AF-50 Noxious Ranger Armor Render.png",
+      "assetPath": "assets/wiki/af-50-noxious-ranger.png",
+      "remoteSha1": "38ecacc4c40903af150c39d1bb0686f28535d96a",
+      "remoteTimestamp": "2026-03-14T00:22:32Z"
+    },
+    {
+      "equipmentId": "af-52-lockdown",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AF-52 Lockdown Armor Render.png",
+      "assetPath": "assets/wiki/af-52-lockdown.png",
+      "remoteSha1": "98493b14efa02a419e3f5fac6398b634f24ef26a",
+      "remoteTimestamp": "2026-03-14T00:22:33Z"
+    },
+    {
+      "equipmentId": "af-91-field-chemist",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AF-91 Field Chemist Armor Render.png",
+      "assetPath": "assets/wiki/af-91-field-chemist.png",
+      "remoteSha1": "caed5bc4baa497ea2b2b9f5e70e41b5bb3ad1810",
+      "remoteTimestamp": "2026-03-14T00:22:34Z"
+    },
+    {
+      "equipmentId": "apw-1-anti-materiel-rifle",
+      "purpose": "catalog-image",
+      "fileTitle": "File:APW-1 Anti-Materiel Rifle Support Render.png",
+      "assetPath": "assets/wiki/apw-1-anti-materiel-rifle.png",
+      "remoteSha1": "63a3ca5cd4f98f7b96e8b78c07905733d69314d1",
+      "remoteTimestamp": "2025-06-22T07:52:34Z"
+    },
+    {
+      "equipmentId": "ar-2-coyote",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AR-2 Coyote Primary Render.png",
+      "assetPath": "assets/wiki/ar-2-coyote.png",
+      "remoteSha1": "5fee452b59aa806bd4c0eb3d13e4d25a419786ec",
+      "remoteTimestamp": "2026-03-18T17:09:50Z"
+    },
+    {
+      "equipmentId": "ar-23-liberator",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AR-23 Liberator Primary Render.png",
+      "assetPath": "assets/wiki/ar-23-liberator.png",
+      "remoteSha1": "97e7bbd5d702c066f12e309593f04885556e56e6",
+      "remoteTimestamp": "2026-03-18T17:09:52Z"
+    },
+    {
+      "equipmentId": "ar-23a-liberator-carbine",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AR-23A Liberator Carbine Primary Render.png",
+      "assetPath": "assets/wiki/ar-23a-liberator-carbine.png",
+      "remoteSha1": "4b36e2daa23b055c389f6efdfae0365032042b00",
+      "remoteTimestamp": "2026-03-18T17:09:54Z"
+    },
+    {
+      "equipmentId": "ar-23c-liberator-concussive",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AR-23C Liberator Concussive Primary Render.png",
+      "assetPath": "assets/wiki/ar-23c-liberator-concussive.png",
+      "remoteSha1": "071f5733d63097ace120d6eaace981f2ceac3006",
+      "remoteTimestamp": "2026-03-18T17:09:56Z"
+    },
+    {
+      "equipmentId": "ar-23p-liberator-penetrator",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AR-23P Liberator Penetrator Primary Render.png",
+      "assetPath": "assets/wiki/ar-23p-liberator-penetrator.png",
+      "remoteSha1": "082edd5aecf8d58399d6528200ab41ff26a9e311",
+      "remoteTimestamp": "2026-03-18T17:09:58Z"
+    },
+    {
+      "equipmentId": "ar-32-pacifier",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AR-32 Pacifier Primary Render.png",
+      "assetPath": "assets/wiki/ar-32-pacifier.png",
+      "remoteSha1": "94e4a0f9e471084ac4525c3f974cab8694c92d9d",
+      "remoteTimestamp": "2026-03-18T17:10:00Z"
+    },
+    {
+      "equipmentId": "ar-59-suppressor",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AR-59 Suppressor Primary Render.png",
+      "assetPath": "assets/wiki/ar-59-suppressor.png",
+      "remoteSha1": "1fe2a4410ae9e6cff57630b25f870a361108bac3",
+      "remoteTimestamp": "2026-03-18T17:11:55Z"
+    },
+    {
+      "equipmentId": "ar-61-tenderizer",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AR-61 Tenderizer Primary Render.png",
+      "assetPath": "assets/wiki/ar-61-tenderizer.png",
+      "remoteSha1": "7278b46c031c0bef5c08aa88454d857a9ea62047",
+      "remoteTimestamp": "2026-03-18T17:38:02Z"
+    },
+    {
+      "equipmentId": "ar-gl-21-one-two",
+      "purpose": "catalog-image",
+      "fileTitle": "File:AR-GL-21 One Two Primary Render.png",
+      "assetPath": "assets/wiki/ar-gl-21-one-two.png",
+      "remoteSha1": "4bfb7d8559342891508423891f0570a90f7732dc",
+      "remoteTimestamp": "2026-03-18T17:09:42Z"
+    },
+    {
+      "equipmentId": "arc-12-blitzer",
+      "purpose": "catalog-image",
+      "fileTitle": "File:ARC-12 Blitzer Primary Render.png",
+      "assetPath": "assets/wiki/arc-12-blitzer.png",
+      "remoteSha1": "acfea415423560bf600d65182b706e715d4992d8",
+      "remoteTimestamp": "2026-03-18T16:48:15Z"
+    },
+    {
+      "equipmentId": "arc-3-arc-thrower",
+      "purpose": "catalog-image",
+      "fileTitle": "File:ARC-3 Arc Thrower Support Render.png",
+      "assetPath": "assets/wiki/arc-3-arc-thrower.png",
+      "remoteSha1": "0390577d9b1f1a4827239a7ea909f3b71e6a2807",
+      "remoteTimestamp": "2025-06-22T08:04:08Z"
+    },
+    {
+      "equipmentId": "ax-ar-23-guard-dog",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Guard Dog Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/ax-ar-23-guard-dog.svg",
+      "remoteSha1": "eb2b15f56c7f5a1479e66d11ba6dfc850e7f23c0",
+      "remoteTimestamp": "2026-06-19T08:49:56Z"
+    },
+    {
+      "equipmentId": "ax-arc-3-k-9",
+      "purpose": "catalog-image",
+      "fileTitle": "File:K-9 Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/ax-arc-3-k-9.svg",
+      "remoteSha1": "3ed7fe012648c721fc914e80c3f4e8ad2138e3fc",
+      "remoteTimestamp": "2026-06-19T08:51:26Z"
+    },
+    {
+      "equipmentId": "ax-flam-75-hot-dog",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Hot Dog Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/ax-flam-75-hot-dog.svg",
+      "remoteSha1": "c8e42d7fb3412788e7ea3d609d2b6bc4453b18eb",
+      "remoteTimestamp": "2026-06-19T08:51:22Z"
+    },
+    {
+      "equipmentId": "ax-las-5-rover",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Rover Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/ax-las-5-rover.svg",
+      "remoteSha1": "12ad26598513f79074919aae4c9adb78cda35d8d",
+      "remoteTimestamp": "2026-06-19T08:51:49Z"
+    },
+    {
+      "equipmentId": "ax-tx-13-dog-breath",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Dog Breath Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/ax-tx-13-dog-breath.svg",
+      "remoteSha1": "0b93a24840688caf37b2ed2049cba377c081d88d",
+      "remoteTimestamp": "2026-06-19T08:50:16Z"
+    },
+    {
+      "equipmentId": "b-01-tactical",
+      "purpose": "catalog-image",
+      "fileTitle": "File:B-01 Tactical v1 Armor Render.png",
+      "assetPath": "assets/wiki/b-01-tactical.png",
+      "remoteSha1": "69cda35af29cdf3d4786801c9c80d7f94f4f5f8c",
+      "remoteTimestamp": "2026-03-10T23:59:00Z"
+    },
+    {
+      "equipmentId": "b-08-light-gunner",
+      "purpose": "catalog-image",
+      "fileTitle": "File:B-08 Light Gunner Armor Render.png",
+      "assetPath": "assets/wiki/b-08-light-gunner.png",
+      "remoteSha1": "84922c098fa821f763d3421837caa38fd0136909",
+      "remoteTimestamp": "2026-03-10T23:59:02Z"
+    },
+    {
+      "equipmentId": "b-1-supply-pack",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Supply Pack Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/b-1-supply-pack.svg",
+      "remoteSha1": "6f6c53fe731ab7597aa68870693c6c8127116cb3",
+      "remoteTimestamp": "2026-06-19T08:51:59Z"
+    },
+    {
+      "equipmentId": "b-100-portable-hellbomb",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Portable Hellbomb Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/b-100-portable-hellbomb.svg",
+      "remoteSha1": "e8bd763184b8b8e943a5b1c59dfbd2e1fe87e16b",
+      "remoteTimestamp": "2026-06-19T08:51:44Z"
+    },
+    {
+      "equipmentId": "b-22-model-citizen",
+      "purpose": "catalog-image",
+      "fileTitle": "File:B-22 Model Citizen Armor Render.png",
+      "assetPath": "assets/wiki/b-22-model-citizen.png",
+      "remoteSha1": "fd79946c94b42db8d13a8e7c1e962f4587d920cf",
+      "remoteTimestamp": "2026-03-11T21:58:08Z"
+    },
+    {
+      "equipmentId": "b-24-enforcer",
+      "purpose": "catalog-image",
+      "fileTitle": "File:B-24 Enforcer Body Icon.png",
+      "assetPath": "assets/wiki/b-24-enforcer.png",
+      "remoteSha1": "5af29554f442c036015da7319f7e87d475987901",
+      "remoteTimestamp": "2025-07-26T08:28:49Z"
+    },
+    {
+      "equipmentId": "b-27-fortified-commando",
+      "purpose": "catalog-image",
+      "fileTitle": "File:B-27 Fortified Commando Armor Render.png",
+      "assetPath": "assets/wiki/b-27-fortified-commando.png",
+      "remoteSha1": "8d38eab16bad9d7feafd488ec6c26c38874f39d9",
+      "remoteTimestamp": "2026-03-12T23:04:04Z"
+    },
+    {
+      "equipmentId": "b-flam-80-cremator",
+      "purpose": "catalog-image",
+      "fileTitle": "File:B FLAM-80 Cremator Weapon and Backpack Support Render.png",
+      "assetPath": "assets/wiki/b-flam-80-cremator.png",
+      "remoteSha1": "93063a1d5b07fa84f197c41a9d9c39ec6f5231d6",
+      "remoteTimestamp": "2026-05-03T22:04:36Z"
+    },
+    {
+      "equipmentId": "b-md-c4-pack",
+      "purpose": "catalog-image",
+      "fileTitle": "File:B MD C4 Pack Support Render.png",
+      "assetPath": "assets/wiki/b-md-c4-pack.png",
+      "remoteSha1": "e41cd7aac7681a76480039a07067cedaefcb1832",
+      "remoteTimestamp": "2026-03-18T19:02:37Z"
+    },
+    {
+      "equipmentId": "bp-20-correct-officer",
+      "purpose": "catalog-image",
+      "fileTitle": "File:BP-20 Correct Officer Armor Render.png",
+      "assetPath": "assets/wiki/bp-20-correct-officer.png",
+      "remoteSha1": "7acc68be63ace8904307627b18d2c4de8f0ac78e",
+      "remoteTimestamp": "2026-03-15T09:43:44Z"
+    },
+    {
+      "equipmentId": "bp-32-jackboot",
+      "purpose": "catalog-image",
+      "fileTitle": "File:BP-32 Jackboot Armor Render.png",
+      "assetPath": "assets/wiki/bp-32-jackboot.png",
+      "remoteSha1": "150b9c3d880c40cd344c20a1fd4ffe264a514b86",
+      "remoteTimestamp": "2026-03-15T09:43:45Z"
+    },
+    {
+      "equipmentId": "bp-77-grand-juror",
+      "purpose": "catalog-image",
+      "fileTitle": "File:BP-77 Grand Juror Armor Render.png",
+      "assetPath": "assets/wiki/bp-77-grand-juror.png",
+      "remoteSha1": "8cfa23504b534c6214e969b986344cde991579da",
+      "remoteTimestamp": "2026-03-15T09:43:46Z"
+    },
+    {
+      "equipmentId": "br-14-adjudicator",
+      "purpose": "catalog-image",
+      "fileTitle": "File:BR-14 Adjudicator Primary Render.png",
+      "assetPath": "assets/wiki/br-14-adjudicator.png",
+      "remoteSha1": "e74a3d14d4d2809ab68c975f0b21dead98e82c12",
+      "remoteTimestamp": "2026-03-18T17:09:44Z"
+    },
+    {
+      "equipmentId": "cb-9-exploding-crossbow",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CB-9 Exploding Crossbow Primary Render.png",
+      "assetPath": "assets/wiki/cb-9-exploding-crossbow.png",
+      "remoteSha1": "01aa01fe987953196a4dd007431ba757ff7def2c",
+      "remoteTimestamp": "2026-03-18T17:57:31Z"
+    },
+    {
+      "equipmentId": "ce-07-demolition-specialist",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CE-07 Demolition Specialist Armor Render.png",
+      "assetPath": "assets/wiki/ce-07-demolition-specialist.png",
+      "remoteSha1": "f2b4fb1bba038f25eb10caf85bd27cbce9aeb17b",
+      "remoteTimestamp": "2026-03-11T16:54:25Z"
+    },
+    {
+      "equipmentId": "ce-101-guerilla-gorilla",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CE-101 Guerilla Gorilla Armor Render.png",
+      "assetPath": "assets/wiki/ce-101-guerilla-gorilla.png",
+      "remoteSha1": "a78ae12a13fbd61bdca299f566d3714a48436f45",
+      "remoteTimestamp": "2026-03-10T23:59:04Z"
+    },
+    {
+      "equipmentId": "ce-27-ground-breaker",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CE-27 Ground Breaker Armor Render.png",
+      "assetPath": "assets/wiki/ce-27-ground-breaker.png",
+      "remoteSha1": "013a541d9dbe51bb366a2b17e89621fc22551006",
+      "remoteTimestamp": "2026-03-13T17:20:44Z"
+    },
+    {
+      "equipmentId": "ce-35-trench-engineer",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CE-35 Trench Engineer Armor Render.png",
+      "assetPath": "assets/wiki/ce-35-trench-engineer.png",
+      "remoteSha1": "3b933424a472555555f5362cf95c7d925455f533",
+      "remoteTimestamp": "2026-03-12T21:59:14Z"
+    },
+    {
+      "equipmentId": "ce-64-grenadier",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CE-64 Grenadier Body Icon.png",
+      "assetPath": "assets/wiki/ce-64-grenadier.png",
+      "remoteSha1": "ab730e37380e7da8e4d301bed9ae5df32394609b",
+      "remoteTimestamp": "2025-07-26T09:13:43Z"
+    },
+    {
+      "equipmentId": "ce-67-titan",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CE-67 Titan Armor Render.png",
+      "assetPath": "assets/wiki/ce-67-titan.png",
+      "remoteSha1": "5b3742c24a0e647cbcfe1693278b14ba573b4ef0",
+      "remoteTimestamp": "2026-03-11T16:54:26Z"
+    },
+    {
+      "equipmentId": "ce-74-breaker",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CE-74 Breaker Armor Render.png",
+      "assetPath": "assets/wiki/ce-74-breaker.png",
+      "remoteSha1": "ee85f2d38a2c6204898a3b6885084cb2fb928b3f",
+      "remoteTimestamp": "2026-03-10T23:59:03Z"
+    },
+    {
+      "equipmentId": "ce-81-juggernaut",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CE-81 Juggernaut Armor Render.png",
+      "assetPath": "assets/wiki/ce-81-juggernaut.png",
+      "remoteSha1": "d7055ac2b6d490f8fe8d2ffb6a3f48c42da99b3d",
+      "remoteTimestamp": "2026-03-12T21:07:38Z"
+    },
+    {
+      "equipmentId": "cm-09-bonesnapper",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CM-09 Bonesnapper Armor Render.png",
+      "assetPath": "assets/wiki/cm-09-bonesnapper.png",
+      "remoteSha1": "8bc155f1d3cfa3c2ecd574cacfaa25e70f7764ef",
+      "remoteTimestamp": "2026-03-12T21:59:15Z"
+    },
+    {
+      "equipmentId": "cm-10-clinician",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CM-10 Clinician Armor Render.png",
+      "assetPath": "assets/wiki/cm-10-clinician.png",
+      "remoteSha1": "4c5d518336519c031cb4e73b35b2cdf3be6d535b",
+      "remoteTimestamp": "2026-03-13T16:01:35Z"
+    },
+    {
+      "equipmentId": "cm-14-physician",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CM-14 Physician Armor Render.png",
+      "assetPath": "assets/wiki/cm-14-physician.png",
+      "remoteSha1": "84d134aa3c1070f72f12c9423101f439d2230313",
+      "remoteTimestamp": "2026-03-12T21:59:17Z"
+    },
+    {
+      "equipmentId": "cm-17-butcher",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CM-17 Butcher Body Icon.png",
+      "assetPath": "assets/wiki/cm-17-butcher.png",
+      "remoteSha1": "d7b007f5550947d6d928a3e53b305d4d3b0ec932",
+      "remoteTimestamp": "2025-07-26T09:13:42Z"
+    },
+    {
+      "equipmentId": "cm-21-trench-paramedic",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CM-21 Trench Paramedic Armor Render.png",
+      "assetPath": "assets/wiki/cm-21-trench-paramedic.png",
+      "remoteSha1": "8865f2b86cdb5a661aa19d7ddf7a1b152de727ce",
+      "remoteTimestamp": "2026-03-10T23:59:05Z"
+    },
+    {
+      "equipmentId": "cpg-48-sapper",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CPG-48 Sapper Armor Render.png",
+      "assetPath": "assets/wiki/cpg-48-sapper.png",
+      "remoteSha1": "9f1fa9f0a9e9fad37b7fdce667ceecbdb935bff8",
+      "remoteTimestamp": "2026-03-17T19:01:10Z"
+    },
+    {
+      "equipmentId": "cph-26-commandant",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CPH-26 Commandant Armor Render.png",
+      "assetPath": "assets/wiki/cph-26-commandant.png",
+      "remoteSha1": "e35a2494a849d1c52ba87da98bf12981a964792d",
+      "remoteTimestamp": "2026-03-17T19:01:11Z"
+    },
+    {
+      "equipmentId": "cpr-80-bulwark",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CPR-80 Bulwark Armor Render.png",
+      "assetPath": "assets/wiki/cpr-80-bulwark.png",
+      "remoteSha1": "dfef3c2a39a0c67df6b9f25e488fa749662aab6e",
+      "remoteTimestamp": "2026-03-17T19:01:12Z"
+    },
+    {
+      "equipmentId": "cqc-1-one-true-flag",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CQC-1 One True Flag Support Render.png",
+      "assetPath": "assets/wiki/cqc-1-one-true-flag.png",
+      "remoteSha1": "a8ee96102f3d17fa7ddd5c952a56c1340fdef56c",
+      "remoteTimestamp": "2025-06-22T22:45:13Z"
+    },
+    {
+      "equipmentId": "cqc-19-stun-lance",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CQC-19 Stun Lance Secondary Render.png",
+      "assetPath": "assets/wiki/cqc-19-stun-lance.png",
+      "remoteSha1": "9a97090d07a9c39d48af7b20c9646ee2029aa9c4",
+      "remoteTimestamp": "2025-06-26T00:11:11Z"
+    },
+    {
+      "equipmentId": "cqc-2-saber",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CQC-2 Saber Secondary Render.png",
+      "assetPath": "assets/wiki/cqc-2-saber.png",
+      "remoteSha1": "459c5b3b1bd2219abf4547e31bcd6ed454cfa58b",
+      "remoteTimestamp": "2026-03-18T18:14:06Z"
+    },
+    {
+      "equipmentId": "cqc-20-breaching-hammer",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CQC-20 Breaching Hammer Render.png",
+      "assetPath": "assets/wiki/cqc-20-breaching-hammer.png",
+      "remoteSha1": "2adf0454d0c538465935228d17bccaac75a085e5",
+      "remoteTimestamp": "2026-03-18T19:02:41Z"
+    },
+    {
+      "equipmentId": "cqc-30-stun-baton",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CQC-30 Stun Baton Secondary Render.png",
+      "assetPath": "assets/wiki/cqc-30-stun-baton.png",
+      "remoteSha1": "5b701fb3ff1eff6b8e5380d54a7410f0c4a153dd",
+      "remoteTimestamp": "2025-06-26T00:11:12Z"
+    },
+    {
+      "equipmentId": "cqc-42-machete",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CQC-42 Machete Render.png",
+      "assetPath": "assets/wiki/cqc-42-machete.png",
+      "remoteSha1": "b79f734276bb5c05bfc2b4261e0f173600ffafa0",
+      "remoteTimestamp": "2025-08-29T17:38:25Z"
+    },
+    {
+      "equipmentId": "cqc-5-combat-hatchet",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CQC-5 Combat Hatchet Secondary Render.png",
+      "assetPath": "assets/wiki/cqc-5-combat-hatchet.png",
+      "remoteSha1": "eb83de88b50d345c0f8ec6dfdfc638918f5b9964",
+      "remoteTimestamp": "2025-06-26T00:11:10Z"
+    },
+    {
+      "equipmentId": "cqc-72-entrenchment-tool",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CQC-72 Entrenchment Tool Support Render.png",
+      "assetPath": "assets/wiki/cqc-72-entrenchment-tool.png",
+      "remoteSha1": "2adde9a91a22ffa0688c0f7a80b5a71641d45262",
+      "remoteTimestamp": "2026-03-18T23:26:07Z"
+    },
+    {
+      "equipmentId": "cqc-73-entrenchment-tool",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CQC-73 Entrenchment Tool Secondary Render.png",
+      "assetPath": "assets/wiki/cqc-73-entrenchment-tool.png",
+      "remoteSha1": "349204be8689902aa8df8bed9ad8cf0ad6b34ca5",
+      "remoteTimestamp": "2026-03-18T23:34:18Z"
+    },
+    {
+      "equipmentId": "cqc-9-defoliation-tool",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CQC-9 Defoliation Tool Support Render.png",
+      "assetPath": "assets/wiki/cqc-9-defoliation-tool.png",
+      "remoteSha1": "3f7221494260760ce08cafc298fbdd41550683b6",
+      "remoteTimestamp": "2025-12-22T02:35:19Z"
+    },
+    {
+      "equipmentId": "cw-22-kodiak",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CW-22 Kodiak Armor Render.png",
+      "assetPath": "assets/wiki/cw-22-kodiak.png",
+      "remoteSha1": "328906d483b78f14d7eafe95fbc0549ce4378b20",
+      "remoteTimestamp": "2026-03-13T16:01:38Z"
+    },
+    {
+      "equipmentId": "cw-36-winter-warrior",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CW-36 Winter Warrior Armor Render.png",
+      "assetPath": "assets/wiki/cw-36-winter-warrior.png",
+      "remoteSha1": "7c8e710a8d8614817baeefb1b4eacc2d437460e6",
+      "remoteTimestamp": "2026-03-13T16:01:39Z"
+    },
+    {
+      "equipmentId": "cw-4-arctic-ranger",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CW-4 Arctic Ranger Armor Render.png",
+      "assetPath": "assets/wiki/cw-4-arctic-ranger.png",
+      "remoteSha1": "21ec77746e32b986408c3980a60e4bea3e9854f8",
+      "remoteTimestamp": "2026-03-13T16:01:36Z"
+    },
+    {
+      "equipmentId": "cw-9-white-wolf",
+      "purpose": "catalog-image",
+      "fileTitle": "File:CW-9 White Wolf Armor Render.png",
+      "assetPath": "assets/wiki/cw-9-white-wolf.png",
+      "remoteSha1": "747c528fef2145ae1bdddd15c0424f136dd44c50",
+      "remoteTimestamp": "2026-03-13T16:01:37Z"
+    },
+    {
+      "equipmentId": "dbs-2-double-freedom",
+      "purpose": "catalog-image",
+      "fileTitle": "File:DBS-2 Shotgun Primary Render.png",
+      "assetPath": "assets/wiki/dbs-2-double-freedom.png",
+      "remoteSha1": "fd2b05167e164f8bca95616cddffd242023430a4",
+      "remoteTimestamp": "2025-12-03T12:13:11Z"
+    },
+    {
+      "equipmentId": "dp-00-tactical",
+      "purpose": "catalog-image",
+      "fileTitle": "File:DP-00 Tactical Armor Render.png",
+      "assetPath": "assets/wiki/dp-00-tactical.png",
+      "remoteSha1": "425a3dedfd38e375539789f3f2cdff54760d6e24",
+      "remoteTimestamp": "2026-03-11T21:58:09Z"
+    },
+    {
+      "equipmentId": "dp-11-champion-of-the-people",
+      "purpose": "catalog-image",
+      "fileTitle": "File:DP-11 Champion of the People Armor Render.png",
+      "assetPath": "assets/wiki/dp-11-champion-of-the-people.png",
+      "remoteSha1": "c3ea469540227583ed29e302c860bf85250b9003",
+      "remoteTimestamp": "2026-03-11T21:58:09Z"
+    },
+    {
+      "equipmentId": "dp-40-hero-of-the-federation",
+      "purpose": "catalog-image",
+      "fileTitle": "File:DP-40 Hero of the Federation Armor Render.png",
+      "assetPath": "assets/wiki/dp-40-hero-of-the-federation.png",
+      "remoteSha1": "00aaafd0e61f72993b07ca5bb967ac12fec03be6",
+      "remoteTimestamp": "2026-03-11T11:44:33Z"
+    },
+    {
+      "equipmentId": "dp-53-savior-of-the-free",
+      "purpose": "catalog-image",
+      "fileTitle": "File:DP-53 Savior of the Free Armor Render.png",
+      "assetPath": "assets/wiki/dp-53-savior-of-the-free.png",
+      "remoteSha1": "24c2855ea3ff3ae4c375febb9d8d91b0aa485082",
+      "remoteTimestamp": "2026-03-11T11:44:34Z"
+    },
+    {
+      "equipmentId": "dp-8-mountain-scaled",
+      "purpose": "catalog-image",
+      "fileTitle": "File:DP-8 Mountain-Scaled Armor Render.png",
+      "assetPath": "assets/wiki/dp-8-mountain-scaled.png",
+      "remoteSha1": "6d8716c5442e54c78c35b4b3cb44c9c6a4c94667",
+      "remoteTimestamp": "2026-03-10T23:59:37Z"
+    },
+    {
+      "equipmentId": "ds-10-big-game-hunter",
+      "purpose": "catalog-image",
+      "fileTitle": "File:DS-10 Big Game Hunter Armor Render.png",
+      "assetPath": "assets/wiki/ds-10-big-game-hunter.png",
+      "remoteSha1": "36c8d421e59a7232c65c6138fb2a0423eec72285",
+      "remoteTimestamp": "2026-03-15T15:13:44Z"
+    },
+    {
+      "equipmentId": "ds-191-scorpion",
+      "purpose": "catalog-image",
+      "fileTitle": "File:DS-191 Scorpion Armor Render.png",
+      "assetPath": "assets/wiki/ds-191-scorpion.png",
+      "remoteSha1": "49c43d966db7ac49c8199bcc8ff22ee93703a193",
+      "remoteTimestamp": "2026-03-15T15:13:46Z"
+    },
+    {
+      "equipmentId": "ds-42-federations-blade",
+      "purpose": "catalog-image",
+      "fileTitle": "File:DS-42 Federation's Blade Armor Render.png",
+      "assetPath": "assets/wiki/ds-42-federations-blade.png",
+      "remoteSha1": "d1b11419dcf5f69f2d6bb280d5d9127b8e536d7e",
+      "remoteTimestamp": "2026-03-15T15:13:45Z"
+    },
+    {
+      "equipmentId": "e-at-12-anti-tank-emplacement",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Anti-Tank Emplacement Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/e-at-12-anti-tank-emplacement.svg",
+      "remoteSha1": "d8adfcd23cbcb5d30a4f81d292d274f9d1ecec3a",
+      "remoteTimestamp": "2026-06-19T08:49:59Z"
+    },
+    {
+      "equipmentId": "e-gl-21-grenadier-battlement",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Grenadier Battlement Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/e-gl-21-grenadier-battlement.svg",
+      "remoteSha1": "80ed1c476f1c3ce697ab4cfc3ce903572a1c7e38",
+      "remoteTimestamp": "2026-06-19T08:49:55Z"
+    },
+    {
+      "equipmentId": "e-mg-101-hmg-emplacement",
+      "purpose": "catalog-image",
+      "fileTitle": "File:HMG Emplacement Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/e-mg-101-hmg-emplacement.svg",
+      "remoteSha1": "204f0f78125321f4f17d903100a9b78304b85dd1",
+      "remoteTimestamp": "2026-06-19T08:51:22Z"
+    },
+    {
+      "equipmentId": "eagle-110mm-rocket-pods",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Eagle 110mm Rocket Pods Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/eagle-110mm-rocket-pods.svg",
+      "remoteSha1": "002e218af5b2522c835f82694187918f8233602f",
+      "remoteTimestamp": "2026-06-19T08:50:17Z"
+    },
+    {
+      "equipmentId": "eagle-500kg-bomb",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Eagle 500kg Bomb Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/eagle-500kg-bomb.svg",
+      "remoteSha1": "48a0f3f522e8c1f74269caea93264d5899cd3522",
+      "remoteTimestamp": "2026-06-19T08:50:18Z"
+    },
+    {
+      "equipmentId": "eagle-airstrike",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Eagle Airstrike Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/eagle-airstrike.svg",
+      "remoteSha1": "b497fe4aec93027fcfa1c77c386a6c72eb5288b4",
+      "remoteTimestamp": "2026-06-19T08:50:18Z"
+    },
+    {
+      "equipmentId": "eagle-cluster-bomb",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Eagle Cluster Bomb Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/eagle-cluster-bomb.svg",
+      "remoteSha1": "b730d47faad8c59f9759f400b1166c402cf285a8",
+      "remoteTimestamp": "2026-06-19T08:50:19Z"
+    },
+    {
+      "equipmentId": "eagle-napalm-airstrike",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Eagle Napalm Airstrike Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/eagle-napalm-airstrike.svg",
+      "remoteSha1": "735c8b5c76ce35c1f0f7dfe4aedffa05893209bf",
+      "remoteTimestamp": "2026-06-19T08:50:20Z"
+    },
+    {
+      "equipmentId": "eagle-smoke-strike",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Eagle Smoke Strike Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/eagle-smoke-strike.svg",
+      "remoteSha1": "159f1fa465e79aadd26a2e2a74dc13bf93edafbe",
+      "remoteTimestamp": "2026-06-19T08:50:21Z"
+    },
+    {
+      "equipmentId": "eagle-strafing-run",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Eagle Strafing Run Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/eagle-strafing-run.svg",
+      "remoteSha1": "fe286e1ec078371ac066a186716e3522b4bbf029",
+      "remoteTimestamp": "2026-06-19T08:50:22Z"
+    },
+    {
+      "equipmentId": "eat-17-expendable-anti-tank",
+      "purpose": "catalog-image",
+      "fileTitle": "File:EAT-17 Expendable Anti-Tank Support Render.png",
+      "assetPath": "assets/wiki/eat-17-expendable-anti-tank.png",
+      "remoteSha1": "964d4d649a6cb0ecb6992812fdbaffd2370bce33",
+      "remoteTimestamp": "2025-06-22T07:54:07Z"
+    },
+    {
+      "equipmentId": "eat-411-leveller",
+      "purpose": "catalog-image",
+      "fileTitle": "File:EAT-411 Leveller Support Render.png",
+      "assetPath": "assets/wiki/eat-411-leveller.png",
+      "remoteSha1": "9b52ff04ca3218335335f94ad350947f2da4c55c",
+      "remoteTimestamp": "2026-03-18T19:02:48Z"
+    },
+    {
+      "equipmentId": "eat-700-expendable-napalm",
+      "purpose": "catalog-image",
+      "fileTitle": "File:EAT-700 Expendable Napalm Support Render.png",
+      "assetPath": "assets/wiki/eat-700-expendable-napalm.png",
+      "remoteSha1": "1478728705c71e877d6422dd659bb6032a65434e",
+      "remoteTimestamp": "2026-03-18T19:02:51Z"
+    },
+    {
+      "equipmentId": "ex-00-prototype-x",
+      "purpose": "catalog-image",
+      "fileTitle": "File:EX-00 Prototype X Armor Render.png",
+      "assetPath": "assets/wiki/ex-00-prototype-x.png",
+      "remoteSha1": "3248434fab63e3dfd92df9d6354604f9cedc6f9d",
+      "remoteTimestamp": "2026-03-11T16:54:27Z"
+    },
+    {
+      "equipmentId": "ex-03-prototype-3",
+      "purpose": "catalog-image",
+      "fileTitle": "File:EX-03 Prototype 3 Armor Render.png",
+      "assetPath": "assets/wiki/ex-03-prototype-3.png",
+      "remoteSha1": "9955564a23cf0a8b09adb08a17cfe2a294dda947",
+      "remoteTimestamp": "2026-03-13T17:20:45Z"
+    },
+    {
+      "equipmentId": "ex-16-prototype-16",
+      "purpose": "catalog-image",
+      "fileTitle": "File:EX-16 Prototype 16 Armor Render.png",
+      "assetPath": "assets/wiki/ex-16-prototype-16.png",
+      "remoteSha1": "61aa2aefea13dd21251e58aaad02ad601e8573a3",
+      "remoteTimestamp": "2026-03-13T17:20:46Z"
+    },
+    {
+      "equipmentId": "exo-45-patriot-exosuit",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Patriot Exosuit Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/exo-45-patriot-exosuit.svg",
+      "remoteSha1": "3fa7def5493199b818a8997d5f27896bbd61c01e",
+      "remoteTimestamp": "2026-06-19T08:51:43Z"
+    },
+    {
+      "equipmentId": "exo-49-emancipator-exosuit",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Emancipator Exosuit Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/exo-49-emancipator-exosuit.svg",
+      "remoteSha1": "33641953d37ff69444d062f1c1b89f02e7b3eaa1",
+      "remoteTimestamp": "2026-06-19T08:50:23Z"
+    },
+    {
+      "equipmentId": "exo-51-lumberer-exosuit",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Lumberer Exosuit Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/exo-51-lumberer-exosuit.svg",
+      "remoteSha1": "c3895feee9cb0675c9cda242fdd9e1b8cf4384bd",
+      "remoteTimestamp": "2026-06-19T08:51:29Z"
+    },
+    {
+      "equipmentId": "exo-55-breakthrough-exosuit",
+      "purpose": "catalog-image",
+      "fileTitle": "File:EXO-55 Breakthrough Exosuit Stratagem Icon.png",
+      "assetPath": "assets/wiki/exo-55-breakthrough-exosuit.png",
+      "remoteSha1": "51a99dfc953f4bf353419c32a5665026e2626868",
+      "remoteTimestamp": "2026-04-21T14:30:24Z"
+    },
+    {
+      "equipmentId": "faf-14-spear",
+      "purpose": "catalog-image",
+      "fileTitle": "File:FAF-14 Spear Weapon and Backpack Support Render.png",
+      "assetPath": "assets/wiki/faf-14-spear.png",
+      "remoteSha1": "51a0d0a548b851814dd2f857b8fe1a596ab81fad",
+      "remoteTimestamp": "2026-05-03T21:34:05Z"
+    },
+    {
+      "equipmentId": "flam-40-flamethrower",
+      "purpose": "catalog-image",
+      "fileTitle": "File:FLAM-40 Flamethrower Support Render.png",
+      "assetPath": "assets/wiki/flam-40-flamethrower.png",
+      "remoteSha1": "efbb2122ee4c62b6660281dd800a4fd92776e090",
+      "remoteTimestamp": "2025-06-22T07:56:34Z"
+    },
+    {
+      "equipmentId": "flam-66-torcher",
+      "purpose": "catalog-image",
+      "fileTitle": "File:FLAM-66 Torcher Primary Render.png",
+      "assetPath": "assets/wiki/flam-66-torcher.png",
+      "remoteSha1": "e719cd56707c2fdf1af28b548bedd8adb7d7ff5c",
+      "remoteTimestamp": "2026-03-18T17:57:33Z"
+    },
+    {
+      "equipmentId": "fs-05-marksman",
+      "purpose": "catalog-image",
+      "fileTitle": "File:FS-05 Marksman Body Icon.png",
+      "assetPath": "assets/wiki/fs-05-marksman.png",
+      "remoteSha1": "2b8bcd2040d3c5d0dfb1b249d1990195864981f0",
+      "remoteTimestamp": "2025-07-26T09:13:38Z"
+    },
+    {
+      "equipmentId": "fs-11-executioner",
+      "purpose": "catalog-image",
+      "fileTitle": "File:FS-11 Executioner Armor Render.png",
+      "assetPath": "assets/wiki/fs-11-executioner.png",
+      "remoteSha1": "40cfdaa0a863be3a162de8f85bf6a1044640f383",
+      "remoteTimestamp": "2026-03-12T23:04:05Z"
+    },
+    {
+      "equipmentId": "fs-23-battle-master",
+      "purpose": "catalog-image",
+      "fileTitle": "File:FS-23 Battle Master Armor Render.png",
+      "assetPath": "assets/wiki/fs-23-battle-master.png",
+      "remoteSha1": "f7f3b785e6e6a84564ebee59bcb6e0961b1d0b0d",
+      "remoteTimestamp": "2026-03-15T23:30:20Z"
+    },
+    {
+      "equipmentId": "fs-34-exterminator",
+      "purpose": "catalog-image",
+      "fileTitle": "File:FS-34 Exterminator Armor Render.png",
+      "assetPath": "assets/wiki/fs-34-exterminator.png",
+      "remoteSha1": "7f80c938f3cfed96c188f778a507f02ecaab754d",
+      "remoteTimestamp": "2026-03-13T16:01:40Z"
+    },
+    {
+      "equipmentId": "fs-37-ravager",
+      "purpose": "catalog-image",
+      "fileTitle": "File:FS-37 Ravager Armor Render.png",
+      "assetPath": "assets/wiki/fs-37-ravager.png",
+      "remoteSha1": "a71a00b12d445b64381434b91a307e9252dee48a",
+      "remoteTimestamp": "2026-03-15T23:30:21Z"
+    },
+    {
+      "equipmentId": "fs-38-eradicator",
+      "purpose": "catalog-image",
+      "fileTitle": "File:FS-38 Eradicator Armor Render.png",
+      "assetPath": "assets/wiki/fs-38-eradicator.png",
+      "remoteSha1": "5093e6971aa5a6faf2de1db1564d62691231bd83",
+      "remoteTimestamp": "2026-03-10T23:59:06Z"
+    },
+    {
+      "equipmentId": "fs-55-devastator",
+      "purpose": "catalog-image",
+      "fileTitle": "File:FS-55 Devastator Armor Render.png",
+      "assetPath": "assets/wiki/fs-55-devastator.png",
+      "remoteSha1": "d45cb64bd785d7745933d5ec6c9a4e7a90c5f554",
+      "remoteTimestamp": "2026-03-13T17:20:47Z"
+    },
+    {
+      "equipmentId": "fs-61-dreadnought",
+      "purpose": "catalog-image",
+      "fileTitle": "File:FS-61 Dreadnought Armor Render.png",
+      "assetPath": "assets/wiki/fs-61-dreadnought.png",
+      "remoteSha1": "693c273ef07d5755974bcfc50bd462187c1d2afd",
+      "remoteTimestamp": "2026-03-12T23:04:06Z"
+    },
+    {
+      "equipmentId": "fx-12-shield-generator-relay",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Shield Generator Relay Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/fx-12-shield-generator-relay.svg",
+      "remoteSha1": "8f5149eeacbaa6d0dd8608544ad68ce0d5ab2759",
+      "remoteTimestamp": "2026-06-19T08:51:52Z"
+    },
+    {
+      "equipmentId": "g-10-incendiary",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-10 Incendiary Throwable Render.png",
+      "assetPath": "assets/wiki/g-10-incendiary.png",
+      "remoteSha1": "fa03cb072e69e25cf8922774290a12a93dbe36f0",
+      "remoteTimestamp": "2026-03-18T18:35:40Z"
+    },
+    {
+      "equipmentId": "g-109-urchin",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-109 Urchin Throwable Render.png",
+      "assetPath": "assets/wiki/g-109-urchin.png",
+      "remoteSha1": "6556aef78474d8e7ae4a0dd56af14bb16e89f233",
+      "remoteTimestamp": "2026-03-18T18:46:45Z"
+    },
+    {
+      "equipmentId": "g-12-high-explosive",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-12 High Explosive Throwable Render.png",
+      "assetPath": "assets/wiki/g-12-high-explosive.png",
+      "remoteSha1": "5b30493a684d1430c49a26572c444f0daaa4b3a9",
+      "remoteTimestamp": "2026-03-18T18:35:42Z"
+    },
+    {
+      "equipmentId": "g-123-thermite",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-123 Thermite Throwable Render.png",
+      "assetPath": "assets/wiki/g-123-thermite.png",
+      "remoteSha1": "1dc4e182a99875bc3402d955d5098f505db07e5a",
+      "remoteTimestamp": "2026-03-18T18:46:47Z"
+    },
+    {
+      "equipmentId": "g-13-incendiary-impact",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-13 Incendiary Impact Throwable Render.png",
+      "assetPath": "assets/wiki/g-13-incendiary-impact.png",
+      "remoteSha1": "103c4a4ca556f6ad031dd1ef7a852f9f28c6e718",
+      "remoteTimestamp": "2026-03-18T18:47:01Z"
+    },
+    {
+      "equipmentId": "g-142-pyrotech",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-142 Pyrotech Throwable Render.png",
+      "assetPath": "assets/wiki/g-142-pyrotech.png",
+      "remoteSha1": "d77fbb0ec8c063773f06fc2862c23cc2a054c3f4",
+      "remoteTimestamp": "2026-03-18T18:46:49Z"
+    },
+    {
+      "equipmentId": "g-16-impact",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-16 Impact Throwable Render.png",
+      "assetPath": "assets/wiki/g-16-impact.png",
+      "remoteSha1": "6e6bc3febe39fd9d48275e35981e623d19ffe0bb",
+      "remoteTimestamp": "2026-03-18T18:46:33Z"
+    },
+    {
+      "equipmentId": "g-23-stun",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-23 Stun Throwable Render.png",
+      "assetPath": "assets/wiki/g-23-stun.png",
+      "remoteSha1": "674d411f6b6f50384f922d23ccd35932f07f8011",
+      "remoteTimestamp": "2026-03-18T18:46:35Z"
+    },
+    {
+      "equipmentId": "g-3-smoke",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-3 Smoke Throwable Render.png",
+      "assetPath": "assets/wiki/g-3-smoke.png",
+      "remoteSha1": "4ff7f7b4cb33f9bfdf7766d2f91f7ee92f821bed",
+      "remoteTimestamp": "2026-03-18T18:46:57Z"
+    },
+    {
+      "equipmentId": "g-31-arc",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-31 ARC Throwable Render.png",
+      "assetPath": "assets/wiki/g-31-arc.png",
+      "remoteSha1": "3ad7a29048ec26c775e41882ed601ec1995fe42e",
+      "remoteTimestamp": "2026-03-18T18:46:37Z"
+    },
+    {
+      "equipmentId": "g-4-gas",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-4 Gas Throwable Render.png",
+      "assetPath": "assets/wiki/g-4-gas.png",
+      "remoteSha1": "5edf984269024402f6afa73d4db0948b9611e644",
+      "remoteTimestamp": "2026-03-18T18:46:59Z"
+    },
+    {
+      "equipmentId": "g-40-k-melta-mine",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-40-K Melta Mine Throwable Render.png",
+      "assetPath": "assets/wiki/g-40-k-melta-mine.png",
+      "remoteSha1": "42bbceae630f73bdab5be88963954ecfe240290c",
+      "remoteTimestamp": "2026-08-12T18:01:42Z"
+    },
+    {
+      "equipmentId": "g-48-giga-grenade",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-48 Giga Grenade Throwable Render.png",
+      "assetPath": "assets/wiki/g-48-giga-grenade.png",
+      "remoteSha1": "f00d38cb7a82f7240e6375f5f40674cd999513f0",
+      "remoteTimestamp": "2026-03-18T18:46:39Z"
+    },
+    {
+      "equipmentId": "g-50-seeker",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-50 Seeker Throwable Render.png",
+      "assetPath": "assets/wiki/g-50-seeker.png",
+      "remoteSha1": "1eba1768ccaaf9133c2a16c487d1c895a2597628",
+      "remoteTimestamp": "2026-03-18T18:46:41Z"
+    },
+    {
+      "equipmentId": "g-6-frag",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-6 Frag Throwable Render.png",
+      "assetPath": "assets/wiki/g-6-frag.png",
+      "remoteSha1": "3a5ba5ed5fc618d245d60fe75e59eb61576577fe",
+      "remoteTimestamp": "2026-03-18T18:35:36Z"
+    },
+    {
+      "equipmentId": "g-7-pineapple",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-7 Pineapple Throwable Render.png",
+      "assetPath": "assets/wiki/g-7-pineapple.png",
+      "remoteSha1": "c70d05688991b621a6579c6de1f09a8a03732774",
+      "remoteTimestamp": "2026-03-18T18:35:38Z"
+    },
+    {
+      "equipmentId": "g-89-smokescreen",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-89 Smokescreen Throwable Render.png",
+      "assetPath": "assets/wiki/g-89-smokescreen.png",
+      "remoteSha1": "bf4187ffa4796e51a71ea4f08f9722825d8dec48",
+      "remoteTimestamp": "2026-03-18T18:46:43Z"
+    },
+    {
+      "equipmentId": "g-sh-39-shield",
+      "purpose": "catalog-image",
+      "fileTitle": "File:G-SH-39 Shield Throwable Render.png",
+      "assetPath": "assets/wiki/g-sh-39-shield.png",
+      "remoteSha1": "1535108e21053ae718c4749aaef97edc64fa4d25",
+      "remoteTimestamp": "2026-03-18T18:47:43Z"
+    },
+    {
+      "equipmentId": "gl-21-grenade-launcher",
+      "purpose": "catalog-image",
+      "fileTitle": "File:GL-21 Grenade Launcher Support Render.png",
+      "assetPath": "assets/wiki/gl-21-grenade-launcher.png",
+      "remoteSha1": "952e8d36a69fb2519c4512fdff3ba32d329106c6",
+      "remoteTimestamp": "2025-06-22T08:03:07Z"
+    },
+    {
+      "equipmentId": "gl-28-belt-fed-grenade-launcher",
+      "purpose": "catalog-image",
+      "fileTitle": "File:GL-28 Belt-Fed Grenade Launcher Weapon and Backpack Support Render.png",
+      "assetPath": "assets/wiki/gl-28-belt-fed-grenade-launcher.png",
+      "remoteSha1": "5fec5c602d2ba5cbec323f28859790c2481e673f",
+      "remoteTimestamp": "2026-05-03T21:34:06Z"
+    },
+    {
+      "equipmentId": "gl-52-de-escalator",
+      "purpose": "catalog-image",
+      "fileTitle": "File:GL-52 De-Escalator Support Render.png",
+      "assetPath": "assets/wiki/gl-52-de-escalator.png",
+      "remoteSha1": "b90ee959f1cef2472eb18f55aabcd6413f0c9c2a",
+      "remoteTimestamp": "2025-06-22T08:08:56Z"
+    },
+    {
+      "equipmentId": "gp-20-ultimatum",
+      "purpose": "catalog-image",
+      "fileTitle": "File:GP-20 Ultimatum Secondary Render.png",
+      "assetPath": "assets/wiki/gp-20-ultimatum.png",
+      "remoteSha1": "3d51dc8d14a64fbea815ebcf52e6bacaf739a8ac",
+      "remoteTimestamp": "2026-03-18T18:29:06Z"
+    },
+    {
+      "equipmentId": "gp-31-grenade-pistol",
+      "purpose": "catalog-image",
+      "fileTitle": "File:GP-31 Grenade Pistol Secondary Render.png",
+      "assetPath": "assets/wiki/gp-31-grenade-pistol.png",
+      "remoteSha1": "4f6aba84f5d346fef2c8c27aa859ac128bd5e719",
+      "remoteTimestamp": "2026-03-18T18:29:08Z"
+    },
+    {
+      "equipmentId": "gr-8-recoilless-rifle",
+      "purpose": "catalog-image",
+      "fileTitle": "File:GR-8 Recoilless Rifle Weapon and Backpack Support Render.png",
+      "assetPath": "assets/wiki/gr-8-recoilless-rifle.png",
+      "remoteSha1": "a51dd5311b63c28346c15f50b8c2eea3bac9fe3f",
+      "remoteTimestamp": "2026-05-03T21:34:07Z"
+    },
+    {
+      "equipmentId": "gs-11-democracys-deputy",
+      "purpose": "catalog-image",
+      "fileTitle": "File:GS-11 Democracy's Deputy Armor Render.png",
+      "assetPath": "assets/wiki/gs-11-democracys-deputy.png",
+      "remoteSha1": "db8ccc9e06a9789379ff585967b721d2d84da38d",
+      "remoteTimestamp": "2026-04-26T10:30:29Z"
+    },
+    {
+      "equipmentId": "gs-17-frontier-marshal",
+      "purpose": "catalog-image",
+      "fileTitle": "File:GS-17 Frontier Marshal Armor Render.png",
+      "assetPath": "assets/wiki/gs-17-frontier-marshal.png",
+      "remoteSha1": "afb377ce8af9dfe3e3863e838a2e9572b9c8a08a",
+      "remoteTimestamp": "2026-04-26T10:30:31Z"
+    },
+    {
+      "equipmentId": "gs-66-lawmaker",
+      "purpose": "catalog-image",
+      "fileTitle": "File:GS-66 Lawmaker Armor Render.png",
+      "assetPath": "assets/wiki/gs-66-lawmaker.png",
+      "remoteSha1": "d367b5db11168295c3be79037f71452ba91f982e",
+      "remoteTimestamp": "2026-04-26T10:30:32Z"
+    },
+    {
+      "equipmentId": "i-09-heatseeker",
+      "purpose": "catalog-image",
+      "fileTitle": "File:I-09 Heatseeker Armor Render.png",
+      "assetPath": "assets/wiki/i-09-heatseeker.png",
+      "remoteSha1": "7577dfc65ca5fb67066303ac2abe4a7512133ab8",
+      "remoteTimestamp": "2026-03-13T20:54:46Z"
+    },
+    {
+      "equipmentId": "i-102-draconaught",
+      "purpose": "catalog-image",
+      "fileTitle": "File:I-102 Draconaught Armor Render.png",
+      "assetPath": "assets/wiki/i-102-draconaught.png",
+      "remoteSha1": "be9733f1e06ff55ec677e830c056ecd3170dfe2e",
+      "remoteTimestamp": "2026-03-13T20:54:49Z"
+    },
+    {
+      "equipmentId": "i-44-salamander",
+      "purpose": "catalog-image",
+      "fileTitle": "File:I-44 Salamander Armor Render.png",
+      "assetPath": "assets/wiki/i-44-salamander.png",
+      "remoteSha1": "2a2d82aee130c0d69d8fc8019c603623183c0c12",
+      "remoteTimestamp": "2026-03-13T20:54:47Z"
+    },
+    {
+      "equipmentId": "i-92-fire-fighter",
+      "purpose": "catalog-image",
+      "fileTitle": "File:I-92 Fire Fighter Armor Render.png",
+      "assetPath": "assets/wiki/i-92-fire-fighter.png",
+      "remoteSha1": "7235b83c2216b6816402a2c4b0e6e648394e36ac",
+      "remoteTimestamp": "2026-03-13T20:54:48Z"
+    },
+    {
+      "equipmentId": "ie-12-righteous",
+      "purpose": "catalog-image",
+      "fileTitle": "File:IE-12 Righteous Armor Render.png",
+      "assetPath": "assets/wiki/ie-12-righteous.png",
+      "remoteSha1": "4ddc5593434cf1e06d0a30f41db004e3385b156a",
+      "remoteTimestamp": "2026-03-10T23:59:07Z"
+    },
+    {
+      "equipmentId": "ie-3-martyr",
+      "purpose": "catalog-image",
+      "fileTitle": "File:IE-3 Martyr Armor Render.png",
+      "assetPath": "assets/wiki/ie-3-martyr.png",
+      "remoteSha1": "80eaea1450f6edfd96ae5cbe3b1817efe1840051",
+      "remoteTimestamp": "2026-03-10T23:59:07Z"
+    },
+    {
+      "equipmentId": "ie-57-hell-bent",
+      "purpose": "catalog-image",
+      "fileTitle": "File:IE-57 Hell-Bent Armor Render.png",
+      "assetPath": "assets/wiki/ie-57-hell-bent.png",
+      "remoteSha1": "9f72eefb955f41cb9e5999d287c86dfc75116bdb",
+      "remoteTimestamp": "2026-03-10T23:59:08Z"
+    },
+    {
+      "equipmentId": "jar-5-dominator",
+      "purpose": "catalog-image",
+      "fileTitle": "File:JAR-5 Dominator Primary Render.png",
+      "assetPath": "assets/wiki/jar-5-dominator.png",
+      "remoteSha1": "81a672c8cf78c6f78a2767e2eed86db11ff794b8",
+      "remoteTimestamp": "2026-03-18T17:57:35Z"
+    },
+    {
+      "equipmentId": "k-2-throwing-knife",
+      "purpose": "catalog-image",
+      "fileTitle": "File:K-2 Throwing Knife Throwable Render.png",
+      "assetPath": "assets/wiki/k-2-throwing-knife.png",
+      "remoteSha1": "4b7c6a7721fa342878571d36170a24b34a8c0bc4",
+      "remoteTimestamp": "2026-03-18T18:46:51Z"
+    },
+    {
+      "equipmentId": "kdm-500-outrider",
+      "purpose": "catalog-image",
+      "fileTitle": "File:KDM-500 Outrider Armor Render.png",
+      "assetPath": "assets/wiki/kdm-500-outrider.png",
+      "remoteSha1": "66afec70652b17dca80233f1e0d7f92a411a9596",
+      "remoteTimestamp": "2026-07-28T12:20:09Z"
+    },
+    {
+      "equipmentId": "las-13-trident",
+      "purpose": "catalog-image",
+      "fileTitle": "File:LAS-13 Trident Primary Render.png",
+      "assetPath": "assets/wiki/las-13-trident.png",
+      "remoteSha1": "615ace12b45e00d7349cba5aac73886d3c277330",
+      "remoteTimestamp": "2026-03-18T16:48:13Z"
+    },
+    {
+      "equipmentId": "las-16-sickle",
+      "purpose": "catalog-image",
+      "fileTitle": "File:LAS-16 Sickle Primary Render.png",
+      "assetPath": "assets/wiki/las-16-sickle.png",
+      "remoteSha1": "43d245220de6fce35216e7a8eabca4d7fb7d9bb5",
+      "remoteTimestamp": "2026-03-18T16:48:18Z"
+    },
+    {
+      "equipmentId": "las-17-double-edge-sickle",
+      "purpose": "catalog-image",
+      "fileTitle": "File:LAS-17 Double-Edge Sickle Primary Render.png",
+      "assetPath": "assets/wiki/las-17-double-edge-sickle.png",
+      "remoteSha1": "c64fae9be1f71e81348ac986803da4b3b130ccc4",
+      "remoteTimestamp": "2026-03-18T16:48:20Z"
+    },
+    {
+      "equipmentId": "las-5-scythe",
+      "purpose": "catalog-image",
+      "fileTitle": "File:LAS-5 Scythe Primary Render.png",
+      "assetPath": "assets/wiki/las-5-scythe.png",
+      "remoteSha1": "fd3c7d289ec47c85299aa80b8c2fa2fbbca84f8a",
+      "remoteTimestamp": "2026-03-18T16:48:17Z"
+    },
+    {
+      "equipmentId": "las-58-talon",
+      "purpose": "catalog-image",
+      "fileTitle": "File:LAS-58 Talon Secondary Render.png",
+      "assetPath": "assets/wiki/las-58-talon.png",
+      "remoteSha1": "8621df14b577f7e6b97b0edc2ae79bdffc4ebc48",
+      "remoteTimestamp": "2026-03-18T18:29:12Z"
+    },
+    {
+      "equipmentId": "las-7-dagger",
+      "purpose": "catalog-image",
+      "fileTitle": "File:LAS-7 Dagger Secondary Render.png",
+      "assetPath": "assets/wiki/las-7-dagger.png",
+      "remoteSha1": "bcfb598a3b4345141ef0cf2ed96b63e8ba5cd850",
+      "remoteTimestamp": "2026-05-02T18:13:12Z"
+    },
+    {
+      "equipmentId": "las-98-laser-cannon",
+      "purpose": "catalog-image",
+      "fileTitle": "File:LAS-98 Laser Cannon Support Render.png",
+      "assetPath": "assets/wiki/las-98-laser-cannon.png",
+      "remoteSha1": "92de395c70ae4ca721aea8816e8ddfeff5b8d6e7",
+      "remoteTimestamp": "2025-06-22T22:43:44Z"
+    },
+    {
+      "equipmentId": "las-99-quasar-cannon",
+      "purpose": "catalog-image",
+      "fileTitle": "File:LAS-99 Quasar Cannon Support Render.png",
+      "assetPath": "assets/wiki/las-99-quasar-cannon.png",
+      "remoteSha1": "a1a5c6d4d1302cd242492fbd9b9ce233009d1a8e",
+      "remoteTimestamp": "2025-06-22T08:04:47Z"
+    },
+    {
+      "equipmentId": "lift-182-warp-pack",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Warp Pack Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/lift-182-warp-pack.svg",
+      "remoteSha1": "b27510210a0bb7fcbabfb8e26f360c66050f21bd",
+      "remoteTimestamp": "2026-06-19T08:52:03Z"
+    },
+    {
+      "equipmentId": "lift-850-jump-pack",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Jump Pack Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/lift-850-jump-pack.svg",
+      "remoteSha1": "464278137e25dbaf418c17bbdc5de5cd81b117f9",
+      "remoteTimestamp": "2026-06-19T08:51:25Z"
+    },
+    {
+      "equipmentId": "lift-860-hover-pack",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Hover Pack Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/lift-860-hover-pack.svg",
+      "remoteSha1": "63fe63001ab286866523fa74604a8f72e58e3c56",
+      "remoteTimestamp": "2026-06-19T08:51:23Z"
+    },
+    {
+      "equipmentId": "m-1000-maxigun",
+      "purpose": "catalog-image",
+      "fileTitle": "File:M-1000 Maxigun Weapon and Backpack Support Render.png",
+      "assetPath": "assets/wiki/m-1000-maxigun.png",
+      "remoteSha1": "56293a4af32c116b0782c59168746d3de4e56d92",
+      "remoteTimestamp": "2026-05-03T21:34:08Z"
+    },
+    {
+      "equipmentId": "m-102-fast-recon-vehicle",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Fast Recon Vehicle Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/m-102-fast-recon-vehicle.svg",
+      "remoteSha1": "d9bba162803f70728f8e40d38d4b1879672d95b8",
+      "remoteTimestamp": "2026-06-19T08:50:28Z"
+    },
+    {
+      "equipmentId": "m-103-supply-frv",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Supply FRV Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/m-103-supply-frv.svg",
+      "remoteSha1": "4154456cfcd89f591cd66e80970e659404468ec2",
+      "remoteTimestamp": "2026-06-19T08:51:58Z"
+    },
+    {
+      "equipmentId": "m-104-incinerator-frv",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Incinerator FRV Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/m-104-incinerator-frv.svg",
+      "remoteSha1": "f5764f9b8bbd2d69ff37b8ecfcdc75685cab7807",
+      "remoteTimestamp": "2026-06-19T08:51:24Z"
+    },
+    {
+      "equipmentId": "m-105-stalwart",
+      "purpose": "catalog-image",
+      "fileTitle": "File:M-105 Stalwart Support Render.png",
+      "assetPath": "assets/wiki/m-105-stalwart.png",
+      "remoteSha1": "a9251bd9c4e7653c028df92668af88cbe1db7693",
+      "remoteTimestamp": "2025-06-22T07:53:24Z"
+    },
+    {
+      "equipmentId": "m6c-socom-pistol",
+      "purpose": "catalog-image",
+      "fileTitle": "File:M6C-SOCOM Pistol Secondary Render.png",
+      "assetPath": "assets/wiki/m6c-socom-pistol.png",
+      "remoteSha1": "82f58b044d0ed93fb6dcf7bc8314cfe393b4a0ad",
+      "remoteTimestamp": "2026-03-18T18:09:53Z"
+    },
+    {
+      "equipmentId": "m7s-smg",
+      "purpose": "catalog-image",
+      "fileTitle": "File:M7S SMG Primary Render.png",
+      "assetPath": "assets/wiki/m7s-smg.png",
+      "remoteSha1": "80963e2eaf82704f9e3d04ecf4e094b28ec2262b",
+      "remoteTimestamp": "2026-03-18T17:49:08Z"
+    },
+    {
+      "equipmentId": "m90a-shotgun",
+      "purpose": "catalog-image",
+      "fileTitle": "File:M90A Shotgun Primary Render.png",
+      "assetPath": "assets/wiki/m90a-shotgun.png",
+      "remoteSha1": "d8aadb4d7d3548af4fa7ffa4621594ff9b53d0b4",
+      "remoteTimestamp": "2026-03-18T16:27:51Z"
+    },
+    {
+      "equipmentId": "ma5c-assault-rifle",
+      "purpose": "catalog-image",
+      "fileTitle": "File:MA5C Assault Rifle Primary Render.png",
+      "assetPath": "assets/wiki/ma5c-assault-rifle.png",
+      "remoteSha1": "ed9b791e28b0d94dc22753236e828ce1b22bf926",
+      "remoteTimestamp": "2026-03-18T18:21:37Z"
+    },
+    {
+      "equipmentId": "md-17-anti-tank-mines",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Anti-Tank Mines Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/md-17-anti-tank-mines.svg",
+      "remoteSha1": "04573f23c7fff48778bd2ec9d141ea7640ee9098",
+      "remoteTimestamp": "2026-06-19T08:50:00Z"
+    },
+    {
+      "equipmentId": "md-6-anti-personnel-minefield",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Anti-Personnel Minefield Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/md-6-anti-personnel-minefield.svg",
+      "remoteSha1": "ac79b451273c0a02ba737c79123317b4ed276370",
+      "remoteTimestamp": "2026-06-19T08:49:59Z"
+    },
+    {
+      "equipmentId": "md-8-gas-mines",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Gas Mines Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/md-8-gas-mines.svg",
+      "remoteSha1": "b10ef84f5c38b9a09ffc136dfb5ff9f9fc609ae0",
+      "remoteTimestamp": "2026-06-19T08:49:52Z"
+    },
+    {
+      "equipmentId": "md-i4-incendiary-mines",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Incendiary Mines Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/md-i4-incendiary-mines.svg",
+      "remoteSha1": "6c612fbc7359344976a0e7ad562a1b1dc96df584",
+      "remoteTimestamp": "2026-06-19T08:51:24Z"
+    },
+    {
+      "equipmentId": "mg-206-heavy-machine-gun",
+      "purpose": "catalog-image",
+      "fileTitle": "File:MG-206 Heavy Machine Gun Support Render.png",
+      "assetPath": "assets/wiki/mg-206-heavy-machine-gun.png",
+      "remoteSha1": "5a5c8660e7ee84f2ca50210b231c5f10263afeff",
+      "remoteTimestamp": "2025-06-22T07:58:19Z"
+    },
+    {
+      "equipmentId": "mg-43-machine-gun",
+      "purpose": "catalog-image",
+      "fileTitle": "File:MG-43 Machine Gun Support Render.png",
+      "assetPath": "assets/wiki/mg-43-machine-gun.png",
+      "remoteSha1": "21f502e08f5461e9d3d21c5714d32ae086843579",
+      "remoteTimestamp": "2025-06-22T07:45:11Z"
+    },
+    {
+      "equipmentId": "mgx-42-bullet-storm",
+      "purpose": "catalog-image",
+      "fileTitle": "File:MGX-42 Bullet Storm Support Render.png",
+      "assetPath": "assets/wiki/mgx-42-bullet-storm.png",
+      "remoteSha1": "faf6f7200f29f461ce00047b683fa7d1bd34fb05",
+      "remoteTimestamp": "2026-04-29T20:47:01Z"
+    },
+    {
+      "equipmentId": "mls-4x-commando",
+      "purpose": "catalog-image",
+      "fileTitle": "File:MLS-4X Commando Support Render.png",
+      "assetPath": "assets/wiki/mls-4x-commando.png",
+      "remoteSha1": "4ecc9d52a005c2bd9a7ebbcac7ef8922a4480fa4",
+      "remoteTimestamp": "2025-12-22T02:29:23Z"
+    },
+    {
+      "equipmentId": "mp-98-knight",
+      "purpose": "catalog-image",
+      "fileTitle": "File:MP-98 Knight Primary Render.png",
+      "assetPath": "assets/wiki/mp-98-knight.png",
+      "remoteSha1": "4573f07ddfedb3ccc45f66c9b9ce6a89dff0e12a",
+      "remoteTimestamp": "2026-03-18T17:49:11Z"
+    },
+    {
+      "equipmentId": "ms-11-solo-silo",
+      "purpose": "catalog-image",
+      "fileTitle": "File:MS-11 Solo Silo Support Render.png",
+      "assetPath": "assets/wiki/ms-11-solo-silo.png",
+      "remoteSha1": "11b5b136e29258a1189652263fda26c0a167937d",
+      "remoteTimestamp": "2026-03-18T19:02:57Z"
+    },
+    {
+      "equipmentId": "o-2-heavy-operator",
+      "purpose": "catalog-image",
+      "fileTitle": "File:O-2 Heavy Operator Armor Render.png",
+      "assetPath": "assets/wiki/o-2-heavy-operator.png",
+      "remoteSha1": "0f2395bbd747bfdb26bf3f6993e9f665d8b9c259",
+      "remoteTimestamp": "2026-04-29T10:08:42Z"
+    },
+    {
+      "equipmentId": "o-3-free-spirit",
+      "purpose": "catalog-image",
+      "fileTitle": "File:O-3 Free Spirit Armor Render.png",
+      "assetPath": "assets/wiki/o-3-free-spirit.png",
+      "remoteSha1": "e873a25995b659991288f5ebb061b4a5b91f07e6",
+      "remoteTimestamp": "2026-04-29T10:08:43Z"
+    },
+    {
+      "equipmentId": "o-44-bonded-pilot",
+      "purpose": "catalog-image",
+      "fileTitle": "File:O-44 Bonded Pilot Armor Render.png",
+      "assetPath": "assets/wiki/o-44-bonded-pilot.png",
+      "remoteSha1": "ed5289cddc134a57d7bc51b040b0e0bde5ac7ffc",
+      "remoteTimestamp": "2026-04-29T10:08:45Z"
+    },
+    {
+      "equipmentId": "orbital-120mm-he-barrage",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Orbital 120mm HE Barrage Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/orbital-120mm-he-barrage.svg",
+      "remoteSha1": "17de59ed955fa0646548678b850eb682502e54f1",
+      "remoteTimestamp": "2026-06-19T08:51:33Z"
+    },
+    {
+      "equipmentId": "orbital-380mm-he-barrage",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Orbital 380mm HE Barrage Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/orbital-380mm-he-barrage.svg",
+      "remoteSha1": "eb3f9544cb661d1ad4b2dfab7177ba84907a114a",
+      "remoteTimestamp": "2026-06-19T08:51:34Z"
+    },
+    {
+      "equipmentId": "orbital-airburst-strike",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Orbital Airburst Strike Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/orbital-airburst-strike.svg",
+      "remoteSha1": "c77894acb898465ea2d382db1ae4127aa842a352",
+      "remoteTimestamp": "2026-06-19T08:51:34Z"
+    },
+    {
+      "equipmentId": "orbital-ems-strike",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Orbital EMS Strike Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/orbital-ems-strike.svg",
+      "remoteSha1": "5e3ef929b2676716ef97c072bddd5d1a1fbde5c3",
+      "remoteTimestamp": "2026-06-19T08:51:35Z"
+    },
+    {
+      "equipmentId": "orbital-gas-strike",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Orbital Gas Strike Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/orbital-gas-strike.svg",
+      "remoteSha1": "668a1e5a60750691e2d473a6e1f9844ca8ead10a",
+      "remoteTimestamp": "2026-06-19T08:51:36Z"
+    },
+    {
+      "equipmentId": "orbital-gatling-barrage",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Orbital Gatling Barrage Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/orbital-gatling-barrage.svg",
+      "remoteSha1": "f73d5241ea69d8c2443127bd6a43c50e5d169b4c",
+      "remoteTimestamp": "2026-06-19T08:51:37Z"
+    },
+    {
+      "equipmentId": "orbital-illumination-flare",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Orbital Illumination Flare Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/orbital-illumination-flare.svg",
+      "remoteSha1": "eb95f94cf0d431513678bf800501b6c7325fb786",
+      "remoteTimestamp": "2026-06-19T08:51:37Z"
+    },
+    {
+      "equipmentId": "orbital-laser",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Orbital Laser Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/orbital-laser.svg",
+      "remoteSha1": "0ae2ad30482ed6be38372c64d0c7d34e61f9b1dd",
+      "remoteTimestamp": "2026-06-19T08:51:38Z"
+    },
+    {
+      "equipmentId": "orbital-napalm-barrage",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Orbital Napalm Barrage Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/orbital-napalm-barrage.svg",
+      "remoteSha1": "be78c4b2c51e401e6d0b339be5599d92ceefb618",
+      "remoteTimestamp": "2026-06-19T08:51:39Z"
+    },
+    {
+      "equipmentId": "orbital-precision-strike",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Orbital Precision Strike Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/orbital-precision-strike.svg",
+      "remoteSha1": "e7855059dc6da36417b52c205e19d7957778b6b2",
+      "remoteTimestamp": "2026-06-19T08:51:39Z"
+    },
+    {
+      "equipmentId": "orbital-railcannon-strike",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Orbital Railcannon Strike Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/orbital-railcannon-strike.svg",
+      "remoteSha1": "ee9232c048b0be01075b5be2c08251971b7d8826",
+      "remoteTimestamp": "2026-06-19T08:51:40Z"
+    },
+    {
+      "equipmentId": "orbital-smoke-strike",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Orbital Smoke Strike Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/orbital-smoke-strike.svg",
+      "remoteSha1": "a054630bd2a5a96880cf733018b747283afb3e5d",
+      "remoteTimestamp": "2026-06-19T08:51:41Z"
+    },
+    {
+      "equipmentId": "orbital-walking-barrage",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Orbital Walking Barrage Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/orbital-walking-barrage.svg",
+      "remoteSha1": "cb3bf0ed92e69b0a2583530e49ee7ff68700f9a6",
+      "remoteTimestamp": "2026-06-19T08:51:42Z"
+    },
+    {
+      "equipmentId": "p-11-stim-pistol",
+      "purpose": "catalog-image",
+      "fileTitle": "File:P-11 Stim Pistol Secondary Render.png",
+      "assetPath": "assets/wiki/p-11-stim-pistol.png",
+      "remoteSha1": "9d252ecc735e35e984f883b03cb125db1ffc59a9",
+      "remoteTimestamp": "2026-03-18T18:29:14Z"
+    },
+    {
+      "equipmentId": "p-113-verdict",
+      "purpose": "catalog-image",
+      "fileTitle": "File:P-113 Verdict Secondary Render.png",
+      "assetPath": "assets/wiki/p-113-verdict.png",
+      "remoteSha1": "2bc2c604bf4ec37ed51fc422005ae3c74efbcdc6",
+      "remoteTimestamp": "2026-03-18T18:08:08Z"
+    },
+    {
+      "equipmentId": "p-19-redeemer",
+      "purpose": "catalog-image",
+      "fileTitle": "File:P-19 Redeemer Secondary Render.png",
+      "assetPath": "assets/wiki/p-19-redeemer.png",
+      "remoteSha1": "cf120533f16e3a62c8d56a4003d279398b13f046",
+      "remoteTimestamp": "2026-03-18T18:08:03Z"
+    },
+    {
+      "equipmentId": "p-2-peacemaker",
+      "purpose": "catalog-image",
+      "fileTitle": "File:P-2 Peacemaker Secondary Render.png",
+      "assetPath": "assets/wiki/p-2-peacemaker.png",
+      "remoteSha1": "946d179d0ef1712514e6872219ca76dcb77464f3",
+      "remoteTimestamp": "2026-05-11T00:54:02Z"
+    },
+    {
+      "equipmentId": "p-33-missile-pistol",
+      "purpose": "catalog-image",
+      "fileTitle": "File:P-33 Missile Pistol Secondary Render.png",
+      "assetPath": "assets/wiki/p-33-missile-pistol.png",
+      "remoteSha1": "a1e58d53f9dba9e7e7d31a7ba18a0dfb267b79f3",
+      "remoteTimestamp": "2026-04-29T20:35:54Z"
+    },
+    {
+      "equipmentId": "p-35-re-educator",
+      "purpose": "catalog-image",
+      "fileTitle": "File:P-35 Re-Educator Concept Art Tom McCahey.png",
+      "assetPath": "assets/wiki/p-35-re-educator.png",
+      "remoteSha1": "48269e949a59a6afb13f9bfe2622808a58189596",
+      "remoteTimestamp": "2026-04-26T09:07:58Z"
+    },
+    {
+      "equipmentId": "p-4-senator",
+      "purpose": "catalog-image",
+      "fileTitle": "File:P-4 Senator Secondary Render.png",
+      "assetPath": "assets/wiki/p-4-senator.png",
+      "remoteSha1": "34d42a61afa5b9bbc9e4fd54b40cd5784d754e56",
+      "remoteTimestamp": "2026-03-18T18:08:13Z"
+    },
+    {
+      "equipmentId": "p-40-k-bolt-pistol",
+      "purpose": "catalog-image",
+      "fileTitle": "File:P-40-K Bolt Pistol Secondary Render.png",
+      "assetPath": "assets/wiki/p-40-k-bolt-pistol.png",
+      "remoteSha1": "f2d0791349a1137112ac63c8ea675c5aa93ade0a",
+      "remoteTimestamp": "2026-08-12T22:22:08Z"
+    },
+    {
+      "equipmentId": "p-69-veto",
+      "purpose": "catalog-image",
+      "fileTitle": "File:P-69 Veto Secondary Icon.png",
+      "assetPath": "assets/wiki/p-69-veto.png",
+      "remoteSha1": "e0246546cf14d63554d4340b8551c3a304d83bc3",
+      "remoteTimestamp": "2026-03-17T19:01:30Z"
+    },
+    {
+      "equipmentId": "p-72-crisper",
+      "purpose": "catalog-image",
+      "fileTitle": "File:P-72 Crisper Secondary Render.png",
+      "assetPath": "assets/wiki/p-72-crisper.png",
+      "remoteSha1": "8490084dd6136cc64a22f685d6603400f6d9e96e",
+      "remoteTimestamp": "2026-03-18T18:29:19Z"
+    },
+    {
+      "equipmentId": "p-92-warrant",
+      "purpose": "catalog-image",
+      "fileTitle": "File:P-92 Warrant Secondary Render.png",
+      "assetPath": "assets/wiki/p-92-warrant.png",
+      "remoteSha1": "ac350bd8848fa89c40f5a5179014042000d22aa5",
+      "remoteTimestamp": "2026-03-18T18:08:06Z"
+    },
+    {
+      "equipmentId": "ph-202-twigsnapper",
+      "purpose": "catalog-image",
+      "fileTitle": "File:PH-202 Twigsnapper Armor Render.png",
+      "assetPath": "assets/wiki/ph-202-twigsnapper.png",
+      "remoteSha1": "d2a694ff216504254174c3ecfa971157d0d03e01",
+      "remoteTimestamp": "2026-03-12T21:07:39Z"
+    },
+    {
+      "equipmentId": "ph-56-jaguar",
+      "purpose": "catalog-image",
+      "fileTitle": "File:PH-56 Jaguar Armor Render.png",
+      "assetPath": "assets/wiki/ph-56-jaguar.png",
+      "remoteSha1": "3a9fb7d6b9c03dd43b6371260b3bca36742278d1",
+      "remoteTimestamp": "2026-03-11T16:54:28Z"
+    },
+    {
+      "equipmentId": "ph-9-predator",
+      "purpose": "catalog-image",
+      "fileTitle": "File:PH-9 Predator Body Icon.png",
+      "assetPath": "assets/wiki/ph-9-predator.png",
+      "remoteSha1": "24742c8acc22bc71491e2e1c0cf4c52914b8b8f5",
+      "remoteTimestamp": "2025-07-25T06:27:01Z"
+    },
+    {
+      "equipmentId": "plas-1-scorcher",
+      "purpose": "catalog-image",
+      "fileTitle": "File:PLAS-1 Scorcher Primary Render.png",
+      "assetPath": "assets/wiki/plas-1-scorcher.png",
+      "remoteSha1": "7327083e7322d8fc3d8685e1243ce7e60e8c1984",
+      "remoteTimestamp": "2026-03-18T16:48:22Z"
+    },
+    {
+      "equipmentId": "plas-101-purifier",
+      "purpose": "catalog-image",
+      "fileTitle": "File:PLAS-101 Purifier Primary Render.png",
+      "assetPath": "assets/wiki/plas-101-purifier.png",
+      "remoteSha1": "c0889604217994f474181bed36ee9a0b25c574d0",
+      "remoteTimestamp": "2026-03-18T16:48:25Z"
+    },
+    {
+      "equipmentId": "plas-15-loyalist",
+      "purpose": "catalog-image",
+      "fileTitle": "File:PLAS-15 Loyalist Secondary Render.png",
+      "assetPath": "assets/wiki/plas-15-loyalist.png",
+      "remoteSha1": "fd5d4ba45c7fa9a70422c8208cc165c3bdb914e8",
+      "remoteTimestamp": "2026-03-18T18:29:20Z"
+    },
+    {
+      "equipmentId": "plas-39-accelerator-rifle",
+      "purpose": "catalog-image",
+      "fileTitle": "File:PLAS-39 Accelerator Rifle Primary Render.png",
+      "assetPath": "assets/wiki/plas-39-accelerator-rifle.png",
+      "remoteSha1": "a8ff98632a1d511193aa49123021d18c548fcc98",
+      "remoteTimestamp": "2026-03-18T16:48:23Z"
+    },
+    {
+      "equipmentId": "plas-45-epoch",
+      "purpose": "catalog-image",
+      "fileTitle": "File:PLAS-45 Epoch Support Render.png",
+      "assetPath": "assets/wiki/plas-45-epoch.png",
+      "remoteSha1": "f6741444bb3109667c5abbed2433a3cc32899f2d",
+      "remoteTimestamp": "2026-04-29T20:49:53Z"
+    },
+    {
+      "equipmentId": "r-2-amendment",
+      "purpose": "catalog-image",
+      "fileTitle": "File:R-2 Amendment Primary Render.png",
+      "assetPath": "assets/wiki/r-2-amendment.png",
+      "remoteSha1": "804c0c481109bee47d4ecb210b2522f72f28875c",
+      "remoteTimestamp": "2026-03-18T17:28:08Z"
+    },
+    {
+      "equipmentId": "r-2124-constitution",
+      "purpose": "catalog-image",
+      "fileTitle": "File:R-2124 Constitution Primary Render.png",
+      "assetPath": "assets/wiki/r-2124-constitution.png",
+      "remoteSha1": "5afe2d62266dfff4fff390844b3c37801c1b8c4e",
+      "remoteTimestamp": "2026-03-18T17:28:19Z"
+    },
+    {
+      "equipmentId": "r-36-eruptor",
+      "purpose": "catalog-image",
+      "fileTitle": "File:R-36 Eruptor Primary Render.png",
+      "assetPath": "assets/wiki/r-36-eruptor.png",
+      "remoteSha1": "2c6f6636edca4209ee6ec79424f3a7adf0121883",
+      "remoteTimestamp": "2026-03-18T17:57:38Z"
+    },
+    {
+      "equipmentId": "r-4-hyena",
+      "purpose": "catalog-image",
+      "fileTitle": "File:R-4 Hyena Primary Render.png",
+      "assetPath": "assets/wiki/r-4-hyena.png",
+      "remoteSha1": "f84f0d8ee72216174856e722e9b49167aeafe5fb",
+      "remoteTimestamp": "2026-06-30T19:24:16Z"
+    },
+    {
+      "equipmentId": "r-40-k-hot-shot-marksman-rifle",
+      "purpose": "catalog-image",
+      "fileTitle": "File:R-40-K Hot-Shot Primary Render.png",
+      "assetPath": "assets/wiki/r-40-k-hot-shot-marksman-rifle.png",
+      "remoteSha1": "8ec697619ab48e5794f4304277f17d36d7c6633c",
+      "remoteTimestamp": "2026-08-12T22:22:13Z"
+    },
+    {
+      "equipmentId": "r-6-deadeye",
+      "purpose": "catalog-image",
+      "fileTitle": "File:R-6 Deadeye Primary Render.png",
+      "assetPath": "assets/wiki/r-6-deadeye.png",
+      "remoteSha1": "85d99d48c223d0273c84dd8ecffee1a2852172f9",
+      "remoteTimestamp": "2026-03-18T17:28:11Z"
+    },
+    {
+      "equipmentId": "r-63-diligence",
+      "purpose": "catalog-image",
+      "fileTitle": "File:R-63 Diligence Primary Render.png",
+      "assetPath": "assets/wiki/r-63-diligence.png",
+      "remoteSha1": "69ed5cfa5b5381a9a02eeed072724cdc8e08652c",
+      "remoteTimestamp": "2026-03-18T17:28:12Z"
+    },
+    {
+      "equipmentId": "r-63cs-diligence-counter-sniper",
+      "purpose": "catalog-image",
+      "fileTitle": "File:R-63CS Diligence Counter Sniper Primary Render.png",
+      "assetPath": "assets/wiki/r-63cs-diligence-counter-sniper.png",
+      "remoteSha1": "3ff844e8659a7740faa65701ac079345c65ae018",
+      "remoteTimestamp": "2026-03-18T17:28:15Z"
+    },
+    {
+      "equipmentId": "r-72-censor",
+      "purpose": "catalog-image",
+      "fileTitle": "File:R-72 Censor Primary Render.png",
+      "assetPath": "assets/wiki/r-72-censor.png",
+      "remoteSha1": "27d6713eeb96053df9810761988a9277057fd569",
+      "remoteTimestamp": "2026-03-18T17:28:17Z"
+    },
+    {
+      "equipmentId": "re-1861-parade-commander",
+      "purpose": "catalog-image",
+      "fileTitle": "File:RE-1861 Parade Commander Armor Render.png",
+      "assetPath": "assets/wiki/re-1861-parade-commander.png",
+      "remoteSha1": "505fcb562f541dfe04d9d509c0e43d12a7322df1",
+      "remoteTimestamp": "2026-03-10T23:59:10Z"
+    },
+    {
+      "equipmentId": "re-2310-honorary-guard",
+      "purpose": "catalog-image",
+      "fileTitle": "File:RE-2310 Honorary Guard Armor Render.png",
+      "assetPath": "assets/wiki/re-2310-honorary-guard.png",
+      "remoteSha1": "6146a1b30b7e4b4c0d755ac7d091caa60a9ccc70",
+      "remoteTimestamp": "2026-03-10T23:59:11Z"
+    },
+    {
+      "equipmentId": "re-824-bearer-of-the-standard",
+      "purpose": "catalog-image",
+      "fileTitle": "File:RE-824 Bearer of the Standard Armor Render.png",
+      "assetPath": "assets/wiki/re-824-bearer-of-the-standard.png",
+      "remoteSha1": "3f599365bb117d5a1da02e1258d2c38b0a0a8d16",
+      "remoteTimestamp": "2026-04-26T08:17:57Z"
+    },
+    {
+      "equipmentId": "rl-77-airburst-rocket-launcher",
+      "purpose": "catalog-image",
+      "fileTitle": "File:RL-77 Airburst Rocket Launcher Weapon and Backpack Support Render.png",
+      "assetPath": "assets/wiki/rl-77-airburst-rocket-launcher.png",
+      "remoteSha1": "28635841e4eb5b2bea6fabda926564bb7a8581da",
+      "remoteTimestamp": "2026-05-03T21:34:09Z"
+    },
+    {
+      "equipmentId": "rs-100-sanctioner",
+      "purpose": "catalog-image",
+      "fileTitle": "File:RS-100 Sanctioner Armor Render.png",
+      "assetPath": "assets/wiki/rs-100-sanctioner.png",
+      "remoteSha1": "c989dc61b94152e353d7c72af723c7d78277146a",
+      "remoteTimestamp": "2026-03-10T23:58:11Z"
+    },
+    {
+      "equipmentId": "rs-20-constrictor",
+      "purpose": "catalog-image",
+      "fileTitle": "File:RS-20 Constrictor Armor Render.png",
+      "assetPath": "assets/wiki/rs-20-constrictor.png",
+      "remoteSha1": "90e610d005826192f4ea06986cc5cd8f7b4be293",
+      "remoteTimestamp": "2026-03-10T23:59:13Z"
+    },
+    {
+      "equipmentId": "rs-40-beast-of-prey",
+      "purpose": "catalog-image",
+      "fileTitle": "File:RS-40 Beast of Prey Armor Render.png",
+      "assetPath": "assets/wiki/rs-40-beast-of-prey.png",
+      "remoteSha1": "f5be223a2d9fbb028e1937caa9f8ad0a8241d48a",
+      "remoteTimestamp": "2026-03-10T23:59:14Z"
+    },
+    {
+      "equipmentId": "rs-422-railgun",
+      "purpose": "catalog-image",
+      "fileTitle": "File:RS-422 Railgun Support Render.png",
+      "assetPath": "assets/wiki/rs-422-railgun.png",
+      "remoteSha1": "33e8a5f1796744ea8f8a240f7cf58a0f8d57b38d",
+      "remoteTimestamp": "2025-06-22T08:00:40Z"
+    },
+    {
+      "equipmentId": "rs-6-fiend-destroyer",
+      "purpose": "catalog-image",
+      "fileTitle": "File:RS-6 Fiend Destroyer Armor Render.png",
+      "assetPath": "assets/wiki/rs-6-fiend-destroyer.png",
+      "remoteSha1": "c9aac7ad6a66590fed0565730b84be2d4ae05148",
+      "remoteTimestamp": "2026-03-10T23:59:12Z"
+    },
+    {
+      "equipmentId": "rs-67-null-cipher",
+      "purpose": "catalog-image",
+      "fileTitle": "File:RS-67 Null Cipher Armor Render.png",
+      "assetPath": "assets/wiki/rs-67-null-cipher.png",
+      "remoteSha1": "173cae6f9d031d0b63d1eb831fad8a1bef9c3fb4",
+      "remoteTimestamp": "2026-03-10T23:58:10Z"
+    },
+    {
+      "equipmentId": "rs-89-shadow-paragon",
+      "purpose": "catalog-image",
+      "fileTitle": "File:RS-89 Shadow Paragon Armor Render.png",
+      "assetPath": "assets/wiki/rs-89-shadow-paragon.png",
+      "remoteSha1": "b60c98a89085e19952818eebac403355a9c38b88",
+      "remoteTimestamp": "2026-03-10T23:56:15Z"
+    },
+    {
+      "equipmentId": "s-11-speargun",
+      "purpose": "catalog-image",
+      "fileTitle": "File:S-11 Speargun Support Render.png",
+      "assetPath": "assets/wiki/s-11-speargun.png",
+      "remoteSha1": "6e93fa0fbff085b7dabd8c06421404264738bc52",
+      "remoteTimestamp": "2026-03-18T19:03:01Z"
+    },
+    {
+      "equipmentId": "sa-04-combat-technician",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SA-04 Combat Technician Armor Render.png",
+      "assetPath": "assets/wiki/sa-04-combat-technician.png",
+      "remoteSha1": "52bfe97e61df8e215746a24a933eb8964ebb64d8",
+      "remoteTimestamp": "2026-03-12T21:59:18Z"
+    },
+    {
+      "equipmentId": "sa-12-servo-assisted",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SA-12 Servo Assisted Armor Render.png",
+      "assetPath": "assets/wiki/sa-12-servo-assisted.png",
+      "remoteSha1": "9150502bfc5d7288a68af5191766db17335f584d",
+      "remoteTimestamp": "2026-03-13T20:54:50Z"
+    },
+    {
+      "equipmentId": "sa-25-steel-trooper",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SA-25 Steel Trooper Armor Render.png",
+      "assetPath": "assets/wiki/sa-25-steel-trooper.png",
+      "remoteSha1": "0f5481eca199e86d15d2fc09614bbac11b083f5a",
+      "remoteTimestamp": "2026-03-13T20:54:52Z"
+    },
+    {
+      "equipmentId": "sa-32-dynamo",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SA-32 Dynamo Armor Render.png",
+      "assetPath": "assets/wiki/sa-32-dynamo.png",
+      "remoteSha1": "d1a59f043c2aee964efb505a5113727d8c04381e",
+      "remoteTimestamp": "2026-03-13T20:54:53Z"
+    },
+    {
+      "equipmentId": "sa-7-headfirst",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SA-7 Headfirst Armor Render.png",
+      "assetPath": "assets/wiki/sa-7-headfirst.png",
+      "remoteSha1": "796aa6ee690de7f83d2906eeb53056cfdc4295e5",
+      "remoteTimestamp": "2026-03-10T23:56:16Z"
+    },
+    {
+      "equipmentId": "sa-8-ram",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SA-8 Ram Armor Render.png",
+      "assetPath": "assets/wiki/sa-8-ram.png",
+      "remoteSha1": "f57664c7236e01cf02551100c29e5063f22bb74b",
+      "remoteTimestamp": "2026-03-10T23:56:18Z"
+    },
+    {
+      "equipmentId": "sc-15-drone-master",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SC-15 Drone Master Armor Render.png",
+      "assetPath": "assets/wiki/sc-15-drone-master.png",
+      "remoteSha1": "825e5d9b7d1a39403d4b4f63d917df4de2beb0c1",
+      "remoteTimestamp": "2026-03-12T21:59:19Z"
+    },
+    {
+      "equipmentId": "sc-30-trailblazer-scout",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SC-30 Trailblazer Scout Armor Render.png",
+      "assetPath": "assets/wiki/sc-30-trailblazer-scout.png",
+      "remoteSha1": "0391b26dec3c0eb0dbfcb5ea1f1a691e564db850",
+      "remoteTimestamp": "2026-03-10T23:59:15Z"
+    },
+    {
+      "equipmentId": "sc-34-infiltrator",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SC-34 Infiltrator Armor Render.png",
+      "assetPath": "assets/wiki/sc-34-infiltrator.png",
+      "remoteSha1": "201f6ed4fc5da6f57a3e132e9b80d9578d2e1426",
+      "remoteTimestamp": "2026-03-10T23:59:16Z"
+    },
+    {
+      "equipmentId": "sc-37-legionnaire",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SC-37 Legionnaire Armor Render.png",
+      "assetPath": "assets/wiki/sc-37-legionnaire.png",
+      "remoteSha1": "e35814c3ae84a8cd7190749198250d18b76d8f8f",
+      "remoteTimestamp": "2026-03-11T16:54:29Z"
+    },
+    {
+      "equipmentId": "sg-20-halt",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SG-20 Halt Primary Render.png",
+      "assetPath": "assets/wiki/sg-20-halt.png",
+      "remoteSha1": "baf7754d8c88a2a672cf8a76571d725d83402f48",
+      "remoteTimestamp": "2026-03-18T16:27:57Z"
+    },
+    {
+      "equipmentId": "sg-22-bushwhacker",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SG-22 Bushwhacker Secondary Render.png",
+      "assetPath": "assets/wiki/sg-22-bushwhacker.png",
+      "remoteSha1": "96bab5d6369b829d1ff8ce2e44a757a781361ff6",
+      "remoteTimestamp": "2026-03-18T18:29:22Z"
+    },
+    {
+      "equipmentId": "sg-225-breaker",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SG-225 Breaker Primary Render.png",
+      "assetPath": "assets/wiki/sg-225-breaker.png",
+      "remoteSha1": "2c7fc4d737a708532e65352e50bfdee900b93e16",
+      "remoteTimestamp": "2026-03-18T16:27:59Z"
+    },
+    {
+      "equipmentId": "sg-225ie-breaker-incendiary",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SG-225IE Breaker Incendiary Primary Render.png",
+      "assetPath": "assets/wiki/sg-225ie-breaker-incendiary.png",
+      "remoteSha1": "29206cf6cbeaf292703309ff09536b0976f5fc66",
+      "remoteTimestamp": "2026-03-18T16:28:01Z"
+    },
+    {
+      "equipmentId": "sg-225sp-breaker-spray-pray",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SG-225SP Breaker Spray&Pray Primary Render.png",
+      "assetPath": "assets/wiki/sg-225sp-breaker-spray-pray.png",
+      "remoteSha1": "e050a47daf646ae2e4a40bef79f8937345651407",
+      "remoteTimestamp": "2026-03-18T16:31:25Z"
+    },
+    {
+      "equipmentId": "sg-451-cookout",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SG-451 Cookout Primary Render.png",
+      "assetPath": "assets/wiki/sg-451-cookout.png",
+      "remoteSha1": "a1febd9804c816186b38ed28562d793a303925a0",
+      "remoteTimestamp": "2026-03-18T16:27:49Z"
+    },
+    {
+      "equipmentId": "sg-8-punisher",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SG-8 Punisher Primary Render.png",
+      "assetPath": "assets/wiki/sg-8-punisher.png",
+      "remoteSha1": "c4306767d681a6bf862da81cd65924379472c948",
+      "remoteTimestamp": "2026-03-18T16:27:53Z"
+    },
+    {
+      "equipmentId": "sg-88-break-action-shotgun",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SG-88 Break-Action Shotgun Support Render.png",
+      "assetPath": "assets/wiki/sg-88-break-action-shotgun.png",
+      "remoteSha1": "9db67860be84e71dec72359e3c006777b65569f7",
+      "remoteTimestamp": "2025-10-08T13:37:32Z"
+    },
+    {
+      "equipmentId": "sg-8p-punisher-plasma",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SG-8P Punisher Plasma Primary Render.png",
+      "assetPath": "assets/wiki/sg-8p-punisher-plasma.png",
+      "remoteSha1": "1c38be9599363d5c49ad295a4e236c66e0454f06",
+      "remoteTimestamp": "2026-03-18T16:48:27Z"
+    },
+    {
+      "equipmentId": "sg-8s-slugger",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SG-8S Slugger Primary Render.png",
+      "assetPath": "assets/wiki/sg-8s-slugger.png",
+      "remoteSha1": "6296bacaffe9bdcb4f7442637dc70651c0bd1420",
+      "remoteTimestamp": "2026-03-18T16:27:55Z"
+    },
+    {
+      "equipmentId": "sg-97-sweeper",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SG-97 Shotgun Primary Render.png",
+      "assetPath": "assets/wiki/sg-97-sweeper.png",
+      "remoteSha1": "255318354e890480b87eb5929a25feb68b3cd715",
+      "remoteTimestamp": "2026-03-18T16:08:48Z"
+    },
+    {
+      "equipmentId": "sh-20-ballistic-shield-backpack",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Ballistic Shield Backpack Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/sh-20-ballistic-shield-backpack.svg",
+      "remoteSha1": "6697d4aa8470691fbf2ce8485cbbe725dadc3d12",
+      "remoteTimestamp": "2026-06-19T08:50:04Z"
+    },
+    {
+      "equipmentId": "sh-32-shield-generator-pack",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Shield Generator Pack Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/sh-32-shield-generator-pack.svg",
+      "remoteSha1": "2f4980292556f64a7d68d012e1c5abcc0974a504",
+      "remoteTimestamp": "2026-06-19T08:51:52Z"
+    },
+    {
+      "equipmentId": "sh-51-directional-shield",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Directional Shield Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/sh-51-directional-shield.svg",
+      "remoteSha1": "a0bd68e0bfdae54f97b923e815383a23c57a2309",
+      "remoteTimestamp": "2026-06-19T08:50:15Z"
+    },
+    {
+      "equipmentId": "smg-203-gallant",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SMG-203 Gallant Primary Render.png",
+      "assetPath": "assets/wiki/smg-203-gallant.png",
+      "remoteSha1": "2fac8612ae4597c152dbf220a088c897ead083ed",
+      "remoteTimestamp": "2026-04-29T20:31:56Z"
+    },
+    {
+      "equipmentId": "smg-32-reprimand",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SMG-32 Reprimand Primary Render.png",
+      "assetPath": "assets/wiki/smg-32-reprimand.png",
+      "remoteSha1": "19d16db28e1bec27bb55e4c537a4cbd62198219a",
+      "remoteTimestamp": "2026-03-18T17:49:12Z"
+    },
+    {
+      "equipmentId": "smg-37-defender",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SMG-37 Defender Primary Render.png",
+      "assetPath": "assets/wiki/smg-37-defender.png",
+      "remoteSha1": "b3da923cc8d7c4d23c538d228dbb3b59d1e9cb87",
+      "remoteTimestamp": "2026-03-18T17:49:14Z"
+    },
+    {
+      "equipmentId": "smg-72-pummeler",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SMG-72 Pummeler Primary Render.png",
+      "assetPath": "assets/wiki/smg-72-pummeler.png",
+      "remoteSha1": "2acd0ee8922810f6c86468ddaaefdc9d2c1ed0f2",
+      "remoteTimestamp": "2026-03-18T17:49:16Z"
+    },
+    {
+      "equipmentId": "smg-flam-34-stoker",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SMGFLAM-34 Stoker Primary Icon.png",
+      "assetPath": "assets/wiki/smg-flam-34-stoker.png",
+      "remoteSha1": "fb6998c9a9a2c938d95b1b004f03c4ccfb8d0ac7",
+      "remoteTimestamp": "2026-03-17T18:49:23Z"
+    },
+    {
+      "equipmentId": "sr-18-roadblock",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SR-18 Roadblock Armor Render.png",
+      "assetPath": "assets/wiki/sr-18-roadblock.png",
+      "remoteSha1": "4314dc37c3fad070e5082d6a758516e07dfb6c3f",
+      "remoteTimestamp": "2026-03-12T21:07:40Z"
+    },
+    {
+      "equipmentId": "sr-24-street-scout",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SR-24 Street Scout Armor Render.png",
+      "assetPath": "assets/wiki/sr-24-street-scout.png",
+      "remoteSha1": "24d174006ce7af6f31f4ded129b25128c8500644",
+      "remoteTimestamp": "2026-03-11T23:45:25Z"
+    },
+    {
+      "equipmentId": "sr-64-cinderblock",
+      "purpose": "catalog-image",
+      "fileTitle": "File:SR-64 Cinderblock Armor Render.png",
+      "assetPath": "assets/wiki/sr-64-cinderblock.png",
+      "remoteSha1": "8dea07403fce13836e34fd491b3b8733f7cd6724",
+      "remoteTimestamp": "2026-03-11T23:45:26Z"
+    },
+    {
+      "equipmentId": "sta-11-smg",
+      "purpose": "catalog-image",
+      "fileTitle": "File:StA-11 SMG Primary Render.png",
+      "assetPath": "assets/wiki/sta-11-smg.png",
+      "remoteSha1": "0bd19ee1a56106576df2b3cd0f2805ce6a0f4ece",
+      "remoteTimestamp": "2026-03-18T17:49:19Z"
+    },
+    {
+      "equipmentId": "sta-52-assault-rifle",
+      "purpose": "catalog-image",
+      "fileTitle": "File:StA-52 Assault Rifle Primary Render.png",
+      "assetPath": "assets/wiki/sta-52-assault-rifle.png",
+      "remoteSha1": "94bd97571fdf5e78ef2b13334987bdf62b2cd812",
+      "remoteTimestamp": "2026-03-18T17:09:48Z"
+    },
+    {
+      "equipmentId": "sta-x3-w-a-s-p-launcher",
+      "purpose": "catalog-image",
+      "fileTitle": "File:StA-X3 W.A.S.P. Launcher Weapon and Backpack Support Render.png",
+      "assetPath": "assets/wiki/sta-x3-w-a-s-p-launcher.png",
+      "remoteSha1": "e04dde6e7b5bfbce0ae87c1f27cf38b0c2c26130",
+      "remoteTimestamp": "2026-05-03T21:34:10Z"
+    },
+    {
+      "equipmentId": "td-220-bastion-mk-xvi",
+      "purpose": "catalog-image",
+      "fileTitle": "File:Bastion MK XVI Stratagem Icon Background.svg",
+      "assetPath": "assets/wiki/td-220-bastion-mk-xvi.svg",
+      "remoteSha1": "9de9524faa59cf825aad988b45b65b59516f7fb1",
+      "remoteTimestamp": "2026-06-19T08:50:05Z"
+    },
+    {
+      "equipmentId": "ted-63-dynamite",
+      "purpose": "catalog-image",
+      "fileTitle": "File:TED-63 Dynamite Throwable Render.png",
+      "assetPath": "assets/wiki/ted-63-dynamite.png",
+      "remoteSha1": "e607be06b4a1fe417c4a9a8570cafc91e5de8576",
+      "remoteTimestamp": "2026-03-18T18:35:44Z"
+    },
+    {
+      "equipmentId": "tg-122-demo-trooper",
+      "purpose": "catalog-image",
+      "fileTitle": "File:TG-122 Demo-Trooper Armor Icon.png",
+      "assetPath": "assets/wiki/tg-122-demo-trooper.png",
+      "remoteSha1": "8d1fc7b0ef355218abde291c454f811a03a45521",
+      "remoteTimestamp": "2026-08-12T18:02:15Z"
+    },
+    {
+      "equipmentId": "tg-8-sharpshooter",
+      "purpose": "catalog-image",
+      "fileTitle": "File:TG-8 Sharpshooter Armor Icon.png",
+      "assetPath": "assets/wiki/tg-8-sharpshooter.png",
+      "remoteSha1": "9bd3680fc7a0b65b6270564180c03a81da1903fd",
+      "remoteTimestamp": "2026-08-12T18:03:49Z"
+    },
+    {
+      "equipmentId": "tm-1-lure-mine",
+      "purpose": "catalog-image",
+      "fileTitle": "File:TM-1 Lure Mine Armed.png",
+      "assetPath": "assets/wiki/tm-1-lure-mine.png",
+      "remoteSha1": "f53c2bc3549c1c5fa7313e64a4b33d115da21b9b",
+      "remoteTimestamp": "2026-02-17T13:46:47Z"
+    },
+    {
+      "equipmentId": "tr-117-alpha-commander",
+      "purpose": "catalog-image",
+      "fileTitle": "File:TR-117 Alpha Commander Armor Render.png",
+      "assetPath": "assets/wiki/tr-117-alpha-commander.png",
+      "remoteSha1": "bb4656a6217280e2e7d51e1b1e435d345be45f29",
+      "remoteTimestamp": "2026-03-11T21:58:10Z"
+    },
+    {
+      "equipmentId": "tr-40-gold-eagle",
+      "purpose": "catalog-image",
+      "fileTitle": "File:TR-40 Gold Eagle Armor Render.png",
+      "assetPath": "assets/wiki/tr-40-gold-eagle.png",
+      "remoteSha1": "3c27f1edaccbdeaab16878126b80d5f780d9445b",
+      "remoteTimestamp": "2026-03-10T23:59:17Z"
+    },
+    {
+      "equipmentId": "tr-62-knight",
+      "purpose": "catalog-image",
+      "fileTitle": "File:TR-62 Knight Armor Render.png",
+      "assetPath": "assets/wiki/tr-62-knight.png",
+      "remoteSha1": "a610215a1d934364fc6f7f034ad7f5e89e68e619",
+      "remoteTimestamp": "2026-03-10T23:56:20Z"
+    },
+    {
+      "equipmentId": "tr-7-ambassador-of-the-brand",
+      "purpose": "catalog-image",
+      "fileTitle": "File:TR-7 Ambassador of the Brand Armor Render.png",
+      "assetPath": "assets/wiki/tr-7-ambassador-of-the-brand.png",
+      "remoteSha1": "014960ccbab7095eff52238c031f5740838c5d20",
+      "remoteTimestamp": "2026-03-10T23:56:19Z"
+    },
+    {
+      "equipmentId": "tr-9-cavalier-of-democracy",
+      "purpose": "catalog-image",
+      "fileTitle": "File:TR-9 Cavalier of Democracy Armor Render.png",
+      "assetPath": "assets/wiki/tr-9-cavalier-of-democracy.png",
+      "remoteSha1": "3bd192b2d156e4953f8c50730a52ecd5cbaf7977",
+      "remoteTimestamp": "2026-03-11T11:44:35Z"
+    },
+    {
+      "equipmentId": "tx-41-sterilizer",
+      "purpose": "catalog-image",
+      "fileTitle": "File:TX-41 Sterilizer Support Render.png",
+      "assetPath": "assets/wiki/tx-41-sterilizer.png",
+      "remoteSha1": "7f1981f62fd7d7769e31892cde49f7c4c1d3cc47",
+      "remoteTimestamp": "2025-06-22T08:08:02Z"
+    },
+    {
+      "equipmentId": "uf-16-inspector",
+      "purpose": "catalog-image",
+      "fileTitle": "File:UF-16 Inspector Armor Render.png",
+      "assetPath": "assets/wiki/uf-16-inspector.png",
+      "remoteSha1": "ea246d0b4e6f394f2c5968655045f373b066b75d",
+      "remoteTimestamp": "2026-03-10T23:59:18Z"
+    },
+    {
+      "equipmentId": "uf-50-bloodhound",
+      "purpose": "catalog-image",
+      "fileTitle": "File:UF-50 Bloodhound Armor Render.png",
+      "assetPath": "assets/wiki/uf-50-bloodhound.png",
+      "remoteSha1": "39f25d0924694b667e30b1f2de4e6f786c8990e8",
+      "remoteTimestamp": "2026-03-10T23:59:19Z"
+    },
+    {
+      "equipmentId": "uf-84-doubt-killer",
+      "purpose": "catalog-image",
+      "fileTitle": "File:UF-84 Doubt Killer Armor Render.png",
+      "assetPath": "assets/wiki/uf-84-doubt-killer.png",
+      "remoteSha1": "f3347bdc50451180a1a4ed170de396d542d874e9",
+      "remoteTimestamp": "2026-03-10T23:56:21Z"
+    },
+    {
+      "equipmentId": "vg-70-variable",
+      "purpose": "catalog-image",
+      "fileTitle": "File:VG-70 Variable Primary Render.png",
+      "assetPath": "assets/wiki/vg-70-variable.png",
+      "remoteSha1": "8e909cbb9341df7ae0a8855e9b7b3a0071c1eaaf",
+      "remoteTimestamp": "2026-03-18T17:57:40Z"
+    },
+    {
+      "equipmentId": "40-k-meltagun",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 20141,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Support Weapon Stratagem Fallback Icon.svg",
+      "remoteSha1": "255891a8105089e61e8af5fc71a29a7d2a7ce55e",
+      "remoteTimestamp": "2026-06-19T08:42:20Z"
+    },
+    {
+      "equipmentId": "ac-8-autocannon",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 2233,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Autocannon Stratagem Icon Background.svg",
+      "remoteSha1": "556cf5f98741db623def761c34801a9d727ea493",
+      "remoteTimestamp": "2026-06-19T08:50:03Z"
+    },
+    {
+      "equipmentId": "apw-1-anti-materiel-rifle",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 2356,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Anti-Materiel Rifle Stratagem Icon Background.svg",
+      "remoteSha1": "37652d5a137eeb692e343ee62178110117f0e211",
+      "remoteTimestamp": "2026-06-19T08:49:58Z"
+    },
+    {
+      "equipmentId": "arc-3-arc-thrower",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 2378,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Arc Thrower Stratagem Icon Background.svg",
+      "remoteSha1": "5909af2930078db52f9f18b5c53e322856f838ad",
+      "remoteTimestamp": "2026-06-19T08:50:01Z"
+    },
+    {
+      "equipmentId": "b-flam-80-cremator",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 17273,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Cremator Stratagem Icon Background.svg",
+      "remoteSha1": "ce54a78379be2b6a0760200571122dbfae2975eb",
+      "remoteTimestamp": "2026-06-19T08:50:12Z"
+    },
+    {
+      "equipmentId": "b-md-c4-pack",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 15427,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:C4 Pack Stratagem Icon Background.svg",
+      "remoteSha1": "bfb8f2d9d71455038168f66ff5b775e9024d57f9",
+      "remoteTimestamp": "2026-06-19T08:50:08Z"
+    },
+    {
+      "equipmentId": "cqc-1-one-true-flag",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 12041,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:One True Flag Stratagem Icon Background.svg",
+      "remoteSha1": "e919beb969325bcec21df7b9bbc87b11b5bcc747",
+      "remoteTimestamp": "2026-06-19T08:51:32Z"
+    },
+    {
+      "equipmentId": "cqc-20-breaching-hammer",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 15876,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Breaching Hammer Stratagem Icon Background.svg",
+      "remoteSha1": "65dd9b51d118410a1a896311edfe35f0c9816ccc",
+      "remoteTimestamp": "2026-06-19T08:50:06Z"
+    },
+    {
+      "equipmentId": "cqc-9-defoliation-tool",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 14690,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Defoliation Tool Stratagem Icon Background.svg",
+      "remoteSha1": "418556695e5b1004f857589cc19e4c99a24835a4",
+      "remoteTimestamp": "2026-06-19T08:50:14Z"
+    },
+    {
+      "equipmentId": "eat-17-expendable-anti-tank",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 2358,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Expendable Anti-Tank Stratagem Icon Background.svg",
+      "remoteSha1": "d52ad89ac2c636a0c8b647b21db88f10d9b4a92c",
+      "remoteTimestamp": "2026-06-19T08:50:27Z"
+    },
+    {
+      "equipmentId": "eat-411-leveller",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 15873,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Leveller Stratagem Icon Background.svg",
+      "remoteSha1": "8f0c64504af62e4a602699ac647e07b331e6ffd6",
+      "remoteTimestamp": "2026-06-19T08:51:28Z"
+    },
+    {
+      "equipmentId": "eat-700-expendable-napalm",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 13847,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Expendable Napalm Stratagem Icon Background.svg",
+      "remoteSha1": "1177782e88094e486ff0a64d139042b26c3183d7",
+      "remoteTimestamp": "2026-06-19T08:50:28Z"
+    },
+    {
+      "equipmentId": "faf-14-spear",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 1577,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Spear Stratagem Icon Background.svg",
+      "remoteSha1": "3f762303e3cf18323fd67dd383caaddfa1f5e6ff",
+      "remoteTimestamp": "2026-06-19T08:51:55Z"
+    },
+    {
+      "equipmentId": "flam-40-flamethrower",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 2360,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Flamethrower Stratagem Icon Background.svg",
+      "remoteSha1": "648ed8966ce9b68beb8560188217d1584cb1c0d7",
+      "remoteTimestamp": "2026-06-19T08:50:30Z"
+    },
+    {
+      "equipmentId": "gl-21-grenade-launcher",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 2256,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Grenade Launcher Stratagem Icon Background.svg",
+      "remoteSha1": "168a6049eb1137754d4112fc3ad0c6047385dad5",
+      "remoteTimestamp": "2026-06-19T08:49:54Z"
+    },
+    {
+      "equipmentId": "gl-28-belt-fed-grenade-launcher",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 15878,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Belt-Fed Grenade Launcher Stratagem Icon Background.svg",
+      "remoteSha1": "4c99f199de4ad82163d18b9a7561ad380ad3e2e1",
+      "remoteTimestamp": "2026-06-19T08:50:06Z"
+    },
+    {
+      "equipmentId": "gl-52-de-escalator",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 12723,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:De-Escalator Stratagem Icon Background.svg",
+      "remoteSha1": "7a9dca4b60ed6f9e126aeaa3dc391441fec43c30",
+      "remoteTimestamp": "2026-06-19T08:50:13Z"
+    },
+    {
+      "equipmentId": "gr-8-recoilless-rifle",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 2359,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Recoilless Rifle Stratagem Icon Background.svg",
+      "remoteSha1": "aaa0b79ab962205faa4d042bce8ba02b08761870",
+      "remoteTimestamp": "2026-06-19T08:51:46Z"
+    },
+    {
+      "equipmentId": "las-98-laser-cannon",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 2374,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Laser Cannon Stratagem Icon Background.svg",
+      "remoteSha1": "21b5f695ad9552a1581f765320060ec9f3379c22",
+      "remoteTimestamp": "2026-06-19T08:51:27Z"
+    },
+    {
+      "equipmentId": "las-99-quasar-cannon",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 4136,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Quasar Cannon Stratagem Icon Background.svg",
+      "remoteSha1": "559764fa593bbd74f65d8e3eda16b83ef44b839c",
+      "remoteTimestamp": "2026-06-19T08:51:44Z"
+    },
+    {
+      "equipmentId": "m-1000-maxigun",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 14686,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Maxigun Stratagem Icon Background.svg",
+      "remoteSha1": "d08884af73a3dd0b303d3a0e6470ee6ca344cb66",
+      "remoteTimestamp": "2026-06-19T08:51:31Z"
+    },
+    {
+      "equipmentId": "m-105-stalwart",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 2357,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Stalwart Stratagem Icon Background.svg",
+      "remoteSha1": "89f988e49ae38051549f280bf5afa966df09c4e0",
+      "remoteTimestamp": "2026-06-19T08:51:56Z"
+    },
+    {
+      "equipmentId": "mg-206-heavy-machine-gun",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 4137,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Heavy Machine Gun Stratagem Icon Background.svg",
+      "remoteSha1": "7f60eb69cd8ac6a62783f3e7ddaab082ef6b058b",
+      "remoteTimestamp": "2026-06-19T08:49:57Z"
+    },
+    {
+      "equipmentId": "mg-43-machine-gun",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 2268,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Machine Gun Stratagem Icon Background.svg",
+      "remoteSha1": "35fc07a3a1cf8d955de9dc0799592ab89e75e380",
+      "remoteTimestamp": "2026-06-19T08:51:30Z"
+    },
+    {
+      "equipmentId": "mgx-42-bullet-storm",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 18421,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Bullet Storm Stratagem Icon Background.svg",
+      "remoteSha1": "097328f0102ba5a6fcf42257133c19dae73c9397",
+      "remoteTimestamp": "2026-06-19T08:50:08Z"
+    },
+    {
+      "equipmentId": "mls-4x-commando",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 7111,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Commando Stratagem Icon Background.svg",
+      "remoteSha1": "6ea89693883e3e9cc448996260ddf69cb4e6db83",
+      "remoteTimestamp": "2026-06-19T08:50:10Z"
+    },
+    {
+      "equipmentId": "ms-11-solo-silo",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 13846,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Solo Silo Stratagem Icon Background.svg",
+      "remoteSha1": "69f9612f9ae99c079456a8b3766b72d9b031f2a6",
+      "remoteTimestamp": "2026-06-19T08:51:53Z"
+    },
+    {
+      "equipmentId": "plas-45-epoch",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 13327,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Epoch Stratagem Icon Background.svg",
+      "remoteSha1": "bfe6b15ea844b615369c4fd391445fd6f6f2cc34",
+      "remoteTimestamp": "2026-06-19T08:50:26Z"
+    },
+    {
+      "equipmentId": "rl-77-airburst-rocket-launcher",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 5878,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Airburst Rocket Launcher Stratagem Icon Background.svg",
+      "remoteSha1": "6755a737c16f92a9fdbbc69139f50d8d99b1d2b6",
+      "remoteTimestamp": "2026-06-19T08:49:57Z"
+    },
+    {
+      "equipmentId": "rs-422-railgun",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 2361,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Railgun Stratagem Icon Background.svg",
+      "remoteSha1": "7030a2a9b2a0bfc56b56d40f3e9a851aba5bed23",
+      "remoteTimestamp": "2026-06-19T08:51:45Z"
+    },
+    {
+      "equipmentId": "s-11-speargun",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 13848,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Speargun Stratagem Icon Background.svg",
+      "remoteSha1": "2f0be9d0e2ec0e4048db7be525ffe29c35dfb34f",
+      "remoteTimestamp": "2026-06-19T08:51:55Z"
+    },
+    {
+      "equipmentId": "sta-x3-w-a-s-p-launcher",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 9150,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:W.A.S.P. Launcher Stratagem Icon Background.svg",
+      "remoteSha1": "a33ba85dda61f8e1e900584c97fab830a30268b0",
+      "remoteTimestamp": "2026-06-19T08:52:02Z"
+    },
+    {
+      "equipmentId": "tx-41-sterilizer",
+      "purpose": "loadout-icon-watch",
+      "equipmentPageId": 7450,
+      "sourceField": "rendered-infobox-file",
+      "fileTitle": "File:Sterilizer Stratagem Icon Background.svg",
+      "remoteSha1": "0a42db75c76594bba142abe9e8d438c67bed69ce",
+      "remoteTimestamp": "2026-06-19T08:51:57Z"
+    }
+  ]
+}

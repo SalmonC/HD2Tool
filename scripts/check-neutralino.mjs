@@ -19,8 +19,12 @@ const required = [
 ];
 if (required.some((value) => typeof value !== "string" || value.length === 0))
   throw new Error("Neutralino 配置缺少必要字段。");
-if (config.enableNativeAPI !== false)
-  throw new Error("本项目不需要 Native API，必须保持 enableNativeAPI=false。");
+if (
+  config.applicationId !== "com.hd2tool.supplybook" ||
+  config.port !== 47831 ||
+  config.enableNativeAPI !== false
+)
+  throw new Error("Neutralino 必须使用固定端口，并保持 Native API 关闭。");
 if (
   config.cli.resourcesPath !== "/dist" ||
   config.cli.distributionPath !== "/desktop-dist"
@@ -48,5 +52,5 @@ if (requireBinaries) {
   }
 }
 console.log(
-  `Neutralino config OK: ${config.cli.binaryName}, framework ${config.cli.binaryVersion}, command: neu build --embed-resources`,
+  `Neutralino config OK: ${config.cli.binaryName}, framework ${config.cli.binaryVersion}, fixed port ${config.port}`,
 );

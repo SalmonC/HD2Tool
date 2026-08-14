@@ -9,19 +9,140 @@ import {
   displayableCombatComponents,
   hasDisplayableCombatFields,
   passiveLabel,
+  radiusText,
   weaponTypeLabel,
 } from "../lib/display";
 import { acquisitionAvailable } from "../lib/currency";
 
 describe("light catalog", () => {
   it("keeps the accepted catalog and community aliases", () => {
-    expect(catalogItems).toHaveLength(292);
+    expect(catalogItems).toHaveLength(298);
     expect([...aliasesById.values()].flat()).toHaveLength(48);
     expect([...aliasesById.values()].flat()).not.toContain("(Armor)");
     expect(
       catalogItems.some((item) => item.image.path.includes("placeholder")),
     ).toBe(false);
-    expect(catalog.meta.demolitionSource?.importedComponents).toBe(183);
+    expect(catalog.meta.demolitionSource?.importedComponents).toBe(188);
+  });
+
+  it("includes the 1.007.000 warbond equipment and balance changes", () => {
+    expect(
+      catalog.warbonds.find(
+        (entry) => entry.id === "castellans-creed-legendary",
+      ),
+    ).toMatchObject({
+      superCredits: 1500,
+      pages: [
+        { page: 1, cumulativeMedals: 0 },
+        { page: 2, cumulativeMedals: null },
+        { page: 3, cumulativeMedals: 210 },
+      ],
+    });
+    expect(findEquipment("r-40-k-hot-shot-marksman-rifle")).toMatchObject({
+      productKind: "primary-weapon",
+      acquisition: { page: 1, itemMedals: 35 },
+      handling: { magazine: 12, spareMagazines: 7, recoil: 18.75 },
+      combat: {
+        components: [
+          {
+            fields: {
+              standardDamage: 275,
+              durableDamage: 40,
+              armorPenetration: { value: 3 },
+              demolitionForce: 10,
+            },
+          },
+        ],
+      },
+    });
+    expect(findEquipment("40-k-meltagun")).toMatchObject({
+      productKind: "support-weapon",
+      acquisition: { page: 3, itemMedals: 110 },
+      deployment: { cooldownSeconds: 410 },
+      combat: {
+        components: [
+          {
+            fields: {
+              standardDamage: 2600,
+              durableDamage: 2600,
+              armorPenetration: { value: 7 },
+              demolitionForce: 30,
+            },
+          },
+        ],
+      },
+    });
+    expect(findEquipment("p-40-k-bolt-pistol")).toMatchObject({
+      localization: { status: "community-reviewed" },
+      acquisition: { page: 2, itemMedals: 50 },
+      combat: {
+        primaryComponentId: "20140-component-1",
+        components: [
+          {
+            type: "projectile",
+            fields: {
+              standardDamage: 325,
+              durableDamage: 115,
+              armorPenetration: { value: 4 },
+              demolitionForce: 20,
+            },
+          },
+          {
+            type: "explosion",
+            fields: {
+              standardDamage: 175,
+              durableDamage: 175,
+              armorPenetration: { value: 3 },
+              demolitionForce: 10,
+              innerRadius: 1,
+              outerRadius: 3.5,
+            },
+          },
+        ],
+      },
+    });
+    expect(findEquipment("g-40-k-melta-mine")).toMatchObject({
+      localization: { status: "community-reviewed" },
+      alternateNames: ["G/40-K Meltamine"],
+      acquisition: { page: 2, itemMedals: 50 },
+      combat: {
+        components: [
+          {
+            fields: {
+              standardDamage: 2000,
+              durableDamage: 2000,
+              armorPenetration: { value: 7 },
+              demolitionForce: 40,
+              innerRadius: 2.5,
+              outerRadius: 6,
+            },
+          },
+        ],
+      },
+    });
+    for (const [id, armorClass, rating] of [
+      ["tg-8-sharpshooter", "Medium", 100],
+      ["tg-122-demo-trooper", "Heavy", 150],
+    ] as const)
+      expect(findEquipment(id)).toMatchObject({
+        localization: { status: "community-reviewed" },
+        armor: { class: armorClass, rating, passive: "True Grit" },
+      });
+    expect(findEquipment("p-113-verdict")?.handling?.spareMagazines).toBe(10);
+    expect(findEquipment("m6c-socom-pistol")?.handling?.spareMagazines).toBe(
+      10,
+    );
+    expect(findEquipment("p-19-redeemer")?.handling?.spareMagazines).toBe(6);
+    expect(
+      findEquipment("md-17-anti-tank-mines")?.combat?.components[0]?.fields
+        .demolitionForce,
+    ).toBe(40);
+  });
+
+  it("formats sourced attack radii without inventing a missing bound", () => {
+    expect(radiusText({ innerRadius: 1, outerRadius: 3.5 })).toBe("1–3.5 米");
+    expect(radiusText({ outerRadius: 6 })).toBe("外半径 6 米");
+    expect(radiusText({ innerRadius: 2.5 })).toBe("内半径 2.5 米");
   });
 
   it("keeps high-risk identities and classifications distinct", () => {

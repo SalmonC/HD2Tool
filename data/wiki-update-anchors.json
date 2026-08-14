@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "image": {
+    "equipmentId": "b-flam-80-cremator",
+    "equipmentPageId": 17273,
+    "purpose": "loadout-icon-watch",
+    "fileTitle": "File:Cremator Stratagem Icon Background.svg",
+    "remoteSha1": "ce54a78379be2b6a0760200571122dbfae2975eb",
+    "remoteTimestamp": "2026-06-19T08:50:12Z",
+    "meaning": "If this loadout icon changes, inspect and sync the full support-weapon icon set."
+  },
+  "stats": {
+    "equipmentId": "g-40-k-melta-mine",
+    "pageId": 20142,
+    "section": "Detailed Weapon Statistics",
+    "template": "Attack_Data_Weapon",
+    "argument": "G/40-K Melta Mine",
+    "baselineState": "AVAILABLE",
+    "baselineSignature": "8e1c05ddcfa2ddf2181d15b262ba8c167ccee928030570ee1471fa999fa81b7d",
+    "baselinePageRevision": 128835,
+    "meaning": "If detailed attack data appears or changes, inspect and fill all newly released equipment stats."
+  }
+}
