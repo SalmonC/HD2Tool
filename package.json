@@ -1,6 +1,6 @@
 {
   "name": "hd2-supply-book",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "type": "module",
   "description": "HD2 Supply Book: offline equipment lookup and unlock planning.",
@@ -14,6 +14,9 @@
     "format:check": "prettier --check .",
     "format": "prettier --write .",
     "validate:data": "node scripts/validate-data.mjs",
+    "images:check": "node scripts/check-wiki-images.mjs",
+    "images:accept": "node scripts/check-wiki-images.mjs --accept",
+    "updates:check": "node scripts/check-update-anchors.mjs",
     "smoke": "node scripts/smoke.mjs",
     "size:check": "node scripts/size-budget.mjs",
     "desktop:check": "node scripts/check-neutralino.mjs",

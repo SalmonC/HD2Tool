@@ -1,28 +1,52 @@
 {
   "meta": {
     "game": "HELLDIVERS 2",
-    "gameBuild": null,
-    "dataVersion": "2026.08.09.1",
-    "capturedAt": "2026-08-09T13:54:37.506Z",
+    "gameBuild": "1.007.000",
+    "dataVersion": "2026.08.14.1",
+    "capturedAt": "2026-08-14T03:25:51.159Z",
     "demolitionSource": {
-      "capturedAt": "2026-08-09T13:54:37.506Z",
-      "importedComponents": 183,
+      "capturedAt": "2026-08-14T03:25:51.159Z",
+      "importedComponents": 188,
       "modules": [
         {
           "title": "Module:Decodedata-Attacks/data.json",
-          "revision": 125929
+          "revision": 128157
         },
         {
           "title": "Module:Decodedata-Attacks/weapons_data.json",
-          "revision": 127459
+          "revision": 128784
         },
         {
           "title": "Module:Decodedata-Attacks/stratagems_data.json",
-          "revision": 127880
+          "revision": 128799
         },
         {
           "title": "Module:Decodedata-Weapons/data.json",
           "revision": 39038
+        }
+      ],
+      "pages": [
+        {
+          "title": "R/40-K Hot-Shot Marksman Rifle",
+          "revision": 128812
+        },
+        {
+          "title": "P/40-K Bolt Pistol",
+          "revision": 128871
+        },
+        {
+          "title": "40-K Meltagun",
+          "revision": 128830
+        },
+        {
+          "title": "G/40-K Melta Mine",
+          "revision": 128835
+        }
+      ],
+      "patches": [
+        {
+          "title": "Devoid of Liberty: 7.0.0",
+          "url": "https://store.steampowered.com/news/app/553850/view/703276586134143012"
         }
       ]
     }
@@ -651,9 +675,9 @@
     },
     {
       "id": "castellans-creed-legendary",
-      "nameZh": "Helldivers 2 X Warhammer 40k",
+      "nameZh": "卡斯特兰的信条",
       "nameEn": "Castellan’s Creed",
-      "superCredits": null,
+      "superCredits": 1500,
       "pages": [
         {
           "page": 1,
@@ -665,17 +689,78 @@
         },
         {
           "page": 3,
-          "cumulativeMedals": null
+          "cumulativeMedals": 210
         }
       ],
       "wiki": {
         "pageId": 19094,
-        "revision": 127718,
+        "revision": 128669,
         "url": "https://helldivers.wiki.gg/wiki/Castellan%E2%80%99s_Creed_Legendary_Warbond"
       }
     }
   ],
   "items": [
+    {
+      "id": "40-k-meltagun",
+      "productKind": "support-weapon",
+      "model": "40-K",
+      "nameZh": "40-K热熔枪",
+      "nameEn": "40-K Meltagun",
+      "localization": {
+        "status": "community-reviewed"
+      },
+      "weaponType": "Heavy Energy-Based",
+      "image": {
+        "path": "assets/wiki/40-k-meltagun.png",
+        "alt": "40-K热熔枪",
+        "filePage": "https://helldivers.wiki.gg/wiki/File:40-K_Meltagun_Support_Render.png",
+        "license": "License/Arrowhead"
+      },
+      "wiki": {
+        "pageId": 20141,
+        "revision": 128830,
+        "url": "https://helldivers.wiki.gg/wiki/40-K_Meltagun"
+      },
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "castellans-creed-legendary",
+        "page": 3,
+        "itemMedals": 110
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "20141-component-1",
+            "type": "beam",
+            "label": "Laser",
+            "fields": {
+              "standardDamage": 2600,
+              "durableDamage": 2600,
+              "armorPenetration": {
+                "value": 7,
+                "labelZh": "反坦克 III"
+              },
+              "demolitionForce": 30,
+              "stagger": 40,
+              "push": 40
+            }
+          }
+        ],
+        "primaryComponentId": "20141-component-1"
+      },
+      "handling": {
+        "magazine": 3,
+        "spareMagazines": 4,
+        "fireRate": 50,
+        "recoil": 2.125
+      },
+      "deployment": {
+        "type": "Support Weapon",
+        "code": ["down", "left", "up", "left", "left", "down"],
+        "cooldownSeconds": 410,
+        "callInSeconds": 7.75
+      }
+    },
     {
       "id": "a-35-recon",
       "productKind": "body-armor",
@@ -6982,6 +7067,61 @@
       }
     },
     {
+      "id": "g-40-k-melta-mine",
+      "productKind": "grenade",
+      "model": "G/40-K",
+      "nameZh": "G/40-K热熔地雷",
+      "nameEn": "G/40-K Melta Mine",
+      "localization": {
+        "status": "community-reviewed"
+      },
+      "weaponType": "Special",
+      "alternateNames": ["G/40-K Meltamine"],
+      "image": {
+        "path": "assets/wiki/g-40-k-melta-mine.png",
+        "alt": "G/40-K热熔地雷",
+        "filePage": "https://helldivers.wiki.gg/wiki/File:G-40-K_Melta_Mine_Throwable_Render.png",
+        "license": "License/Arrowhead"
+      },
+      "wiki": {
+        "pageId": 20142,
+        "revision": 128835,
+        "url": "https://helldivers.wiki.gg/wiki/G/40-K_Melta_Mine"
+      },
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "castellans-creed-legendary",
+        "page": 2,
+        "itemMedals": 50
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "20142-component-1",
+            "type": "explosion",
+            "label": "Explosion",
+            "fields": {
+              "standardDamage": 2000,
+              "durableDamage": 2000,
+              "armorPenetration": {
+                "value": 7,
+                "labelZh": "反坦克 III"
+              },
+              "demolitionForce": 40,
+              "stagger": 40,
+              "push": 40,
+              "innerRadius": 2.5,
+              "outerRadius": 6
+            }
+          }
+        ],
+        "primaryComponentId": "20142-component-1"
+      },
+      "handling": {
+        "magazine": 4
+      }
+    },
+    {
       "id": "g-48-giga-grenade",
       "productKind": "grenade",
       "model": "G-48",
@@ -9021,7 +9161,7 @@
       },
       "handling": {
         "magazine": 12,
-        "spareMagazines": 8,
+        "spareMagazines": 10,
         "fireRate": 900,
         "recoil": 20,
         "firingModes": ["Semi"]
@@ -9226,7 +9366,7 @@
               "armorPenetration": {
                 "value": 5
               },
-              "demolitionForce": 30,
+              "demolitionForce": 40,
               "stagger": 30,
               "push": 40
             }
@@ -10769,7 +10909,7 @@
       },
       "handling": {
         "magazine": 10,
-        "spareMagazines": 8,
+        "spareMagazines": 10,
         "fireRate": 450,
         "recoil": 31,
         "firingModes": ["Semi"]
@@ -10823,7 +10963,7 @@
       },
       "handling": {
         "magazine": 31,
-        "spareMagazines": 4,
+        "spareMagazines": 6,
         "fireRate": 1100,
         "reloadSeconds": 2.1,
         "recoil": 15,
@@ -11046,6 +11186,80 @@
         "magazine": 6,
         "fireRate": 200,
         "recoil": 43,
+        "firingModes": ["Semi"]
+      }
+    },
+    {
+      "id": "p-40-k-bolt-pistol",
+      "productKind": "secondary-weapon",
+      "model": "P/40-K",
+      "nameZh": "P/40-K爆弹手枪",
+      "nameEn": "P/40-K Bolt Pistol",
+      "localization": {
+        "status": "community-reviewed"
+      },
+      "weaponType": "Special",
+      "image": {
+        "path": "assets/wiki/p-40-k-bolt-pistol.png",
+        "alt": "P/40-K爆弹手枪",
+        "filePage": "https://helldivers.wiki.gg/wiki/File:P-40-K_Bolt_Pistol_Secondary_Render.png",
+        "license": "License/Arrowhead"
+      },
+      "wiki": {
+        "pageId": 20140,
+        "revision": 128871,
+        "url": "https://helldivers.wiki.gg/wiki/P/40-K_Bolt_Pistol"
+      },
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "castellans-creed-legendary",
+        "page": 2,
+        "itemMedals": 50
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "20140-component-1",
+            "type": "projectile",
+            "label": "Ballistic",
+            "fields": {
+              "standardDamage": 325,
+              "durableDamage": 115,
+              "armorPenetration": {
+                "value": 4,
+                "labelZh": "重型"
+              },
+              "demolitionForce": 20,
+              "stagger": 35,
+              "push": 15
+            }
+          },
+          {
+            "id": "20140-component-2",
+            "type": "explosion",
+            "label": "Explosion",
+            "fields": {
+              "standardDamage": 175,
+              "durableDamage": 175,
+              "armorPenetration": {
+                "value": 3,
+                "labelZh": "中型"
+              },
+              "demolitionForce": 10,
+              "stagger": 35,
+              "push": 5,
+              "innerRadius": 1,
+              "outerRadius": 3.5
+            }
+          }
+        ],
+        "primaryComponentId": "20140-component-1"
+      },
+      "handling": {
+        "magazine": 6,
+        "spareMagazines": 4,
+        "fireRate": 150,
+        "recoil": 325,
         "firingModes": ["Semi"]
       }
     },
@@ -11842,6 +12056,62 @@
         "magazine": 15,
         "fireRate": 190,
         "recoil": 54,
+        "firingModes": ["Semi"]
+      }
+    },
+    {
+      "id": "r-40-k-hot-shot-marksman-rifle",
+      "productKind": "primary-weapon",
+      "model": "R/40-K",
+      "nameZh": "R/40-K“热射线”精确射手步枪",
+      "nameEn": "R/40-K Hot-Shot Marksman Rifle",
+      "localization": {
+        "status": "community-reviewed"
+      },
+      "weaponType": "Energy-Based",
+      "image": {
+        "path": "assets/wiki/r-40-k-hot-shot-marksman-rifle.png",
+        "alt": "R/40-K“热射线”精确射手步枪",
+        "filePage": "https://helldivers.wiki.gg/wiki/File:R-40-K_Hot-Shot_Primary_Render.png",
+        "license": "License/Arrowhead"
+      },
+      "wiki": {
+        "pageId": 20138,
+        "revision": 128812,
+        "url": "https://helldivers.wiki.gg/wiki/R/40-K_Hot-Shot_Marksman_Rifle"
+      },
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "castellans-creed-legendary",
+        "page": 1,
+        "itemMedals": 35
+      },
+      "combat": {
+        "components": [
+          {
+            "id": "20138-component-1",
+            "type": "projectile",
+            "label": "Ballistic",
+            "fields": {
+              "standardDamage": 275,
+              "durableDamage": 40,
+              "armorPenetration": {
+                "value": 3,
+                "labelZh": "中型"
+              },
+              "demolitionForce": 10,
+              "stagger": 20,
+              "push": 14
+            }
+          }
+        ],
+        "primaryComponentId": "20138-component-1"
+      },
+      "handling": {
+        "magazine": 12,
+        "spareMagazines": 7,
+        "fireRate": 210,
+        "recoil": 18.75,
         "firingModes": ["Semi"]
       }
     },
@@ -14262,6 +14532,74 @@
       },
       "handling": {
         "magazine": 4
+      }
+    },
+    {
+      "id": "tg-122-demo-trooper",
+      "productKind": "body-armor",
+      "model": "TG-122",
+      "nameZh": "TG-122“爆破兵”",
+      "nameEn": "TG-122 Demo-Trooper",
+      "localization": {
+        "status": "community-reviewed"
+      },
+      "image": {
+        "path": "assets/wiki/tg-122-demo-trooper.png",
+        "alt": "TG-122“爆破兵”",
+        "filePage": "https://helldivers.wiki.gg/wiki/File:TG-122_Demo-Trooper_Armor_Icon.png",
+        "license": "License/Arrowhead"
+      },
+      "wiki": {
+        "pageId": 20103,
+        "revision": 128581,
+        "url": "https://helldivers.wiki.gg/wiki/TG-122_Demo-Trooper"
+      },
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "castellans-creed-legendary",
+        "page": 2,
+        "itemMedals": 55
+      },
+      "armor": {
+        "class": "Heavy",
+        "rating": 150,
+        "speed": 450,
+        "staminaRegen": 50,
+        "passive": "True Grit"
+      }
+    },
+    {
+      "id": "tg-8-sharpshooter",
+      "productKind": "body-armor",
+      "model": "TG-8",
+      "nameZh": "TG-8“神射手”",
+      "nameEn": "TG-8 Sharpshooter",
+      "localization": {
+        "status": "community-reviewed"
+      },
+      "image": {
+        "path": "assets/wiki/tg-8-sharpshooter.png",
+        "alt": "TG-8“神射手”",
+        "filePage": "https://helldivers.wiki.gg/wiki/File:TG-8_Sharpshooter_Armor_Icon.png",
+        "license": "License/Arrowhead"
+      },
+      "wiki": {
+        "pageId": 20105,
+        "revision": 128575,
+        "url": "https://helldivers.wiki.gg/wiki/TG-8_Sharpshooter"
+      },
+      "acquisition": {
+        "kind": "warbond",
+        "warbondId": "castellans-creed-legendary",
+        "page": 1,
+        "itemMedals": 45
+      },
+      "armor": {
+        "class": "Medium",
+        "rating": 100,
+        "speed": 500,
+        "staminaRegen": 100,
+        "passive": "True Grit"
       }
     },
     {

@@ -27,6 +27,7 @@ import {
   deploymentTypeLabel,
   passiveLabel,
   PRODUCT_KIND_LABELS,
+  radiusText,
   weaponTypeLabel,
 } from "./lib/display";
 import {
@@ -179,6 +180,7 @@ function Stat({
 
 function ComponentDetails({ component }: { component: AttackComponent }) {
   const fields = component.fields;
+  const radius = radiusText(fields);
   return (
     <div className="component-card">
       <h4>{componentLabel(component)}</h4>
@@ -190,6 +192,7 @@ function ComponentDetails({ component }: { component: AttackComponent }) {
         <Stat label="拆毁" value={fields.demolitionForce} />
         <Stat label="硬直" value={fields.stagger} />
         <Stat label="推力" value={fields.push} />
+        <Stat label="范围" value={radius} />
       </dl>
     </div>
   );

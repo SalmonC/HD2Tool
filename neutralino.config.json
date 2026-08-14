@@ -1,9 +1,10 @@
 {
   "applicationId": "com.hd2tool.supplybook",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "defaultMode": "window",
   "documentRoot": "/dist",
   "url": "/index.html",
+  "port": 47831,
   "enableServer": true,
   "enableNativeAPI": false,
   "tokenSecurity": "one-time",

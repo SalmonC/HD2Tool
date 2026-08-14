@@ -20,15 +20,24 @@ describe("searchEquipment", () => {
     expect(searchEquipment(catalogItems, "SG-225IF")).toHaveLength(0);
   });
 
+  it("finds the new warbond equipment and its announced alternate name", () => {
+    expect(searchEquipment(catalogItems, "R/40-K")[0]?.item.id).toBe(
+      "r-40-k-hot-shot-marksman-rifle",
+    );
+    expect(searchEquipment(catalogItems, "Meltamine")[0]?.item.id).toBe(
+      "g-40-k-melta-mine",
+    );
+  });
+
   it("filters the full catalog before the UI paginates", () => {
     const armor = searchEquipment(catalogItems, "", "armor");
-    expect(armor.length).toBe(105);
+    expect(armor.length).toBe(107);
     expect(
       armor.every((result) => result.item.productKind === "body-armor"),
     ).toBe(true);
   });
 
   it("returns the complete catalog for the All category", () => {
-    expect(searchEquipment(catalogItems, "", null)).toHaveLength(292);
+    expect(searchEquipment(catalogItems, "", null)).toHaveLength(298);
   });
 });
