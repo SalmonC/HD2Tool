@@ -437,7 +437,7 @@ p {
 }
 .detail-card {
   position: relative;
-  width: min(760px, 100%);
+  width: min(900px, 100%);
   border: 1px solid #426571;
   border-radius: 12px;
   padding: 17px;
@@ -460,15 +460,15 @@ p {
 }
 .detail-hero {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
+  grid-template-columns: 300px minmax(0, 1fr);
   gap: 16px;
   align-items: center;
   padding-right: 35px;
 }
 .equipment-image--detail,
 .image-fallback--detail {
-  width: 150px;
-  height: 150px;
+  width: 300px;
+  height: 300px;
 }
 .detail-hero h2 {
   margin: 4px 0;
@@ -533,6 +533,17 @@ p {
   margin-top: 15px;
   color: var(--cyan);
   font-size: 13px;
+}
+
+@media (max-width: 1099px) and (min-width: 561px) {
+  .detail-hero {
+    grid-template-columns: 180px minmax(0, 1fr);
+  }
+  .equipment-image--detail,
+  .image-fallback--detail {
+    width: 180px;
+    height: 180px;
+  }
 }
 
 .plan-pane {

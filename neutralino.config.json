@@ -1,6 +1,6 @@
 {
   "applicationId": "com.hd2tool.supplybook",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "defaultMode": "window",
   "documentRoot": "/dist",
   "url": "/index.html",
